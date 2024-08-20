@@ -1,13 +1,29 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.gradient-border {
+  position: relative;
+  display: inline-block;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: linear-gradient(90deg, #2F69B1 0%, #53A4FF 100%);
+  border-radius: 8px; /* Adjust based on your element's border-radius */
+}
+
+/* Optional: Add a background to the actual element inside the border */
+.gradient-border .content {
+  position: relative;
+  background: white; /* Adjust to your needs */
+  padding: 20px;
+  border-radius: 6px; /* Should be less than the pseudo-element's border-radius */
 }
