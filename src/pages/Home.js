@@ -164,7 +164,7 @@ const Title = styled.h2`
   color: #333;
   margin-bottom: 20px;
   text-align: center;
-  margin-right: 445px;
+  // margin-right: 445px;
       // margin-left: 336px;
       font-family: 'Poppins';
 `;

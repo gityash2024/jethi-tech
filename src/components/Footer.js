@@ -153,13 +153,14 @@ const Copyright = styled.p`
   }
 `;
 const GradientText = styled.span`
-  background: linear-gradient(90deg, #111212 0%, #0e0e0e 100%);
+  background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
   font-family: Sofia, cursive;
   font-size: x-large;
+  color: white;
 `;
 
 const Footer = () => {
