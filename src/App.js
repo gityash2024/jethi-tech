@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+// index.js or App.js
+import '@fontsource/sofia'; // Defaults to weight 400
+
 import About from './pages/About';
 import Blog from './pages/Blog';
 import TermsConditions from './pages/TermsConditions';

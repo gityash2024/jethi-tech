@@ -32,15 +32,19 @@ const TopBarContent = styled.div`
 const TopBarLink = styled.a`
   color: #FFFFFF;
   text-decoration: none;
-  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* SemiBold */
   margin-right: 20px;
   font-size: 14px;
   padding: 5px 10px;
   transition: all 0.3s;
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  pointer-events: ${props => props.disabled ? 'none' : 'auto'};
+  // opacity: ${props => props.disabled ? 0.6 : 1};
 
   &:hover, &.active {
-    background-color: #FFFFFF;
-    color: #015BCC;
+    background-color: ${props => props.disabled ? 'transparent' : '#FFFFFF'};
+    color: ${props => props.disabled ? '#FFFFFF' : '#015BCC'};
     border-radius: 2px;
   }
 
@@ -48,6 +52,7 @@ const TopBarLink = styled.a`
     margin-right: 0;
   }
 `;
+
 
 const MainNav = styled.nav`
   background-color: #FFFFFF;
@@ -104,6 +109,9 @@ const NavItem = styled.li`
   &:last-child {
     margin-right: 0;
   }
+      font-family: 'Poppins', sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 16px;
 
   @media (max-width: 768px) {
     margin: 10px 0;
@@ -126,8 +134,8 @@ const NavLink = styled(Link)`
   &:after {
     content: '';
     display: inline-block;
-    width: 12px;
-    height: 12px;
+    width: 22px;
+    height: 22px;
     background-image: url(${downArrow});
     background-size: contain;
     background-repeat: no-repeat;
@@ -200,18 +208,20 @@ const Header = () => {
     <HeaderWrapper>
       <TopBar>
         <TopBarContent>
-          <TopBarLink href="#" className="active">JTS</TopBarLink>
-          <TopBarLink href="#">Soleventure</TopBarLink>
-          <TopBarLink href="#">Realtors</TopBarLink>
-          <TopBarLink href="#">Interiors</TopBarLink>
-          <TopBarLink href="#">Branding</TopBarLink>
-          <TopBarLink href="#">Tax & accounting</TopBarLink>
-          <TopBarLink href="#">Startup incubation</TopBarLink>
+        <TopBarLink href="/" className="active">JTS</TopBarLink>
+<TopBarLink href="#" disabled>Soleventure</TopBarLink>
+<TopBarLink href="#" disabled>Realtors</TopBarLink>
+<TopBarLink href="#" disabled>Interiors</TopBarLink>
+<TopBarLink href="#" disabled>Branding</TopBarLink>
+<TopBarLink href="#" disabled>Tax & accounting</TopBarLink>
+<TopBarLink href="#" disabled>Startup incubation</TopBarLink>
+
         </TopBarContent>
       </TopBar>
       <MainNav>
         <NavContent>
-          <Logo src={jethiTechLogo} alt="JETHI TECH SOLUTIONS Pvt. Ltd." />
+          {/* <Logo src={jethiTechLogo} alt="JETHI TECH SOLUTIONS Pvt. Ltd." /> */}
+          <h1 style={{ fontFamily: 'Sofia, cursive' }}>Solminica</h1>
           <MenuButton onClick={toggleMenu}>
             MENU <MenuIcon src={menuIcon} alt="Menu" />
           </MenuButton>
