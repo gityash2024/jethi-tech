@@ -56,6 +56,10 @@ const HeroTitle = styled.h1`
   font-size: 48px;
   color: #333;
   margin-bottom: 20px;
+  font-family: 'poppins';
+  span {
+    color: #0066CC;
+  }
 `;
 
 const HeroSubtitle = styled.p`
@@ -87,12 +91,14 @@ const BeliefTitle = styled.h2`
   font-size: 36px;
   color: #333;
   margin-bottom: 20px;
+  font-family: 'Poppins';
 `;
 
 const BeliefText = styled.p`
   font-size: 18px;
   color: #666;
   margin-bottom: 40px;
+  font-family: 'Poppins';
 `;
 
 const VisionMissionGrid = styled.div`
@@ -130,7 +136,7 @@ const CardText = styled.p`
 
 
 const SolutionsSection = styled(Section)`
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
 `;
 
 const SolutionsTitle = styled.h2`
@@ -138,6 +144,7 @@ const SolutionsTitle = styled.h2`
   color: #333;
   margin-bottom: 20px;
   text-align: center;
+  font-family: 'Poppins';
 `;
 
 const SolutionsSubtitle = styled.p`
@@ -183,6 +190,7 @@ const ValueTitle = styled.h2`
   color: #333;
   margin-bottom: 20px;
   text-align: center;
+  font-family: 'Poppins';
 `;
 
 const ValueSubtitle = styled.p`
@@ -190,6 +198,7 @@ const ValueSubtitle = styled.p`
   color: #666;
   margin-bottom: 40px;
   text-align: center;
+  font-family: 'Poppins';
 `;
 
 const StatsGrid = styled.div`
@@ -205,7 +214,7 @@ const StatItem = styled.div`
 
 const StatNumber = styled.h3`
   font-size: 36px;
-  color: #0066CC;
+  color: #0f1010;;
   margin-bottom: 10px;
 `;
 
@@ -215,7 +224,7 @@ const StatLabel = styled.p`
 `;
 
 const PreferSection = styled(Section)`
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
 `;
 
 const PreferTitle = styled.h2`
@@ -223,6 +232,7 @@ const PreferTitle = styled.h2`
   color: #333;
   margin-bottom: 20px;
   text-align: center;
+  font-family: 'Poppins';
 `;
 
 const PreferSubtitle = styled.p`
@@ -230,6 +240,7 @@ const PreferSubtitle = styled.p`
   color: #666;
   margin-bottom: 40px;
   text-align: center;
+  font-family: 'Poppins';
 `;
 
 const PreferGrid = styled.div`
@@ -259,12 +270,14 @@ const TestimonialTitle = styled.h2`
   font-size: 36px;
   color: #333;
   margin-bottom: 20px;
+  font-family: 'Poppins';
 `;
 
 const TestimonialSubtitle = styled.p`
   font-size: 18px;
   color: #666;
   margin-bottom: 40px;
+  font-family: 'Poppins';
 `;
 
 const TestimonialCard = styled.div`
@@ -312,12 +325,14 @@ const FindUsTitle = styled.h2`
   font-size: 36px;
   color: #333;
   margin-bottom: 20px;
+  font-family: 'Poppins';
 `;
 
 const FindUsSubtitle = styled.p`
   font-size: 18px;
   color: #666;
   margin-bottom: 40px;
+  font-family: 'Poppins';
 `;
 
 const ReviewPlatforms = styled.div`
@@ -354,7 +369,7 @@ const About = () => {
       <Container>
         <HeroSection>
           <HeroContent>
-            <HeroTitle>The right technology partner can change everything</HeroTitle>
+            <HeroTitle>The right <span>technology partner</span>  can change everything</HeroTitle>
             <HeroSubtitle>We are firm believers that the best software comes from small agile and highly skilled teams.</HeroSubtitle>
             <Button>Get Quote</Button>
           </HeroContent>

@@ -50,6 +50,7 @@ const HeroSubtitle = styled.p`
   margin-bottom: 0;
   max-width: 600px;
   line-height: 1.5;
+  font-family: 'poppins';
 `;
 
 const HeroImage = styled.img`
@@ -253,7 +254,7 @@ const Blog = () => {
     <BlogPage>
     <HeroSection>
       <HeroContent>
-        <HeroTitle>Our <span style={{color: '#0000FF'}}> Blogs</span></HeroTitle>
+        <HeroTitle>Our <span> Blogs</span></HeroTitle>
         <HeroSubtitle>
           Solminica creates inspirational designs and robust 
           solutions for Web and mobile apps. We combine our 

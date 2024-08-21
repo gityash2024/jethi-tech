@@ -43,12 +43,17 @@ const HeroTitle = styled.h1`
   font-size: 48px;
   color: #333;
   margin-bottom: 20px;
+  font-family: 'poppins';
+   span {
+    color: #0066CC;
+  }
 `;
 
 const HeroSubtitle = styled.p`
   font-size: 18px;
   color: #666;
   margin-bottom: 30px;
+  font-family: 'poppins';
 `;
 
 const Button = styled.button`
@@ -75,6 +80,7 @@ const AwardsTitle = styled.h2`
   font-size: 36px;
   color: #333;
   margin-bottom: 40px;
+  font-family: 'poppins';
 `;
 
 const AwardsGrid = styled.div`
@@ -89,7 +95,7 @@ const AwardImage = styled.img`
 `;
 
 const TrustedSection = styled(Section)`
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
   text-align: center;
 `;
 
@@ -97,6 +103,7 @@ const TrustedTitle = styled.h2`
   font-size: 36px;
   color: #333;
   margin-bottom: 40px;
+  font-family: 'poppins';
 `;
 
 const TrustedGrid = styled.div`
@@ -118,6 +125,7 @@ const TestimonialTitle = styled.h2`
   font-size: 36px;
   color: #333;
   margin-bottom: 40px;
+  font-family: 'poppins';
 `;
 
 const TestimonialCard = styled.div`
@@ -266,7 +274,7 @@ const Contact = () => {
         <Container>
           <HeroSection>
             <HeroContent>
-              <HeroTitle>Partner with us to revolutionize your industry</HeroTitle>
+              <HeroTitle>Partner with us to <span>revolutionize your industry</span></HeroTitle>
               <HeroSubtitle>Solminica creates inspirational designs and robust solutions for Web and mobile apps. We combine our expertise in tech & design to craft innovate digital solutions that lead the way in your industry.</HeroSubtitle>
               <Button>Get Quote</Button>
             </HeroContent>

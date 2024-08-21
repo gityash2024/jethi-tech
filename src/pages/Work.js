@@ -53,6 +53,7 @@ const OurWorkContent = styled.div`
 const Title = styled.h2`
   font-size: 48px;
   margin-bottom: 20px;
+  font-family: 'poppins';
 
   span {
     color: #0066CC;
@@ -62,6 +63,7 @@ const Title = styled.h2`
 const Description = styled.p`
   font-size: 18px;
   margin-bottom: 20px;
+  color: #666;
 `;
 
 const OurWorkImage = styled.img`
@@ -95,10 +97,11 @@ const LoadMoreButton = styled.button`
   color: white;
   border: none;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 22px;
+  argin-left: 538px;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 48px;
 `;
 
 const AwardsSection = styled(Section)`
@@ -108,6 +111,7 @@ const AwardsTitle = styled.h2`
   font-size: 48px;
   color: #333;
   margin-bottom: 20px;
+  font-famliy: 'poppins';
 `;
 
 const AwardsDescription = styled.p`
@@ -181,6 +185,7 @@ const TestimonialSection = styled(Section)`
 const TestimonialTitle = styled.h2`
   font-size: 48px;
   margin-bottom: 20px;
+  font-family: 'poppins';
 `;
 
 const TestimonialDescription = styled.p`
@@ -188,11 +193,12 @@ const TestimonialDescription = styled.p`
   max-width: 1000px;
   margin: 0 auto 40px;
   line-height: 1.6;
+  color: #666;
 `;
 
 const TestimonialCard = styled.div`
   display: flex;
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
   border-radius: 20px;
   padding: 40px;
   margin-top: 40px;
@@ -215,6 +221,7 @@ const TestimonialText = styled.p`
   font-size: 16px;
   margin-bottom: 20px;
   line-height: 1.6;
+  color: #666;
 `;
 
 const TestimonialAuthor = styled.p`
@@ -253,6 +260,7 @@ const TrustedTitle = styled.h2`
   font-size: 48px;
   color: #333;
   margin-bottom: 20px;
+  font-family :'poppins';
 `;
 
 const TrustedDescription = styled.p`

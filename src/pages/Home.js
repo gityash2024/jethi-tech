@@ -164,13 +164,17 @@ const Title = styled.h2`
   color: #333;
   margin-bottom: 20px;
   text-align: center;
+  margin-right: 445px;
+      // margin-left: 336px;
+      font-family: 'Poppins';
 `;
 
 const Subtitle = styled.p`
   font-size: 18px;
   color: #666;
   margin-bottom: 20px;
-  text-align: center;
+  // text-align: center;
+  font-family: "Poppins";
 `;
 
 const GradientText = styled.span`
@@ -388,7 +392,7 @@ const BottomText = styled.p`
 `;
 
 const ConsultButton = styled(Button)`
-  width: 20%;
+  width: 23%;
 `;
 const SolutionsSection = styled(Section)`
   background-color: #f8f8f8;

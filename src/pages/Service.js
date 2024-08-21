@@ -221,6 +221,7 @@ const Title = styled.h2`
   color: #333;
   margin-bottom: 20px;
   text-align: center;
+  font-family:'poppins';
 `;
 
 const Subtitle = styled.p`

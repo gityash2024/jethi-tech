@@ -197,6 +197,7 @@ const FAQImage = styled.img`
 const Title = styled.h1`
   font-size: 48px;
   margin-bottom: 20px;
+  font-family:'poppins';
   span {
     color: #0066CC;
   }
@@ -272,7 +273,7 @@ const Logo = styled.img`
 `;
 
 const WhyChooseSection = styled(Section)`
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
 `;
 
 const WhyChooseContent = styled.div`
@@ -329,7 +330,7 @@ const ModuleImage = styled.img`
 `;
 
 const StatisticsSection = styled(Section)`
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
   text-align: center;
 `;
 
@@ -494,6 +495,7 @@ const TestimonialPosition = styled.p`
   font-size: 14px;
   color: #666;
 `;
+
 const Solutions = () => {
   const [activeTab, setActiveTab] = useState('User side');
   const [activeTech, setActiveTech] = useState('Backend Development');
@@ -540,7 +542,7 @@ const Solutions = () => {
         <Container>
           <WhyChooseContent>
             <WhyChooseText>
-              <Title>Why Should You Choose Solminica For An On-demand Food Delivery App Like Zomato?</Title>
+              <Title>Why Should You Choose <span>Solminica</span> For An On-demand <span>Food Delivery App</span> Like Zomato?</Title>
               <Subtitle>Hunger is never going to end and similar is the case with the business of food. This is the reason, why food delivery apps like Zomato, UberEats, etc. have gained much popularity recently. You can be the next in the list of top entrepreneurs in the Food delivery sector. All you need is a holistic app which can meet every aspect of your business.</Subtitle>
               <Subtitle>The team of Solminica has the expertise and relevant experience in delivering such food apps for startups and companies. By choosing us you can be sure of the final quality of your app that can find its place in the heart of your customers. With the help of latest tools and technologies, we can assure you to deliver the best possible solutions for your business.</Subtitle>
               <Button>Consult Now</Button>
@@ -575,7 +577,7 @@ const Solutions = () => {
 
       <StatisticsSection data-aos="fade-up">
         <Container>
-          <Title>Some Statistics To Prove Demand For An App Like Zomato</Title>
+          <Title>Some <span>Statistics</span> To Prove <span>Demand</span> For An App Like Zomato</Title>
           <Subtitle>Solminica delivers unparalleled value for money by offering top-quality, innovative technology solutions at competitive prices.</Subtitle>
           <StatGrid>
             <StatItem>
@@ -603,7 +605,7 @@ const Solutions = () => {
 
       <MarketShareSection data-aos="fade-up">
         <Container>
-          <Title>Market Share</Title>
+          <Title><span>Market</span> Share</Title>
           <MarketShareContent>
             <MarketShareImage src={market} alt="Market Share" />
             <MarketShareText>
@@ -615,7 +617,7 @@ const Solutions = () => {
 
       <ExistingPlayersSection data-aos="fade-up">
         <Container>
-          <Title>Where Do The Existing Players Stand?</Title>
+          <Title>Where Do The <span>Existing Players</span>  Stand?</Title>
           <Subtitle>Solminica delivers unparalleled value for money by offering top-quality, innovative technology solutions at competitive prices.</Subtitle>
           <PlayerGrid>
             <PlayerItem>
@@ -689,7 +691,7 @@ const Solutions = () => {
 
       <CostSection data-aos="fade-up">
         <Container>
-          <Title>How much does it cost to build an app like Zomato?</Title>
+          <Title>How much does it <span>cost to build</span> an app like <span>Zomato?</span></Title>
           <CostContent>
             <CostText>
               <Subtitle>
@@ -725,7 +727,7 @@ const Solutions = () => {
 
       <FeaturesSection data-aos="fade-up">
         <Container>
-          <Title>Features to Make an App like <span>Zomato?</span></Title>
+          <Title><span>Features</span> to Make an App like <span>Zomato?</span></Title>
           <FeatureTable>
             <thead>
               <tr>

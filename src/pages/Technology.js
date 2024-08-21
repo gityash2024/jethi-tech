@@ -43,6 +43,7 @@ const HeroImage = styled.img`
 const Title = styled.h1`
   font-size: 48px;
   margin-bottom: 20px;
+  font-family: 'Poppins';
   span {
     color: #0066CC;
   }
