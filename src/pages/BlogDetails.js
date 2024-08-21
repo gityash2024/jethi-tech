@@ -67,6 +67,8 @@ const Tag = styled.span`
   font-size: 14px;
 `;
 
+
+
 const RelatedPosts = styled.div`
   display: flex;
   justify-content: space-between;
@@ -85,6 +87,12 @@ const RelatedPostImage = styled.img`
    margin-left: 168px;
 // height: auto;
 `;
+const RelatedPostImage2 = styled.img`
+//   max-width: 100%;
+  width : 30vw;
+  height: 10vh;
+// height: auto;
+`;
 
 const RelatedPostTitle = styled.h3`
   font-size: 18px;
@@ -96,6 +104,7 @@ const ReadTime = styled.span`
   font-size: 14px;
   color: #666;
 `;
+
 
 const BlogDetails = () => {
 
@@ -152,12 +161,12 @@ const BlogDetails = () => {
 
       <RelatedPosts>
         <RelatedPost>
-          {/* <RelatedPostImage src={connect_blog} alt="Previous Post" /> */}
+          <RelatedPostImage2 src={Frame} alt="Next Post" />
           <RelatedPostTitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit</RelatedPostTitle>
-          <ReadTime>← Previous Post • 7 min Read</ReadTime>
+          <ReadTime>Next Post → • 7 min Read</ReadTime>
         </RelatedPost>
         <RelatedPost>
-          <RelatedPostImage src={Frame} alt="Next Post" />
+          <RelatedPostImage2 src={Frame} alt="Next Post" />
           <RelatedPostTitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit</RelatedPostTitle>
           <ReadTime>Next Post → • 7 min Read</ReadTime>
         </RelatedPost>

@@ -145,7 +145,7 @@ const Container = styled.div`
 `;
 
 const Section = styled.section`
-  padding: 60px 0;
+  padding: 40px 0;
 `;
 
 const Button = styled.button`
@@ -169,7 +169,7 @@ const Title = styled.h2`
 const Subtitle = styled.p`
   font-size: 18px;
   color: #666;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: center;
 `;
 
@@ -238,7 +238,7 @@ const HeroContentWrapper = styled.div`
 
 const TrustedBy = styled.div`
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 `;
 
 const TrustedTitle = styled.h3`
@@ -246,7 +246,7 @@ const TrustedTitle = styled.h3`
   font-weight: 500;
   font-size: 20px;
   color: #434343;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 `;
 
 const LogoGrid = styled.div`
@@ -316,7 +316,7 @@ const ServiceTitle = styled.h4`
 `;
 
 const TechnologiesSection = styled(Section)`
-  padding: 60px 0;
+  padding: 40px 0;
 `;
 
 const TechGrid = styled.div`
@@ -473,7 +473,7 @@ const StatLabel = styled.p`
 `;
 
 const WorkSection = styled(Section)`
-  padding: 60px 0;
+  padding: 40px 0;
 `;
 
 const WorkGrid = styled.div`
@@ -644,7 +644,7 @@ const TestimonialPosition = styled.p`
 
 const AwardsSection = styled(Section)`
   text-align: center;
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
 `;
 
 const AwardsGrid = styled.div`
@@ -733,7 +733,7 @@ const TrustedDot = styled.span`
 `;
 
 const BlogSection = styled(Section)`
-  padding: 60px 0;
+  padding: 30px 0;
 `;
 
 const BlogsContainer = styled.div`
@@ -751,7 +751,7 @@ const BlogsContent = styled.div`
 `;
 
 const BlogItem = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
 
 const BlogQuestion = styled.div`
@@ -824,7 +824,7 @@ const CountriesList = styled.p`
   font-size: 12px;
   line-height: 1.6;
   margin-top: 20px;
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
 `;
 
 const Home = () => {

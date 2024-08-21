@@ -29,7 +29,7 @@ const PageWrapper = styled.div`
 `;
 
 const Section = styled.section`
-  padding: 60px 0;
+  padding: 40px 0;
 `;
 
 const Container = styled.div`
@@ -44,7 +44,7 @@ const Button = styled.button`
   background-color: #0066CC;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 18px 24px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
@@ -62,7 +62,9 @@ const Tab = styled.button`
   background-color: ${props => props.active ? '#0066CC' : 'white'};
   color: ${props => props.active ? 'white' : '#333'};
   border: 1px solid #0066CC;
-  padding: 10px 20px;
+  padding: 20px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
   cursor: pointer;
   flex: 1;
 `;
@@ -73,75 +75,54 @@ const SolutionGrid = styled.div`
   gap: 30px;
 `;
 
-const SolutionItem = styled.div`
-  background-color: #f8f8f8;
-  padding: 30px;
-  border-radius: 8px;
-`;
 
-const SolutionIcon = styled.img`
-  width: 60px;
-  height: 60px;
-  margin-bottom: 20px;
-`;
 
-const SolutionTitle = styled.h3`
-  font-size: 24px;
-  margin-bottom: 10px;
-`;
 
-const SolutionDescription = styled.p`
-  font-size: 16px;
-`;
-
-const IndustriesSection = styled(Section)`
-  background-color: #f8f8f8;
-`;
-
-const IndustriesGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  margin-top: 40px;
-`;
-
-const IndustryItem = styled.div`
+const ProcessSection = styled(Section)`
   text-align: center;
 `;
 
-const IndustryIcon = styled.img`
-  width: 60px;
-  height: 60px;
-  margin-bottom: 10px;
-`;
-
-const IndustryName = styled.p`
-  font-size: 14px;
-`;
-
-const ProcessSection = styled(Section)``;
-
 const ProcessImage = styled.img`
-  max-width: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+`;
+
+
+
+const CustomerTestimonial = styled.div`
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 40px;
   margin-top: 40px;
 `;
 
-
-
-const TestimonialDots = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+const TestimonialImage = styled.img`
+  width: 20%;
+  margin-right: 40px;
 `;
 
-const TestimonialDot = styled.span`
-  width: 10px;
-  height: 10px;
-  background-color: ${props => props.active ? '#0066CC' : '#ccc'};
-  border-radius: 50%;
-  margin: 0 5px;
+const TestimonialContent = styled.div`
+  flex: 1;
 `;
 
+const TestimonialText = styled.p`
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+`;
+
+const TestimonialAuthor = styled.h4`
+  font-size: 18px;
+  margin-bottom: 5px;
+`;
+
+const TestimonialPosition = styled.p`
+  font-size: 14px;
+  color: #666;
+`;
 const FAQSection = styled(Section)``;
 
 const FAQContainer = styled.div`
@@ -188,11 +169,12 @@ const FAQImage = styled.img`
   width: 40%;
   object-fit: contain;
 `;
+
 const HeroSection = styled(Section)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 50px;
 `;
 
 const HeroContent = styled.div`
@@ -202,6 +184,26 @@ const HeroContent = styled.div`
 const HeroImage = styled.img`
   flex: 1;
   max-width: 50%;
+`;
+
+const HeroTitle = styled.h1`
+  font-size: 46px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+`;
+const HeroTitle2 = styled.h1`
+  font-size: 46px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display:flex;
+  justify-content: center;
+`;
+
+const HeroContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 const ViewAllButton = styled.button`
   background-color: #0066CC;
@@ -214,64 +216,31 @@ const ViewAllButton = styled.button`
   display: block;
   margin: 40px auto 0;
 `;
-
-const ValueSection = styled.section`
-  text-align: center;
-  padding: 60px 0;
-  // background-color: #f8f8f8;
-`;
-
-const CustomerTestimonial = styled.div`
-  display: flex;
-  align-items: center;
-  // background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 40px;
-  margin-top: 40px;
-`;
-
-const TestimonialImage = styled.img`
-  width: 40%;
-  margin-right: 40px;
-`;
-
-const TestimonialContent = styled.div`
-  flex: 1;
-`;
-
-const TestimonialText = styled.p`
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-`;
-
-const TestimonialAuthor = styled.h4`
-  font-size: 18px;
-  margin-bottom: 5px;
-`;
-
-const TestimonialPosition = styled.p`
-  font-size: 14px;
-  color: #666;
-`;
-
-
 const Title = styled.h2`
   font-size: 36px;
   color: #333;
-  margin-bottom: 10px;
-  line-height: 1.2;
+  margin-bottom: 20px;
+  text-align: center;
 `;
 
 const Subtitle = styled.p`
   font-size: 18px;
   color: #666;
-  margin-bottom: 40px;
-  // max-width: 800px;
-  // margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 20px;
+  text-align: center;
 `;
+const Subtitle2 = styled.p`
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+`;
+const ValueSection = styled.section`
+  text-align: center;
+  padding: 40px 0;
+  // background-color: #f8f8f8;
+`;
+
+
 
 const StatsGrid = styled.div`
   display: grid;
@@ -288,11 +257,95 @@ const StatNumber = styled.h3`
   margin-bottom: 10px;
 `;
 
+const GradientText = styled.span`
+  background: linear-gradient(90deg, #2f69b1 0%, #0072ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+`;
+
+const DarkText = styled.span`
+  color: #2f2f2f;
+`;
+const ConsultButton = styled(Button)`
+  width: 30%;
+`;
+
 const StatLabel = styled.p`
   font-size: 16px;
   margin-left: 30px;
   color: #666;
 `;
+
+const SolutionItem = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+`;
+
+const SolutionIcon = styled.img`
+  width: 60px;
+  height: 60px;
+  margin-right: 20px; // Adjust space between icon and text
+`;
+
+const SolutionContent = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const SolutionTitle = styled.h3`
+  font-size: 24px;
+  margin-bottom: 10px;
+`;
+
+const SolutionDescription = styled.p`
+  font-size: 16px;
+`;
+const IndustriesSection = styled(Section)`
+  // background-color: #f8f8f8;
+`;
+
+const IndustriesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+`;
+
+const IndustryItem = styled.div`
+  text-align: center;
+`;
+
+const IndustryIcon = styled.img`
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+`;
+
+const IndustryName = styled.p`
+  font-size: 14px;
+`;
+
+const IndustrySubsection = styled.div`
+  display: flex;
+  margin-top: 40px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #2f2f2f;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const IndustrySubtitle = styled.p`
+  font-size: 16px;
+  color: #666;
+  flex: 1;
+`;
+
 const ServiceComponent = () => {
   useEffect(() => {
     AOS.init({
@@ -348,13 +401,18 @@ const ServiceComponent = () => {
   return (
     <PageWrapper>
       <Container>
-        <HeroSection  data-aos="fade-up">
-          <HeroContent>
-          <Title>Unleash Your Company's <span>Creative Vision</span> With Custom UX and UI Design Services.</Title>
-          <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
-            <ViewAllButton>Consult Now</ViewAllButton>
-          </HeroContent>
-          <HeroImage src={serivce} alt="Service" />
+        <HeroSection data-aos="fade-up">
+          <HeroContentWrapper>
+            <HeroTitle>
+            <DarkText>Unleash Your Company's </DarkText>{" "}<GradientText>Creative Vision</GradientText>
+              <br /> <DarkText> With Custom UX and UI Design Services.</DarkText>{" "}
+            </HeroTitle>
+            <Subtitle2>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Subtitle2>
+            <ConsultButton>Consult Now!</ConsultButton>
+          </HeroContentWrapper>
+          <HeroImage src={serivce} alt="Transform your business" />
         </HeroSection>
 
        
@@ -362,7 +420,7 @@ const ServiceComponent = () => {
 
       <DesignSolutionsSection  data-aos="fade-up">
         <Container>
-          <Title>Our <span>Design Solutions</span></Title>
+        <HeroTitle2><DarkText>Our &nbsp;</DarkText> <GradientText>Design Solutions</GradientText></HeroTitle2>
           <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
           <TabContainer>
             {Object.keys(designSolutions).map(tab => (
@@ -370,56 +428,56 @@ const ServiceComponent = () => {
             ))}
           </TabContainer>
           <SolutionGrid>
-            {designSolutions[activeTab].map((solution, index) => (
-              <SolutionItem key={index}>
-                <SolutionIcon src={solution.icon} alt={solution.title} />
-                <SolutionTitle>{solution.title}</SolutionTitle>
-                <SolutionDescription>{solution.description}</SolutionDescription>
-              </SolutionItem>
-            ))}
-          </SolutionGrid>
+  {designSolutions[activeTab].map((solution, index) => (
+    <SolutionItem key={index}>
+      <SolutionIcon src={solution.icon} alt={solution.title} />
+      <SolutionContent>
+        <SolutionTitle>{solution.title}</SolutionTitle>
+        <SolutionDescription>{solution.description}</SolutionDescription>
+      </SolutionContent>
+    </SolutionItem>
+  ))}
+</SolutionGrid>
+
         </Container>
       </DesignSolutionsSection>
 
-      <IndustriesSection  data-aos="fade-up">
-        <Container>
-          <Title>Key industries we serve</Title>
-          <Subtitle>We understand the unique challenges and opportunities facing each industry we serve. Our tailored digital solutions are designed to streamline operations, enhance customer experiences, and drive growth for businesses of all sizes.</Subtitle>
-          <IndustriesGrid>
-            {[
-              { icon: industries_1, name: 'Banking, Financial Services & Insurance' },
-              { icon: industries_2, name: 'Media, News & Entertainment' },
-              { icon: industries_3, name: 'Retail & Consumer Services' },
-              { icon: industries_4, name: 'Travel, Tourism & Leisure' },
-              { icon: industries_5, name: 'EdTech & Learning' },
-              { icon: industries_6, name: 'Real estate & Prop Tech' },
-              { icon: industries_7, name: 'Pharma & Healthcare' },
-              { icon: industries_8, name: 'Business & IT Services' },
-              { icon: industries_9, name: 'Automotive & Manufacturing' },
-              { icon: industries_10, name: 'Energy & Utilities' },
-            ].map((industry, index) => (
-              <IndustryItem key={index}>
-                <IndustryIcon src={industry.icon} alt={industry.name} />
-                <IndustryName>{industry.name}</IndustryName>
-              </IndustryItem>
-            ))}
-          </IndustriesGrid>
-          <Subtitle>Our expertise in designing and building digital solutions authorises us to develop bespoke solutions</Subtitle>
-          <Button>Consult Now!</Button>
-        </Container>
-      </IndustriesSection>
+      <IndustriesSection data-aos="fade-up">
+  <Container>
+    <Title>Key industries we serve</Title>
+    <Subtitle>We understand the unique challenges and opportunities facing each industry we serve. Our tailored digital solutions are designed to streamline operations, enhance customer experiences, and drive growth for businesses of all sizes.</Subtitle>
+    <IndustriesGrid>
+      {[
+        { icon: industries_1, name: 'Banking, Financial Services & Insurance' },
+        { icon: industries_2, name: 'Media, News & Entertainment' },
+        { icon: industries_3, name: 'Retail & Consumer Services' },
+        { icon: industries_4, name: 'Travel, Tourism & Leisure' },
+        { icon: industries_5, name: 'EdTech & Learning' },
+        { icon: industries_6, name: 'Real estate & Prop Tech' },
+        { icon: industries_7, name: 'Pharma & Healthcare' },
+        { icon: industries_8, name: 'Business & IT Services' },
+        { icon: industries_9, name: 'Automotive & Manufacturing' },
+        { icon: industries_10, name: 'Energy & Utilities' },
+      ].map((industry, index) => (
+        <IndustryItem key={index}>
+          <IndustryIcon src={industry.icon} alt={industry.name} />
+          <IndustryName>{industry.name}</IndustryName>
+        </IndustryItem>
+      ))}
+    </IndustriesGrid>
+    <IndustrySubsection>
+      <IndustrySubtitle>Our expertise in designing and building digital solutions authorises us to develop bespoke solutions</IndustrySubtitle>
+      <Button>Consult Now!</Button>
+    </IndustrySubsection>
+  </Container>
+</IndustriesSection>
 
-      <ProcessSection  data-aos="fade-up">
-        <Container>
-          <Title>Development Process we Follow</Title>
-          <Subtitle>At Solminica, we follow an agile development methodology, emphasizing iterative development, continuous improvement, and collaboration among cross-functional teams. Our approach prioritizes customer feedback, adapts quickly to changing requirements, and delivers high-quality software solutions efficiently.</Subtitle>
-          <ProcessImage src={developmentProcessImage} alt="Development Process" />
-        </Container>
-      </ProcessSection>
+
+    
       <ValueSection  data-aos="fade-up">
       <Container>
         <Title>
-          Solminica Deliver Value for Money
+          Solminica Deliver Value <br/> for Money
         </Title>
         <Subtitle>
           Solminica delivers unparalleled value for money by offering top-quality, innovative technology
@@ -483,18 +541,44 @@ const ServiceComponent = () => {
         <ViewAllButton>Consult Now!</ViewAllButton>
       </Container>
     </ValueSection>
-
-    <Section  data-aos="fade-up">
+    <ProcessSection data-aos="fade-up">
+        <Container>
+          <Title>Development Process we Follow</Title>
+          <Subtitle>
+            At Solminica, we follow an agile development methodology,
+            emphasizing iterative development, continuous improvement, and
+            collaboration among cross-functional teams. Our approach prioritizes
+            customer feedback, adapts quickly to changing requirements, and
+            delivers high-quality software solutions efficiently.
+          </Subtitle>
+          <ProcessImage
+            src={developmentProcessImage}
+            alt="Development Process"
+          />
+        </Container>
+      </ProcessSection>
+      <Section data-aos="fade-up">
         <Container>
           <Title>Our Customers love what we do</Title>
-          <Subtitle>Our customers are at the center of everything we do, and we're passionate about delivering exceptional solutions that exceed their expectations. We take pride in providing innovative services that delight and satisfy their needs, fostering long-term relationships built on trust, quality, and reliability. Our dedication to customer satisfaction is unwavering, and we continually strive to improve and refine our offerings to meet their evolving needs.</Subtitle>
+          <Subtitle>
+            Our customers are at the center of everything we do, and we're
+            passionate about delivering exceptional solutions that exceed their
+            expectations. We take pride in providing innovative services that
+            delight and satisfy their needs, fostering long-term relationships
+            built on trust, quality, and reliability. Our dedication to customer
+            satisfaction is unwavering, and we continually strive to improve and
+            refine our offerings to meet their evolving needs.
+          </Subtitle>
           <CustomerTestimonial>
             <TestimonialImage src={Customers} alt="Customer Testimonial" />
             <TestimonialContent>
               <TestimonialText>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
+                sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore."
               </TestimonialText>
               <TestimonialAuthor>Mark Rise</TestimonialAuthor>
               <TestimonialPosition>CEO, Founder</TestimonialPosition>
@@ -502,7 +586,6 @@ const ServiceComponent = () => {
           </CustomerTestimonial>
         </Container>
       </Section>
-
       <FAQSection  data-aos="fade-up">
         <Container>
           <Title>FAQ</Title>
@@ -517,7 +600,7 @@ const ServiceComponent = () => {
                   {openQuestion === index && <FAQAnswer>{item.answer}</FAQAnswer>}
                 </FAQItem>
               ))}
-              <Button>View all</Button>
+              {/* <Button>View all</Button> */}
             </FAQContent>
             <FAQImage src={blogs} alt="FAQ Illustration" />
           </FAQContainer>

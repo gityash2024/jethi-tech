@@ -44,7 +44,7 @@ const PageWrapper = styled.div`
 `;
 
 const Section = styled.section`
-  padding: 60px 0;
+  padding: 40px 0;
 `;
 
 const Container = styled.div`
@@ -91,7 +91,7 @@ const TableCell = styled.td`
 `;
 
 const MoneyMakingSection = styled(Section)`
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
 `;
 
 const MoneyMakingGrid = styled.div`
@@ -102,7 +102,9 @@ const MoneyMakingGrid = styled.div`
 `;
 
 const MoneyMakingItem = styled.div`
-  display: flex;
+  display: flex; background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 8px;
   align-items: flex-start;
 `;
 
@@ -135,31 +137,6 @@ const TestimonialCard = styled.div`
   margin-top: 40px;
 `;
 
-const TestimonialImage = styled.img`
-  width: 300px;
-  margin-right: 40px;
-`;
-
-const TestimonialContent = styled.div`
-  text-align: left;
-`;
-
-const TestimonialText = styled.p`
-  font-size: 16px;
-  margin-bottom: 20px;
-  line-height: 1.6;
-`;
-
-const TestimonialAuthor = styled.p`
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 5px;
-`;
-
-const TestimonialPosition = styled.p`
-  font-size: 14px;
-  color: #666;
-`;
 
 const TestimonialDots = styled.div`
   display: flex;
@@ -234,7 +211,6 @@ const HeroSection = styled(Section)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 100px;
 `;
 
 const HeroContent = styled.div`
@@ -248,6 +224,7 @@ const HeroContent = styled.div`
 const HeroImage = styled.img`
   flex: 1;
   max-width: 42%;
+  margin-left: 70px;
 `;
 
 const Input = styled.input`
@@ -277,6 +254,7 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: 4px;
 `;
+
 
 const PopularAppsSection = styled(Section)`
   text-align: center;
@@ -326,7 +304,9 @@ const Tab = styled.button`
   background-color: ${props => props.active ? '#0066CC' : 'white'};
   color: ${props => props.active ? 'white' : '#333'};
   border: 1px solid #0066CC;
-  padding: 10px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 16px 20px;
   cursor: pointer;
 `;
 
@@ -407,7 +387,7 @@ const PlayerItem = styled.div`
 `;
 
 const PlayerLogo = styled.img`
-  height: 80px;
+  height: 150px;
   margin-bottom: 15px;
 `;
 
@@ -416,8 +396,13 @@ const PlayerValue = styled.p`
   font-size: 18px;
 `;
 
+const TechIcon = styled.img`
+  width: 40px;
+  margin-right: 10px;
+`;
+
 const TechStackSection = styled(Section)`
-  background-color: #f8f8f8;
+  padding: 40px 0;
 `;
 
 const TechGrid = styled.div`
@@ -427,34 +412,23 @@ const TechGrid = styled.div`
 `;
 
 const TechColumn = styled.div`
-  flex: 1;
+  flex: ${props => props.width || 1};
 `;
 
-const ExpertiseList = styled.ul`
-  list-style-type: none;
-  padding: 0;
-`;
-
-const ExpertiseItem = styled.li`
-  margin-bottom: 10px;
-  cursor: pointer;
-  color: ${props => props.active ? '#015BCC' : '#333'};
-  font-weight: ${props => props.active ? '600' : 'normal'};
-  background: ${props => props.active ? 'linear-gradient(90deg, #366DFA 0%, #53A4FF 100%)' : 'transparent'};
-  padding: 5px 10px;
-  border-radius: 4px;
+const TechItemsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 `;
 
 const TechItem = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  border-bottom: 1px solid #e0e0e0;
 `;
 
-const TechIcon = styled.img`
+const TechLogo = styled.img`
   width: 40px;
   margin-right: 10px;
 `;
@@ -463,9 +437,67 @@ const TechName = styled.span`
   font-size: 16px;
 `;
 
+const ExpertiseList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  border-left: 3px solid #202020;
+  width: 100%;
+  margin-right: 40px;
+`;
+
+const ExpertiseItem = styled.li`
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: ${(props) => (props.active ? "#ffffff" : "#333")};
+  font-weight: ${(props) => (props.active ? "600" : "normal")};
+  background: ${(props) =>
+    props.active
+      ? "linear-gradient(to right, #366DFA 0%, #53A4FF 100%)"
+      : "transparent"};
+  padding: 10px 15px;
+  width: 70%;
+  text-align: left;
+`;
+
+
+
+const CustomerTestimonial = styled.div`
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 40px;
+  margin-top: 40px;
+`;
+
+const TestimonialImage = styled.img`
+  width: 20%;
+  margin-right: 40px;
+`;
+
+const TestimonialContent = styled.div`
+  flex: 1;
+`;
+
+const TestimonialText = styled.p`
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+`;
+
+const TestimonialAuthor = styled.h4`
+  font-size: 18px;
+  margin-bottom: 5px;
+`;
+
+const TestimonialPosition = styled.p`
+  font-size: 14px;
+  color: #666;
+`;
 const Solutions = () => {
   const [activeTab, setActiveTab] = useState('User side');
   const [activeTech, setActiveTech] = useState('Backend Development');
+  const [activeExpertise, setActiveExpertise] = useState("Backend Technologies");
 
   useEffect(() => {
     AOS.init({
@@ -473,7 +505,6 @@ const Solutions = () => {
       once: true,
     });
   }, []);
-
   return (
     <PageWrapper>
       <Container>
@@ -561,7 +592,12 @@ const Solutions = () => {
             </StatItem>
           </StatGrid>
           <hr style={{margin: '40px 0', border: 'none', borderTop: '1px solid #ddd'}} />
+          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
           <Button>Consult Now!</Button>
+          </div>
         </Container>
       </StatisticsSection>
 
@@ -584,19 +620,19 @@ const Solutions = () => {
           <PlayerGrid>
             <PlayerItem>
               <PlayerLogo src={swiggy} alt="Swiggy" />
-              <PlayerValue>$86M</PlayerValue>
+              {/* <PlayerValue>$86M</PlayerValue> */}
             </PlayerItem>
             <PlayerItem>
               <PlayerLogo src={zomato} alt="Zomato" />
-              <PlayerValue>$74M</PlayerValue>
+              {/* <PlayerValue>$74M</PlayerValue> */}
             </PlayerItem>
             <PlayerItem>
               <PlayerLogo src={uber} alt="UberEats" />
-              <PlayerValue>$10.8M</PlayerValue>
+              {/* <PlayerValue>$10.8M</PlayerValue> */}
             </PlayerItem>
             <PlayerItem>
               <PlayerLogo src={foodpanda} alt="Foodpanda" />
-              <PlayerValue>$10M</PlayerValue>
+              {/* <PlayerValue>$10M</PlayerValue> */}
             </PlayerItem>
           </PlayerGrid>
         </Container>
@@ -765,7 +801,11 @@ const Solutions = () => {
               <tr><TableCell>Logout</TableCell></tr>
             </tbody>
           </FeatureTable>
+          <div style={{display: "flex", justifyContent: "center", marginTop: "40px"}}>
+
           <Button>Get your Quote</Button>
+          </div>
+          
         </Container>
       </FeaturesSection>
 
@@ -806,30 +846,35 @@ const Solutions = () => {
         </Container>
       </MoneyMakingSection>
      
-      <TestimonialSection data-aos="fade-up">
+      <Section data-aos="fade-up">
         <Container>
           <Title>Our Customers love what we do</Title>
-          <Subtitle>Our customers are at the center of everything we do, and we're passionate about delivering exceptional solutions that exceed their expectations. We take pride in providing innovative services that delight and satisfy their needs, fostering long-term relationships built on trust, quality, and reliability. Our dedication to customer satisfaction is unwavering, and we continually strive to improve and refine our offerings to meet their evolving needs.</Subtitle>
-          <TestimonialCard>
+          <Subtitle>
+            Our customers are at the center of everything we do, and we're
+            passionate about delivering exceptional solutions that exceed their
+            expectations. We take pride in providing innovative services that
+            delight and satisfy their needs, fostering long-term relationships
+            built on trust, quality, and reliability. Our dedication to customer
+            satisfaction is unwavering, and we continually strive to improve and
+            refine our offerings to meet their evolving needs.
+          </Subtitle>
+          <CustomerTestimonial>
             <TestimonialImage src={Customers} alt="Customer Testimonial" />
             <TestimonialContent>
               <TestimonialText>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
+                sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore."
               </TestimonialText>
               <TestimonialAuthor>Mark Rise</TestimonialAuthor>
               <TestimonialPosition>CEO, Founder</TestimonialPosition>
             </TestimonialContent>
-          </TestimonialCard>
-          <TestimonialDots>
-            <TestimonialDot active />
-            <TestimonialDot />
-            <TestimonialDot />
-            <TestimonialDot />
-          </TestimonialDots>
+          </CustomerTestimonial>
         </Container>
-      </TestimonialSection>
+      </Section>
 
       <FAQSection data-aos="fade-up">
         <Container>
