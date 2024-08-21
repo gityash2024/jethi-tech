@@ -13,6 +13,7 @@ import Technology from './pages/Technology';
 import Hire from './pages/Hire';
 import Solutions from './pages/Solutions';
 import Work from './pages/Work';
+import BlogDetails from './pages/BlogDetails';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog-details" element={<BlogDetails/>} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/code-of-conduct" element={<CodeOfConduct />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
