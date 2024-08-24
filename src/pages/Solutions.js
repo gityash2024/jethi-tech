@@ -39,7 +39,7 @@ import negative from '../assets/images/negative.png';
 import positive from '../assets/images/positive.png';
 
 const PageWrapper = styled.div`
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #333;
 `;
 
@@ -59,15 +59,25 @@ const CostContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const CostText = styled.div`
   flex: 1;
   padding-right: 40px;
+  @media (max-width: 768px) {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const CostImage = styled.img`
   max-width: 40%;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const FeaturesSection = styled(Section)``;
@@ -90,19 +100,21 @@ const TableCell = styled.td`
   border: 1px solid #ddd;
 `;
 
-const MoneyMakingSection = styled(Section)`
-  // background-color: #f8f8f8;
-`;
+const MoneyMakingSection = styled(Section)``;
 
 const MoneyMakingGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const MoneyMakingItem = styled.div`
-  display: flex; background-color: #f8f8f8;
+  display: flex;
+  background-color: #f8f8f8;
   padding: 30px;
   border-radius: 8px;
   align-items: flex-start;
@@ -135,8 +147,10 @@ const TestimonialCard = styled.div`
   padding: 40px;
   display: flex;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
-
 
 const TestimonialDots = styled.div`
   display: flex;
@@ -147,7 +161,7 @@ const TestimonialDots = styled.div`
 const TestimonialDot = styled.span`
   width: 10px;
   height: 10px;
-  background-color: ${props => props.active ? '#0066CC' : '#ccc'};
+  background-color: ${(props) => (props.active ? '#0066CC' : '#ccc')};
   border-radius: 50%;
   margin: 0 5px;
 `;
@@ -158,11 +172,18 @@ const FAQContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const FAQContent = styled.div`
   flex: 1;
   margin-right: 40px;
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const FAQItem = styled.div`
@@ -193,7 +214,11 @@ const FAQAnswer = styled.p`
 const FAQImage = styled.img`
   width: 40%;
   object-fit: contain;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
+
 const Title = styled.h1`
   font-size: 48px;
   margin-bottom: 20px;
@@ -211,6 +236,9 @@ const HeroSection = styled(Section)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -219,12 +247,20 @@ const HeroContent = styled.div`
   background-color: #f8f8f8;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  @media (max-width: 768px) {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
 `;
 
 const HeroImage = styled.img`
   flex: 1;
   max-width: 42%;
   margin-left: 70px;
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin-left: 0;
+  }
 `;
 
 const Input = styled.input`
@@ -255,7 +291,6 @@ const Button = styled.button`
   border-radius: 4px;
 `;
 
-
 const PopularAppsSection = styled(Section)`
   text-align: center;
 `;
@@ -265,10 +300,16 @@ const LogoGrid = styled.div`
   justify-content: space-around;
   align-items: center;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Logo = styled.img`
   height: 80px;
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const WhyChooseSection = styled(Section)`
@@ -279,15 +320,25 @@ const WhyChooseContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const WhyChooseText = styled.div`
   flex: 1;
   padding-right: 40px;
+  @media (max-width: 768px) {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const WhyChooseImage = styled.img`
   max-width: 40%;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const ModulesSection = styled(Section)`
@@ -298,34 +349,46 @@ const TabContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
+  flex-wrap: wrap;
 `;
 
 const Tab = styled.button`
-  background-color: ${props => props.active ? '#0066CC' : 'white'};
-  color: ${props => props.active ? 'white' : '#333'};
+  background-color: ${(props) => (props.active ? '#0066CC' : 'white')};
+  color: ${(props) => (props.active ? 'white' : '#333')};
   border: 1px solid #0066CC;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   padding: 16px 20px;
   cursor: pointer;
+  margin: 5px;
 `;
 
 const ModuleContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
+  flex-direction: ${(props) => (props.reverse ? 'row-reverse' : 'row')};
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const ModuleText = styled.div`
   flex: 1;
   text-align: left;
-  padding-right: ${props => props.reverse ? '0' : '40px'};
-  padding-left: ${props => props.reverse ? '40px' : '0'};
+  padding-right: ${(props) => (props.reverse ? '0' : '40px')};
+  padding-left: ${(props) => (props.reverse ? '40px' : '0')};
+  @media (max-width: 768px) {
+    padding: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const ModuleImage = styled.img`
   max-width: 40%;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const StatisticsSection = styled(Section)`
@@ -337,6 +400,10 @@ const StatGrid = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 const StatItem = styled.div``;
@@ -357,15 +424,25 @@ const MarketShareContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const MarketShareText = styled.div`
   flex: 1;
   padding-left: 40px;
+  @media (max-width: 768px) {
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const MarketShareImage = styled.img`
   max-width: 40%;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const ExistingPlayersSection = styled(Section)`
@@ -376,6 +453,10 @@ const PlayerGrid = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 const PlayerItem = styled.div`
@@ -391,11 +472,6 @@ const PlayerLogo = styled.img`
   margin-bottom: 15px;
 `;
 
-const PlayerValue = styled.p`
-  font-weight: bold;
-  font-size: 18px;
-`;
-
 const TechIcon = styled.img`
   width: 40px;
   margin-right: 10px;
@@ -409,16 +485,22 @@ const TechGrid = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const TechColumn = styled.div`
-  flex: ${props => props.width || 1};
+  flex: ${(props) => props.width || 1};
 `;
 
 const TechItemsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const TechItem = styled.div`
@@ -448,18 +530,16 @@ const ExpertiseList = styled.ul`
 const ExpertiseItem = styled.li`
   margin-bottom: 10px;
   cursor: pointer;
-  color: ${(props) => (props.active ? "#ffffff" : "#333")};
-  font-weight: ${(props) => (props.active ? "600" : "normal")};
+  color: ${(props) => (props.active ? '#ffffff' : '#333')};
+  font-weight: ${(props) => (props.active ? '600' : 'normal')};
   background: ${(props) =>
     props.active
-      ? "linear-gradient(to right, #366DFA 0%, #53A4FF 100%)"
-      : "transparent"};
+      ? 'linear-gradient(to right, #366DFA 0%, #53A4FF 100%)'
+      : 'transparent'};
   padding: 10px 15px;
   width: 70%;
   text-align: left;
 `;
-
-
 
 const CustomerTestimonial = styled.div`
   display: flex;
@@ -468,11 +548,19 @@ const CustomerTestimonial = styled.div`
   border-radius: 10px;
   padding: 40px;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const TestimonialImage = styled.img`
   width: 20%;
   margin-right: 40px;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const TestimonialContent = styled.div`
@@ -494,10 +582,10 @@ const TestimonialPosition = styled.p`
   font-size: 14px;
   color: #666;
 `;
+
 const Solutions = () => {
   const [activeTab, setActiveTab] = useState('User side');
   const [activeTech, setActiveTech] = useState('Backend Development');
-  const [activeExpertise, setActiveExpertise] = useState("Backend Technologies");
 
   useEffect(() => {
     AOS.init({
@@ -505,6 +593,7 @@ const Solutions = () => {
       once: true,
     });
   }, []);
+
   return (
     <PageWrapper>
       <Container>
@@ -541,8 +630,8 @@ const Solutions = () => {
           <WhyChooseContent>
             <WhyChooseText>
               <Title>Why Should You Choose Solminica For An On-demand Food Delivery App Like Zomato?</Title>
-              <Subtitle>Hunger is never going to end and similar is the case with the business of food. This is the reason, why food delivery apps like Zomato, UberEats, etc. have gained much popularity recently. You can be the next in the list of top entrepreneurs in the Food delivery sector. All you need is a holistic app which can meet every aspect of your business.</Subtitle>
-              <Subtitle>The team of Solminica has the expertise and relevant experience in delivering such food apps for startups and companies. By choosing us you can be sure of the final quality of your app that can find its place in the heart of your customers. With the help of latest tools and technologies, we can assure you to deliver the best possible solutions for your business.</Subtitle>
+              <Subtitle>Hunger is never going to end and similar is the case with the business of food...</Subtitle>
+              <Subtitle>The team of Solminica has the expertise and relevant experience in delivering such food apps...</Subtitle>
               <Button>Consult Now</Button>
             </WhyChooseText>
             <WhyChooseImage src={delivery_app} alt="Food Delivery App" />
@@ -562,10 +651,13 @@ const Solutions = () => {
           <ModuleContent reverse={activeTab === 'Business owner'}>
             <ModuleText reverse={activeTab === 'Business owner'}>
               <Subtitle>
-                {activeTab === 'User side' && "Your app should be user-oriented with smooth and rich experience. With the team of WebClues Infotech, you can embed rich features and functionalities in your app. From searching the nearby restaurants to real-time tracking of the food and delivery driver, the app will take every minute detail into focus. Users can easily place their order and customize and save their searches. Customers are provided with multiple payment gateway options as per their convenience. Reviews and feedback can be given quickly and easily. Also, with few clicks, your customers get an idea of the tables available to book."}
-                {activeTab === 'Business owner' && "The app allows the business's owners to register and create profile including information like restaurant address, list of menu with price, offers, discounts, and contact details. The owner has all the status (dispatched, schedule, pickups etc.) of the orders to view with the simple touch on the screen and manage orders systematically. He can create and update the menu along with adding all details like items, price, special dishes, etc. The app gives the owner a chance to attract more customers by offering special discounts and offers. Through push notifications the management side can be updated regarding the status of orders, the payment received, and feedback."}
-                {activeTab === 'Delivery Driver' && "The delivery driver module provides an intuitive interface for drivers to manage their deliveries efficiently. Drivers can view assigned orders, navigate to pickup and drop-off locations, update order statuses, and communicate with customers. Real-time tracking allows both customers and restaurant owners to monitor the delivery progress."}
-                {activeTab === 'Effective Administration' && "The administration module offers powerful tools for managing the entire food delivery ecosystem. Admins can oversee restaurants, users, and drivers, handle payments and commissions, generate reports, and manage promotional campaigns. This module ensures smooth operations and helps in making data-driven decisions to improve overall service quality."}
+                {activeTab === 'User side' && "Your app should be user-oriented with smooth and rich experience..."}
+
+                {activeTab === 'Business owner' && "The app allows the business's owners to register and create profile..."}
+
+                {activeTab === 'Delivery Driver' && "The delivery driver module provides an intuitive interface for drivers..."}
+
+                {activeTab === 'Effective Administration' && "The administration module offers powerful tools for managing the entire food delivery ecosystem..."}
               </Subtitle>
             </ModuleText>
             <ModuleImage src={modul} alt={`${activeTab} module`} />
@@ -576,7 +668,7 @@ const Solutions = () => {
       <StatisticsSection data-aos="fade-up">
         <Container>
           <Title>Some Statistics To Prove Demand For An App Like Zomato</Title>
-          <Subtitle>Solminica delivers unparalleled value for money by offering top-quality, innovative technology solutions at competitive prices.</Subtitle>
+          <Subtitle>Solminica delivers unparalleled value for money by offering top-quality, innovative technology solutions...</Subtitle>
           <StatGrid>
             <StatItem>
               <StatValue>$266.05 bn</StatValue>
@@ -593,10 +685,8 @@ const Solutions = () => {
           </StatGrid>
           <hr style={{margin: '40px 0', border: 'none', borderTop: '1px solid #ddd'}} />
           <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-          <Button>Consult Now!</Button>
+            Lorem ipsum dolor sit amet...
+            <Button>Consult Now!</Button>
           </div>
         </Container>
       </StatisticsSection>
@@ -607,7 +697,7 @@ const Solutions = () => {
           <MarketShareContent>
             <MarketShareImage src={market} alt="Market Share" />
             <MarketShareText>
-              <Subtitle>Your app should be user-oriented with smooth and rich experience. With the team of WebClues Infotech, you can embed rich features and functionalities in your app. From searching the nearby restaurants to real-time tracking of the food and delivery driver, the app will take every minute detail into focus. Users can easily place their order and customize and save their searches. Customers are provided with multiple payment gateway options as per their convenience. Reviews and feedback can be given quickly and easily. Also, with few clicks, your customers get an idea of the tables available to book.</Subtitle>
+              <Subtitle>Your app should be user-oriented with smooth and rich experience...</Subtitle>
             </MarketShareText>
           </MarketShareContent>
         </Container>
@@ -616,23 +706,19 @@ const Solutions = () => {
       <ExistingPlayersSection data-aos="fade-up">
         <Container>
           <Title>Where Do The Existing Players Stand?</Title>
-          <Subtitle>Solminica delivers unparalleled value for money by offering top-quality, innovative technology solutions at competitive prices.</Subtitle>
+          <Subtitle>Solminica delivers unparalleled value for money by offering top-quality...</Subtitle>
           <PlayerGrid>
             <PlayerItem>
               <PlayerLogo src={swiggy} alt="Swiggy" />
-              {/* <PlayerValue>$86M</PlayerValue> */}
             </PlayerItem>
             <PlayerItem>
               <PlayerLogo src={zomato} alt="Zomato" />
-              {/* <PlayerValue>$74M</PlayerValue> */}
             </PlayerItem>
             <PlayerItem>
               <PlayerLogo src={uber} alt="UberEats" />
-              {/* <PlayerValue>$10.8M</PlayerValue> */}
             </PlayerItem>
             <PlayerItem>
               <PlayerLogo src={foodpanda} alt="Foodpanda" />
-              {/* <PlayerValue>$10M</PlayerValue> */}
             </PlayerItem>
           </PlayerGrid>
         </Container>
@@ -656,32 +742,36 @@ const Solutions = () => {
               </ExpertiseList>
             </TechColumn>
             <TechColumn>
-              <TechItem>
-                <TechIcon src={ubuntu} alt="Ubuntu" />
-                <TechName>Ubuntu</TechName>
-              </TechItem>
-              <TechItem>
-                <TechIcon src={react} alt="React JS" />
-                <TechName>React JS</TechName>
-              </TechItem>
-              <TechItem>
-                <TechIcon src={php} alt="PHP" />
-                <TechName>PHP</TechName>
-              </TechItem>
+              <TechItemsContainer>
+                <TechItem>
+                  <TechLogo src={ubuntu} alt="Ubuntu" />
+                  <TechName>Ubuntu</TechName>
+                </TechItem>
+                <TechItem>
+                  <TechLogo src={react} alt="React JS" />
+                  <TechName>React JS</TechName>
+                </TechItem>
+                <TechItem>
+                  <TechLogo src={php} alt="PHP" />
+                  <TechName>PHP</TechName>
+                </TechItem>
+              </TechItemsContainer>
             </TechColumn>
             <TechColumn>
-              <TechItem>
-                <TechIcon src={mysql} alt="My SQL" />
-                <TechName>My SQL</TechName>
-              </TechItem>
-              <TechItem>
-                <TechIcon src={mongo} alt="Mongo DB" />
-                <TechName>Mongo DB</TechName>
-              </TechItem>
-              <TechItem>
-                <TechIcon src={node} alt="Node js" />
-                <TechName>Node js</TechName>
-              </TechItem>
+              <TechItemsContainer>
+                <TechItem>
+                  <TechLogo src={mysql} alt="My SQL" />
+                  <TechName>My SQL</TechName>
+                </TechItem>
+                <TechItem>
+                  <TechLogo src={mongo} alt="Mongo DB" />
+                  <TechName>Mongo DB</TechName>
+                </TechItem>
+                <TechItem>
+                  <TechLogo src={node} alt="Node js" />
+                  <TechName>Node js</TechName>
+                </TechItem>
+              </TechItemsContainer>
             </TechColumn>
           </TechGrid>
         </Container>
@@ -693,29 +783,7 @@ const Solutions = () => {
           <CostContent>
             <CostText>
               <Subtitle>
-                The cost of developing an app depends majorly upon four components: App Platform, App Size, App Design, and App Development
-
-                App Platform: App development cost for iOS varies from Android.
-
-                App Size: Size of the app is decided by the number of features in it. The complexity of these features decides the app cost.
-
-                App Design: UI/UX of the app and its design play a crucial role. Design cost depends upon the animation and graphics involved.
-
-                App Development: It includes the hiring cost of the development team and license purchase.
-
-                Also, the app cost can vary on choosing a mobile app development company or mobile app developers situated in different locations.
-
-                For example:
-
-                U.S. based developers: $50 to $250 per hour.
-
-                Eastern Europe based developers: $30 to $150 per hour.
-
-                India based developers: $15 to $50 per hour.
-
-                Right from hiring to providing support post app launched, everything is dependent on the cost. You have to manage everything in your budget.
-
-                Solminica helps you stick to your spending plan and provide you with an appropriate solution.
+                The cost of developing an app depends majorly upon four components...
               </Subtitle>
             </CostText>
             <CostImage src={cost_build} alt="Cost to build" />
@@ -802,72 +870,59 @@ const Solutions = () => {
             </tbody>
           </FeatureTable>
           <div style={{display: "flex", justifyContent: "center", marginTop: "40px"}}>
-
-          <Button>Get your Quote</Button>
+            <Button>Get your Quote</Button>
           </div>
-          
         </Container>
       </FeaturesSection>
 
       <MoneyMakingSection data-aos="fade-up">
         <Container>
           <Title>How to <span>Make Money</span> in the Food-Delivery Business?</Title>
-          <Subtitle>Solminica creates enterprise solutions that seamlessly blend traditional methods with the latest innovations.</Subtitle>
+          <Subtitle>Solminica creates enterprise solutions that seamlessly blend traditional methods...</Subtitle>
           <MoneyMakingGrid>
             <MoneyMakingItem>
               <MoneyMakingIcon src={delivery} alt="Delivery charges" />
               <MoneyMakingContent>
                 <MoneyMakingTitle>Delivery charges</MoneyMakingTitle>
-                <MoneyMakingDescription>A food delivery app can take care of the timely delivery for a fee. The delivery charges can be a percentage of the price of the order or otherwise a flat price as per the distance. This is a good approach for a stable income</MoneyMakingDescription>
+                <MoneyMakingDescription>A food delivery app can take care of the timely delivery for a fee...</MoneyMakingDescription>
               </MoneyMakingContent>
             </MoneyMakingItem>
             <MoneyMakingItem>
               <MoneyMakingIcon src={commision} alt="Commission from food joints" />
               <MoneyMakingContent>
                 <MoneyMakingTitle>Commission from food joints</MoneyMakingTitle>
-                <MoneyMakingDescription>Based on the order size the online food delivery apps can collaborate with restaurants on predefined commission charges. The size of the commission may vary depending on the restaurant's level, its average revenue and other factors.</MoneyMakingDescription>
+                <MoneyMakingDescription>Based on the order size the online food delivery apps can collaborate with restaurants on predefined commission charges...</MoneyMakingDescription>
               </MoneyMakingContent>
             </MoneyMakingItem>
             <MoneyMakingItem>
               <MoneyMakingIcon src={peakup} alt="Peak hours" />
               <MoneyMakingContent>
                 <MoneyMakingTitle>Peak hours</MoneyMakingTitle>
-                <MoneyMakingDescription>This monetizing technique of charging extra during peak hours can help you to generate extra revenue. Though it has its advantages, it also welcomes some demerits. If your customer finds cheaper prices from your competitor he would simply switch.</MoneyMakingDescription>
+                <MoneyMakingDescription>This monetizing technique of charging extra during peak hours can help you to generate extra revenue...</MoneyMakingDescription>
               </MoneyMakingContent>
             </MoneyMakingItem>
             <MoneyMakingItem>
               <MoneyMakingIcon src={sound} alt="Advertising" />
               <MoneyMakingContent>
                 <MoneyMakingTitle>Advertising</MoneyMakingTitle>
-                <MoneyMakingDescription>Advertising can give an awesome boost to your business. Featuring certain restaurants on the top of the search results by charging an extra fee can help you to generate extra revenue. Be careful to first check the restaurant's feedback in order to ensure customer satisfaction.</MoneyMakingDescription>
+                <MoneyMakingDescription>Advertising can give an awesome boost to your business...</MoneyMakingDescription>
               </MoneyMakingContent>
             </MoneyMakingItem>
           </MoneyMakingGrid>
         </Container>
       </MoneyMakingSection>
-     
+
       <Section data-aos="fade-up">
         <Container>
           <Title>Our Customers love what we do</Title>
           <Subtitle>
-            Our customers are at the center of everything we do, and we're
-            passionate about delivering exceptional solutions that exceed their
-            expectations. We take pride in providing innovative services that
-            delight and satisfy their needs, fostering long-term relationships
-            built on trust, quality, and reliability. Our dedication to customer
-            satisfaction is unwavering, and we continually strive to improve and
-            refine our offerings to meet their evolving needs.
+            Our customers are at the center of everything we do, and we're passionate about delivering exceptional solutions...
           </Subtitle>
           <CustomerTestimonial>
             <TestimonialImage src={Customers} alt="Customer Testimonial" />
             <TestimonialContent>
               <TestimonialText>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore."
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore consectetur adipiscing elit..."
               </TestimonialText>
               <TestimonialAuthor>Mark Rise</TestimonialAuthor>
               <TestimonialPosition>CEO, Founder</TestimonialPosition>
@@ -887,7 +942,7 @@ const Solutions = () => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit?
                 </FAQQuestion>
                 <FAQAnswer>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
                 </FAQAnswer>
               </FAQItem>
               <FAQItem>

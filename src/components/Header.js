@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import jethiTechLogo from '../assets/images/jethi-tech-solution.png';
+import { Link, useNavigate } from 'react-router-dom';
 import menuIcon from '../assets/images/menu-btn-3-lines.png';
 import downArrow from '../assets/images/down-arrow.png';
 
@@ -32,15 +31,13 @@ const TopBarContent = styled.div`
 const TopBarLink = styled.a`
   color: #FFFFFF;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600; /* SemiBold */
+  font-weight: 600;
   margin-right: 20px;
   font-size: 14px;
   padding: 5px 10px;
   transition: all 0.3s;
   cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
   pointer-events: ${props => props.disabled ? 'none' : 'auto'};
-  // opacity: ${props => props.disabled ? 0.6 : 1};
 
   &:hover, &.active {
     background-color: ${props => props.disabled ? 'transparent' : '#FFFFFF'};
@@ -52,7 +49,6 @@ const TopBarLink = styled.a`
     margin-right: 0;
   }
 `;
-
 
 const MainNav = styled.nav`
   background-color: #FFFFFF;
@@ -73,11 +69,14 @@ const NavContent = styled.div`
   }
 `;
 
-const Logo = styled.img`
-  height: 50px;
+const Logo = styled.h1`
+  font-family: 'Sofia', cursive;
+  font-size: 32px;
+  color: #015BCC;
+  margin: 0;
 
   @media (max-width: 768px) {
-    height: 40px;
+    font-size: 28px;
   }
 `;
 
@@ -97,9 +96,10 @@ const NavMenu = styled.ul`
     right: 0;
     bottom: 0;
     background-color: #FFFFFF;
-    padding: 20px;
+    padding: 50px 20px;
     z-index: 100;
     justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -109,8 +109,7 @@ const NavItem = styled.li`
   &:last-child {
     margin-right: 0;
   }
-      font-family: 'Poppins', sans-serif;
-  font-weight: 500; /* Medium */
+  font-weight: 500;
   font-size: 16px;
 
   @media (max-width: 768px) {
@@ -124,8 +123,6 @@ const NavLink = styled(Link)`
   font-weight: 500;
   font-size: 16px;
   transition: color 0.3s;
-  display: flex;
-  align-items: center;
 
   &:hover {
     color: #015BCC;
@@ -151,7 +148,6 @@ const MenuButton = styled.button`
   background: none;
   border: none;
   color: #434343;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
@@ -170,16 +166,18 @@ const MenuIcon = styled.img`
 `;
 
 const CloseButton = styled.button`
-  position: absolute;
-  top: 20px;
-  right: 20px;
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 36px;
+  color: #015BCC;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   cursor: pointer;
 `;
 
 const Header = () => {
+  const navigate =useNavigate()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -208,20 +206,18 @@ const Header = () => {
     <HeaderWrapper>
       <TopBar>
         <TopBarContent>
-        <TopBarLink href="/" className="active">JTS</TopBarLink>
-<TopBarLink href="#" disabled>Soleventure</TopBarLink>
-<TopBarLink href="#" disabled>Realtors</TopBarLink>
-<TopBarLink href="#" disabled>Interiors</TopBarLink>
-<TopBarLink href="#" disabled>Branding</TopBarLink>
-<TopBarLink href="#" disabled>Tax & accounting</TopBarLink>
-<TopBarLink href="#" disabled>Startup incubation</TopBarLink>
-
+          <TopBarLink href="/" className="active">JTS</TopBarLink>
+          <TopBarLink href="#" disabled>Soleventure</TopBarLink>
+          <TopBarLink href="#" disabled>Realtors</TopBarLink>
+          <TopBarLink href="#" disabled>Interiors</TopBarLink>
+          <TopBarLink href="#" disabled>Branding</TopBarLink>
+          <TopBarLink href="#" disabled>Tax & accounting</TopBarLink>
+          <TopBarLink href="#" disabled>Startup incubation</TopBarLink>
         </TopBarContent>
       </TopBar>
       <MainNav>
         <NavContent>
-          {/* <Logo src={jethiTechLogo} alt="JETHI TECH SOLUTIONS Pvt. Ltd." /> */}
-          <h1 style={{ fontFamily: 'Sofia, cursive' }}>Solminica</h1>
+          <Logo onClick={()=>{navigate("/")}}>Solminica</Logo>
           <MenuButton onClick={toggleMenu}>
             MENU <MenuIcon src={menuIcon} alt="Menu" />
           </MenuButton>

@@ -11,12 +11,12 @@ import negative from '../assets/images/negative.png';
 import positive from '../assets/images/positive.png';
 
 const PageWrapper = styled.div`
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #333;
 `;
 
 const Section = styled.section`
-  padding: 60px 0;
+  padding: 40px 0;
 `;
 
 const Container = styled.div`
@@ -29,22 +29,35 @@ const HeroSection = styled(Section)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const HeroContent = styled.div`
   flex: 1;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const HeroImage = styled.img`
   flex: 1;
   max-width: 50%;
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin-top: 20px;
+  }
 `;
 
 const Title = styled.h1`
-  font-size: 48px;
+  font-size: 36px;
   margin-bottom: 20px;
   span {
-    color: #0066CC;
+    color: #0066cc;
+  }
+  @media (max-width: 768px) {
+    font-size: 28px;
   }
 `;
 
@@ -54,7 +67,7 @@ const Subtitle = styled.p`
 `;
 
 const Button = styled.button`
-  background-color: #0066CC;
+  background-color: #0066cc;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -72,6 +85,9 @@ const FeatureGrid = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const FeatureItem = styled.div`
@@ -93,7 +109,7 @@ const FeatureContent = styled.div`
 `;
 
 const FeatureTitle = styled.h3`
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
 `;
 
@@ -110,6 +126,9 @@ const ServiceGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ServiceItem = styled.div`
@@ -119,7 +138,7 @@ const ServiceItem = styled.div`
 `;
 
 const ServiceTitle = styled.h3`
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
 `;
 
@@ -136,6 +155,9 @@ const ProjectGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ProjectItem = styled.div`
@@ -165,15 +187,26 @@ const TestimonialCard = styled.div`
   padding: 40px;
   margin-top: 40px;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 const TestimonialImage = styled.img`
   width: 200px;
   margin-right: 40px;
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const TestimonialContent = styled.div`
   text-align: left;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const TestimonialText = styled.p`
@@ -194,11 +227,17 @@ const FAQContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const FAQContent = styled.div`
   flex: 1;
   margin-right: 40px;
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
 `;
 
 const FAQItem = styled.div`
@@ -230,9 +269,14 @@ const FAQAnswer = styled.p`
 const FAQImage = styled.img`
   width: 40%;
   object-fit: contain;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px;
+  }
 `;
+
 const ViewAllButton = styled.button`
-  background-color: #0066CC;
+  background-color: #0066cc;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -242,6 +286,7 @@ const ViewAllButton = styled.button`
   display: block;
   margin: 40px auto 0;
 `;
+
 const Technology = () => {
   const [openQuestion, setOpenQuestion] = useState(0);
 

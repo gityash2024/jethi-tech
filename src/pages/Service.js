@@ -30,15 +30,21 @@ const PageWrapper = styled.div`
 
 const Section = styled.section`
   padding: 40px 0;
+
+  @media (max-width: 768px) {
+    padding: 20px 0;
+  }
 `;
 
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
 `;
-
-
 
 const Button = styled.button`
   background-color: #0066CC;
@@ -48,6 +54,11 @@ const Button = styled.button`
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
+
+  @media (max-width: 768px) {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
 `;
 
 const DesignSolutionsSection = styled(Section)``;
@@ -56,27 +67,38 @@ const TabContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const Tab = styled.button`
   background-color: ${props => props.active ? '#0066CC' : 'white'};
   color: ${props => props.active ? 'white' : '#333'};
   border: 1px solid #0066CC;
-  padding: 20px 20px;
+  padding: 20px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   cursor: pointer;
   flex: 1;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    margin-bottom: 10px;
+    flex-basis: 100%;
+  }
 `;
 
 const SolutionGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
-
-
-
 
 const ProcessSection = styled(Section)`
   text-align: center;
@@ -86,9 +108,11 @@ const ProcessImage = styled.img`
   width: 100%;
   max-width: 1200px;
   margin: 40px auto;
+
+  @media (max-width: 768px) {
+    margin: 20px auto;
+  }
 `;
-
-
 
 const CustomerTestimonial = styled.div`
   display: flex;
@@ -97,21 +121,40 @@ const CustomerTestimonial = styled.div`
   border-radius: 10px;
   padding: 40px;
   margin-top: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px;
+  }
 `;
 
 const TestimonialImage = styled.img`
   width: 20%;
   margin-right: 40px;
+
+  @media (max-width: 768px) {
+    width: 50%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const TestimonialContent = styled.div`
   flex: 1;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const TestimonialText = styled.p`
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const TestimonialAuthor = styled.h4`
@@ -123,23 +166,40 @@ const TestimonialPosition = styled.p`
   font-size: 14px;
   color: #666;
 `;
+
 const FAQSection = styled(Section)``;
 
 const FAQContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const FAQContent = styled.div`
   flex: 1;
   margin-right: 40px;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `;
+
 const BottomText = styled.p`
   font-size: 18px;
   color: #666;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    text-align: center;
+  }
 `;
+
 const FAQItem = styled.div`
   margin-bottom: 20px;
 `;
@@ -150,6 +210,10 @@ const FAQQuestion = styled.div`
   cursor: pointer;
   font-weight: bold;
   font-size: 18px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const FAQToggle = styled.img`
@@ -163,11 +227,20 @@ const FAQAnswer = styled.p`
   padding-left: 34px;
   font-size: 16px;
   line-height: 1.5;
+
+  @media (max-width: 768px) {
+    padding-left: 24px;
+    font-size: 14px;
+  }
 `;
 
 const FAQImage = styled.img`
   width: 40%;
   object-fit: contain;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const HeroSection = styled(Section)`
@@ -175,6 +248,12 @@ const HeroSection = styled(Section)`
   justify-content: space-between;
   align-items: center;
   padding-top: 50px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -184,6 +263,11 @@ const HeroContent = styled.div`
 const HeroImage = styled.img`
   flex: 1;
   max-width: 50%;
+
+  @media (max-width: 768px) {
+    max-width: 80%;
+    margin-top: 20px;
+  }
 `;
 
 const HeroTitle = styled.h1`
@@ -191,20 +275,30 @@ const HeroTitle = styled.h1`
   line-height: 1.2;
   margin-bottom: 20px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 `;
+
 const HeroTitle2 = styled.h1`
   font-size: 46px;
   line-height: 1.2;
   margin-bottom: 20px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display:flex;
+  display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 `;
 
 const HeroContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 const ViewAllButton = styled.button`
   background-color: #0066CC;
   color: white;
@@ -215,12 +309,23 @@ const ViewAllButton = styled.button`
   border-radius: 4px;
   display: block;
   margin: 40px auto 0;
+
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-top: 20px;
+  }
 `;
+
 const Title = styled.h2`
   font-size: 36px;
   color: #333;
   margin-bottom: 20px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const Subtitle = styled.p`
@@ -228,25 +333,38 @@ const Subtitle = styled.p`
   color: #666;
   margin-bottom: 20px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
+
 const Subtitle2 = styled.p`
   font-size: 18px;
   color: #666;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    text-align: center;
+  }
 `;
+
 const ValueSection = styled.section`
   text-align: center;
   padding: 40px 0;
-  // background-color: #f8f8f8;
 `;
-
-
 
 const StatsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 `;
 
 const StatItem = styled.div``;
@@ -255,6 +373,10 @@ const StatNumber = styled.h3`
   font-size: 36px;
   color: #2F2F2F;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const GradientText = styled.span`
@@ -268,14 +390,25 @@ const GradientText = styled.span`
 const DarkText = styled.span`
   color: #2f2f2f;
 `;
+
 const ConsultButton = styled(Button)`
   width: 30%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px;
+  }
 `;
 
 const StatLabel = styled.p`
   font-size: 16px;
   margin-left: 30px;
   color: #666;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    text-align: center;
+  }
 `;
 
 const SolutionItem = styled.div`
@@ -284,12 +417,22 @@ const SolutionItem = styled.div`
   background-color: #f8f8f8;
   padding: 20px;
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 const SolutionIcon = styled.img`
   width: 60px;
   height: 60px;
-  margin-right: 20px; // Adjust space between icon and text
+  margin-right: 20px;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 `;
 
 const SolutionContent = styled.div`
@@ -300,20 +443,32 @@ const SolutionContent = styled.div`
 const SolutionTitle = styled.h3`
   font-size: 24px;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const SolutionDescription = styled.p`
   font-size: 16px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
-const IndustriesSection = styled(Section)`
-  // background-color: #f8f8f8;
-`;
+
+const IndustriesSection = styled(Section)``;
 
 const IndustriesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   margin-top: 40px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
 `;
 
 const IndustryItem = styled.div`
@@ -324,10 +479,19 @@ const IndustryIcon = styled.img`
   width: 60px;
   height: 60px;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 const IndustryName = styled.p`
   font-size: 14px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const IndustrySubsection = styled.div`
@@ -338,12 +502,22 @@ const IndustrySubsection = styled.div`
   color: #2f2f2f;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 const IndustrySubtitle = styled.p`
   font-size: 16px;
   color: #666;
   flex: 1;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 `;
 
 const ServiceComponent = () => {
@@ -353,6 +527,7 @@ const ServiceComponent = () => {
       once: true,
     });
   }, []);
+  
   const [activeTab, setActiveTab] = useState('Application Design');
 
   const designSolutions = {
@@ -404,144 +579,221 @@ const ServiceComponent = () => {
         <HeroSection data-aos="fade-up">
           <HeroContentWrapper>
             <HeroTitle>
-            <DarkText>Unleash Your Company's </DarkText>{" "}<GradientText>Creative Vision</GradientText>
-              <br /> <DarkText> With Custom UX and UI Design Services.</DarkText>{" "}
+              <DarkText>Unleash Your Company's </DarkText>{" "}
+              <GradientText>Creative Vision</GradientText>
+              <br />{" "}
+              <DarkText> With Custom UX and UI Design Services.</DarkText>{" "}
             </HeroTitle>
             <Subtitle2>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Subtitle2>
             <ConsultButton>Consult Now!</ConsultButton>
           </HeroContentWrapper>
           <HeroImage src={serivce} alt="Transform your business" />
         </HeroSection>
-
-       
       </Container>
 
-      <DesignSolutionsSection  data-aos="fade-up">
+      <DesignSolutionsSection data-aos="fade-up">
         <Container>
-        <HeroTitle2><DarkText>Our &nbsp;</DarkText> <GradientText>Design Solutions</GradientText></HeroTitle2>
-          <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
+          <HeroTitle2>
+            <DarkText>Our &nbsp;</DarkText> <GradientText>Design Solutions</GradientText>
+          </HeroTitle2>
+          <Subtitle>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Subtitle>
           <TabContainer>
-            {Object.keys(designSolutions).map(tab => (
-              <Tab key={tab} active={activeTab === tab} onClick={() => setActiveTab(tab)}>{tab}</Tab>
+            {Object.keys(designSolutions).map((tab) => (
+              <Tab
+                key={tab}
+                active={activeTab === tab}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab}
+              </Tab>
             ))}
           </TabContainer>
           <SolutionGrid>
-  {designSolutions[activeTab].map((solution, index) => (
-    <SolutionItem key={index}>
-      <SolutionIcon src={solution.icon} alt={solution.title} />
-      <SolutionContent>
-        <SolutionTitle>{solution.title}</SolutionTitle>
-        <SolutionDescription>{solution.description}</SolutionDescription>
-      </SolutionContent>
-    </SolutionItem>
-  ))}
-</SolutionGrid>
-
+            {designSolutions[activeTab].map((solution, index) => (
+              <SolutionItem key={index}>
+                <SolutionIcon src={solution.icon} alt={solution.title} />
+                <SolutionContent>
+                  <SolutionTitle>{solution.title}</SolutionTitle>
+                  <SolutionDescription>{solution.description}</SolutionDescription>
+                </SolutionContent>
+              </SolutionItem>
+            ))}
+          </SolutionGrid>
         </Container>
       </DesignSolutionsSection>
 
       <IndustriesSection data-aos="fade-up">
-  <Container>
-    <Title>Key industries we serve</Title>
-    <Subtitle>We understand the unique challenges and opportunities facing each industry we serve. Our tailored digital solutions are designed to streamline operations, enhance customer experiences, and drive growth for businesses of all sizes.</Subtitle>
-    <IndustriesGrid>
-      {[
-        { icon: industries_1, name: 'Banking, Financial Services & Insurance' },
-        { icon: industries_2, name: 'Media, News & Entertainment' },
-        { icon: industries_3, name: 'Retail & Consumer Services' },
-        { icon: industries_4, name: 'Travel, Tourism & Leisure' },
-        { icon: industries_5, name: 'EdTech & Learning' },
-        { icon: industries_6, name: 'Real estate & Prop Tech' },
-        { icon: industries_7, name: 'Pharma & Healthcare' },
-        { icon: industries_8, name: 'Business & IT Services' },
-        { icon: industries_9, name: 'Automotive & Manufacturing' },
-        { icon: industries_10, name: 'Energy & Utilities' },
-      ].map((industry, index) => (
-        <IndustryItem key={index}>
-          <IndustryIcon src={industry.icon} alt={industry.name} />
-          <IndustryName>{industry.name}</IndustryName>
-        </IndustryItem>
-      ))}
-    </IndustriesGrid>
-    <IndustrySubsection>
-      <IndustrySubtitle>Our expertise in designing and building digital solutions authorises us to develop bespoke solutions</IndustrySubtitle>
-      <Button>Consult Now!</Button>
-    </IndustrySubsection>
-  </Container>
-</IndustriesSection>
+        <Container>
+          <Title>Key industries we serve</Title>
+          <Subtitle>
+            We understand the unique challenges and opportunities facing each
+            industry we serve. Our tailored digital solutions are designed to
+            streamline operations, enhance customer experiences, and drive growth
+            for businesses of all sizes.
+          </Subtitle>
+          <IndustriesGrid>
+            {[
+              { icon: industries_1, name: 'Banking, Financial Services & Insurance' },
+              { icon: industries_2, name: 'Media, News & Entertainment' },
+              { icon: industries_3, name: 'Retail & Consumer Services' },
+              { icon: industries_4, name: 'Travel, Tourism & Leisure' },
+              { icon: industries_5, name: 'EdTech & Learning' },
+              { icon: industries_6, name: 'Real estate & Prop Tech' },
+              { icon: industries_7, name: 'Pharma & Healthcare' },
+              { icon: industries_8, name: 'Business & IT Services' },
+              { icon: industries_9, name: 'Automotive & Manufacturing' },
+              { icon: industries_10, name: 'Energy & Utilities' },
+            ].map((industry, index) => (
+              <IndustryItem key={index}>
+                <IndustryIcon src={industry.icon} alt={industry.name} />
+                <IndustryName>{industry.name}</IndustryName>
+              </IndustryItem>
+            ))}
+          </IndustriesGrid>
+          <IndustrySubsection>
+            <IndustrySubtitle>
+              Our expertise in designing and building digital solutions
+              authorises us to develop bespoke solutions
+            </IndustrySubtitle>
+            <Button>Consult Now!</Button>
+          </IndustrySubsection>
+        </Container>
+      </IndustriesSection>
 
+      <ValueSection data-aos="fade-up">
+        <Container>
+          <Title>
+            Solminica Deliver Value <br /> for Money
+          </Title>
+          <Subtitle>
+            Solminica delivers unparalleled value for money by offering
+            top-quality, innovative technology solutions at competitive prices.
+            Our customized services are designed to fit any budget, ensuring
+            efficiency and productivity enhancements for businesses of all sizes.
+            With exceptional customer support, we are your trusted partner in
+            achieving technological success.
+          </Subtitle>
+          <StatsGrid>
+            <StatItem>
+              <StatNumber>99%</StatNumber>
+              <hr
+                style={{
+                  height: '2px',
+                  backgroundColor: '#E0E0E0',
+                  border: 'none',
+                  marginLeft: '90px',
+                  marginRight: '20px',
+                }}
+              />
+              <StatLabel>Satisfied Clients</StatLabel>
+            </StatItem>
+            <StatItem>
+              <StatNumber>160+</StatNumber>
+              <hr
+                style={{
+                  height: '2px',
+                  backgroundColor: '#E0E0E0',
+                  border: 'none',
+                  marginLeft: '90px',
+                  marginRight: '20px',
+                }}
+              />
+              <StatLabel>Tech Enthusiasts</StatLabel>
+            </StatItem>
+            <StatItem>
+              <StatNumber>30+</StatNumber>
+              <hr
+                style={{
+                  height: '2px',
+                  backgroundColor: '#E0E0E0',
+                  border: 'none',
+                  marginLeft: '90px',
+                  marginRight: '20px',
+                }}
+              />
+              <StatLabel>Industries covered</StatLabel>
+            </StatItem>
+            <StatItem>
+              <StatNumber>550+</StatNumber>
+              <hr
+                style={{
+                  height: '2px',
+                  backgroundColor: '#E0E0E0',
+                  border: 'none',
+                  marginLeft: '90px',
+                  marginRight: '20px',
+                }}
+              />
+              <StatLabel>Projects Delivered</StatLabel>
+            </StatItem>
+            <StatItem>
+              <StatNumber>80%+</StatNumber>
+              <hr
+                style={{
+                  height: '2px',
+                  backgroundColor: '#E0E0E0',
+                  border: 'none',
+                  marginLeft: '90px',
+                  marginRight: '20px',
+                }}
+              />
+              <StatLabel>Impressive growth of Product</StatLabel>
+            </StatItem>
+            <StatItem>
+              <StatNumber>3.4M+</StatNumber>
+              <hr
+                style={{
+                  height: '2px',
+                  backgroundColor: '#E0E0E0',
+                  border: 'none',
+                  marginLeft: '90px',
+                  marginRight: '20px',
+                }}
+              />
+              <StatLabel>Lines of Code</StatLabel>
+            </StatItem>
+            <StatItem>
+              <StatNumber>20+</StatNumber>
+              <hr
+                style={{
+                  height: '2px',
+                  backgroundColor: '#E0E0E0',
+                  border: 'none',
+                  marginLeft: '90px',
+                  marginRight: '20px',
+                }}
+              />
+              <StatLabel>Industry Certified Team members</StatLabel>
+            </StatItem>
+            <StatItem>
+              <StatNumber>850+</StatNumber>
+              <hr
+                style={{
+                  height: '2px',
+                  backgroundColor: '#E0E0E0',
+                  border: 'none',
+                  marginLeft: '90px',
+                  marginRight: '20px',
+                }}
+              />
+              <StatLabel>On time project delivery.</StatLabel>
+            </StatItem>
+          </StatsGrid>
+          <BottomText>
+            Our expertise in designing and building digital solutions authorises
+            us to develop bespoke solutions
+          </BottomText>
+          <ViewAllButton>Consult Now!</ViewAllButton>
+        </Container>
+      </ValueSection>
 
-    
-      <ValueSection  data-aos="fade-up">
-      <Container>
-        <Title>
-          Solminica Deliver Value <br/> for Money
-        </Title>
-        <Subtitle>
-          Solminica delivers unparalleled value for money by offering top-quality, innovative technology
-          solutions at competitive prices. Our customized services are designed to fit any budget, ensuring
-          efficiency and productivity enhancements for businesses of all sizes. With exceptional customer
-          support, we are your trusted partner in achieving technological success.
-        </Subtitle>
-        <StatsGrid>
-          <StatItem>
-            <StatNumber>99%</StatNumber>
-            <hr style={{height: '2px', backgroundColor: '#E0E0E0', border: 'none',marginLeft: '90px', marginRight: '20px'}}/>
-            <StatLabel>Satisfied Clients</StatLabel>
-          </StatItem>
-          <StatItem>
-            <StatNumber>160+</StatNumber>
-            <hr style={{height: '2px', backgroundColor: '#E0E0E0', border: 'none',marginLeft: '90px', marginRight: '20px'}}/>
-
-            <StatLabel>Tech Enthusiasts</StatLabel>
-          </StatItem>
-          <StatItem>
-            <StatNumber>30+</StatNumber>
-            <hr style={{height: '2px', backgroundColor: '#E0E0E0', border: 'none',marginLeft: '90px', marginRight: '20px'}}/>
-
-            <StatLabel>Industries covered</StatLabel>
-          </StatItem>
-          <StatItem>
-            <StatNumber>550+</StatNumber>
-            <hr style={{height: '2px', backgroundColor: '#E0E0E0', border: 'none',marginLeft: '90px', marginRight: '20px'}}/>
-
-            <StatLabel>Projects Delivered</StatLabel>
-          </StatItem>
-          <StatItem>
-            <StatNumber>80%+</StatNumber>
-            <hr style={{height: '2px', backgroundColor: '#E0E0E0', border: 'none',marginLeft: '90px', marginRight: '20px'}}/>
-
-            <StatLabel>Impressive growth of Product</StatLabel>
-          </StatItem>
-          <StatItem>
-            <StatNumber>3.4M+</StatNumber>
-            <hr style={{height: '2px', backgroundColor: '#E0E0E0', border: 'none',marginLeft: '90px', marginRight: '20px'}}/>
-
-            <StatLabel>Lines of Code</StatLabel>
-          </StatItem>
-          <StatItem>
-            <StatNumber>20+</StatNumber>
-            <hr style={{height: '2px', backgroundColor: '#E0E0E0', border: 'none',marginLeft: '90px', marginRight: '20px'}}/>
-
-            <StatLabel>Industry Certified Team members</StatLabel>
-          </StatItem>
-          <StatItem>
-            <StatNumber>850+</StatNumber>
-            <hr style={{height: '2px', backgroundColor: '#E0E0E0', border: 'none',marginLeft: '90px', marginRight: '20px'}}/>
-
-            <StatLabel>On time project delivery.</StatLabel>
-          </StatItem>
-        </StatsGrid>
-        {/* <Divider /> */}
-        <BottomText>
-          Our expertise in designing and building digital solutions authorises us to develop bespoke solutions
-        </BottomText>
-        <ViewAllButton>Consult Now!</ViewAllButton>
-      </Container>
-    </ValueSection>
-    <ProcessSection data-aos="fade-up">
+      <ProcessSection data-aos="fade-up">
         <Container>
           <Title>Development Process we Follow</Title>
           <Subtitle>
@@ -557,6 +809,7 @@ const ServiceComponent = () => {
           />
         </Container>
       </ProcessSection>
+
       <Section data-aos="fade-up">
         <Container>
           <Title>Our Customers love what we do</Title>
@@ -586,21 +839,30 @@ const ServiceComponent = () => {
           </CustomerTestimonial>
         </Container>
       </Section>
-      <FAQSection  data-aos="fade-up">
+
+      <FAQSection data-aos="fade-up">
         <Container>
           <Title>FAQ</Title>
           <FAQContainer>
             <FAQContent>
               {faqData.map((item, index) => (
                 <FAQItem key={index}>
-                  <FAQQuestion onClick={() => setOpenQuestion(openQuestion === index ? -1 : index)}>
-                    <FAQToggle src={openQuestion === index ? negative : positive} alt="Toggle" />
+                  <FAQQuestion
+                    onClick={() =>
+                      setOpenQuestion(openQuestion === index ? -1 : index)
+                    }
+                  >
+                    <FAQToggle
+                      src={openQuestion === index ? negative : positive}
+                      alt="Toggle"
+                    />
                     {item.question}
                   </FAQQuestion>
-                  {openQuestion === index && <FAQAnswer>{item.answer}</FAQAnswer>}
+                  {openQuestion === index && (
+                    <FAQAnswer>{item.answer}</FAQAnswer>
+                  )}
                 </FAQItem>
               ))}
-              {/* <Button>View all</Button> */}
             </FAQContent>
             <FAQImage src={blogs} alt="FAQ Illustration" />
           </FAQContainer>

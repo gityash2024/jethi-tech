@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import mb_blogs from '../assets/images/mb_blogs.png';
-import robat from '../assets/images/robat.png';
-import connect_blog from '../assets/images/connect_blog.png';
-import Frame from '../assets/images/Frame.png';
+import { useNavigate } from 'react-router-dom';
 import our_blog from '../assets/images/our_blog.png';
 import blog_1 from '../assets/images/blog_1.png';
 import blog_2 from '../assets/images/blog_2.png';
@@ -12,16 +9,13 @@ import blog_4 from '../assets/images/blog_4.png';
 import blog_5 from '../assets/images/blog_5.png';
 import blog_6 from '../assets/images/blog_6.png';
 import blog_7 from '../assets/images/blog_7.png';
-import { useNavigate } from 'react-router-dom';
-
-
 
 const BlogPage = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
 `;
-  
+
 const HeroSection = styled.div`
   display: flex;
   justify-content: space-between;
@@ -61,6 +55,10 @@ const BlogGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const BlogCard = styled.div`
@@ -125,7 +123,6 @@ const ResultsCount = styled.p`
   color: #666;
 `;
 
-
 const FilterContainer = styled.div`
   display: flex;
   gap: 20px;
@@ -139,7 +136,6 @@ const FilterDropdown = styled.div`
 const DropdownSelect = styled.select`
   appearance: none;
   padding: 8px 30px 8px 12px;
-  // border: 1px solid #ccc;
   border: none;
   border-radius: 4px;
   font-size: 14px;
@@ -161,109 +157,23 @@ const DropdownArrow = styled.span`
   }
 `;
 
-// const BlogContainer = styled.div`
-//   max-width: 1300px;
-//   margin: 0 auto;
-//   padding: 40px 20px;
-// `;
-
-// const HeroImage = styled.img`
-//   width: 100%;
-//   height: auto;
-//   margin-bottom: 40px;
-// `;
-
-// const BlogTitle = styled.h1`
-//   font-size: 48px;
-//   margin-bottom: 20px;
-//   color: #333;
-// `;
-
-// const BlogMeta = styled.div`
-//   font-size: 14px;
-//   margin-bottom: 40px;
-//   color: #666;
-// `;
-
-// const BlogContent = styled.div`
-//   display: flex;
-//   gap: 40px;
-// `;
-
-// const MainContent = styled.div`
-//   flex: 2;
-// `;
-
-// const BlogImage = styled.img`
-//   max-width: 100%;
-//   height: auto;
-//   margin-bottom: 20px;
-// `;
-
-// const BlogText = styled.p`
-//   font-size: 16px;
-//   line-height: 1.6;
-//   margin-bottom: 20px;
-//   color: #333;
-// `;
-
-// const TagsSection = styled.div`
-//   margin-bottom: 40px;
-// `;
-
-// const Tag = styled.span`
-//   background-color: #f0f0f0;
-//   padding: 5px 10px;
-//   margin-right: 10px;
-//   border-radius: 20px;
-//   font-size: 14px;
-// `;
-
-// const RelatedPosts = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   margin-top: 40px;
-// `;
-
-// const RelatedPost = styled.div`
-//   flex: 1;
-//   margin: 0 10px;
-// `;
-
-// const RelatedPostImage = styled.img`
-//   max-width: 100%;
-//   height: auto;
-// `;
-
-// const RelatedPostTitle = styled.h3`
-//   font-size: 18px;
-//   margin-top: 10px;
-//   color: #333;
-// `;
-
-// const ReadTime = styled.span`
-//   font-size: 14px;
-//   color: #666;
-// `;
-
 const Blog = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   return (
-    
     <BlogPage>
-    <HeroSection>
-      <HeroContent>
-        <HeroTitle>Our <span style={{color: '#0000FF'}}> Blogs</span></HeroTitle>
-        <HeroSubtitle>
-          Solminica creates inspirational designs and robust 
-          solutions for Web and mobile apps. We combine our 
-          expertise in tech & design
-        </HeroSubtitle>
-      </HeroContent>
-      <HeroImage src={our_blog} alt="Our Blogs" />
-    </HeroSection>
+      <HeroSection>
+        <HeroContent>
+          <HeroTitle>Our <span style={{color: '#0000FF'}}>Blogs</span></HeroTitle>
+          <HeroSubtitle>
+            Solminica creates inspirational designs and robust 
+            solutions for Web and mobile apps. We combine our 
+            expertise in tech & design.
+          </HeroSubtitle>
+        </HeroContent>
+        <HeroImage src={our_blog} alt="Our Blogs" />
+      </HeroSection>
 
-    <BlogHeader>
+      <BlogHeader>
         <ResultsCount>Showing 1-6 of 13 results</ResultsCount>
         <FilterContainer>
           <FilterDropdown>
@@ -285,9 +195,8 @@ const Blog = () => {
         </FilterContainer>
       </BlogHeader>
 
-
-    <BlogGrid>
-        {[blog_1, blog_2, blog_3, blog_4, blog_5, blog_6, blog_1, blog_1, blog_1].map((blog, index) => (
+      <BlogGrid>
+        {[blog_1, blog_2, blog_3, blog_4, blog_5, blog_6].map((blog, index) => (
           <BlogCard key={index} onClick={() => navigate('/blog-details')}>
             <BlogCardImage src={blog} alt={`Blog ${index + 1}`} />
             <BlogCardContent>
@@ -301,10 +210,6 @@ const Blog = () => {
 
       <LoadMoreButton>Load More</LoadMoreButton>
     </BlogPage>
-
-
-
-  
   );
 };
 

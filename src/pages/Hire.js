@@ -24,12 +24,12 @@ import negative from '../assets/images/negative.png';
 import positive from '../assets/images/positive.png';
 
 const PageWrapper = styled.div`
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #333;
 `;
 
 const Section = styled.section`
-  padding: 60px 0;
+  padding: 40px 0;
 `;
 
 const Container = styled.div`
@@ -42,24 +42,37 @@ const HeroSection = styled(Section)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const HeroContent = styled.div`
   flex: 1;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const HeroImage = styled.img`
   flex: 1;
   max-width: 50%;
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin-top: 20px;
+  }
 `;
 
 const Title = styled.h1`
-  font-size: 48px;
+  font-size: 36px;
   margin-bottom: 20px;
   span {
-    color: #0066CC;
+    color: #0066cc;
   }
-`;  
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+`;
 
 const Subtitle = styled.p`
   font-size: 18px;
@@ -67,7 +80,7 @@ const Subtitle = styled.p`
 `;
 
 const Button = styled.button`
-  background-color: #0066CC;
+  background-color: #0066cc;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -85,6 +98,9 @@ const ServiceGrid = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ServiceItem = styled.div`
@@ -101,7 +117,7 @@ const ServiceIcon = styled.img`
 `;
 
 const ServiceTitle = styled.h3`
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
 `;
 
@@ -118,6 +134,9 @@ const ReasonGrid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const ReasonItem = styled.div`
@@ -157,14 +176,13 @@ const BenefitIcon = styled.img`
 `;
 
 const BenefitTitle = styled.h3`
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
 `;
 
 const BenefitDescription = styled.p`
   font-size: 16px;
 `;
-
 
 const CTASection = styled(Section)`
   display: flex;
@@ -176,26 +194,26 @@ const HireSection = styled(Section)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const HireContent = styled.div`
   flex: 1;
   max-width: 100%;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const HireImage = styled.img`
   flex: 1;
   max-width: 25%;
-`;
-
-const CTAContent = styled.div`
-  flex: 1;
-  max-width: 50%;
-`;
-
-const CTAImage = styled.img`
-  flex: 1;
-  max-width: 25%;
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin-top: 20px;
+  }
 `;
 
 const TestimonialSection = styled(Section)`
@@ -209,15 +227,26 @@ const TestimonialCard = styled.div`
   padding: 40px;
   margin-top: 40px;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 const TestimonialImage = styled.img`
   width: 200px;
   margin-right: 40px;
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const TestimonialContent = styled.div`
   text-align: left;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const TestimonialText = styled.p`
@@ -228,30 +257,25 @@ const TestimonialText = styled.p`
 const TestimonialAuthor = styled.p`
   font-weight: bold;
 `;
-const ViewAllButton = styled(Button)`
-  margin-top: 20px;
-`;
 
-
-const TestimonialPosition = styled.p`
-  font-size: 14px;
-  color: #666;
-`;
-
-const FAQSection = styled(Section)`
-  // text-align: center;
-`;
+const FAQSection = styled(Section)``;
 
 const FAQContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const FAQContent = styled.div`
   flex: 1;
   margin-right: 40px;
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
 `;
 
 const FAQItem = styled.div`
@@ -283,6 +307,14 @@ const FAQAnswer = styled.p`
 const FAQImage = styled.img`
   width: 40%;
   object-fit: contain;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px;
+  }
+`;
+
+const ViewAllButton = styled(Button)`
+  margin-top: 20px;
 `;
 
 const Hire = () => {
@@ -328,10 +360,10 @@ const Hire = () => {
           <Title>Our Developers' <span>Expert Services</span></Title>
           <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
           <ServiceGrid>
-          <ServiceItem>
+            <ServiceItem>
               <ServiceIcon src={mean} alt="Mean Stack IOT Application Development" />
               <ServiceTitle>Mean Stack IOT Application Development</ServiceTitle>
-              <ServiceDescription>Mean Stack is the powerhouse of platforms and software that help the developers to create fastest and slimmest IOT apps which are incredibly efficient. We also provide authentication codes that are used to check the privacy of the data. se.</ServiceDescription>
+              <ServiceDescription>Mean Stack is the powerhouse of platforms and software that help the developers to create fastest and slimmest IOT apps which are incredibly efficient. We also provide authentication codes that are used to check the privacy of the data.</ServiceDescription>
             </ServiceItem>
             <ServiceItem>
               <ServiceIcon src={web} alt="Mean Stack Development & Integration" />
@@ -341,17 +373,12 @@ const Hire = () => {
             <ServiceItem>
               <ServiceIcon src={ui} alt="Mean Stack Application Development" />
               <ServiceTitle>Mean Stack Application Development</ServiceTitle>
-              <ServiceDescription>The Mean Stack developers of our company are passionate to create highly optimized, robust, and extensive mobile app solution for your business.</ServiceDescription>
+              <ServiceDescription>The Mean Stack developers of our company are passionate to create highly optimized, robust, and extensive mobile app solutions for your business.</ServiceDescription>
             </ServiceItem>
             <ServiceItem>
               <ServiceIcon src={desktop} alt="Mean Stack E-Commerce Solutions" />
               <ServiceTitle>Mean Stack E-Commerce Solutions</ServiceTitle>
-              <ServiceDescription>E-commerce websites or apps always require flexibility. But Mean Stack is the combination of No-SQL and JS platform that gives much more flexibility while upgradation.</ServiceDescription>
-            </ServiceItem>
-            <ServiceItem>
-              <ServiceIcon src={cross} alt="Mean Stack CMS Development" />
-              <ServiceTitle>Mean Stack CMS Development</ServiceTitle>
-              <ServiceDescription>Mean Stack developers use their extensive experience with the latest and advanced technology to create vigorous, intuitive, and efficient CMS for your business.</ServiceDescription>
+              <ServiceDescription>E-commerce websites or apps always require flexibility. But Mean Stack is the combination of No-SQL and JS platform that gives much more flexibility while upgrading.</ServiceDescription>
             </ServiceItem>
             <ServiceItem>
               <ServiceIcon src={cross} alt="Mean Stack CMS Development" />
@@ -367,7 +394,7 @@ const Hire = () => {
           <Title>Why Hire Developers From <span>Solminica?</span></Title>
           <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
           <ReasonGrid>
-          <ReasonItem>
+            <ReasonItem>
               <ReasonIcon src={hire_1} alt="Highly-skilled Team of Developers" />
               <ReasonTitle>Highly-skilled Team of Developers</ReasonTitle>
             </ReasonItem>
@@ -408,7 +435,7 @@ const Hire = () => {
           <Title>Benefits of Mean Stack Development with <span>Advanced Skill-Sets and Latest Technologies</span></Title>
           <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
           <BenefitsGrid>
-          <BenefitItem>
+            <BenefitItem>
               <BenefitIcon src={benefits} alt="Isomorphic Coding" />
               <BenefitTitle>Isomorphic Coding</BenefitTitle>
               <BenefitDescription>Mean Stack technology allows you to code shifting from one framework to another because it uses one language for the coding. So this feature makes it highly reliable.</BenefitDescription>
@@ -426,37 +453,37 @@ const Hire = () => {
             <BenefitItem>
               <BenefitIcon src={benefits} alt="Mean Stack Functionality and Stability" />
               <BenefitTitle>Mean Stack Functionality and Stability</BenefitTitle>
-              <BenefitDescription>Web applications always face the problem of traffic. But mean stack application is developed with Node.JS technology which balances the load on the server in a proper manner.</BenefitDescription>
+              <BenefitDescription>Web applications always face the problem of traffic. But mean stack application is developed with Node.js technology which balances the load on the server in a proper manner.</BenefitDescription>
             </BenefitItem>
             <BenefitItem>
               <BenefitIcon src={benefits} alt="Mean Stack Consulting" />
               <BenefitTitle>Mean Stack Consulting</BenefitTitle>
-              <BenefitDescription>Our Company provides the consultation facility to the clients on their doubts and issues regarding Mean Stack Apps. Our potential Mean Stack developers offer guidance to resolve their issues as well as fulfill their all requirements.</BenefitDescription>
+              <BenefitDescription>Our company provides the consultation facility to the clients on their doubts and issues regarding Mean Stack Apps. Our potential Mean Stack developers offer guidance to resolve their issues as well as fulfill all their requirements.</BenefitDescription>
             </BenefitItem>
             <BenefitItem>
               <BenefitIcon src={benefits} alt="Mean Stack Supports MVC Architecture" />
               <BenefitTitle>Mean Stack Supports MVC Architecture</BenefitTitle>
-              <BenefitDescription>Mean Stack development supports MVC architecture to make the development process of Mean Stack hustle-free. MVC architecture is integrated with the JavaScript framework to support asynchronous technique that allows developers to build an app which loads faster.</BenefitDescription>
+              <BenefitDescription>Mean Stack development supports MVC architecture to make the development process of Mean Stack hustle-free. MVC architecture is integrated with the JavaScript framework to support the asynchronous technique that allows developers to build an app which loads faster.</BenefitDescription>
             </BenefitItem>
             <BenefitItem>
               <BenefitIcon src={benefits} alt="Cloud Integration" />
               <BenefitTitle>Cloud Integration</BenefitTitle>
-              <BenefitDescription>MongoDB technology of Mean Stack Web Development allows developing, host, and testing app in the cloud. So, MongoDB is minimized the client's disk space cost and the better option for a database system.</BenefitDescription>
+              <BenefitDescription>MongoDB technology of Mean Stack Web Development allows developing, hosting, and testing the app in the cloud. So, MongoDB minimizes the client's disk space cost and is a better option for a database system.</BenefitDescription>
             </BenefitItem>
           </BenefitsGrid>
         </Container>
       </BenefitsSection>
-      <Container>
 
-<HireSection data-aos="fade-up">
-  <HireContent>
-    <Title>Are you looking to hire Efficient Mobile app and Web Development Team for your Business ?</Title>
-    <Subtitle>Solminica serves you with the most innovative Mobile App & web development team that will take your business to a whole new level.</Subtitle>
-    <Button>Hire now</Button>
-  </HireContent>
-  <HireImage src={digitalservices} alt="Hire Efficient Team" />
-</HireSection>
-          </Container>
+      <Container>
+        <HireSection data-aos="fade-up">
+          <HireContent>
+            <Title>Are you looking to hire an Efficient Mobile app and Web Development Team for your Business?</Title>
+            <Subtitle>Solminica serves you with the most innovative Mobile App & web development team that will take your business to a whole new level.</Subtitle>
+            <Button>Hire now</Button>
+          </HireContent>
+          <HireImage src={digitalservices} alt="Hire Efficient Team" />
+        </HireSection>
+      </Container>
 
       <TestimonialSection data-aos="fade-up">
         <Container>

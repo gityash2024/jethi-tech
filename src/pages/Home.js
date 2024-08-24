@@ -14,7 +14,6 @@ import facebook from "../assets/images/facebook.png";
 import twitter from "../assets/images/twitter.png";
 import negative from '../assets/images/negative.png';
 import positive from '../assets/images/positive.png';
-import { ExpandMore, ExpandLess } from "@material-ui/icons";
 import google from "../assets/images/google.png";
 import googleCloud from "../assets/images/googleCloud.png";
 import razorpay from "../assets/images/razorpay.png";
@@ -146,6 +145,9 @@ const Container = styled.div`
 
 const Section = styled.section`
   padding: 40px 0;
+  @media (max-width: 768px) {
+    padding: 30px 0;
+  }
 `;
 
 const Button = styled.button`
@@ -164,6 +166,9 @@ const Title = styled.h2`
   color: #333;
   margin-bottom: 20px;
   text-align: center;
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const Subtitle = styled.p`
@@ -171,6 +176,9 @@ const Subtitle = styled.p`
   color: #666;
   margin-bottom: 20px;
   text-align: center;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const GradientText = styled.span`
@@ -213,6 +221,11 @@ const HeroSection = styled(Section)`
   align-items: center;
   padding-top: 50px;
   margin-bottom: 60px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding-top: 30px;
+    margin-bottom: 40px;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -222,6 +235,10 @@ const HeroContent = styled.div`
 const HeroImage = styled.img`
   flex: 1;
   max-width: 50%;
+  @media (max-width: 768px) {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
 `;
 
 const HeroTitle = styled.h1`
@@ -229,6 +246,10 @@ const HeroTitle = styled.h1`
   line-height: 1.2;
   margin-bottom: 20px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  @media (max-width: 768px) {
+    font-size: 34px;
+    text-align: center;
+  }
 `;
 
 const HeroContentWrapper = styled.div`
@@ -268,12 +289,19 @@ const ServicesSection = styled(Section)`
 const ServicesContainer = styled(Container)`
   display: flex;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const ServicesSideImage = styled.img`
   max-width: 30%;
   height: auto;
   margin-right: 5%;
+  @media (max-width: 768px) {
+    max-width: 80%;
+    margin: 0 auto 20px auto;
+  }
 `;
 
 const ServicesContent = styled.div`
@@ -285,6 +313,9 @@ const ServiceGrid = styled.div`
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const ServiceItem = styled.div`
@@ -323,10 +354,13 @@ const TechGrid = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const TechColumn = styled.div`
-  flex: ${props => props.width || 1};
+  flex: ${(props) => props.width || 1};
 `;
 
 const ExpertiseList = styled.ul`
@@ -378,6 +412,10 @@ const BottomRow = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 const BottomText = styled.p`
@@ -389,7 +427,11 @@ const BottomText = styled.p`
 
 const ConsultButton = styled(Button)`
   width: 20%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
+
 const SolutionsSection = styled(Section)`
   background-color: #f8f8f8;
 `;
@@ -399,6 +441,9 @@ const SolutionGrid = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const SolutionItem = styled.div`
@@ -435,6 +480,10 @@ const HireSection = styled(Section)`
   justify-content: space-between;
   align-items: center;
   padding-top: 80px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding-top: 40px;
+  }
 `;
 
 const HireContent = styled.div`
@@ -445,6 +494,10 @@ const HireContent = styled.div`
 const HireImage = styled.img`
   flex: 1;
   max-width: 25%;
+  @media (max-width: 768px) {
+    max-width: 80%;
+    margin-top: 20px;
+  }
 `;
 
 const ValueSection = styled(Section)`
@@ -456,6 +509,10 @@ const StatsGrid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-bottom: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 `;
 
 const StatItem = styled.div``;
@@ -480,6 +537,9 @@ const WorkGrid = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const IndustryList = styled.ul`
@@ -493,9 +553,12 @@ const IndustryList = styled.ul`
 const IndustryItem = styled.li`
   margin-bottom: 10px;
   cursor: pointer;
-  color: ${props => props.active ? '#ffffff' : '#333'};
-  font-weight: ${props => props.active ? '600' : 'normal'};
-  background: ${props => props.active ? 'linear-gradient(to right, #366DFA 0%, #53A4FF 100%)' : 'transparent'};
+  color: ${(props) => (props.active ? "#ffffff" : "#333")};
+  font-weight: ${(props) => (props.active ? "600" : "normal")};
+  background: ${(props) =>
+    props.active
+      ? "linear-gradient(to right, #366DFA 0%, #53A4FF 100%)"
+      : "transparent"};
   padding: 10px 15px;
   width: 100%;
   text-align: left;
@@ -592,6 +655,9 @@ const IndustriesGrid = styled.div`
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   margin: 40px 0;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const IndustryGridItem = styled.div`
@@ -615,11 +681,20 @@ const CustomerTestimonial = styled.div`
   border-radius: 10px;
   padding: 40px;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px;
+  }
 `;
 
 const TestimonialImage = styled.img`
   width: 20%;
   margin-right: 40px;
+  @media (max-width: 768px) {
+    width: 50%;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
 `;
 
 const TestimonialContent = styled.div`
@@ -644,7 +719,6 @@ const TestimonialPosition = styled.p`
 
 const AwardsSection = styled(Section)`
   text-align: center;
-  // margin-bottom: 50px;
 `;
 
 const AwardsGrid = styled.div`
@@ -653,6 +727,9 @@ const AwardsGrid = styled.div`
   align-items: center;
   gap: 20px;
   margin-bottom: 20px;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const AwardImage = styled.img`
@@ -683,6 +760,9 @@ const BusinessesGrid = styled.div`
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
   margin-top: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 const BusinessIcon = styled.img`
@@ -712,6 +792,9 @@ const TrustedGrid = styled.div`
   align-items: center;
   gap: 20px;
   margin-bottom: 20px;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const TrustedLogo = styled.img`
@@ -792,7 +875,7 @@ const BlogImage = styled.img`
 `;
 
 const ReadMore = styled.a`
-  color: #015BCC;
+  color: #015bcc;
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
@@ -808,6 +891,9 @@ const PartnersGrid = styled.div`
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
   margin: 40px 0;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const PartnerLogo = styled.img`
@@ -824,7 +910,6 @@ const CountriesList = styled.p`
   font-size: 12px;
   line-height: 1.6;
   margin-top: 20px;
-  // margin-bottom: 50px;
 `;
 
 const Home = () => {
@@ -991,7 +1076,7 @@ const Home = () => {
           <img src={telegram} alt="Telegram" />
         </SidebarSocialIcon>
         <SidebarSocialIcon href="#" target="_blank">
-          <img src={whatsapp} alt="Whats App" />
+          <img src={whatsapp} alt="WhatsApp" />
         </SidebarSocialIcon>
         <SidebarSocialIcon href="#" target="_blank">
           <img src={twitter} alt="Twitter" />
@@ -1014,8 +1099,8 @@ const Home = () => {
           <HeroContentWrapper>
             <HeroTitle>
               <GradientText>Transform</GradientText>
-              <br /> <DarkText>your Business with</DarkText>{" "}
-              <GradientText>Solminica</GradientText>
+              <br /> <DarkText>Your Business</DarkText>{" "}
+              <GradientText>Now</GradientText>
             </HeroTitle>
             <Subtitle>
               We are firm believers that the best software comes from small

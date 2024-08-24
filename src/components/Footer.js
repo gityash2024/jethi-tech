@@ -33,17 +33,31 @@ const TopRow = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const LogoSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 const LogoImage = styled.img`
   width: 150px;
   margin-right: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const LogoText = styled.p`
@@ -51,34 +65,58 @@ const LogoText = styled.p`
   line-height: 1.5;
   margin: 0;
   max-width: 70%;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const MiddleRow = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const QuickLinksColumn = styled.div`
   display: flex;
   gap: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 const QuickLinksSubColumn = styled.div``;
 
-const SocialProductsColumn = styled.div``;
+const SocialProductsColumn = styled.div`
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
+`;
 
 const FooterLink = styled.a`
   color: white;
   text-decoration: none;
   display: block;
   margin-bottom: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const SocialIcons = styled.div`
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+  justify-content: center;
 `;
 
 const FooterSocialIcon = styled.img`
@@ -88,7 +126,12 @@ const FooterSocialIcon = styled.img`
 
 const ProductsSection = styled.div`
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  margin: 0 20px; /* Add margin from left and right */
+  
+  @media (max-width: 768px) {
+    margin: 0 10px; /* Adjust for mobile */
+  }
 `;
 
 const ProductImage = styled.img`
@@ -100,23 +143,10 @@ const LocationSection = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
-  position: relative;
 
-  &::before, &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background-color: #53A4FF;
-  }
-
-  &::before {
-    left: 33.33%;
-  }
-
-  &::after {
-    right: 33.33%;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -124,6 +154,15 @@ const LocationItem = styled.div`
   text-align: center;
   flex: 1;
   padding: 0 20px;
+
+  @media (max-width: 768px) {
+    padding: 20px 0;
+    border-bottom: 1px solid #53A4FF;
+    width: 100%;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 `;
 
 const Flag = styled.img`
@@ -137,6 +176,11 @@ const CopyrightRow = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 const Copyright = styled.p`

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import about from '../assets/images/about.png';
-import Frame_1 from '../assets/images/Frame_1.png';
 import award_1 from '../assets/images/award_1.png';
 import award_2 from '../assets/images/award_2.png';
 import award_3 from '../assets/images/award_3.png';
@@ -21,6 +20,10 @@ const AboutWrapper = styled.div`
 
 const Section = styled.section`
   padding: 80px 0;
+
+  @media (max-width: 768px) {
+    padding: 40px 0;
+  }
 `;
 
 const Container = styled.div`
@@ -33,6 +36,11 @@ const HeroSection = styled(Section)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -43,12 +51,20 @@ const HeroTitle = styled.h1`
   font-size: 48px;
   color: #333;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
 `;
 
 const HeroSubtitle = styled.p`
   font-size: 18px;
   color: #666;
   margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const Button = styled.button`
@@ -59,13 +75,22 @@ const Button = styled.button`
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
 `;
 
 const HeroImage = styled.img`
   flex: 1;
   max-width: 50%;
-`;
 
+  @media (max-width: 768px) {
+    max-width: 80%;
+    margin-top: 20px;
+  }
+`;
 
 const AwardsSection = styled(Section)`
   text-align: center;
@@ -75,17 +100,26 @@ const AwardsTitle = styled.h2`
   font-size: 36px;
   color: #333;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const AwardsGrid = styled.div`
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
 `;
 
 const AwardImage = styled.img`
-  height: 100px;
+  width: 100%;
+  height: auto;
 `;
 
 const TrustedSection = styled(Section)`
@@ -97,6 +131,10 @@ const TrustedTitle = styled.h2`
   font-size: 36px;
   color: #333;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const TrustedGrid = styled.div`
@@ -104,10 +142,18 @@ const TrustedGrid = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
 `;
 
 const TrustedLogo = styled.img`
   height: 60px;
+
+  @media (max-width: 768px) {
+    height: 50px;
+  }
 `;
 
 const TestimonialSection = styled(Section)`
@@ -118,6 +164,10 @@ const TestimonialTitle = styled.h2`
   font-size: 36px;
   color: #333;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const TestimonialCard = styled.div`
@@ -128,21 +178,40 @@ const TestimonialCard = styled.div`
   align-items: center;
   max-width: 800px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px;
+  }
 `;
 
 const TestimonialImage = styled.img`
   width: 200px;
   margin-right: 40px;
+
+  @media (max-width: 768px) {
+    width: 150px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const TestimonialContent = styled.div`
   text-align: left;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const TestimonialText = styled.p`
   font-size: 16px;
   color: #666;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const TestimonialAuthor = styled.p`
@@ -150,12 +219,16 @@ const TestimonialAuthor = styled.p`
   font-weight: bold;
   color: #333;
 `;
+
 const FormSection = styled(Section)`
   background-color: #f8f8f8;
   display: flex;
   justify-content: space-between;
-`;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
 
 const InfoBox = styled.div`
   background-color: #0066CC;
@@ -163,16 +236,29 @@ const InfoBox = styled.div`
   padding: 30px;
   border-radius: 8px;
   flex: 0 0 40%;
+
+  @media (max-width: 768px) {
+    flex: 1;
+    margin-bottom: 20px;
+  }
 `;
 
 const InfoTitle = styled.h3`
   font-size: 24px;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const InfoSubtitle = styled.p`
   font-size: 16px;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const InfoList = styled.ol`
@@ -182,9 +268,14 @@ const InfoList = styled.ol`
 const InfoItem = styled.li`
   margin-bottom: 10px;
 `;
+
 const FormContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const FormTitle = styled.h2`
@@ -192,12 +283,21 @@ const FormTitle = styled.h2`
   color: #333;
   text-align: center;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const Form = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 `;
 
 const Input = styled.input`
@@ -206,6 +306,10 @@ const Input = styled.input`
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 const Select = styled.select`
@@ -215,10 +319,10 @@ const Select = styled.select`
   border-radius: 4px;
   font-size: 16px;
   appearance: none;
-  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
-  background-repeat: no-repeat;
-  background-position: right 12px top 50%;
-  background-size: 12px auto;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 const TextArea = styled.textarea`
@@ -229,6 +333,11 @@ const TextArea = styled.textarea`
   font-size: 16px;
   grid-column: span 2;
   resize: vertical;
+
+  @media (max-width: 768px) {
+    grid-column: span 1;
+    padding: 10px;
+  }
 `;
 
 const Captcha = styled.div`
@@ -236,6 +345,10 @@ const Captcha = styled.div`
   align-items: center;
   gap: 10px;
   grid-column: span 2;
+
+  @media (max-width: 768px) {
+    grid-column: span 1;
+  }
 `;
 
 const CaptchaInput = styled(Input)`
@@ -258,105 +371,122 @@ const SubmitButton = styled.button`
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+
+  @media (max-width: 768px) {
+    grid-column: span 1;
+    padding: 10px;
+  }
 `;
 
 const Contact = () => {
-    return (
-      <AboutWrapper>
-        <Container>
-          <HeroSection>
-            <HeroContent>
-              <HeroTitle>Partner with us to revolutionize your industry</HeroTitle>
-              <HeroSubtitle>Solminica creates inspirational designs and robust solutions for Web and mobile apps. We combine our expertise in tech & design to craft innovate digital solutions that lead the way in your industry.</HeroSubtitle>
-              <Button>Get Quote</Button>
-            </HeroContent>
-            <HeroImage src={about} alt="Partner with us" />
-          </HeroSection>
-  
-          <FormSection>
+  return (
+    <AboutWrapper>
+      <Container>
+        <HeroSection>
+          <HeroContent>
+            <HeroTitle>Partner with us to revolutionize your industry</HeroTitle>
+            <HeroSubtitle>
+              Solminica creates inspirational designs and robust solutions for Web and mobile apps. We combine our expertise in tech & design to craft innovative digital solutions that lead the way in your industry.
+            </HeroSubtitle>
+            <Button>Get Quote</Button>
+          </HeroContent>
+          <HeroImage src={about} alt="Partner with us" />
+        </HeroSection>
+
+        <FormSection>
           <FormContainer>
-  <FormTitle>Let's work together to turn your vision into a reality</FormTitle>
-  <Form>
-    <Input type="text" placeholder="Name*" required />
-    <Input type="email" placeholder="Email*" required />
-    <Select defaultValue="">
-      <option value="" disabled>Contact Number*</option>
-    </Select>
-    <Select defaultValue="">
-      <option value="" disabled>Your Budget</option>
-    </Select>
-    <Select defaultValue="">
-      <option value="" disabled>Interested in</option>
-    </Select>
-    <Select defaultValue="">
-      <option value="" disabled>How did you learn about us</option>
-    </Select>
-    <TextArea placeholder="Project Requirements" rows={4} />
-    <Captcha>
-      <CaptchaInput type="text" value="5" disabled />
-      <CaptchaOperator>+</CaptchaOperator>
-      <CaptchaInput type="text" value="8" disabled />
-      <CaptchaOperator>=</CaptchaOperator>
-      <CaptchaInput type="text" placeholder="Captcha code" />
-    </Captcha>
-    <SubmitButton type="submit">Send</SubmitButton>
-  </Form>
-</FormContainer>
-  <InfoBox>
-    <InfoTitle>You have an Idea</InfoTitle>
-    <InfoSubtitle>We have the experience to transform your idea in Digital Reality</InfoSubtitle>
-    <InfoSubtitle>Here's what you will get for submitting your contact details</InfoSubtitle>
-    <InfoList>
-      <InfoItem>45 minutes of free consultation</InfoItem>
-      <InfoItem>A strict non-disclosure agreement</InfoItem>
-      <InfoItem>Free Market & Competitive Analysis</InfoItem>
-      <InfoItem>Suggestions on Revenue Models & Go to Market Strategy</InfoItem>
-      <InfoItem>No obligation Technical specs & Proposal</InfoItem>
-      <InfoItem>Guidance on Pre-launch & Post-launch marketing</InfoItem>
-    </InfoList>
-  </InfoBox>
-</FormSection>
-  
-          <AwardsSection>
-            <AwardsTitle>Awards and Recognition</AwardsTitle>
-            <AwardsGrid>
-              <AwardImage src={award_1} alt="Award 1" />
-              <AwardImage src={award_2} alt="Award 2" />
-              <AwardImage src={award_3} alt="Award 3" />
-              <AwardImage src={award_4} alt="Award 4" />
-              <AwardImage src={award_5} alt="Award 5" />
-            </AwardsGrid>
-          </AwardsSection>
-  
-          <TrustedSection>
-            <TrustedTitle>Trusted By 100+ Happy Brands</TrustedTitle>
-            <TrustedGrid>
-              <TrustedLogo src={trusted_partner_1} alt="Trusted Partner 1" />
-              <TrustedLogo src={trusted_partner_2} alt="Trusted Partner 2" />
-              <TrustedLogo src={trusted_partner_3} alt="Trusted Partner 3" />
-              <TrustedLogo src={trusted_partner_4} alt="Trusted Partner 4" />
-              <TrustedLogo src={trusted_partner_5} alt="Trusted Partner 5" />
-              <TrustedLogo src={trusted_partner_6} alt="Trusted Partner 6" />
-            </TrustedGrid>
-          </TrustedSection>
-  
-          <TestimonialSection>
-            <TestimonialTitle>Our Customers love what we do</TestimonialTitle>
-            <TestimonialCard>
-              <TestimonialImage src={Customers} alt="Customer Testimonial" />
-              <TestimonialContent>
-                <TestimonialText>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-  
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
-                </TestimonialText>
-                <TestimonialAuthor>Mark Rise, CEO, Founder</TestimonialAuthor>
-              </TestimonialContent>
-            </TestimonialCard>
-          </TestimonialSection>
-        </Container>
-      </AboutWrapper>
-    );
+            <FormTitle>Let's work together to turn your vision into a reality</FormTitle>
+            <Form>
+              <Input type="text" placeholder="Name*" required />
+              <Input type="email" placeholder="Email*" required />
+              <Select defaultValue="">
+                <option value="" disabled>
+                  Contact Number*
+                </option>
+              </Select>
+              <Select defaultValue="">
+                <option value="" disabled>
+                  Your Budget
+                </option>
+              </Select>
+              <Select defaultValue="">
+                <option value="" disabled>
+                  Interested in
+                </option>
+              </Select>
+              <Select defaultValue="">
+                <option value="" disabled>
+                  How did you learn about us
+                </option>
+              </Select>
+              <TextArea placeholder="Project Requirements" rows={4} />
+              <Captcha>
+                <CaptchaInput type="text" value="5" disabled />
+                <CaptchaOperator>+</CaptchaOperator>
+                <CaptchaInput type="text" value="8" disabled />
+                <CaptchaOperator>=</CaptchaOperator>
+                <CaptchaInput type="text" placeholder="Captcha code" />
+              </Captcha>
+              <SubmitButton type="submit">Send</SubmitButton>
+            </Form>
+          </FormContainer>
+
+          <InfoBox>
+            <InfoTitle>You have an Idea</InfoTitle>
+            <InfoSubtitle>We have the experience to transform your idea in Digital Reality</InfoSubtitle>
+            <InfoSubtitle>Here's what you will get for submitting your contact details</InfoSubtitle>
+            <InfoList>
+              <InfoItem>45 minutes of free consultation</InfoItem>
+              <InfoItem>A strict non-disclosure agreement</InfoItem>
+              <InfoItem>Free Market & Competitive Analysis</InfoItem>
+              <InfoItem>Suggestions on Revenue Models & Go to Market Strategy</InfoItem>
+              <InfoItem>No obligation Technical specs & Proposal</InfoItem>
+              <InfoItem>Guidance on Pre-launch & Post-launch marketing</InfoItem>
+            </InfoList>
+          </InfoBox>
+        </FormSection>
+
+        <AwardsSection>
+          <AwardsTitle>Awards and Recognition</AwardsTitle>
+          <AwardsGrid>
+            <AwardImage src={award_1} alt="Award 1" />
+            <AwardImage src={award_2} alt="Award 2" />
+            <AwardImage src={award_3} alt="Award 3" />
+            <AwardImage src={award_4} alt="Award 4" />
+            <AwardImage src={award_5} alt="Award 5" />
+          </AwardsGrid>
+        </AwardsSection>
+
+        <TrustedSection>
+          <TrustedTitle>Trusted By 100+ Happy Brands</TrustedTitle>
+          <TrustedGrid>
+            <TrustedLogo src={trusted_partner_1} alt="Trusted Partner 1" />
+            <TrustedLogo src={trusted_partner_2} alt="Trusted Partner 2" />
+            <TrustedLogo src={trusted_partner_3} alt="Trusted Partner 3" />
+            <TrustedLogo src={trusted_partner_4} alt="Trusted Partner 4" />
+            <TrustedLogo src={trusted_partner_5} alt="Trusted Partner 5" />
+            <TrustedLogo src={trusted_partner_6} alt="Trusted Partner 6" />
+          </TrustedGrid>
+        </TrustedSection>
+
+        <TestimonialSection>
+          <TestimonialTitle>Our Customers love what we do</TestimonialTitle>
+          <TestimonialCard>
+            <TestimonialImage src={Customers} alt="Customer Testimonial" />
+            <TestimonialContent>
+              <TestimonialText>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+              </TestimonialText>
+              <TestimonialAuthor>Mark Rise, CEO, Founder</TestimonialAuthor>
+            </TestimonialContent>
+          </TestimonialCard>
+        </TestimonialSection>
+      </Container>
+    </AboutWrapper>
+  );
 };
 
 export default Contact;
