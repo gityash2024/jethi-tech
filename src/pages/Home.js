@@ -175,10 +175,15 @@ const Subtitle = styled.p`
   font-size: 18px;
   color: #666;
   margin-bottom: 20px;
+<<<<<<< HEAD
   text-align: center;
   @media (max-width: 768px) {
     font-size: 16px;
   }
+=======
+  // text-align: center;
+  font-family: "Poppins";
+>>>>>>> 2ae1bbdd33fab80cec182804a6af7e531c284b90
 `;
 
 const GradientText = styled.span`

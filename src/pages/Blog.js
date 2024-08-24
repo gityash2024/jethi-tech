@@ -44,6 +44,7 @@ const HeroSubtitle = styled.p`
   margin-bottom: 0;
   max-width: 600px;
   line-height: 1.5;
+  font-family: 'poppins';
 `;
 
 const HeroImage = styled.img`

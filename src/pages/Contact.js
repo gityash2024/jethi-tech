@@ -51,9 +51,15 @@ const HeroTitle = styled.h1`
   font-size: 48px;
   color: #333;
   margin-bottom: 20px;
+<<<<<<< HEAD
 
   @media (max-width: 768px) {
     font-size: 36px;
+=======
+  font-family: 'poppins';
+   span {
+    color: #0066CC;
+>>>>>>> 2ae1bbdd33fab80cec182804a6af7e531c284b90
   }
 `;
 
@@ -61,10 +67,14 @@ const HeroSubtitle = styled.p`
   font-size: 18px;
   color: #666;
   margin-bottom: 30px;
+<<<<<<< HEAD
 
   @media (max-width: 768px) {
     font-size: 16px;
   }
+=======
+  font-family: 'poppins';
+>>>>>>> 2ae1bbdd33fab80cec182804a6af7e531c284b90
 `;
 
 const Button = styled.button`
@@ -100,10 +110,14 @@ const AwardsTitle = styled.h2`
   font-size: 36px;
   color: #333;
   margin-bottom: 40px;
+<<<<<<< HEAD
 
   @media (max-width: 768px) {
     font-size: 28px;
   }
+=======
+  font-family: 'poppins';
+>>>>>>> 2ae1bbdd33fab80cec182804a6af7e531c284b90
 `;
 
 const AwardsGrid = styled.div`
@@ -123,7 +137,7 @@ const AwardImage = styled.img`
 `;
 
 const TrustedSection = styled(Section)`
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
   text-align: center;
 `;
 
@@ -131,10 +145,14 @@ const TrustedTitle = styled.h2`
   font-size: 36px;
   color: #333;
   margin-bottom: 40px;
+<<<<<<< HEAD
 
   @media (max-width: 768px) {
     font-size: 28px;
   }
+=======
+  font-family: 'poppins';
+>>>>>>> 2ae1bbdd33fab80cec182804a6af7e531c284b90
 `;
 
 const TrustedGrid = styled.div`
@@ -164,10 +182,14 @@ const TestimonialTitle = styled.h2`
   font-size: 36px;
   color: #333;
   margin-bottom: 40px;
+<<<<<<< HEAD
 
   @media (max-width: 768px) {
     font-size: 28px;
   }
+=======
+  font-family: 'poppins';
+>>>>>>> 2ae1bbdd33fab80cec182804a6af7e531c284b90
 `;
 
 const TestimonialCard = styled.div`

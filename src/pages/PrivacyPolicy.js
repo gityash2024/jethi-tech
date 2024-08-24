@@ -1,9 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const PrivacyPolicy = () => {
   return (
     <>
-      <h1 style={styles.header}>Privacy Policy</h1>
+      <h1 style={styles.header} >Privacy Policy</h1>
       <div style={styles.container}>
         <p style={styles.paragraph}>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
@@ -62,6 +63,7 @@ const styles = {
     fontSize: '2.5rem',
     fontWeight: 'bold',
     margin: '20px 0',
+    fontFamily: 'poppins',
   },
   container: {
     padding: '20px',
@@ -69,6 +71,7 @@ const styles = {
     margin: '0 auto',
     fontSize: '1rem',
     lineHeight: '1.6',
+    fontFamily: 'poppins',
   },
   paragraph: {
     marginBottom: '1rem',

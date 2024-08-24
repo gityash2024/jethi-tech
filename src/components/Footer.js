@@ -196,6 +196,16 @@ const Copyright = styled.p`
     text-decoration: none;
   }
 `;
+const GradientText = styled.span`
+  background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-family: Sofia, cursive;
+  font-size: x-large;
+  color: white;
+`;
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -205,7 +215,9 @@ const Footer = () => {
       <FooterContent>
         <TopRow>
           <LogoSection>
-            <LogoImage src={footer_logo} alt="Jethi Tech Solutions Pvt. Ltd." />
+            {/* <LogoImage src={footer_logo} alt="Jethi Tech Solutions Pvt. Ltd." /> */}
+            <GradientText ><b>Solminica</b></GradientText>
+
             <LogoText>
               Dreaming big? Let Solminica be your one-stop destination for turning visions into successful business endeavors. With our comprehensive technology support, staff augmentation, and venture capital funding, your dreams are closer than ever.
             </LogoText>

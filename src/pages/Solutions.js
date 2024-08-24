@@ -222,6 +222,7 @@ const FAQImage = styled.img`
 const Title = styled.h1`
   font-size: 48px;
   margin-bottom: 20px;
+  font-family:'poppins';
   span {
     color: #0066CC;
   }
@@ -313,7 +314,7 @@ const Logo = styled.img`
 `;
 
 const WhyChooseSection = styled(Section)`
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
 `;
 
 const WhyChooseContent = styled.div`
@@ -392,7 +393,7 @@ const ModuleImage = styled.img`
 `;
 
 const StatisticsSection = styled(Section)`
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
   text-align: center;
 `;
 
@@ -693,7 +694,7 @@ const Solutions = () => {
 
       <MarketShareSection data-aos="fade-up">
         <Container>
-          <Title>Market Share</Title>
+          <Title><span>Market</span> Share</Title>
           <MarketShareContent>
             <MarketShareImage src={market} alt="Market Share" />
             <MarketShareText>
@@ -779,7 +780,7 @@ const Solutions = () => {
 
       <CostSection data-aos="fade-up">
         <Container>
-          <Title>How much does it cost to build an app like Zomato?</Title>
+          <Title>How much does it <span>cost to build</span> an app like <span>Zomato?</span></Title>
           <CostContent>
             <CostText>
               <Subtitle>
@@ -793,7 +794,7 @@ const Solutions = () => {
 
       <FeaturesSection data-aos="fade-up">
         <Container>
-          <Title>Features to Make an App like <span>Zomato?</span></Title>
+          <Title><span>Features</span> to Make an App like <span>Zomato?</span></Title>
           <FeatureTable>
             <thead>
               <tr>

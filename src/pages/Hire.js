@@ -126,7 +126,7 @@ const ServiceDescription = styled.p`
 `;
 
 const ReasonSection = styled(Section)`
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
 `;
 
 const ReasonGrid = styled.div`
@@ -348,7 +348,7 @@ const Hire = () => {
         <HeroSection data-aos="fade-up">
           <HeroContent>
             <Title>Hire Developers to build your <span>eCommerce store</span></Title>
-            <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
+            <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua".</Subtitle>
             <Button>Hire Developers</Button>
           </HeroContent>
           <HeroImage src={hire} alt="Hire Developers" />

@@ -112,7 +112,8 @@ const LoadMoreButton = styled.button`
   color: white;
   border: none;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 22px;
+  argin-left: 538px;
   border-radius: 4px;
   cursor: pointer;
   margin-top: 20px;
@@ -232,7 +233,7 @@ const TestimonialDescription = styled.p`
 
 const TestimonialCard = styled.div`
   display: flex;
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
   border-radius: 20px;
   padding: 40px;
   margin-top: 40px;
@@ -267,6 +268,7 @@ const TestimonialText = styled.p`
   font-size: 16px;
   margin-bottom: 20px;
   line-height: 1.6;
+  color: #666;
 `;
 
 const TestimonialAuthor = styled.p`
