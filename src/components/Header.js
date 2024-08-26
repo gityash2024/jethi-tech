@@ -5,7 +5,7 @@ import menuIcon from '../assets/images/menu-btn-3-lines.png';
 import downArrow from '../assets/images/down-arrow.png';
 
 const HeaderWrapper = styled.header`
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 `;
 
 const TopBar = styled.div`

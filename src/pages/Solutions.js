@@ -39,7 +39,7 @@ import negative from '../assets/images/negative.png';
 import positive from '../assets/images/positive.png';
 
 const PageWrapper = styled.div`
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   color: #333;
 `;
 
@@ -220,9 +220,12 @@ const FAQImage = styled.img`
 `;
 
 const Title = styled.h1`
-  font-size: 48px;
+  font-size: 35px;
   margin-bottom: 20px;
   font-family:'poppins';
+  font-weight: 700;
+    line-height: 45.5px;
+    text-align: center;
   span {
     color: #0066CC;
   }
@@ -357,7 +360,7 @@ const Tab = styled.button`
   background-color: ${(props) => (props.active ? '#0066CC' : 'white')};
   color: ${(props) => (props.active ? 'white' : '#333')};
   border: 1px solid #0066CC;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 600;
   padding: 16px 20px;
   cursor: pointer;
@@ -614,7 +617,7 @@ const Solutions = () => {
 
       <PopularAppsSection data-aos="fade-up">
         <Container>
-          <Title>Popular Food Delivery Apps Built By Solminica. <span>Your Idea Can Be Next!</span></Title>
+          <Title>Popular Food Delivery Apps Built By Solminica. <span><br />Your Idea Can Be Next!</span></Title>
           <LogoGrid>
             <Logo src={trusted_partner_4} alt="Trusted Partner 1" />
             <Logo src={trusted_partner_2} alt="Trusted Partner 2" />

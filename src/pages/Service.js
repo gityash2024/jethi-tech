@@ -24,7 +24,7 @@ import negative from '../assets/images/negative.png';
 import positive from '../assets/images/positive.png';
 
 const PageWrapper = styled.div`
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins';
   color: #333;
 `;
 
@@ -78,7 +78,7 @@ const Tab = styled.button`
   color: ${props => props.active ? 'white' : '#333'};
   border: 1px solid #0066CC;
   padding: 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 600;
   cursor: pointer;
   flex: 1;
@@ -497,7 +497,7 @@ const IndustryName = styled.p`
 const IndustrySubsection = styled.div`
   display: flex;
   margin-top: 40px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 600;
   color: #2f2f2f;
   justify-content: space-between;

@@ -24,7 +24,7 @@ import negative from '../assets/images/negative.png';
 import positive from '../assets/images/positive.png';
 
 const PageWrapper = styled.div`
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   color: #333;
 `;
 

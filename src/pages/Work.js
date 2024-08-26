@@ -31,7 +31,7 @@ const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 `;
 
 const Section = styled.section`

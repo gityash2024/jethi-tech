@@ -29,8 +29,9 @@ const HeroContent = styled.div`
 
 const HeroTitle = styled.h1`
   font-size: 48px;
-  font-weight: bold;
+  font-weight: 700;
   color: #333;
+ line-height: 62.4px;
   margin-bottom: 20px;
 
   span {
@@ -39,12 +40,13 @@ const HeroTitle = styled.h1`
 `;
 
 const HeroSubtitle = styled.p`
-  font-size: 18px;
-  color: #666;
+  font-size: 20px;
+  color: #4E4E4E;
   margin-bottom: 0;
   max-width: 600px;
-  line-height: 1.5;
+  line-height: 30px;
   font-family: 'poppins';
+  font-weight: 400;
 `;
 
 const HeroImage = styled.img`
@@ -121,7 +123,9 @@ const BlogHeader = styled.div`
 
 const ResultsCount = styled.p`
   font-size: 16px;
-  color: #666;
+ color: #434343;
+    line-height: 24px;
+    font-weight: 500;
 `;
 
 const FilterContainer = styled.div`

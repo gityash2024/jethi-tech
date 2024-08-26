@@ -22,11 +22,13 @@ const HeroImage = styled.img`
 `;
 
 const BlogTitle = styled.h1`
-  font-size: 48px;
+  font-size: 44px;
   margin-bottom: 20px;
   margin-left: 17px;
-  color: #333;
-
+  color: #434343;
+ font-family: 'Poppins';
+    font-weight: 600;
+    line-height: 66px;
   @media (max-width: 768px) {
     font-size: 32px;
     margin-left: 0;
@@ -67,10 +69,12 @@ const BlogImage = styled.img`
 `;
 
 const BlogText = styled.p`
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #333;
+      font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    color: #434343;
+    font-weight: 400;
+    font-family: 'poppins';
 `;
 
 const TagsSection = styled.div`
@@ -140,13 +144,13 @@ const BlogDetails = () => {
         <MainContent>
           <BlogImage src={robat} alt="App Development Illustration" />
           <BlogText>
-            Ever dreamed of turning your app idea into reality? But then the questions start swirling: How much will it cost? More importantly, how long will it take? This is a common concern, especially considering the ever-growing app market. While it's impossible to give a one-size-fits-all answer, we can break down the key factors that influence development timelines. The Platform Puzzle: The platform you choose (iOS or Android) can significantly impact development time. Android apps often require more effort due to the wider range of devices with varying screen sizes and operating systems. However, the app approval process can be faster on Android compared to iOS. Our expert developers are well-versed in the challenges of both platforms and know how to navigate them efficiently. Keeping it Simple vs. Breaking New Ground The complexity of your app idea plays a big role. A straightforward app with basic features will take less time to develop than a groundbreaking concept with innovative functionalities. The clearer your vision and the more detailed your requirements, the smoother the development process will be.
+            Ever dreamed of turning your app idea into reality? But then the questions start swirling: How much will it cost? More <br />importantly, how long will it take? <br />This is a common concern, especially considering the ever-growing app market. While it's impossible to give a one-<br />size-fits-all answer, we can break down the key factors that influence development timelines. The Platform Puzzle: The <br />platform you choose (iOS or Android) can significantly impact development time. Android apps often require more<br /> effort due to the wider range of devices with varying screen sizes and operating systems. However, the app approval <br />process can be faster on Android compared to iOS. Our expert developers are well-versed in the challenges of both <br />platforms and know how to navigate them efficiently. Keeping it Simple vs. Breaking New Ground <br />The complexity of your app idea plays a big role. A straightforward app with basic features will take less time to develop <br />than a groundbreaking concept with innovative functionalities. The clearer your vision and the more detailed your <br />requirements, the smoother the development process will be.
           </BlogText>
           <BlogText>
             <RelatedPost>
               <RelatedPostImage src={connect_blog} alt="Previous Post" />
             </RelatedPost>
-            At Solminica, we take the time to understand your app idea thoroughly before diving into development. Features: A Balancing Act: The number and complexity of features you envision will directly impact development time. More features generally mean a longer timeline. It's important to prioritize core functionalities and consider a phased rollout with a Minimum Viable Product (MVP) to test the market and gather valuable user feedback. This allows you to refine your app and add features based on real user data, saving you time and resources in the long run. Knowing Your Audience: Developing an app for a small, targeted audience requires less complexity compared to a large user base. Apps for a broader audience might necessitate additional investment in infrastructure, performance testing, and scalability. Our focus is on delivering a polished, bug-free app that meets all the crucial performance indicators (KPIs) for a successful launch. The Development Journey: The development process itself can significantly impact timelines. A well-defined approach ensures everything from planning and design to development and testing progresses smoothly. Agile methodologies, which promote continuous collaboration and iterative development, are ideal for complex projects with evolving requirements. We leverage parallel development of different modules to expedite the process and deliver results faster. Communication is Key: Clear and consistent communication between you and your development partner is crucial. Time zone differences or communication gaps can lead to delays in resolving challenges. Our team is committed to open communication throughout the development lifecycle to keep things moving forward. The Bottom Line: Building a top-notch mobile app takes time, effort, and strategic planning. By understanding the factors that influence development timelines, you can make informed decisions and set realistic expectations. If you have any questions about bringing your app idea to life, feel free to contact us today!
+            At Solminica, we take the time to understand your app idea thoroughly before diving into development. <br />Features: <br />A Balancing Act: The number and complexity of features you envision will directly impact development time. More <br />features generally mean a longer timeline. It's important to prioritize core functionalities and consider a phased rollout <br />with a Minimum Viable Product (MVP) to test the market and gather valuable user feedback. <br />This allows you to refine your app and add features based on real user data, saving you time and resources in the long <br />run. <br />Knowing Your Audience: Developing an app for a small, targeted audience requires less complexity compared to a <br />large user base. Apps for a broader audience might necessitate additional investment in infrastructure, performance <br />testing, and scalability.<br /> Our focus is on delivering a polished, bug-free app that meets all the crucial performance indicators (KPIs) for a <br />successful launch. The Development Journey: The development process itself can significantly impact timelines. A well-defined approach <br />ensures everything from planning and design to development and testing progresses smoothly. Agile methodologies,<br /> which promote continuous collaboration and iterative development, are ideal for complex projects with evolving  <br />requirements.<br /> We leverage parallel development of different modules to expedite the process and deliver results faster. <br />Communication is Key: Clear and consistent communication between you and your development partner is crucial. <br />Time zone differences or communication gaps can lead to delays in resolving challenges.<br /> Our team is committed to open communication throughout the development lifecycle to keep things moving forward. <br />The Bottom Line: Building a top-notch mobile app takes time, effort, and strategic planning. By understanding the <br /> factors that influence development timelines, you can make informed decisions and set realistic expectations.<br /> If you have any questions about bringing your app idea to life, feel free to contact us today!
           </BlogText>
           <TagsSection>
             Tags: 

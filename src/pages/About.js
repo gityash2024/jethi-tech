@@ -29,7 +29,7 @@ import find_4 from '../assets/images/find_4.png';
 import find_5 from '../assets/images/find_5.png';
 
 const AboutWrapper = styled.div`
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins';
 `;
 
 const Section = styled.section`
@@ -57,15 +57,20 @@ const HeroTitle = styled.h1`
   color: #333;
   margin-bottom: 20px;
   font-family: 'poppins';
+  font-weight: 700;
+    font-family: 'poppins';
   span {
     color: #0066CC;
   }
 `;
 
 const HeroSubtitle = styled.p`
-  font-size: 18px;
-  color: #666;
+  font-size: 20px;
+  color: #4E4E4E;
   margin-bottom: 30px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  line-height: 30px;
 `;
 
 const Button = styled.button`
@@ -88,10 +93,13 @@ const BeliefSection = styled(Section)`
 `;
 
 const BeliefTitle = styled.h2`
-  font-size: 36px;
+  font-size: 48px;
   color: #333;
   margin-bottom: 20px;
   font-family: 'Poppins';
+  font-weight: 700;
+  line-height: 62.4px;
+  text-align: center;
 `;
 
 const BeliefText = styled.p`
@@ -140,11 +148,13 @@ const SolutionsSection = styled(Section)`
 `;
 
 const SolutionsTitle = styled.h2`
-  font-size: 36px;
-  color: #333;
+  font-size: 48px;
+  color: #434343;
   margin-bottom: 20px;
   text-align: center;
   font-family: 'Poppins';
+  font-weight: 700;
+  line-height: 62.4px;
 `;
 
 const SolutionsSubtitle = styled.p`
@@ -165,18 +175,7 @@ const SolutionCard = styled.div`
   align-items: flex-start;
 `;
 
-const SolutionIcon = styled.img`
-  width: 60px;
-  margin-right: 20px;
-`;
 
-const SolutionContent = styled.div``;
-
-const SolutionTitle = styled.h4`
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 10px;
-`;
 
 const SolutionText = styled.p`
   font-size: 16px;
@@ -186,15 +185,17 @@ const SolutionText = styled.p`
 const ValueSection = styled(Section)``;
 
 const ValueTitle = styled.h2`
-  font-size: 36px;
-  color: #333;
+   font-size: 48px;
+  color: #434343;
   margin-bottom: 20px;
   text-align: center;
   font-family: 'Poppins';
+  font-weight: 700;
+  line-height: 62.4px;
 `;
 
 const ValueSubtitle = styled.p`
-  font-size: 18px;
+  font-size: 20px;
   color: #666;
   margin-bottom: 40px;
   text-align: center;
@@ -228,19 +229,23 @@ const PreferSection = styled(Section)`
 `;
 
 const PreferTitle = styled.h2`
-  font-size: 36px;
-  color: #333;
+   font-size: 48px;
+  color: #434343;
   margin-bottom: 20px;
   text-align: center;
   font-family: 'Poppins';
+  font-weight: 700;
+  line-height: 62.4px;
 `;
 
 const PreferSubtitle = styled.p`
-  font-size: 18px;
-  color: #666;
+  font-size: 20px;
+  color: #4E4E4E;
   margin-bottom: 40px;
   text-align: center;
   font-family: 'Poppins';
+  font-weight: 400;
+  line-height: 30px;
 `;
 
 const PreferGrid = styled.div`
@@ -267,14 +272,17 @@ const TestimonialSection = styled(Section)`
 `;
 
 const TestimonialTitle = styled.h2`
-  font-size: 36px;
-  color: #333;
+   font-size: 48px;
+  color: #434343;
   margin-bottom: 20px;
+  text-align: center;
   font-family: 'Poppins';
+  font-weight: 700;
+  line-height: 62.4px;;
 `;
 
 const TestimonialSubtitle = styled.p`
-  font-size: 18px;
+  font-size: 20px;
   color: #666;
   margin-bottom: 40px;
   font-family: 'Poppins';
@@ -322,17 +330,24 @@ const FindUsSection = styled(Section)`
 `;
 
 const FindUsTitle = styled.h2`
-  font-size: 36px;
-  color: #333;
+  font-size: 48px;
+  color: #434343;
   margin-bottom: 20px;
   font-family: 'Poppins';
+  font-weight: 700;
+  line-height: 62.4px;;
+  text-align: center;
+
 `;
 
 const FindUsSubtitle = styled.p`
-  font-size: 18px;
-  color: #666;
+  font-size: 20px;
+  color: #4E4E4E;
   margin-bottom: 40px;
   font-family: 'Poppins';
+  font-weight: 400;
+  text-align: center;
+  line-height: 30px;
 `;
 
 const ReviewPlatforms = styled.div`
@@ -344,13 +359,12 @@ const ReviewPlatforms = styled.div`
 const ReviewPlatform = styled.div`
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 180px;
 `;
 
 const PlatformLogo = styled.img`
-  height: 40px;
   margin-bottom: 10px;
 `;
 
@@ -360,8 +374,107 @@ const PlatformRating = styled.p`
   color: #333;
 `;
 
+const SolutionGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
 
+const SolutionItem = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+`;
 
+const SolutionIcon = styled.img`
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 20px;
+`;
+
+const SolutionContent = styled.div`
+  flex: 1;
+`;
+
+const SolutionTitle = styled.h4`
+  font-size: 20px;
+  margin-bottom: 10px;
+`;
+
+const SolutionDescription = styled.p`
+  font-size: 16px;
+`;
+const Title = styled.h2`
+  font-size: 48px;
+  color: #434343;
+  margin-bottom: 20px;
+  text-align: center; 
+  font-weight:700;
+  line-height: 62.4px;
+  @media (max-width: 768px) {
+    font-size: 28px;
+    
+  }
+     font-family: "Poppins";
+`;
+const Subtitle = styled.p`
+  font-size: 20px;
+  color:#4E4E4E;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 400;
+  line-height:30px;
+  font-family: "Poppins";
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`;
+const BottomRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+`;
+
+const BottomText = styled.p`
+  font-size: 20px;
+  color: #434343;
+  text-align: left;
+  flex: 1;
+  line-height: 30px;
+    font-weight: 700;
+`;
+
+const ConsultButton = styled(Button)`
+  width: 20%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+const AwardsDots = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+`;
+
+const AwardsDot = styled.span`
+  width: 10px;
+  height: 10px;
+  background-color: ${(props) => (props.active ? "#333" : "#ccc")};
+  border-radius: 50%;
+`;
 
 const About = () => {
   return (
@@ -379,7 +492,7 @@ const About = () => {
         <BeliefSection>
   <BeliefTitle>Our Belief System</BeliefTitle>
   <BeliefText>
-    At our core, we believe technology is the key to unlocking a business's true potential. We design software that empowers users, not intimidates them, prioritizing both human-centered design and cutting-edge functionality. We're a team that thrives on continuous learning and exploration, constantly seeking ways to push the boundaries of what software can achieve. Collaboration is our fuel – diverse perspectives coming together to craft exceptional solutions. Building trust with our clients is paramount, fostering open communication and transparency to ensure the solutions we deliver are exactly what they need. This is more than just developing software; it's about shaping the future through innovation and strong partnerships.
+    At our core, we believe technology is the key to unlocking a business's true potential. We design software that empowers users, not <br />intimidates them, prioritizing both human-centered design and cutting-edge functionality. We're a team that thrives on continuous <br />learning and exploration, constantly seeking ways to push the boundaries of what software can achieve. Collaboration is our fuel – <br />diverse perspectives coming together to craft exceptional solutions. Building trust with our clients is paramount, fostering open <br />communication and transparency to ensure the solutions we deliver are exactly what they need. This is more than just developing <br />software; it's about shaping the future through innovation and strong partnerships.
   </BeliefText>
   <VisionMissionGrid>
     <VisionMissionCard>
@@ -401,43 +514,65 @@ const About = () => {
 
 
         <SolutionsSection>
-          <SolutionsTitle>Avail Profit-Driven Development Solutions to Resolve All-Scale Business Needs</SolutionsTitle>
-          <SolutionsSubtitle>Solminica creates enterprise solutions that seamlessly blend traditional methods with the latest innovations.</SolutionsSubtitle>
-          <SolutionsGrid>
-            <SolutionCard>
+          <Title>
+            Avail Profit-Driven Development Solutions<br />
+            to Resolve All-Scale Business Needs
+          </Title>
+          <Subtitle>
+            Solminica creates enterprise solutions that seamlessly blend
+            traditional methods with the latest innovations.
+          </Subtitle>
+          <SolutionGrid>
+            <SolutionItem>
               <SolutionIcon src={smbs} alt="SMBs" />
               <SolutionContent>
                 <SolutionTitle>SMBs</SolutionTitle>
-                <SolutionText>Seamlessly turn your small business into a well-known brand with the top development assistance. For decades, we have been helping small-scale businesses earn.</SolutionText>
+                <SolutionDescription>
+                  Seamlessly turn your small business into a well-known brand
+                  with the top development assistance. For decades, we have been
+                  helping small-scale businesses earn.
+                </SolutionDescription>
               </SolutionContent>
-            </SolutionCard>
-            <SolutionCard>
+            </SolutionItem>
+            <SolutionItem>
               <SolutionIcon src={startup} alt="Startups" />
               <SolutionContent>
                 <SolutionTitle>Startups</SolutionTitle>
-                <SolutionText>Let your startups climb the ladder of success in no time. We offer software development services for startups and help them get more funding as a brand</SolutionText>
+                <SolutionDescription>
+                  Let your startups climb the ladder of success in no time. We
+                  offer software development services for startups and help them
+                  get more funding as a brand
+                </SolutionDescription>
               </SolutionContent>
-            </SolutionCard>
-            <SolutionCard>
+            </SolutionItem>
+            <SolutionItem>
               <SolutionIcon src={enterprise} alt="Enterprises" />
               <SolutionContent>
                 <SolutionTitle>Enterprises</SolutionTitle>
-                <SolutionText>Seek robust and customised enterprise mobility solutions to meet your business needs. Our each development layer is engineered with experience and expertise</SolutionText>
+                <SolutionDescription>
+                  Seek robust and customised enterprise mobility solutions to
+                  meet your business needs. Our each development layer is
+                  engineered with experience and expertise
+                </SolutionDescription>
               </SolutionContent>
-            </SolutionCard>
-            <SolutionCard>
+            </SolutionItem>
+            <SolutionItem>
               <SolutionIcon src={agency} alt="Agencies" />
               <SolutionContent>
                 <SolutionTitle>Agencies</SolutionTitle>
-                <SolutionText>Our technical approach makes it accessible for offshore agencies to get exposure, improve business' financial growth, and increase sales & marketing potential</SolutionText>
+                <SolutionDescription>
+                  Our technical approach makes it accessible for offshore
+                  agencies to get exposure, improve business' financial growth,
+                  and increase sales & marketing potential
+                </SolutionDescription>
               </SolutionContent>
-            </SolutionCard>
-          </SolutionsGrid>
+            </SolutionItem>
+          </SolutionGrid>
         </SolutionsSection>
 
         <ValueSection>
-          <ValueTitle>Solminica Deliver Value for Money</ValueTitle>
-          <ValueSubtitle>Solminica delivers unparalleled value for money by offering top-quality, innovative technology solutions at competitive prices. Our customized services are designed to fit any budget, ensuring efficiency and productivity enhancements for businesses of all sizes. With exceptional customer support, we are your trusted partner in achieving technological success.</ValueSubtitle>
+          <ValueTitle>Solminica Deliver Value for <br />Money</ValueTitle>
+          <ValueSubtitle>Solminica delivers unparalleled value for money by offering top-quality, innovative technology<br /> solutions at competitive prices. Our customized services are designed to fit any budget, ensuring <br />efficiency and productivity enhancements for businesses of all sizes. With exceptional customer <br />support, we are your trusted partner in achieving technological success.</ValueSubtitle>
           <StatsGrid>
             <StatItem>
               <StatNumber>99%</StatNumber>
@@ -472,12 +607,18 @@ const About = () => {
               <StatLabel>On time project delivery.</StatLabel>
             </StatItem>
           </StatsGrid>
-          <Button>Consult Now!</Button>
+          <BottomRow>
+            <BottomText>
+              Our expertise in designing and building digital solutions
+              authorises us to develop <br />bespoke solutions
+            </BottomText>
+            <ConsultButton>Consult Now!</ConsultButton>
+          </BottomRow>
         </ValueSection>
 
         <PreferSection>
           <PreferTitle>Why Businesses Prefer Us?</PreferTitle>
-          <PreferSubtitle>As the leading IT company, Solminica guarantees client satisfaction through surveys, punctual delivery, established SLAs for support, superior quality in deliverables, and a commendable client retention record</PreferSubtitle>
+          <PreferSubtitle>As the leading IT company, Solminica guarantees client satisfaction through surveys, punctual <br />delivery, established SLAs for support, superior quality in deliverables, and a commendable client <br />retention record</PreferSubtitle>
           <PreferGrid>
             <PreferItem>
               <PreferIcon src={Businesses_1} alt="SEO and Digital Marketing" />
@@ -523,10 +664,10 @@ const About = () => {
               <PreferIcon src={Businesses_11} alt="In-depth analysis of revenue business Models" />
               <PreferText>In-depth analysis of revenue business Models</PreferText>
             </PreferItem>
-            <PreferItem>
+            {/* <PreferItem>
               <PreferIcon src={Businesses_11} alt="In-depth analysis of revenue business Models" />
               <PreferText>In-depth analysis of revenue business Models</PreferText>
-            </PreferItem>
+            </PreferItem> */}
             <PreferItem>
               <PreferIcon src={Businesses_12} alt="Mind Maps and video demos" />
               <PreferText>Mind Maps and video demos</PreferText>
@@ -538,9 +679,9 @@ const About = () => {
         <Container>
           <TestimonialTitle>Our Customers love what we do</TestimonialTitle>
           <TestimonialSubtitle>
-            Our customers are at the center of everything we do, and we're passionate about delivering exceptional solutions
-            that exceed their expectations. We take pride in providing innovative services that delight and satisfy their needs,
-            fostering long-term relationships built on trust, quality, and reliability. Our dedication to customer satisfaction is
+            Our customers are at the center of everything we do, and we're passionate about delivering exceptional solutions<br />
+            that exceed their expectations. We take pride in providing innovative services that delight and satisfy their needs,<br />
+            fostering long-term relationships built on trust, quality, and reliability. Our dedication to customer satisfaction is <br />
             unwavering, and we continually strive to improve and refine our offerings to meet their evolving needs.
           </TestimonialSubtitle>
           <TestimonialCard>
@@ -555,6 +696,12 @@ const About = () => {
               </TestimonialQuote>
               <TestimonialAuthor>Mark Rise</TestimonialAuthor>
               <TestimonialRole>CEO, Founder</TestimonialRole>
+              <AwardsDots>
+          <AwardsDot active />
+          <AwardsDot />
+          <AwardsDot />
+          <AwardsDot />
+        </AwardsDots>
             </TestimonialContent>
           </TestimonialCard>
         </Container>
@@ -564,32 +711,28 @@ const About = () => {
         <Container>
           <FindUsTitle>Find us</FindUsTitle>
           <FindUsSubtitle>
-            Discover what our team and clients are saying about us! We're proud to be rated
-            5.0 on Glassdoor and 4.9 out of 5 on Clutch. Explore our reviews on AmbitionBox,
-            GoodFirms, and Trustpilot to learn more about our company culture and
+            Discover what our team and clients are saying about us! We're proud to be rated<br />
+            5.0 on Glassdoor and 4.9 out of 5 on Clutch. Explore our reviews on AmbitionBox,<br />
+            GoodFirms, and Trustpilot to learn more about our company culture and <br />
             commitment to excellence.
           </FindUsSubtitle>
           <ReviewPlatforms>
             <ReviewPlatform>
               <PlatformLogo src={find_1} alt="AmbitionBox" />
-              <PlatformRating>3.0</PlatformRating>
-              <p>(based on 2 reviews)</p>
+              {/* <PlatformRating>3.0</PlatformRating>
+              <p>(based on 2 reviews)</p> */}
             </ReviewPlatform>
             <ReviewPlatform>
               <PlatformLogo src={find_2} alt="Glassdoor" />
-              <PlatformRating>5.0</PlatformRating>
             </ReviewPlatform>
             <ReviewPlatform>
               <PlatformLogo src={find_3} alt="Clutch" />
-              <PlatformRating>4.9/5.0</PlatformRating>
             </ReviewPlatform>
             <ReviewPlatform>
               <PlatformLogo src={find_4} alt="GoodFirms" />
-              <p>See our 1 review</p>
             </ReviewPlatform>
             <ReviewPlatform>
               <PlatformLogo src={find_5} alt="Trustpilot" />
-              <p>See our reviews on</p>
             </ReviewPlatform>
           </ReviewPlatforms>
         </Container>

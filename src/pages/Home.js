@@ -133,7 +133,7 @@ import educationProject1 from "../assets/images/education_1.png";
 import educationProject2 from "../assets/images/education_2.png";
 
 const HomeWrapper = styled.div`
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
   color: #333;
 `;
 
@@ -162,28 +162,41 @@ const Button = styled.button`
 `;
 
 const Title = styled.h2`
-  font-size: 36px;
-  color: #333;
+  font-size: 48px;
+  color: #434343;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: center; 
+  font-weight:700;
+  line-height: 62.4px;
   @media (max-width: 768px) {
     font-size: 28px;
+    
   }
+     font-family: "Poppins";
 `;
 
 const Subtitle = styled.p`
-  font-size: 18px;
-  color: #666;
+  font-size: 20px;
+  color:#4E4E4E;
   margin-bottom: 20px;
-<<<<<<< HEAD
   text-align: center;
+  font-weight: 400;
+  line-height:30px;
+  font-family: "Poppins";
   @media (max-width: 768px) {
     font-size: 16px;
   }
-=======
-  // text-align: center;
+`;
+const Subtitle22 = styled.p`
+  font-size: 20px;
+  color:#4E4E4E;
+  margin-bottom: 20px;
+  font-weight: 400;
+  line-height:30px;
   font-family: "Poppins";
->>>>>>> 2ae1bbdd33fab80cec182804a6af7e531c284b90
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const GradientText = styled.span`
@@ -192,6 +205,7 @@ const GradientText = styled.span`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+
 `;
 
 const DarkText = styled.span`
@@ -247,7 +261,7 @@ const HeroImage = styled.img`
 `;
 
 const HeroTitle = styled.h1`
-  font-size: 46px;
+  font-size: 48px;
   line-height: 1.2;
   margin-bottom: 20px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -268,7 +282,7 @@ const TrustedBy = styled.div`
 `;
 
 const TrustedTitle = styled.h3`
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
   font-weight: 500;
   font-size: 20px;
   color: #434343;
@@ -288,7 +302,7 @@ const Logo = styled.img`
 `;
 
 const ServicesSection = styled(Section)`
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
 `;
 
 const ServicesContainer = styled(Container)`
@@ -379,6 +393,8 @@ const ExpertiseList = styled.ul`
 const ExpertiseItem = styled.li`
   margin-bottom: 10px;
   cursor: pointer;
+  font-family: "Poppins";
+   font-weight: 500;
   color: ${(props) => (props.active ? "#ffffff" : "#333")};
   font-weight: ${(props) => (props.active ? "600" : "normal")};
   background: ${(props) =>
@@ -424,10 +440,12 @@ const BottomRow = styled.div`
 `;
 
 const BottomText = styled.p`
-  font-size: 16px;
-  color: #666;
+  font-size: 20px;
+  color: #434343;
   text-align: left;
   flex: 1;
+  line-height: 30px;
+    font-weight: 700;
 `;
 
 const ConsultButton = styled(Button)`
@@ -438,7 +456,7 @@ const ConsultButton = styled(Button)`
 `;
 
 const SolutionsSection = styled(Section)`
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
 `;
 
 const SolutionGrid = styled.div`
@@ -907,14 +925,21 @@ const PartnerLogo = styled.img`
 `;
 
 const ServingCountries = styled.h3`
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 40px;
+  font-weight: 500;
+    line-height: 26px;
+    font-family: 'Poppins';
+    color: #4E4E4E;
 `;
 
 const CountriesList = styled.p`
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 22px;
   margin-top: 20px;
+  font-weight: 400;
+  font-family: "Poppins";
+  color: #6B6B6B
 `;
 
 const Home = () => {
@@ -1044,6 +1069,8 @@ const Home = () => {
     { icon: Businesses_12, text: "Mind Maps and video demos" },
   ];
 
+  
+
   const industryData = {
     'Education': { icon: educationIcon },
     'Healthcare': { icon: healthcareIcon },
@@ -1105,12 +1132,14 @@ const Home = () => {
             <HeroTitle>
               <GradientText>Transform</GradientText>
               <br /> <DarkText>Your Business</DarkText>{" "}
-              <GradientText>Now</GradientText>
+              <GradientText>With</GradientText>
+              <br />
+              <GradientText>Solminica</GradientText>
             </HeroTitle>
-            <Subtitle>
-              We are firm believers that the best software comes from small
+            <Subtitle22>
+              We are firm believers that the best software comes from <br /> small
               agile and highly skilled teams.
-            </Subtitle>
+            </Subtitle22>
             <ConsultButton>Consult Now!</ConsultButton>
           </HeroContentWrapper>
           <HeroImage src={transformImage} alt="Transform your business" />
@@ -1220,7 +1249,7 @@ const Home = () => {
           <Title>Technologies that drive Growth</Title>
           <Subtitle>
             Solminica creates enterprise solutions that seamlessly blend
-            traditional methods with the latest innovations.
+            traditional methods with the latest <br />innovations.
           </Subtitle>
           <TechGrid>
             <TechColumn width="40%">
@@ -1381,7 +1410,7 @@ const Home = () => {
           </StatsGrid>
           <BottomRow>
             <BottomText>
-              Our expertise in designing and building digital solutions authorises us to develop bespoke solutions
+              Our expertise in designing and building digital solutions authorises us to develop <br />bespoke solutions
             </BottomText>
             <ConsultButton>Consult Now!</ConsultButton>
           </BottomRow>
@@ -1493,11 +1522,11 @@ const Home = () => {
           <Title>Our Customers love what we do</Title>
           <Subtitle>
             Our customers are at the center of everything we do, and we're
-            passionate about delivering exceptional solutions that exceed their
+            passionate about delivering exceptional solutions <br />that exceed their
             expectations. We take pride in providing innovative services that
-            delight and satisfy their needs, fostering long-term relationships
+            delight and satisfy their needs, <br />fostering long-term relationships
             built on trust, quality, and reliability. Our dedication to customer
-            satisfaction is unwavering, and we continually strive to improve and
+            satisfaction is <br />unwavering, and we continually strive to improve and
             refine our offerings to meet their evolving needs.
           </Subtitle>
           <CustomerTestimonial>
@@ -1513,6 +1542,12 @@ const Home = () => {
               </TestimonialText>
               <TestimonialAuthor>Mark Rise</TestimonialAuthor>
               <TestimonialPosition>CEO, Founder</TestimonialPosition>
+              <AwardsDots>
+          <AwardsDot active />
+          <AwardsDot />
+          <AwardsDot />
+          <AwardsDot />
+        </AwardsDots>
             </TestimonialContent>
           </CustomerTestimonial>
         </Container>
@@ -1521,9 +1556,9 @@ const Home = () => {
       <AwardsSection>
         <Title>Awards and Recognition</Title>
         <Subtitle>
-          We're proud to be recognized as a top performer by Clutch and
-          Appfutura, acknowledging our expertise in IT services, software
-          development, and iOS app creation.
+          "We're proud to be recognized as a top performer by Clutch and
+          Appfutura, acknowledging our expertise in IT <br />services, software
+          development, and iOS app creation."
         </Subtitle>
         <AwardsGrid>
           <AwardImage src={award_1} alt="Clutch Award" />
@@ -1549,8 +1584,8 @@ const Home = () => {
           <Title>Why Businesses Prefer Us?</Title>
           <Subtitle>
             As the leading IT company, Solminica guarantees client satisfaction
-            through surveys, punctual delivery, established SLAs for support,
-            superior quality in deliverables, and a commendable client retention
+            through surveys, punctual <br />delivery, established SLAs for support,
+            superior quality in deliverables, and a commendable <br />client retention
             record
           </Subtitle>
           <BusinessesGrid>
@@ -1569,8 +1604,8 @@ const Home = () => {
           <Title>Trusted By 100+ Happy Brands</Title>
           <Subtitle>
             At Solminica, we are dedicated to driving continuous innovation and
-            digital transformation for our stakeholders. We help our clients
-            stay aligned with the latest technology trends, giving them a
+            digital transformation for our <br />stakeholders. We help our clients
+            stay aligned with the latest technology trends, giving them a <br />
             competitive advantage. We are proud to have maintained a 90% client
             retention rate since 2017.
           </Subtitle>
@@ -1595,8 +1630,8 @@ const Home = () => {
         <Container>
           <Title>Blogs</Title>
           <Subtitle>
-            Our blog is your gateway to the world of IT and software development. Explore a wide range of
-            topics, from practical how-to guides to in-depth analysis of industry trends. Stay informed and
+            Our blog is your gateway to the world of IT and software development. Explore a wide range of<br />
+            topics, from practical how-to guides to in-depth analysis of industry trends. Stay informed and<br />
             inspired by our team of experts.
           </Subtitle>
           <BlogsContainer>
@@ -1627,10 +1662,10 @@ const Home = () => {
           <Title>Our Enterprise Technology partners</Title>
           <Subtitle>
             We are proud to partner with industry-leading technology providers
-            to deliver innovative solutions for our clients. Our partnerships
-            with companies like Google Cloud, Razorpay, AWS, and Microsoft
+            to deliver innovative solutions<br /> for our clients. Our partnerships
+            with companies like Google Cloud, Razorpay, AWS, and Microsoft<br />
             empower us to leverage cutting-edge technologies and platforms to
-            drive digital transformation and growth for your business.
+            drive digital transformation<br /> and growth for your business.
           </Subtitle>
           <PartnersGrid>
             {partnerLogos.map((partner, index) => (
