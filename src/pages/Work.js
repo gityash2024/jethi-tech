@@ -55,6 +55,10 @@ const OurWorkContent = styled.div`
 const Title = styled.h2`
   font-size: 48px;
   margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 62.4px;
+  color: #434343;
+  font-family: 'Poppins';
   span {
     color: #0066CC;
   }
@@ -64,8 +68,12 @@ const Title = styled.h2`
 `;
 
 const Description = styled.p`
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 20px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  line-height: 30px;
+  color: #4E4E4E;
   @media (max-width: 768px) {
     font-size: 16px;
   }
@@ -128,8 +136,12 @@ const AwardsSection = styled(Section)`
 
 const AwardsTitle = styled.h2`
   font-size: 48px;
-  color: #333;
+  color: #434343;
   margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 62.4px;
+  font-family: 'Poppins';
+  // text-align: center;
   @media (max-width: 768px) {
     font-size: 36px;
   }
@@ -159,18 +171,6 @@ const AwardImage = styled.img`
   width: auto;
 `;
 
-const AwardsDots = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-`;
-
-const AwardsDot = styled.span`
-  width: 10px;
-  height: 10px;
-  background-color: ${props => props.active ? '#333' : '#ccc'};
-  border-radius: 50%;
-`;
 
 const BusinessesSection = styled(Section)`
   text-align: center;
@@ -216,16 +216,27 @@ const TestimonialSection = styled(Section)`
 const TestimonialTitle = styled.h2`
   font-size: 48px;
   margin-bottom: 20px;
+  font-family: 'poppins';
+    font-weight: 700;
+    line-height: 62.4px;
+    color: #434343;
+    text-align: center;
   @media (max-width: 768px) {
     font-size: 36px;
   }
 `;
 
 const TestimonialDescription = styled.p`
-  font-size: 18px;
-  max-width: 1000px;
+  font-size: 20px;
+  // max-width: 1000px;
   margin: 0 auto 40px;
-  line-height: 1.6;
+  // line-height: 1.6;
+  font-family: 'Poppins';
+  font-weight: 400;
+  line-height: 30px;
+  color: #4E4E4E;
+
+
   @media (max-width: 768px) {
     font-size: 16px;
   }
@@ -302,19 +313,26 @@ const TrustedSection = styled(Section)`
 
 const TrustedTitle = styled.h2`
   font-size: 48px;
-  color: #333;
+  color: #434343;
   margin-bottom: 20px;
+  font-family: 'poppins';
+    font-weight: 700;
+    line-height: 62.4px;
+    text-align: center;
   @media (max-width: 768px) {
     font-size: 36px;
   }
 `;
 
 const TrustedDescription = styled.p`
-  font-size: 18px;
-  color: #666;
+  font-size: 20px;
+  color: #4E4E4E;
   max-width: 1000px;
   margin: 0 auto 40px;
-  line-height: 1.6;
+  line-height: 30px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  text-align: center;
   @media (max-width: 768px) {
     font-size: 16px;
   }
@@ -344,6 +362,18 @@ const TrustedDot = styled.span`
   width: 10px;
   height: 10px;
   background-color: ${props => props.active ? '#333' : '#ccc'};
+  border-radius: 50%;
+`;
+const AwardsDots = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+`;
+
+const AwardsDot = styled.span`
+  width: 10px;
+  height: 10px;
+  background-color: ${(props) => (props.active ? "#333" : "#ccc")};
   border-radius: 50%;
 `;
 
@@ -391,7 +421,7 @@ const Work = () => {
       <AwardsSection>
         <AwardsTitle>Awards and Recognition</AwardsTitle>
         <AwardsDescription>
-          We're proud to be recognized as a top performer by Clutch and Appfutura, acknowledging our
+          We're proud to be recognized as a top performer by Clutch and Appfutura,acknowledging our
           expertise in IT services, software development, and iOS app creation.
         </AwardsDescription>
         <AwardsGrid>
@@ -447,14 +477,20 @@ const Work = () => {
             </TestimonialText>
             <TestimonialAuthor>Mark Rise</TestimonialAuthor>
             <TestimonialPosition>CEO, Founder</TestimonialPosition>
+            <AwardsDots>
+          <AwardsDot active />
+          <AwardsDot />
+          <AwardsDot />
+          <AwardsDot />
+        </AwardsDots>
           </TestimonialContent>
         </TestimonialCard>
-        <TestimonialDots>
+        {/* <TestimonialDots>
           <TestimonialDot active />
           <TestimonialDot />
           <TestimonialDot />
           <TestimonialDot />
-        </TestimonialDots>
+        </TestimonialDots> */}
       </TestimonialSection>
 
       <TrustedSection>

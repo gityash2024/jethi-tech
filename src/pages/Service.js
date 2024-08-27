@@ -82,6 +82,9 @@ const Tab = styled.button`
   font-weight: 600;
   cursor: pointer;
   flex: 1;
+   font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
 
   @media (max-width: 768px) {
     padding: 10px;
@@ -190,9 +193,12 @@ const FAQContent = styled.div`
 `;
 
 const BottomText = styled.p`
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 20px;
+ font-size: 20px;
+    color: #434343;
+    font-weight: 400;
+    line-height: 30px;
+    font-family: 'Poppins';
+    
 
   @media (max-width: 768px) {
     font-size: 16px;
@@ -282,13 +288,15 @@ const HeroTitle = styled.h1`
 `;
 
 const HeroTitle2 = styled.h1`
-  font-size: 46px;
-  line-height: 1.2;
+  font-size: 48px;
+  line-height: 62.4px;
   margin-bottom: 20px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  // text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: center;
-
+  font-family: 'Poppins';
+  font-weight: 700;
+  // text-align: center;
   @media (max-width: 768px) {
     font-size: 32px;
   }
@@ -318,10 +326,13 @@ const ViewAllButton = styled.button`
 `;
 
 const Title = styled.h2`
-  font-size: 36px;
-  color: #333;
+  font-size: 48px;
+  color: #434343;
   margin-bottom: 20px;
   text-align: center;
+  font-weight: 700;
+    line-height: 62.4px;
+    font-family: 'Poppins';
 
   @media (max-width: 768px) {
     font-size: 28px;
@@ -329,10 +340,13 @@ const Title = styled.h2`
 `;
 
 const Subtitle = styled.p`
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 20px;
-  text-align: center;
+  font-size: 20px;
+    color: #4E4E4E;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 400;
+    line-height: 30px;
 
   @media (max-width: 768px) {
     font-size: 16px;
@@ -380,7 +394,7 @@ const StatNumber = styled.h3`
 `;
 
 const GradientText = styled.span`
-  background: linear-gradient(90deg, #2f69b1 0%, #0072ff 100%);
+  background: linear-gradient(90deg, #2F69B1 100%, #0072FF 100%); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -388,7 +402,11 @@ const GradientText = styled.span`
 `;
 
 const DarkText = styled.span`
-  color: #2f2f2f;
+  color: #434343;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 62.4px;
+    font-family: 'Poppins';
 `;
 
 const ConsultButton = styled(Button)`
@@ -487,7 +505,12 @@ const IndustryIcon = styled.img`
 `;
 
 const IndustryName = styled.p`
-  font-size: 14px;
+  font-size: 20px;
+  font-family: 'Poppins';
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    color: #434343
 
   @media (max-width: 768px) {
     font-size: 12px;
@@ -510,9 +533,12 @@ const IndustrySubsection = styled.div`
 `;
 
 const IndustrySubtitle = styled.p`
-  font-size: 16px;
-  color: #666;
+  font-size: 20px;
+  color: #434343;
   flex: 1;
+      font-weight: 700;
+    line-height: 30px;
+    font-family: 'Poppins';
 
   @media (max-width: 768px) {
     font-size: 14px;
@@ -581,12 +607,11 @@ const ServiceComponent = () => {
             <HeroTitle>
               <DarkText>Unleash Your Company's </DarkText>{" "}
               <GradientText>Creative Vision</GradientText>
-              <br />{" "}
-              <DarkText> With Custom UX and UI Design Services.</DarkText>{" "}
+              <DarkText> With Custom UX <br /> and UI Design Services.</DarkText>{" "}
             </HeroTitle>
             <Subtitle2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua."
             </Subtitle2>
             <ConsultButton>Consult Now!</ConsultButton>
           </HeroContentWrapper>
@@ -601,7 +626,7 @@ const ServiceComponent = () => {
           </HeroTitle2>
           <Subtitle>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            eiusmod tempor incididunt ut <br />labore et dolore magna aliqua.
           </Subtitle>
           <TabContainer>
             {Object.keys(designSolutions).map((tab) => (
@@ -659,7 +684,7 @@ const ServiceComponent = () => {
           <IndustrySubsection>
             <IndustrySubtitle>
               Our expertise in designing and building digital solutions
-              authorises us to develop bespoke solutions
+              authorises us to develop <br />bespoke solutions
             </IndustrySubtitle>
             <Button>Consult Now!</Button>
           </IndustrySubsection>

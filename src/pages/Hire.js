@@ -64,8 +64,12 @@ const HeroImage = styled.img`
 `;
 
 const Title = styled.h1`
-  font-size: 36px;
+  font-size: 48px;
   margin-bottom: 20px;
+  font-family: 'Poppins';
+  font-weight: 700;
+  line-height: 62.4px;
+  color: #434343;
   span {
     color: #0066cc;
   }
@@ -75,8 +79,11 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 30px;
+  font-weight: 400;
+  line-height:30px;
+  font-family: 'Poppins';
 `;
 
 const Button = styled.button`
@@ -150,8 +157,13 @@ const ReasonIcon = styled.img`
 `;
 
 const ReasonTitle = styled.h4`
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 10px;
+  font-weight: 600;
+  font-family: 'Poppins';
+  line-height: 30px;
+  text-align: center;
+  color: #434343;
 `;
 
 const BenefitsSection = styled(Section)``;
@@ -348,7 +360,7 @@ const Hire = () => {
         <HeroSection data-aos="fade-up">
           <HeroContent>
             <Title>Hire Developers to build your <span>eCommerce store</span></Title>
-            <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua".</Subtitle>
+            <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed <br /> do eiusmod tempor incididunt ut labore et dolore magna<br /> aliqua".</Subtitle>
             <Button>Hire Developers</Button>
           </HeroContent>
           <HeroImage src={hire} alt="Hire Developers" />
@@ -358,7 +370,7 @@ const Hire = () => {
       <ServicesSection data-aos="fade-up">
         <Container>
           <Title>Our Developers' <span>Expert Services</span></Title>
-          <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
+          <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <br />labore et dolore magna aliqua.</Subtitle>
           <ServiceGrid>
             <ServiceItem>
               <ServiceIcon src={mean} alt="Mean Stack IOT Application Development" />
@@ -392,7 +404,7 @@ const Hire = () => {
       <ReasonSection data-aos="fade-up">
         <Container>
           <Title>Why Hire Developers From <span>Solminica?</span></Title>
-          <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
+          <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <br />labore et dolore magna aliqua."</Subtitle>
           <ReasonGrid>
             <ReasonItem>
               <ReasonIcon src={hire_1} alt="Highly-skilled Team of Developers" />
@@ -433,7 +445,7 @@ const Hire = () => {
       <BenefitsSection data-aos="fade-up">
         <Container>
           <Title>Benefits of Mean Stack Development with <span>Advanced Skill-Sets and Latest Technologies</span></Title>
-          <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
+          <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <br />labore et dolore magna aliqua."</Subtitle>
           <BenefitsGrid>
             <BenefitItem>
               <BenefitIcon src={benefits} alt="Isomorphic Coding" />

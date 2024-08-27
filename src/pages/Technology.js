@@ -51,9 +51,12 @@ const HeroImage = styled.img`
 `;
 
 const Title = styled.h1`
-  font-size: 36px;
-  margin-bottom: 20px;
-  font-family: 'Poppins';
+      font-size: 48px;
+    margin-bottom: 20px;
+    font-family: 'Poppins';
+    font-weight: 700;
+    line-height: 62.4px;
+    color: #434343;
   span {
     color: #0066cc;
   }
@@ -63,8 +66,12 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  font-size: 18px;
-  margin-bottom: 30px;
+  font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-family: 'Poppins';
+    line-height: 30px;
+    color: #4E4E4E;
 `;
 
 const Button = styled.button`
@@ -287,6 +294,43 @@ const ViewAllButton = styled.button`
   display: block;
   margin: 40px auto 0;
 `;
+const BottomRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+`;
+const BottomText = styled.p`
+  font-size: 20px;
+  color: #434343;
+  text-align: left;
+  flex: 1;
+  line-height: 30px;
+    font-weight: 700;
+`;
+
+const ConsultButton = styled(Button)`
+  width: 20%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+const AwardsDots = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+`;
+
+const AwardsDot = styled.span`
+  width: 10px;
+  height: 10px;
+  background-color: ${(props) => (props.active ? "#333" : "#ccc")};
+  border-radius: 50%;
+`;
 
 const Technology = () => {
   const [openQuestion, setOpenQuestion] = useState(0);
@@ -337,7 +381,7 @@ const Technology = () => {
         <HeroSection data-aos="fade-up">
           <HeroContent>
             <Title>Node.js Development Company & Team Augmentation Services</Title>
-            <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
+            <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</Subtitle>
             <Button>Get Quote</Button>
           </HeroContent>
           <HeroImage src={technology} alt="Node.js Development" />
@@ -347,7 +391,7 @@ const Technology = () => {
       <WhyChooseSection data-aos="fade-up">
         <Container>
           <Title>Why Choose <span>Node.Js Development?</span></Title>
-          <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
+          <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna <br />aliqua."</Subtitle>
           <FeatureGrid>
             {features.map((feature, index) => (
               <FeatureItem key={index}>
@@ -374,13 +418,21 @@ const Technology = () => {
               </ServiceItem>
             ))}
           </ServiceGrid>
+      <BottomRow>
+            <BottomText>
+              Our expertise in designing and building digital solutions
+              authorises us to develop bespoke solutions
+            </BottomText>
+            <ConsultButton>Consult Now!</ConsultButton>
+          </BottomRow>
         </Container>
       </ServicesSection>
+
 
       <ExperienceSection data-aos="fade-up">
         <Container>
           <Title>See Our <span>Experience</span></Title>
-          <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
+          <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna <br />aliqua."</Subtitle>
           <ProjectGrid>
             {[1, 2, 3].map((project) => (
               <ProjectItem key={project}>
@@ -401,6 +453,12 @@ const Technology = () => {
             <TestimonialContent>
               <TestimonialText>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."</TestimonialText>
               <TestimonialAuthor>Mark Rise, CEO, Founder</TestimonialAuthor>
+              <AwardsDots>
+          <AwardsDot active />
+          <AwardsDot />
+          <AwardsDot />
+          <AwardsDot />
+        </AwardsDots>
             </TestimonialContent>
           </TestimonialCard>
         </Container>
