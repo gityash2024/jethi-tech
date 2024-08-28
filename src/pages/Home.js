@@ -131,6 +131,9 @@ import retailIcon from "../assets/images/retail-e-commerce.png";
 import miscIcon from "../assets/images/miscellaneous.png";
 import educationProject1 from "../assets/images/education_1.png";
 import educationProject2 from "../assets/images/education_2.png";
+import herosectionbg from "../assets/images/hero-bg-line.png";
+import techbgLeft from "../assets/images/tech-bg-left.png";
+import techbgRight from "../assets/images/tech-bg-right.png";
 
 const HomeWrapper = styled.div`
   font-family: "Poppins";
@@ -142,9 +145,27 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 20px;
 `;
+const Container2 = styled.div`
+background-image: url(${herosectionbg});
+  background-repeat: no-repeat;
+  background-position: right;
+  
+`;
 
 const Section = styled.section`
   padding: 40px 0;
+  @media (max-width: 768px) {
+    padding: 30px 0;
+  }
+`;
+const Section20 = styled.section`
+  padding: 20px 0;
+  @media (max-width: 768px) {
+    padding: 30px 0;
+  }
+`;
+const Section0 = styled.section`
+  padding: 0px 0;
   @media (max-width: 768px) {
     padding: 30px 0;
   }
@@ -180,6 +201,30 @@ const Subtitle = styled.p`
   color:#4E4E4E;
   margin-bottom: 20px;
   text-align: center;
+  font-weight: 400;
+  line-height:30px;
+  font-family: "Poppins";
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`;
+const TitleOurDigital = styled.h2`
+  font-size: 48px;
+  color: #434343;
+  margin-bottom: 20px;
+  font-weight:700;
+  line-height: 62.4px;
+  @media (max-width: 768px) {
+    font-size: 28px;
+    
+  }
+     font-family: "Poppins";
+`;
+
+const SubtitleOurDigital = styled.p`
+  font-size: 20px;
+  color:#4E4E4E;
+  margin-bottom: 20px;
   font-weight: 400;
   line-height:30px;
   font-family: "Poppins";
@@ -232,19 +277,22 @@ const SidebarSocialIcon = styled.a`
   color: white;
   text-decoration: none;
   font-size: 14px;
+  font-family: "Poppins";
 `;
 
 const HeroSection = styled(Section)`
   display: flex;
+  
   justify-content: space-between;
   align-items: center;
   padding-top: 50px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   @media (max-width: 768px) {
     flex-direction: column;
     padding-top: 30px;
     margin-bottom: 40px;
   }
+
 `;
 
 const HeroContent = styled.div`
@@ -263,7 +311,7 @@ const HeroImage = styled.img`
 const HeroTitle = styled.h1`
   font-size: 48px;
   line-height: 1.2;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   @media (max-width: 768px) {
     font-size: 34px;
@@ -301,7 +349,7 @@ const Logo = styled.img`
   margin: 10px;
 `;
 
-const ServicesSection = styled(Section)`
+const ServicesSection = styled(Section20)`
   // background-color: #f8f8f8;
 `;
 
@@ -365,10 +413,24 @@ const ServiceTitle = styled.h4`
   margin-bottom: 0;
 `;
 
-const TechnologiesSection = styled(Section)`
-  padding: 40px 0;
+const TechnologiesSection = styled(Section0)`
 `;
-
+const BgWrapper = styled.div`
+  background-image: url(${techbgLeft});
+  background-repeat: no-repeat;
+  background-position: left;
+  @media (max-width: 768px) {
+    background-image: none;
+  }
+`;
+const BgWrapperRight = styled.div`
+  background-image: url(${techbgRight});
+  background-repeat: no-repeat;
+  background-position: right;
+  @media (max-width: 768px) {
+    background-image: none;
+  }
+`;
 const TechGrid = styled.div`
   display: flex;
   justify-content: space-between;
@@ -399,10 +461,10 @@ const ExpertiseItem = styled.li`
   font-weight: ${(props) => (props.active ? "600" : "normal")};
   background: ${(props) =>
     props.active
-      ? "linear-gradient(to right, #366DFA 0%, #53A4FF 100%)"
+      ? "linear-gradient(to right, #0072FF 0%, #2F69B1 100%)"
       : "transparent"};
   padding: 10px 15px;
-  width: 70%;
+  width: 60%;
   text-align: left;
 `;
 
@@ -416,7 +478,8 @@ const TechItem = styled.div`
   display: flex;
   align-items: center;
   padding: 25px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #5C5C5C;
+  margin-right: 80px;
 `;
 
 const TechLogo = styled.img`
@@ -450,6 +513,12 @@ const BottomText = styled.p`
 
 const ConsultButton = styled(Button)`
   width: 20%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+const ConsultButtonHome = styled(Button)`
+  width: 30%;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -1126,7 +1195,9 @@ const Home = () => {
           <img style={{ marginTop: "100px" }} src={followus} alt="Follow Us" />
         </SidebarSocialIcon>
       </SocialBar>
+      <Container2>
       <Container>
+        
         <HeroSection data-aos="fade-up">
           <HeroContentWrapper>
             <HeroTitle>
@@ -1140,7 +1211,7 @@ const Home = () => {
               We are firm believers that the best software comes from <br /> small
               agile and highly skilled teams.
             </Subtitle22>
-            <ConsultButton>Consult Now!</ConsultButton>
+            <ConsultButtonHome>Consult Now!</ConsultButtonHome>
           </HeroContentWrapper>
           <HeroImage src={transformImage} alt="Transform your business" />
         </HeroSection>
@@ -1169,12 +1240,12 @@ const Home = () => {
             alt="Digital Transformation"
           />
           <ServicesContent>
-            <Title>
+            <TitleOurDigital>
               Our Digital <br /> Transformation Services
-            </Title>
-            <Subtitle>
+            </TitleOurDigital>
+            <SubtitleOurDigital>
               With a blend of reliable & long-term partner than just a Partner
-            </Subtitle>
+            </SubtitleOurDigital>
             <ServiceGrid>
               <ServiceItem>
                 <ServiceIcon
@@ -1243,6 +1314,11 @@ const Home = () => {
           </ServicesContent>
         </ServicesContainer>
       </ServicesSection>
+      </Container2>
+
+      <hr style={{border: "1px solid #000000",marginLeft:"100px",marginRight:"100px"}}/>
+      <BgWrapper>
+      <BgWrapperRight>
 
       <TechnologiesSection>
         <Container>
@@ -1344,6 +1420,9 @@ const Home = () => {
           </SolutionGrid>
         </Container>
       </SolutionsSection>
+      </BgWrapperRight>
+      </BgWrapper>
+
 
       <Container>
         <HireSection data-aos="fade-up">

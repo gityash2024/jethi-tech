@@ -38,6 +38,7 @@ const styles = {
     fontSize: '2.5rem',
     fontWeight: 'bold',
     margin: '20px 0',
+    fontFamily: 'poppins'
   },
   container: {
     padding: '20px',
@@ -45,6 +46,8 @@ const styles = {
     margin: '0 auto',
     fontSize: '1rem',
     lineHeight: '1.6',
+    fontFamily: 'poppins'
+
   },
   paragraph: {
     marginBottom: '1rem',
