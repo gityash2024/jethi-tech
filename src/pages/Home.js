@@ -325,7 +325,7 @@ const HeroContentWrapper = styled.div`
 `;
 
 const TrustedBy = styled.div`
-  margin-top: 40px;
+  margin-top: 25px;
   margin-bottom: 20px;
 `;
 
@@ -379,7 +379,7 @@ const ServiceGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
-  margin-top: 40px;
+  margin-top: 25px;
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -434,7 +434,7 @@ const BgWrapperRight = styled.div`
 const TechGrid = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 25px;
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -495,7 +495,7 @@ const BottomRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 25px;
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 20px;
@@ -524,7 +524,7 @@ const ConsultButtonHome = styled(Button)`
   }
 `;
 
-const SolutionsSection = styled(Section)`
+const SolutionsSection = styled(Section0)`
   // background-color: #f8f8f8;
 `;
 
@@ -532,7 +532,7 @@ const SolutionGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  margin-top: 40px;
+  margin-top: 25px;
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -571,7 +571,6 @@ const HireSection = styled(Section)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 80px;
   @media (max-width: 768px) {
     flex-direction: column;
     padding-top: 40px;
@@ -592,7 +591,7 @@ const HireImage = styled.img`
   }
 `;
 
-const ValueSection = styled(Section)`
+const ValueSection = styled(Section0)`
   text-align: center;
 `;
 
@@ -613,6 +612,10 @@ const StatNumber = styled.h3`
   font-size: 36px;
   color: #2f2f2f;
   margin-bottom: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
+  border-bottom: 1px solid #5C5C5C;
+
 `;
 
 const StatLabel = styled.p`
@@ -621,14 +624,13 @@ const StatLabel = styled.p`
   color: #666;
 `;
 
-const WorkSection = styled(Section)`
-  padding: 40px 0;
+const WorkSection = styled(Section0)`
 `;
 
 const WorkGrid = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 25px;
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -649,7 +651,7 @@ const IndustryItem = styled.li`
   font-weight: ${(props) => (props.active ? "600" : "normal")};
   background: ${(props) =>
     props.active
-      ? "linear-gradient(to right, #366DFA 0%, #53A4FF 100%)"
+      ? "linear-gradient(to right, #0072FF 0%, #2F69B1 100%)"
       : "transparent"};
   padding: 10px 15px;
   width: 100%;
@@ -772,7 +774,7 @@ const CustomerTestimonial = styled.div`
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 40px;
-  margin-top: 40px;
+  margin-top: 25px;
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 20px;
@@ -842,7 +844,7 @@ const AwardsDot = styled.span`
   border-radius: 50%;
 `;
 
-const BusinessesSection = styled(Section)`
+const BusinessesSection = styled(Section0)`
   text-align: center;
   margin-bottom: 50px;
 `;
@@ -851,7 +853,7 @@ const BusinessesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
-  margin-top: 40px;
+  margin-top: 25px;
   @media (max-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -874,7 +876,7 @@ const BusinessItem = styled.div`
   text-align: center;
 `;
 
-const TrustedSection = styled(Section)`
+const TrustedSection = styled(Section20)`
   text-align: center;
 `;
 
@@ -907,13 +909,12 @@ const TrustedDot = styled.span`
   border-radius: 50%;
 `;
 
-const BlogSection = styled(Section)`
-  padding: 30px 0;
+const BlogSection = styled(Section20)`
 `;
 
 const BlogsContainer = styled.div`
   display: flex;
-  margin-top: 40px;
+  margin-top: 25px;
   gap: 40px;
 
   @media (max-width: 768px) {
@@ -956,7 +957,7 @@ const BlogDescription = styled.p`
 `;
 
 const BlogImage = styled.img`
-  width: 40%;
+  width: 30%;
   max-width: 3200px;
   object-fit: cover;
 
@@ -995,7 +996,7 @@ const PartnerLogo = styled.img`
 
 const ServingCountries = styled.h3`
   font-size: 20px;
-  margin-top: 40px;
+  margin-top: 25px;
   font-weight: 500;
     line-height: 26px;
     font-family: 'Poppins';
@@ -1316,9 +1317,9 @@ const Home = () => {
       </ServicesSection>
       </Container2>
 
-      <hr style={{border: "1px solid #000000",marginLeft:"100px",marginRight:"100px"}}/>
       <BgWrapper>
       <BgWrapperRight>
+      <hr style={{border: "1px solid #000000",marginLeft:"100px",marginRight:"100px"}}/>
 
       <TechnologiesSection>
         <Container>
@@ -1361,6 +1362,7 @@ const Home = () => {
           </BottomRow>
         </Container>
       </TechnologiesSection>
+      <hr style={{border: "1px solid #000000",marginLeft:"100px",marginRight:"100px"}}/>
 
       <SolutionsSection data-aos="fade-up">
         <Container>
@@ -1420,6 +1422,7 @@ const Home = () => {
           </SolutionGrid>
         </Container>
       </SolutionsSection>
+
       </BgWrapperRight>
       </BgWrapper>
 
@@ -1427,15 +1430,15 @@ const Home = () => {
       <Container>
         <HireSection data-aos="fade-up">
           <HireContent>
-            <Title>
+            <TitleOurDigital>
               Are you looking to hire Efficient Mobile app and Web Development
               Team for your Business ?
-            </Title>
-            <Subtitle>
+            </TitleOurDigital>
+            <SubtitleOurDigital>
               Solminica serves you with the most innovative Mobile App & web
               development team that will take your business to a whole new
               level.
-            </Subtitle>
+            </SubtitleOurDigital>
             <Button>Hire now</Button>
           </HireContent>
           <HireImage src={digitalservices} alt="Hire Efficient Team" />
@@ -1556,7 +1559,7 @@ const Home = () => {
         </Container>
       </ProcessSection>
 
-      <Section data-aos="fade-up">
+      <TechnologiesSection data-aos="fade-up">
         <Container>
           <Title>Key industries we serve</Title>
           <Subtitle>
@@ -1594,9 +1597,9 @@ const Home = () => {
             <ConsultButton>Consult Now!</ConsultButton>
           </BottomRow>
         </Container>
-      </Section>
+      </TechnologiesSection>
 
-      <Section data-aos="fade-up">
+      <TechnologiesSection data-aos="fade-up">
         <Container>
           <Title>Our Customers love what we do</Title>
           <Subtitle>
@@ -1630,7 +1633,7 @@ const Home = () => {
             </TestimonialContent>
           </CustomerTestimonial>
         </Container>
-      </Section>
+      </TechnologiesSection>
 
       <AwardsSection>
         <Title>Awards and Recognition</Title>
