@@ -134,7 +134,10 @@ import educationProject2 from "../assets/images/education_2.png";
 import herosectionbg from "../assets/images/hero-bg-line.png";
 import techbgLeft from "../assets/images/tech-bg-left.png";
 import techbgRight from "../assets/images/tech-bg-right.png";
-
+import tp_home_1 from "../assets/images/tp-home-1.png";
+import tp_home_2 from "../assets/images/tp-home-2.png";
+import tp_home_3 from "../assets/images/tp-home-3.png";
+import tp_home_4 from "../assets/images/tp-home-4.png";
 const HomeWrapper = styled.div`
   font-family: "Poppins";
   color: #434343;
@@ -1251,10 +1254,10 @@ const Home = () => {
             Trusted by the world's leading organizations
           </TrustedTitle>
           <LogoGrid>
-            <Logo src={trusted_partner_1} alt="Trusted Partner 1" />
-            <Logo src={trusted_partner_2} alt="Trusted Partner 2" />
-            <Logo src={trusted_partner_3} alt="Trusted Partner 3" />
-            <Logo src={trusted_partner_4} alt="Trusted Partner 4" />
+            <Logo src={tp_home_1} alt="Trusted Partner 1" />
+            <Logo src={tp_home_2} alt="Trusted Partner 2" />
+            <Logo src={tp_home_3} alt="Trusted Partner 3" />
+            <Logo src={tp_home_4} alt="Trusted Partner 4" />
             <Logo src={trusted_partner_5} alt="Trusted Partner 5" />
             <Logo src={trusted_partner_6} alt="Trusted Partner 6" />
             <Logo src={trusted_partner_7} alt="Trusted Partner 7" />
