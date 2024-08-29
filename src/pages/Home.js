@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import Slider from "react-slick";
 import AOS from "aos";
 import "slick-carousel/slick/slick.css";
+import CountUp from 'react-countup';
+import { motion } from 'framer-motion';
 import "slick-carousel/slick/slick-theme.css";
 import "aos/dist/aos.css";
 import whatsapp from "../assets/images/whatsapp.png";
@@ -138,6 +139,7 @@ import tp_home_1 from "../assets/images/tp-home-1.png";
 import tp_home_2 from "../assets/images/tp-home-2.png";
 import tp_home_3 from "../assets/images/tp-home-3.png";
 import tp_home_4 from "../assets/images/tp-home-4.png";
+
 const HomeWrapper = styled.div`
   font-family: "Poppins";
   color: #434343;
@@ -281,7 +283,7 @@ const SocialBar = styled.div`
   flex-direction: column;
   gap: 15px;
   z-index: 100;
-  @media (max-width: 768px) {
+  @media (max-width: 1430px) {
     display: none;
   }
 `;
@@ -622,19 +624,19 @@ const ValueSection = styled(Section0)`
   text-align: center;
 `;
 
-const StatsGrid = styled.div`
+const StatsGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-bottom: 40px;
   @media (max-width: 768px) {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
     gap: 0px;
   }
 `;
 
-const StatItem = styled.div``;
+const StatItem = styled(motion.div)``;
 
 const StatNumber = styled.h3`
   font-size: 36px;
@@ -643,7 +645,6 @@ const StatNumber = styled.h3`
   margin-left: 60px;
   margin-right: 60px;
   border-bottom: 1px solid #5C5C5C;
-
 `;
 
 const StatLabel = styled.p`
@@ -1488,40 +1489,34 @@ const Home = () => {
             sizes. With exceptional customer<br/> support, we are your trusted
             partner in achieving technological success.
           </Subtitle>
-          <StatsGrid>
-            <StatItem>
-              <StatNumber>99%</StatNumber>
-              <StatLabel>Satisfied Clients</StatLabel>
-            </StatItem>
-            <StatItem>
-              <StatNumber>160+</StatNumber>
-              <StatLabel>Tech Enthusiasts</StatLabel>
-            </StatItem>
-            <StatItem>
-              <StatNumber>30+</StatNumber>
-              <StatLabel>Industries covered</StatLabel>
-            </StatItem>
-            <StatItem>
-              <StatNumber>550+</StatNumber>
-              <StatLabel>Projects Delivered</StatLabel>
-            </StatItem>
-            <StatItem>
-              <StatNumber>80%+</StatNumber>
-              <StatLabel>Impressive growth of Product</StatLabel>
-            </StatItem>
-            <StatItem>
-              <StatNumber>3.4M+</StatNumber>
-              <StatLabel>Lines of Code</StatLabel>
-            </StatItem>
-            <StatItem>
-              <StatNumber>20+</StatNumber>
-              <StatLabel>Industry Certified Team members</StatLabel>
-            </StatItem>
-            <StatItem>
-              <StatNumber>850+</StatNumber>
-              <StatLabel>On time project delivery.</StatLabel>
-            </StatItem>
-          </StatsGrid>
+         <StatsGrid
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, staggerChildren: 0.1 }}
+>
+  {[
+    { end: 99, suffix: '%', label: 'Satisfied Clients' },
+    { end: 160, suffix: '+', label: 'Tech Enthusiasts' },
+    { end: 30, suffix: '+', label: 'Industries covered' },
+    { end: 550, suffix: '+', label: 'Projects Delivered' },
+    { end: 80, suffix: '%+', label: 'Impressive growth of Product' },
+    { end: 3.4, suffix: 'M+', label: 'Lines of Code' },
+    { end: 20, suffix: '+', label: 'Industry Certified Team members' },
+    { end: 850, suffix: '+', label: 'On time project delivery.' },
+  ].map((stat, index) => (
+    <StatItem
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <StatNumber>
+        <CountUp end={stat.end} suffix={stat.suffix} duration={2.5} />
+      </StatNumber>
+      <StatLabel>{stat.label}</StatLabel>
+    </StatItem>
+  ))}
+</StatsGrid>
           <BottomRow>
             <BottomText>
               Our expertise in designing and building digital solutions authorises us to develop <br />bespoke solutions

@@ -20,7 +20,7 @@ import { useNavigate } from 'react-router-dom';
 const FooterTag = styled.footer`
   background-color: #2F69B1;
   color: white;
-  padding: 40px 20px;
+  padding: 30px 20px;
 `;
 
 const FooterContent = styled.div`
@@ -32,7 +32,7 @@ const TopRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -74,7 +74,7 @@ const LogoText = styled.p`
 const MiddleRow = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -85,7 +85,7 @@ const MiddleRow = styled.div`
 
 const QuickLinksColumn = styled.div`
   display: flex;
-  gap: 40px;
+  gap: 30px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -135,14 +135,14 @@ const ProductsSection = styled.div`
 `;
 
 const ProductImage = styled.img`
-  height: 40px;
+  height: 38px;
   width: auto;
 `;
 
 const LocationSection = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -175,7 +175,6 @@ const CopyrightRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
 
   @media (max-width: 768px) {
     flex-direction: column;

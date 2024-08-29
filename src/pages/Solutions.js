@@ -128,6 +128,9 @@ const MoneyMakingItem = styled.div`
   padding: 30px;
   border-radius: 8px;
   align-items: flex-start;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const MoneyMakingIcon = styled.img`
@@ -322,6 +325,9 @@ const Input = styled.input`
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+  @media (max-width: 768px) {
+  width: 90%;
+  }
 `;
 
 const Select = styled.select`
@@ -353,7 +359,7 @@ const LogoGrid = styled.div`
   align-items: center;
   margin-top: 40px;
   @media (max-width: 768px) {
-    flex-direction: column;
+    display: flow;
   }
 `;
 
@@ -565,6 +571,14 @@ const TechItem = styled.div`
   padding: 25px;
   margin-right: 80px;
   border-bottom: 2px solid #434343;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+     margin-right: 0px; 
+    border-bottom: 2px solid #434343;
+  }
 `;
 
 const TechLogo = styled.img`
@@ -582,6 +596,9 @@ const ExpertiseList = styled.ul`
   border-left: 3px solid #202020;
   width: 100%;
   margin-right: 40px;
+  @media (max-width: 768px) {
+  padding: 20px;
+}
 `;
 
 const ExperienceSection = styled(Section)`

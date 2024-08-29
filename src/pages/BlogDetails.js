@@ -8,7 +8,7 @@ import Frame from '../assets/images/Frame.png';
 const BlogContainer = styled.div`
   max-width: 1300px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 30px 20px;
 
   @media (max-width: 768px) {
     padding: 20px 10px;
@@ -18,7 +18,7 @@ const BlogContainer = styled.div`
 const HeroImage = styled.img`
   width: 100%;
   height: auto;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 `;
 
 const BlogTitle = styled.h1`
@@ -33,6 +33,8 @@ const BlogTitle = styled.h1`
     font-size: 32px;
     margin-left: 0;
     text-align: center;
+    line-height: 45px;
+
   }
 `;
 
@@ -69,7 +71,7 @@ const BlogImage = styled.img`
 `;
 
 const BlogText = styled.p`
-      font-size: 20px;
+      font-size: 18px;
     line-height: 30px;
     margin-bottom: 20px;
     color: #434343;

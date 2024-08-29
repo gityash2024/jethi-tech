@@ -21,6 +21,10 @@ const HeroSection = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 60px;
+  @media (max-width: 768px) {
+    
+    flex-direction: column;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -52,6 +56,10 @@ const HeroSubtitle = styled.p`
 const HeroImage = styled.img`
   flex: 1;
   max-width: 50%;
+  @media (max-width: 768px) {
+  max-width: 100%;
+    
+  }
 `;
 
 const BlogGrid = styled.div`

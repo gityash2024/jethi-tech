@@ -10,7 +10,7 @@ const MainContainer = styled.div`
 const Content = styled.main`
   padding: 120px 20px 0; // Adjust the top padding based on your header height
   @media (max-width: 768px) {
-    padding: 100px 15px 0; // Adjust for mobile
+    padding: 15px 15px 0; // Adjust for mobile
   }
 `;
 const MainLayout = ({ children }) => (
