@@ -122,7 +122,7 @@ const RelatedPostImage2 = styled.img`
 const RelatedPostTitle = styled.h3`
   font-size: 18px;
   margin-top: 10px;
-  color: #333;
+  color: #434343;
 `;
 
 const ReadTime = styled.span`

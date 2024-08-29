@@ -103,7 +103,7 @@ const AwardsSection = styled(Section)`
 
 const AwardsTitle = styled.h2`
   font-size: 36px;
-  color: #333;
+  color: #434343;
   margin-bottom: 40px;
 
   @media (max-width: 768px) {
@@ -147,7 +147,7 @@ const TrustedSection = styled(Section)`
 
 const TrustedTitle = styled.h2`
   font-size: 48px;
-  color: #333;
+  color: #434343;
   margin-bottom: 40px;
    font-weight: 700;
     line-height: 62.4px;
@@ -182,7 +182,7 @@ const TestimonialSection = styled(Section)`
 
 const TestimonialTitle = styled.h2`
   font-size: 36px;
-  color: #333;
+  color: #434343;
   margin-bottom: 40px;
 
   @media (max-width: 768px) {
@@ -267,7 +267,7 @@ const FormContainer = styled.div`
 
 const FormTitle = styled.h2`
   font-size: 36px;
-  color: #333;
+  color: #434343;
   text-align: center;
   margin-bottom: 40px;
 
@@ -384,7 +384,7 @@ const Subtitle = styled.p`
 const AwardsDot = styled.span`
   width: 10px;
   height: 10px;
-  background-color: ${(props) => (props.active ? "#333" : "#ccc")};
+  background-color: ${(props) => (props.active ? "#434343" : "#ccc")};
   border-radius: 50%;
 `;
 

@@ -30,7 +30,7 @@ const HeroContent = styled.div`
 const HeroTitle = styled.h1`
   font-size: 48px;
   font-weight: 700;
-  color: #333;
+  color: #434343;
  line-height: 62.4px;
   margin-bottom: 20px;
 
@@ -90,7 +90,7 @@ const BlogCardDate = styled.p`
 
 const BlogCardTitle = styled.h3`
   font-size: 18px;
-  color: #333;
+  color: #434343;
   margin-bottom: 10px;
 `;
 
@@ -144,7 +144,7 @@ const DropdownSelect = styled.select`
   border: none;
   border-radius: 4px;
   font-size: 14px;
-  color: #333;
+  color: #434343;
   background-color: white;
   cursor: pointer;
 `;

@@ -37,14 +37,20 @@ import Customers from '../assets/images/Customers.png';
 import blogs from '../assets/images/blogs.png';
 import negative from '../assets/images/negative.png';
 import positive from '../assets/images/positive.png';
+import challange1 from '../assets/images/challange1.png';
+import challange2 from '../assets/images/challange2.png';
+import challange3 from '../assets/images/challange3.png';
+import challange4 from '../assets/images/challange4.png';
+import challange5 from '../assets/images/challange5.png';
+
 
 const PageWrapper = styled.div`
   font-family: 'Poppins';
-  color: #333;
+  color: #434343;
 `;
 
 const Section = styled.section`
-  padding: 20px 0;
+  padding: 25px 0;
 `;
 
 const Container = styled.div`
@@ -114,7 +120,11 @@ const MoneyMakingGrid = styled.div`
 
 const MoneyMakingItem = styled.div`
   display: flex;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
+   box-shadow: 
+    7px 0px 9px 0px rgba(190, 190, 190, 0.25),
+    0px 4px 5px 0px rgba(190, 190, 190, 0.25);
+
   padding: 30px;
   border-radius: 8px;
   align-items: flex-start;
@@ -142,7 +152,7 @@ const TestimonialSection = styled(Section)`
 `;
 
 const TestimonialCard = styled.div`
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   border-radius: 20px;
   padding: 40px;
   display: flex;
@@ -220,7 +230,7 @@ const FAQImage = styled.img`
 `;
 
 const Title = styled.h1`
-  font-size: 35px;
+  font-size: 38px;
   margin-bottom: 20px;
   font-family:'poppins';
   font-weight: 700;
@@ -230,10 +240,35 @@ const Title = styled.h1`
     color: #0066CC;
   }
 `;
+const Title22 = styled.h1`
+  font-size: 38px;
+  margin-bottom: 20px;
+  font-family:'poppins';
+  font-weight: 700;
+    line-height: 55.5px;
+  span {
+    color: #0066CC;
+  }
+`;
+const Title223 = styled.h1`
+  font-size: 38px;
+  margin-bottom: 20px;
+  font-family:'poppins';
+  font-weight: 700;
+  text-align:center;
+    line-height: 55.5px;
+  span {
+    color: #0066CC;
+  }
+`;
 
 const Subtitle = styled.p`
   font-size: 18px;
-  margin-bottom: 30px;
+`;
+const Subtitle22 = styled.p`
+  font-size: 18px;
+  align-items: center;
+  text-align: center;
 `;
 
 const HeroSection = styled(Section)`
@@ -248,9 +283,22 @@ const HeroSection = styled(Section)`
 const HeroContent = styled.div`
   flex: 1;
   padding: 40px;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  @media (max-width: 768px) {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+`;
+const HeroContentCard = styled.div`
+  flex: 1;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 10px;
+   box-shadow: 
+    7px 0px 9px 0px rgba(190, 190, 190, 0.25),
+    0px 4px 5px 0px rgba(190, 190, 190, 0.25);
+
   @media (max-width: 768px) {
     padding: 20px;
     margin-bottom: 20px;
@@ -259,7 +307,7 @@ const HeroContent = styled.div`
 
 const HeroImage = styled.img`
   flex: 1;
-  max-width: 42%;
+  max-width: 35%;
   margin-left: 70px;
   @media (max-width: 768px) {
     max-width: 100%;
@@ -310,14 +358,14 @@ const LogoGrid = styled.div`
 `;
 
 const Logo = styled.img`
-  height: 80px;
+  height: 110px;
   @media (max-width: 768px) {
     margin-bottom: 20px;
   }
 `;
 
 const WhyChooseSection = styled(Section)`
-  // background-color: #f8f8f8;
+  // background-color: #ffffff;
 `;
 
 const WhyChooseContent = styled.div`
@@ -339,7 +387,7 @@ const WhyChooseText = styled.div`
 `;
 
 const WhyChooseImage = styled.img`
-  max-width: 40%;
+  max-width: 15%;
   @media (max-width: 768px) {
     max-width: 100%;
   }
@@ -357,9 +405,10 @@ const TabContainer = styled.div`
 `;
 
 const Tab = styled.button`
-  background-color: ${(props) => (props.active ? '#0066CC' : 'white')};
-  color: ${(props) => (props.active ? 'white' : '#333')};
+  background: ${(props) => (props.active ? 'linear-gradient(to right, #0072FF 0%, #2F69B1 100%)' : 'transparent')};
+  color: ${(props) => (props.active ? 'white' : '#434343')};
   border: 1px solid #0066CC;
+  border-radius:5px;
   font-family: 'Poppins';
   font-weight: 600;
   padding: 16px 20px;
@@ -396,7 +445,7 @@ const ModuleImage = styled.img`
 `;
 
 const StatisticsSection = styled(Section)`
-  // background-color: #f8f8f8;
+  // background-color: #ffffff;
   text-align: center;
 `;
 
@@ -404,6 +453,7 @@ const StatGrid = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
+  margin-bottom: 40px;
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 20px;
@@ -416,6 +466,8 @@ const StatValue = styled.h3`
   font-size: 36px;
   color: #434343;
   margin-bottom: 10px;
+  border-bottom: 2px solid #434343;
+  margin: 20px;
 `;
 
 const StatLabel = styled.p`
@@ -450,7 +502,7 @@ const MarketShareImage = styled.img`
 `;
 
 const ExistingPlayersSection = styled(Section)`
-  background-color: #f8f8f8;
+  background-color: #ffffff;
 `;
 
 const PlayerGrid = styled.div`
@@ -500,7 +552,7 @@ const TechColumn = styled.div`
 
 const TechItemsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 20px;
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -511,7 +563,8 @@ const TechItem = styled.div`
   display: flex;
   align-items: center;
   padding: 25px;
-  border-bottom: 1px solid #e0e0e0;
+  margin-right: 80px;
+  border-bottom: 2px solid #434343;
 `;
 
 const TechLogo = styled.img`
@@ -531,15 +584,43 @@ const ExpertiseList = styled.ul`
   margin-right: 40px;
 `;
 
+const ExperienceSection = styled(Section)`
+  text-align: center;
+`;
+
+const ProjectGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const ProjectItem = styled.div`
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  overflow: hidden;
+`;
+
+const ProjectImage = styled.img`
+  width: 100%;
+`;
+
+const ProjectTitle = styled.h3`
+  font-size: 20px;
+  padding: 20px;
+  margin: 0;
+`;
 const ExpertiseItem = styled.li`
   margin-bottom: 10px;
   cursor: pointer;
-  color: ${(props) => (props.active ? '#ffffff' : '#333')};
+  color: ${(props) => (props.active ? '#ffffff' : '#434343')};
   font-weight: ${(props) => (props.active ? '600' : 'normal')};
   background: ${(props) =>
     props.active
-      ? 'linear-gradient(to right, #366DFA 0%, #53A4FF 100%)'
-      : 'transparent'};
+      ? 'linear-gradient(to right, #0072FF 0%, #2F69B1 100%)' : 'transparent'};
   padding: 10px 15px;
   width: 70%;
   text-align: left;
@@ -603,13 +684,16 @@ const Solutions = () => {
       <Container>
         <HeroSection data-aos="fade-up">
           <HeroContent>
-            <Title>Are you looking to build a food delivery app like <span>Zomato?</span></Title>
+            <Title22>Are you looking to build a food delivery app like <span>Zomato?</span></Title22>
+            <HeroContentCard>
+
             <Input type="text" placeholder="Your contact number" />
             <Select>
               <option>I want to develop an app like</option>
               <option>Zomato</option>
             </Select>
             <Button>Get Quote</Button>
+            </HeroContentCard>
           </HeroContent>
           <HeroImage src={zomato_app} alt="Zomato-like App" />
         </HeroSection>
@@ -617,7 +701,7 @@ const Solutions = () => {
 
       <PopularAppsSection data-aos="fade-up">
         <Container>
-          <Title>Popular Food Delivery Apps Built By Solminica. <span><br />Your Idea Can Be Next!</span></Title>
+          <Title22>Popular Food Delivery Apps Built By Solminica. <span><br />Your Idea Can Be Next!</span></Title22>
           <LogoGrid>
             <Logo src={trusted_partner_4} alt="Trusted Partner 1" />
             <Logo src={trusted_partner_2} alt="Trusted Partner 2" />
@@ -633,13 +717,21 @@ const Solutions = () => {
         <Container>
           <WhyChooseContent>
             <WhyChooseText>
-              <Title>Why Should You Choose Solminica For An On-demand Food Delivery App Like Zomato?</Title>
-              <Subtitle>Hunger is never going to end and similar is the case with the business of food...</Subtitle>
-              <Subtitle>The team of Solminica has the expertise and relevant experience in delivering such food apps...</Subtitle>
+              <Title22>Why Should You Choose<span> Solminica</span>  For An On-demand <span>Food Delivery App </span>Like Zomato?</Title22>
+              <Subtitle>Hunger is never going to end and similar is the case with the business of food. This is the reason, why food delivery apps like Zomato, UberEats, etc. have gained much popularity recently. You can be the next in the list of top entrepreneurs in the Food delivery sector. All you need is a holistic app which can meet every aspect of your business.
+              The team of Solminica has the expertise and relevant experience in delivering such food apps for startups and companies. By choosing us you can be sure of the final quality of your app that can find its place in the heart of your customers. With the help of latest tools and technologies, we can assure you to deliver the best possible solutions for your business.</Subtitle>
               <Button>Consult Now</Button>
             </WhyChooseText>
             <WhyChooseImage src={delivery_app} alt="Food Delivery App" />
           </WhyChooseContent>
+        </Container>
+      </WhyChooseSection>
+      <WhyChooseSection data-aos="fade-up">
+        <Container>
+              <Title223>Why should you<span> invest in a food delivery app</span>  like Zomato?</Title223>
+              <Subtitle>With the advent of the new digital era, gone are the days where visiting restaurants was the path abided by people to satisfy their hunger. The eatery business is expanding like never before, restaurants are coming up every day and customers are finding more convenient ways to satisfy their hunger. This has elevated the need for restaurant finder apps. It is high time that you leverage this need for the benefit of your business.
+              The restaurant finder apps are having a three-fold benefit- to the restaurant owner, delivery staff, and customers. If managed efficiently, these three together will server to multiply your business and bring it to the list of top food apps like Zomato and UberEats. An on-demand food delivery app can help you to expand in a wide range and fulfill diverse desires to attract your customers. Before you begin building one, some key points need to be focused including the time and cost of the app, for gaining valuable insights into the process of creation, management, and value of such an app.</Subtitle>
+            
         </Container>
       </WhyChooseSection>
 
@@ -655,13 +747,13 @@ const Solutions = () => {
           <ModuleContent reverse={activeTab === 'Business owner'}>
             <ModuleText reverse={activeTab === 'Business owner'}>
               <Subtitle>
-                {activeTab === 'User side' && "Your app should be user-oriented with smooth and rich experience..."}
+                {activeTab === 'User side' && "Your app should be user-oriented with smooth and rich experience. With the team of WebClues Infotech, you can embed rich features and functionalities in your app. From searching the nearby restaurants to real-time tracking of the food and delivery driver, the app will take every minute detail into focus. Users can easily place their order and customize and save their searches. Customers are provided with multiple payment gateway options as per their convenience. Reviews and feedback can be given quickly and easily. Also, with few clicks, your customers get an idea of the tables available to book."}
 
-                {activeTab === 'Business owner' && "The app allows the business's owners to register and create profile..."}
+                {activeTab === 'Business owner' && "The app allows the business’s owners to register and create profile including information like restaurant address, list of menu with price, offers, discounts, and contact details. The owner has all the status (dispatched, schedule, pickups etc.) of the orders to view with the simple touch on the screen and manage orders systematically. He can create and update the menu along with adding all details like items, price, special dishes, etc. The app gives the owner a chance to attract more customers by offering special discounts and offers. Through push notifications the management side can be updated regarding the status of orders, the payment received, and feedback."}
 
-                {activeTab === 'Delivery Driver' && "The delivery driver module provides an intuitive interface for drivers..."}
+                {activeTab === 'Delivery Driver' && "The app allows the business’s owners to register and create profile including information like restaurant address, list of menu with price, offers, discounts, and contact details. The owner has all the status (dispatched, schedule, pickups etc.) of the orders to view with the simple touch on the screen and manage orders systematically. He can create and update the menu along with adding all details like items, price, special dishes, etc. The app gives the owner a chance to attract more customers by offering special discounts and offers. Through push notifications the management side can be updated regarding the status of orders, the payment received, and feedback."}
 
-                {activeTab === 'Effective Administration' && "The administration module offers powerful tools for managing the entire food delivery ecosystem..."}
+                {activeTab === 'Effective Administration' && "The app allows the business’s owners to register and create profile including information like restaurant address, list of menu with price, offers, discounts, and contact details. The owner has all the status (dispatched, schedule, pickups etc.) of the orders to view with the simple touch on the screen and manage orders systematically. He can create and update the menu along with adding all details like items, price, special dishes, etc. The app gives the owner a chance to attract more customers by offering special discounts and offers. Through push notifications the management side can be updated regarding the status of orders, the payment received, and feedback."}
               </Subtitle>
             </ModuleText>
             <ModuleImage src={modul} alt={`${activeTab} module`} />
@@ -671,8 +763,8 @@ const Solutions = () => {
 
       <StatisticsSection data-aos="fade-up">
         <Container>
-          <Title>Some Statistics To Prove Demand For An App Like Zomato</Title>
-          <Subtitle>Solminica delivers unparalleled value for money by offering top-quality, innovative technology solutions...</Subtitle>
+          <Title>Some<span> Statistics</span>  To Prove <span>Demand</span> For An App Like Zomato</Title>
+          <Subtitle>Solminica delivers unparalleled value for money by offering top-quality, innovative technology<br/> solutions at competitive prices. </Subtitle>
           <StatGrid>
             <StatItem>
               <StatValue>$266.05 bn</StatValue>
@@ -687,9 +779,9 @@ const Solutions = () => {
               <StatLabel>Expanding Revenue of the Food Delivery Market Revenue</StatLabel>
             </StatItem>
           </StatGrid>
-          <hr style={{margin: '40px 0', border: 'none', borderTop: '1px solid #ddd'}} />
-          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-            Lorem ipsum dolor sit amet...
+          {/* <hr style={{margin: '40px 0', border: 'none', borderTop: '1px solid #ddd'}} /> */}
+          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center',fontFamily: 'Poppins', fontSize: '18px', fontWeight: '600', lineHeight: '27px', color: '#000'}}>
+          Our expertise in  designing and building digital  solutions authorises us to develop bespoke solutions
             <Button>Consult Now!</Button>
           </div>
         </Container>
@@ -701,7 +793,7 @@ const Solutions = () => {
           <MarketShareContent>
             <MarketShareImage src={market} alt="Market Share" />
             <MarketShareText>
-              <Subtitle>Your app should be user-oriented with smooth and rich experience...</Subtitle>
+              <Subtitle>Your app should be user-oriented with smooth and rich experience. With the team of WebClues Infotech, you can embed rich features and functionalities in your app. From searching the nearby restaurants to real-time tracking of the food and delivery driver, the app will take every minute detail into focus. Users can easily place their order and customize and save their searches. Customers are provided with multiple payment gateway options as per their convenience. Reviews and feedback can be given quickly and easily. Also, with few clicks, your customers get an idea of the tables available to book.</Subtitle>
             </MarketShareText>
           </MarketShareContent>
         </Container>
@@ -709,8 +801,9 @@ const Solutions = () => {
 
       <ExistingPlayersSection data-aos="fade-up">
         <Container>
-          <Title>Where Do The Existing Players Stand?</Title>
-          <Subtitle>Solminica delivers unparalleled value for money by offering top-quality...</Subtitle>
+          <Title>Where Do The<span> Existing Players </span>  Stand?</Title>
+          
+          <Subtitle22>Solminica delivers unparalleled value for money by offering top-quality, innovative technology <br/>solutions at competitive prices. </Subtitle22>
           <PlayerGrid>
             <PlayerItem>
               <PlayerLogo src={swiggy} alt="Swiggy" />
@@ -727,7 +820,63 @@ const Solutions = () => {
           </PlayerGrid>
         </Container>
       </ExistingPlayersSection>
+      <MoneyMakingSection data-aos="fade-up">
+        <Container>
+          <Title22><span>Challenges</span> In Entering The <span> Mobilized</span>  Food-delivery Market</Title22>
+          <Subtitle22>In order to beat or even come at par with players like Zomato, UberEats, Swiggy, etc. who have already <br/> make an indelible impression for themselves in the market, there are many challenges that have to be <br/> overcome. With a shrewd strategy and right team, this is not so difficult. Let’s have a look at some of <br/> these challenges that should not loose our focus.</Subtitle22>
+          <MoneyMakingGrid>
+            <MoneyMakingItem>
+              <MoneyMakingIcon src={challange1} alt="Delivery charges" />
+              <MoneyMakingContent>
+                <MoneyMakingTitle>Wavering Customer Loyalty</MoneyMakingTitle>
+                <MoneyMakingDescription>Customers are an asset to business but in the mobilized food-delivery market, customer loyalty is continuously deteriorating. You cannot be sure whether a customer will stick to a restaurant’s service if he finds it good in the first place. Later on, if another comes with better offers or unique ways to lure the customer he may eventually shift. For customers the more they get the merrier. Thus, fidelity in a customer is a common and challenging issue.</MoneyMakingDescription>
+              </MoneyMakingContent>
+            </MoneyMakingItem>
+            <MoneyMakingItem>
+              <MoneyMakingIcon src={challange2} alt="Commission from food joints" />
+              <MoneyMakingContent>
+                <MoneyMakingTitle>Inconsistent Food Quality</MoneyMakingTitle>
+                <MoneyMakingDescription>The neck-to-neck competition in the food delivery market has made it really difficult to follow a specific pricing model continuously. The customer will always prefer an option that can serve him the best in the cheapest way. Now small business also can’t keep reducing their prices just to please the customer as this can lead them to run out of their business. Coping up with the fluctuating pricing models is another challenge to be faced.</MoneyMakingDescription>
+              </MoneyMakingContent>
+            </MoneyMakingItem>
+            <MoneyMakingItem>
+              <MoneyMakingIcon src={challange3} alt="Peak hours" />
+              <MoneyMakingContent>
+                <MoneyMakingTitle>Peak hours</MoneyMakingTitle>
+                <MoneyMakingDescription>Will you prefer a hot and tasty meal right from the kitchen or rather a cold one delivered in a box? Obviously the first one, right! This is what happens with the delivered food. No matter how good may be the packing, your Pizza won’t taste the same. The quality of delivery is similar for the customers as the quality of food. Thus there are chances that this may reduce your customer-base.</MoneyMakingDescription>
+              </MoneyMakingContent>
+            </MoneyMakingItem>
+            <MoneyMakingItem>
+              <MoneyMakingIcon src={challange4} alt="Advertising" />
+              <MoneyMakingContent>
+                <MoneyMakingTitle>Inefficiency To Cope With Volumes</MoneyMakingTitle>
+                <MoneyMakingDescription>Too much of orders and demand is always not a boon. It may happen that a particular restaurant does not have enough operations and logistics to meet the growing demand. In that case, in the absence of an alternative operation line, there are chances that the customer might switch to someone else. Amidst such a fierce competition, sometimes a chance gone once may mean a chance gone forever.</MoneyMakingDescription>
+              </MoneyMakingContent>
+            </MoneyMakingItem>
+            <MoneyMakingItem>
+              <MoneyMakingIcon src={challange5} alt="Advertising" />
+              <MoneyMakingContent>
+                <MoneyMakingTitle>Arrival Of Bigwigs</MoneyMakingTitle>
+                <MoneyMakingDescription>Big players like Uber and Amazon have sensed the bright prospects in the mobilized food-delivery markets. Their entry which will also be accompanied by other reputed players like Dominos and Pizza Hut is a slight threat to the new and growing players. The reason is that these big names can easily meet the financial and resource requirements which can be troublesome for the smaller and independent ones.</MoneyMakingDescription>
+              </MoneyMakingContent>
+            </MoneyMakingItem>
+          </MoneyMakingGrid>
+        </Container>
+      </MoneyMakingSection>
 
+      <ExperienceSection data-aos="fade-up">
+        <Container>
+          <Title>Food Delivery Apps Built By <span>Solminica</span></Title>
+          <ProjectGrid>
+            {[1, 2, 3].map((project) => (
+              <ProjectItem key={project}>
+                <ProjectImage src={work_on} alt={`Project ${project}`} />
+                <ProjectTitle>Rainbow Children's Hospital</ProjectTitle>
+              </ProjectItem>
+            ))}
+          </ProjectGrid>
+        </Container>
+      </ExperienceSection>
       <TechStackSection data-aos="fade-up">
         <Container>
           <Title>Technology Stack Behind Our Food Delivery App Development</Title>
@@ -783,11 +932,22 @@ const Solutions = () => {
 
       <CostSection data-aos="fade-up">
         <Container>
-          <Title>How much does it <span>cost to build</span> an app like <span>Zomato?</span></Title>
+          <Title22>How much does it <span>cost to build</span> an app like <span>Zomato?</span></Title22>
           <CostContent>
             <CostText>
               <Subtitle>
-                The cost of developing an app depends majorly upon four components...
+              The cost of developing an app depends majorly upon four components: App Platform, App Size, App Design, and App Development <br/> <br/>
+App Platform: App development cost for iOS varies from Android. <br/> <br/>
+App Size: Size of the app is decided by the number of features in it. The complexity of these features decides the app cost. <br/> <br/>
+App Design: UI/UX of the app and its design play a crucial role. Design cost depends upon the animation and graphics involved. <br/> <br/>
+App Development: It includes the hiring cost of the development team and license purchase. <br/> <br/>
+Also, the app cost can vary on choosing a mobile app development company or mobile app developers situated in different locations. <br/> <br/>
+For example: <br/> <br/>
+U.S. based developers: $50 to $250 per hour. <br/> <br/>
+Eastern Europe based developers: $30 to $150 per hour. <br/> <br/>
+India based developers: $15 to $50 per hour. <br/> <br/>
+Right from hiring to providing support post app launched, everything is dependent on the cost. You have to manage everything in your budget. <br/> <br/>
+Solminica helps you stick to your spending plan and provide you with an appropriate solution. <br/>
               </Subtitle>
             </CostText>
             <CostImage src={cost_build} alt="Cost to build" />
@@ -797,7 +957,7 @@ const Solutions = () => {
 
       <FeaturesSection data-aos="fade-up">
         <Container>
-          <Title><span>Features</span> to Make an App like <span>Zomato?</span></Title>
+          <Title22><span>Features</span> to Make an App like <span>Zomato?</span></Title22>
           <FeatureTable>
             <thead>
               <tr>
@@ -881,7 +1041,7 @@ const Solutions = () => {
 
       <MoneyMakingSection data-aos="fade-up">
         <Container>
-          <Title>How to <span>Make Money</span> in the Food-Delivery Business?</Title>
+          <Title22>How to <span>Make Money</span> in the Food-Delivery Business?</Title22>
           <Subtitle>Solminica creates enterprise solutions that seamlessly blend traditional methods...</Subtitle>
           <MoneyMakingGrid>
             <MoneyMakingItem>

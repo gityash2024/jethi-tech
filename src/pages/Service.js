@@ -25,7 +25,7 @@ import positive from '../assets/images/positive.png';
 
 const PageWrapper = styled.div`
   font-family: 'Poppins';
-  color: #333;
+  color: #434343;
 `;
 
 const Section = styled.section`
@@ -83,7 +83,7 @@ const TabContainer = styled.div`
 
 const Tab = styled.button`
   background-color: ${props => props.active ? '#0066CC' : 'white'};
-  color: ${props => props.active ? 'white' : '#333'};
+  color: ${props => props.active ? 'white' : '#434343'};
   border: 1px solid #0066CC;
   padding: 20px;
   font-family: 'Poppins';

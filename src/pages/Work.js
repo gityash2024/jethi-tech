@@ -361,7 +361,7 @@ const TrustedDots = styled.div`
 const TrustedDot = styled.span`
   width: 10px;
   height: 10px;
-  background-color: ${props => props.active ? '#333' : '#ccc'};
+  background-color: ${props => props.active ? '#434343' : '#ccc'};
   border-radius: 50%;
 `;
 const AwardsDots = styled.div`
@@ -373,7 +373,7 @@ const AwardsDots = styled.div`
 const AwardsDot = styled.span`
   width: 10px;
   height: 10px;
-  background-color: ${(props) => (props.active ? "#333" : "#ccc")};
+  background-color: ${(props) => (props.active ? "#434343" : "#ccc")};
   border-radius: 50%;
 `;
 

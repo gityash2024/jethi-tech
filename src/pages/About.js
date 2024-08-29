@@ -54,7 +54,7 @@ const HeroContent = styled.div`
 
 const HeroTitle = styled.h1`
   font-size: 48px;
-  color: #333;
+  color: #434343;
   margin-bottom: 20px;
   font-family: 'poppins';
   font-weight: 700;
@@ -94,7 +94,7 @@ const BeliefSection = styled(Section)`
 
 const BeliefTitle = styled.h2`
   font-size: 48px;
-  color: #333;
+  color: #434343;
   margin-bottom: 20px;
   font-family: 'Poppins';
   font-weight: 700;
@@ -132,7 +132,7 @@ const CardImage = styled.img`
 
 const CardTitle = styled.h3`
   font-size: 24px;
-  color: #333;
+  color: #434343;
   margin-bottom: 20px;
 `;
 
@@ -317,7 +317,7 @@ const TestimonialQuote = styled.p`
 const TestimonialAuthor = styled.p`
   font-size: 18px;
   font-weight: bold;
-  color: #333;
+  color: #434343;
 `;
 
 const TestimonialRole = styled.p`
@@ -371,7 +371,7 @@ const PlatformLogo = styled.img`
 const PlatformRating = styled.p`
   font-size: 16px;
   font-weight: bold;
-  color: #333;
+  color: #434343;
 `;
 
 const SolutionGrid = styled.div`
@@ -472,7 +472,7 @@ const AwardsDots = styled.div`
 const AwardsDot = styled.span`
   width: 10px;
   height: 10px;
-  background-color: ${(props) => (props.active ? "#333" : "#ccc")};
+  background-color: ${(props) => (props.active ? "#434343" : "#ccc")};
   border-radius: 50%;
 `;
 

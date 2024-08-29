@@ -137,7 +137,7 @@ import techbgRight from "../assets/images/tech-bg-right.png";
 
 const HomeWrapper = styled.div`
   font-family: "Poppins";
-  color: #333;
+  color: #434343;
 `;
 
 const Container = styled.div`
@@ -476,7 +476,7 @@ const ExpertiseItem = styled.li`
   cursor: pointer;
   font-family: "Poppins";
    font-weight: 500;
-  color: ${(props) => (props.active ? "#ffffff" : "#333")};
+  color: ${(props) => (props.active ? "#ffffff" : "#434343")};
   font-weight: ${(props) => (props.active ? "600" : "normal")};
   background: ${(props) =>
     props.active
@@ -676,7 +676,7 @@ const IndustryList = styled.ul`
 const IndustryItem = styled.li`
   margin-bottom: 10px;
   cursor: pointer;
-  color: ${(props) => (props.active ? "#ffffff" : "#333")};
+  color: ${(props) => (props.active ? "#ffffff" : "#434343")};
   font-weight: ${(props) => (props.active ? "600" : "normal")};
   background: ${(props) =>
     props.active
@@ -741,13 +741,13 @@ const OverlayImage = styled.img`
 const WorkCardTitle = styled.h4`
   font-size: 20px;
   margin-bottom: 10px;
-  color: #333;
+  color: #434343;
 `;
 
 const WorkCardDescription = styled.p`
   font-size: 14px;
   margin-bottom: 15px;
-  color: #333;
+  color: #434343;
 `;
 
 const TechStack = styled.div`
@@ -869,7 +869,7 @@ const AwardsDots = styled.div`
 const AwardsDot = styled.span`
   width: 10px;
   height: 10px;
-  background-color: ${(props) => (props.active ? "#333" : "#ccc")};
+  background-color: ${(props) => (props.active ? "#434343" : "#ccc")};
   border-radius: 50%;
 `;
 
@@ -934,7 +934,7 @@ const TrustedDots = styled.div`
 const TrustedDot = styled.span`
   width: 10px;
   height: 10px;
-  background-color: ${(props) => (props.active ? "#333" : "#ccc")};
+  background-color: ${(props) => (props.active ? "#434343" : "#ccc")};
   border-radius: 50%;
 `;
 

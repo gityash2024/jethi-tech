@@ -25,7 +25,7 @@ import positive from '../assets/images/positive.png';
 
 const PageWrapper = styled.div`
   font-family: 'Poppins';
-  color: #333;
+  color: #434343;
 `;
 
 const Section = styled.section`
