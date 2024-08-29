@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
-// index.js or App.js
 import '@fontsource/sofia'; // Defaults to weight 400
 
 import About from './pages/About';
@@ -17,10 +16,13 @@ import Hire from './pages/Hire';
 import Solutions from './pages/Solutions';
 import Work from './pages/Work';
 import BlogDetails from './pages/BlogDetails';
+import ScrollToTop from './components/scrollToTop';
+import ScrollToTopOnMount from './components/ScrollToTopOnMount';
 
 function App() {
   return (
     <Router>
+      <ScrollToTopOnMount />
       <MainLayout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -37,6 +39,7 @@ function App() {
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/work" element={<Work />} />
         </Routes>
+        <ScrollToTop />
       </MainLayout>
     </Router>
   );
