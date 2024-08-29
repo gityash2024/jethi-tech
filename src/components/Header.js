@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import menuIcon from '../assets/images/menu-btn-3-lines.png';
 import downArrow from '../assets/images/down-arrow.png';
 
@@ -124,6 +124,10 @@ const NavLink = styled(Link)`
   font-size: 16px;
   transition: color 0.3s;
 
+  &.active {
+    color: #015BCC;
+  }
+
   &:hover {
     color: #015BCC;
   }
@@ -177,7 +181,8 @@ const CloseButton = styled.button`
 `;
 
 const Header = () => {
-  const navigate =useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -217,18 +222,18 @@ const Header = () => {
       </TopBar>
       <MainNav>
         <NavContent>
-          <Logo onClick={()=>{navigate("/")}}>Solminica</Logo>
+          <Logo onClick={() => { navigate("/") }}>Solminica</Logo>
           <MenuButton onClick={toggleMenu}>
             MENU <MenuIcon src={menuIcon} alt="Menu" />
           </MenuButton>
           <NavMenu isOpen={isMenuOpen}>
             {isMenuOpen && <CloseButton onClick={closeMenu}>&times;</CloseButton>}
-            <NavItem><NavLink to="/" onClick={closeMenu}>Home</NavLink></NavItem>
-            <NavItem><NavLink to="/services" onClick={closeMenu}>Services</NavLink></NavItem>
-            <NavItem><NavLink to="/technology" onClick={closeMenu}>Technology</NavLink></NavItem>
-            <NavItem><NavLink to="/hire" onClick={closeMenu}>Hire</NavLink></NavItem>
-            <NavItem><NavLink to="/solutions" onClick={closeMenu}>Solutions</NavLink></NavItem>
-            <NavItem><NavLink to="/work" onClick={closeMenu}>Work</NavLink></NavItem>
+            <NavItem><NavLink to="/" className={location.pathname === '/' ? 'active' : ''} onClick={closeMenu}>Home</NavLink></NavItem>
+            <NavItem><NavLink to="/services" className={location.pathname === '/services' ? 'active' : ''} onClick={closeMenu}>Services</NavLink></NavItem>
+            <NavItem><NavLink to="/technology" className={location.pathname === '/technology' ? 'active' : ''} onClick={closeMenu}>Technology</NavLink></NavItem>
+            <NavItem><NavLink to="/hire" className={location.pathname === '/hire' ? 'active' : ''} onClick={closeMenu}>Hire</NavLink></NavItem>
+            <NavItem><NavLink to="/solutions" className={location.pathname === '/solutions' ? 'active' : ''} onClick={closeMenu}>Solutions</NavLink></NavItem>
+            <NavItem><NavLink to="/work" className={location.pathname === '/work' ? 'active' : ''} onClick={closeMenu}>Work</NavLink></NavItem>
           </NavMenu>
         </NavContent>
       </MainNav>

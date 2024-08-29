@@ -31,6 +31,9 @@ const PageWrapper = styled.div`
 const Section = styled.section`
   padding: 40px 0;
 `;
+const Section0 = styled.section`
+  padding: 10px 0;
+`;
 
 const Container = styled.div`
   max-width: 1200px;
@@ -77,11 +80,34 @@ const Title = styled.h1`
     font-size: 28px;
   }
 `;
+const Titlecenter = styled.h1`
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: 'Poppins';
+  font-weight: 700;
+  line-height: 62.4px;
+  text-align: center;
+  color: #434343;
+  span {
+    color: #0066cc;
+  }
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+`;
 
 const Subtitle = styled.p`
   font-size: 20px;
   margin-bottom: 30px;
   font-weight: 400;
+  line-height:30px;
+  font-family: 'Poppins';
+`;
+const Subtitlecenter = styled.p`
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-weight: 400;
+  text-align: center;
   line-height:30px;
   font-family: 'Poppins';
 `;
@@ -96,7 +122,7 @@ const Button = styled.button`
   border-radius: 4px;
 `;
 
-const ServicesSection = styled(Section)`
+const ServicesSection = styled(Section0)`
   text-align: center;
 `;
 
@@ -111,7 +137,12 @@ const ServiceGrid = styled.div`
 `;
 
 const ServiceItem = styled.div`
-  background-color: #f8f8f8;
+  background-color: #fffff;
+    box-shadow: 
+    7px 0px 9px 0px rgba(190, 190, 190, 0.25),
+    0px 4px 5px 0px rgba(190, 190, 190, 0.25);
+
+
   padding: 30px;
   border-radius: 8px;
   text-align: left;
@@ -166,7 +197,7 @@ const ReasonTitle = styled.h4`
   color: #434343;
 `;
 
-const BenefitsSection = styled(Section)``;
+const BenefitsSection = styled(Section0)``;
 
 const BenefitsGrid = styled.div`
   display: grid;
@@ -176,7 +207,12 @@ const BenefitsGrid = styled.div`
 `;
 
 const BenefitItem = styled.div`
-  background-color: #f8f8f8;
+  background-color: #ffffff;
+    box-shadow: 
+    7px 0px 9px 0px rgba(190, 190, 190, 0.25),
+    0px 4px 5px 0px rgba(190, 190, 190, 0.25);
+
+
   padding: 30px;
   border-radius: 8px;
 `;
@@ -270,7 +306,7 @@ const TestimonialAuthor = styled.p`
   font-weight: bold;
 `;
 
-const FAQSection = styled(Section)``;
+const FAQSection = styled(Section0)``;
 
 const FAQContainer = styled.div`
   display: flex;
@@ -403,8 +439,8 @@ const Hire = () => {
 
       <ReasonSection data-aos="fade-up">
         <Container>
-          <Title>Why Hire Developers From <span>Solminica?</span></Title>
-          <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <br />labore et dolore magna aliqua."</Subtitle>
+          <Titlecenter>Why Hire Developers From <span>Solminica?</span></Titlecenter>
+          <Subtitlecenter>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <br />labore et dolore magna aliqua."</Subtitlecenter>
           <ReasonGrid>
             <ReasonItem>
               <ReasonIcon src={hire_1} alt="Highly-skilled Team of Developers" />
@@ -444,8 +480,8 @@ const Hire = () => {
 
       <BenefitsSection data-aos="fade-up">
         <Container>
-          <Title>Benefits of Mean Stack Development with <span>Advanced Skill-Sets and Latest Technologies</span></Title>
-          <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <br />labore et dolore magna aliqua."</Subtitle>
+          <Titlecenter>Benefits of Mean Stack Development with <span>Advanced Skill-Sets and Latest Technologies</span></Titlecenter>
+          <Subtitlecenter>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <br />labore et dolore magna aliqua."</Subtitlecenter>
           <BenefitsGrid>
             <BenefitItem>
               <BenefitIcon src={benefits} alt="Isomorphic Coding" />
@@ -500,7 +536,7 @@ const Hire = () => {
       <TestimonialSection data-aos="fade-up">
         <Container>
           <Title>Our Customers love what we do</Title>
-          <Subtitle>Our customers are at the center of everything we do, and we're passionate about delivering exceptional solutions that exceed their expectations. We take pride in providing innovative services that delight and satisfy their needs, fostering long-term relationships built on trust, quality, and reliability.</Subtitle>
+          <Subtitle>Our customers are at the center of everything we do, and we're passionate about delivering exceptional solutions <br/> that exceed their expectations. We take pride in providing innovative services that delight and satisfy their needs,  <br/>fostering long-term relationships built on trust, quality, and reliability. Our dedication to customer satisfaction is <br/> unwavering, and we continually strive to improve and refine our offerings to meet their evolving needs.</Subtitle>
           <TestimonialCard>
             <TestimonialImage src={Customers} alt="Customer Testimonial" />
             <TestimonialContent>

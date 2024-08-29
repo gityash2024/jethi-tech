@@ -29,7 +29,15 @@ const PageWrapper = styled.div`
 `;
 
 const Section = styled.section`
-  padding: 40px 0;
+  padding: 20px 0;
+
+  @media (max-width: 768px) {
+    padding: 20px 0;
+  }
+`;
+
+const Section0 = styled.section`
+  padding: 0px 0;
 
   @media (max-width: 768px) {
     padding: 20px 0;
@@ -366,14 +374,14 @@ const Subtitle2 = styled.p`
 
 const ValueSection = styled.section`
   text-align: center;
-  padding: 40px 0;
+  padding: 20px 0;
 `;
 
 const StatsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
@@ -432,9 +440,13 @@ const StatLabel = styled.p`
 const SolutionItem = styled.div`
   display: flex;
   align-items: center;
-  background-color: #f8f8f8;
-  padding: 20px;
-  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+    box-shadow: 
+    7px 0px 9px 0px rgba(190, 190, 190, 0.25),
+    0px 4px 5px 0px rgba(190, 190, 190, 0.25);
+
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -658,8 +670,8 @@ const ServiceComponent = () => {
           <Title>Key industries we serve</Title>
           <Subtitle>
             We understand the unique challenges and opportunities facing each
-            industry we serve. Our tailored digital solutions are designed to
-            streamline operations, enhance customer experiences, and drive growth
+            industry we serve. Our tailored <br/> digital solutions are designed to
+            streamline operations, enhance customer experiences, and drive<br/> growth
             for businesses of all sizes.
           </Subtitle>
           <IndustriesGrid>
@@ -810,13 +822,18 @@ const ServiceComponent = () => {
               <StatLabel>On time project delivery.</StatLabel>
             </StatItem>
           </StatsGrid>
-          <BottomText>
-            Our expertise in designing and building digital solutions authorises
-            us to develop bespoke solutions
-          </BottomText>
-          <ViewAllButton>Consult Now!</ViewAllButton>
         </Container>
       </ValueSection>
+      <Container>
+
+          <IndustrySubsection>
+            <IndustrySubtitle>
+              Our expertise in designing and building digital solutions
+              authorises us to develop <br />bespoke solutions
+            </IndustrySubtitle>
+            <Button>Consult Now!</Button>
+          </IndustrySubsection>
+      </Container>
 
       <ProcessSection data-aos="fade-up">
         <Container>
@@ -835,7 +852,7 @@ const ServiceComponent = () => {
         </Container>
       </ProcessSection>
 
-      <Section data-aos="fade-up">
+      <Section0 data-aos="fade-up">
         <Container>
           <Title>Our Customers love what we do</Title>
           <Subtitle>
@@ -863,7 +880,7 @@ const ServiceComponent = () => {
             </TestimonialContent>
           </CustomerTestimonial>
         </Container>
-      </Section>
+      </Section0>
 
       <FAQSection data-aos="fade-up">
         <Container>

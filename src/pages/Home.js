@@ -144,6 +144,8 @@ const Container = styled.div`
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
+
+ 
 `;
 const Container2 = styled.div`
 background-image: url(${herosectionbg});
@@ -167,7 +169,7 @@ const Section20 = styled.section`
 const Section0 = styled.section`
   padding: 0px 0;
   @media (max-width: 768px) {
-    padding: 30px 0;
+    padding: 0px 0;
   }
 `;
 
@@ -180,6 +182,9 @@ const Button = styled.button`
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const Title = styled.h2`
@@ -191,6 +196,9 @@ const Title = styled.h2`
   line-height: 62.4px;
   @media (max-width: 768px) {
     font-size: 28px;
+    line-height: 40.4px;
+    
+    
     
   }
      font-family: "Poppins";
@@ -216,6 +224,8 @@ const TitleOurDigital = styled.h2`
   line-height: 62.4px;
   @media (max-width: 768px) {
     font-size: 28px;
+  line-height: 45px;
+
     
   }
      font-family: "Poppins";
@@ -237,10 +247,12 @@ const Subtitle22 = styled.p`
   color:#4E4E4E;
   margin-bottom: 20px;
   font-weight: 400;
+  
   line-height:30px;
   font-family: "Poppins";
   @media (max-width: 768px) {
     font-size: 16px;
+   text-align:center;
   }
 `;
 
@@ -266,6 +278,9 @@ const SocialBar = styled.div`
   flex-direction: column;
   gap: 15px;
   z-index: 100;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const SidebarSocialIcon = styled.a`
@@ -450,6 +465,10 @@ const ExpertiseList = styled.ul`
   border-left: 3px solid #202020;
   width: 100%;
   margin-right: 40px;
+  @media (max-width: 768px) {
+    width: 100vw;
+    margin-left: 20px;
+  }
 `;
 
 const ExpertiseItem = styled.li`
@@ -480,6 +499,10 @@ const TechItem = styled.div`
   padding: 25px;
   border-bottom: 1px solid #5C5C5C;
   margin-right: 80px;
+  @media (max-width: 768px) {
+    padding: 15px;
+    margin-right: 0px;
+  }
 `;
 
 const TechLogo = styled.img`
@@ -521,6 +544,7 @@ const ConsultButtonHome = styled(Button)`
   width: 30%;
   @media (max-width: 768px) {
     width: 100%;
+    margin-bottom: 40px;
   }
 `;
 
@@ -601,8 +625,9 @@ const StatsGrid = styled.div`
   gap: 30px;
   margin-bottom: 40px;
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+    gap: 0px;
   }
 `;
 
@@ -625,6 +650,9 @@ const StatLabel = styled.p`
 `;
 
 const WorkSection = styled(Section0)`
+@media (max-width: 768px) {
+  margin-top: 0px;
+}
 `;
 
 const WorkGrid = styled.div`
@@ -633,6 +661,7 @@ const WorkGrid = styled.div`
   margin-top: 25px;
   @media (max-width: 768px) {
     flex-direction: column;
+    
   }
 `;
 
@@ -1362,7 +1391,7 @@ const Home = () => {
           </BottomRow>
         </Container>
       </TechnologiesSection>
-      <hr style={{border: "1px solid #000000",marginLeft:"100px",marginRight:"100px"}}/>
+      <hr style={{border: "1px solid #000000",marginLeft:"100px",marginRight:"100px",marginTop:"30px"}}/>
 
       <SolutionsSection data-aos="fade-up">
         <Container>
@@ -1372,7 +1401,7 @@ const Home = () => {
           </Title>
           <Subtitle>
             Solminica creates enterprise solutions that seamlessly blend
-            traditional methods with the latest innovations.
+            traditional methods with the latest <br/> innovations.
           </Subtitle>
           <SolutionGrid>
             <SolutionItem>
@@ -1450,10 +1479,10 @@ const Home = () => {
           <Title>Solminica Deliver <br/> Value for Money</Title>
           <Subtitle>
             Solminica delivers unparalleled value for money by offering
-            top-quality, innovative technology solutions at competitive prices.
-            Our customized services are designed to fit any budget, ensuring
+            top-quality, innovative technology <br/> solutions at competitive prices.
+            Our customized services are designed to fit any budget, ensuring<br/>
             efficiency and productivity enhancements for businesses of all
-            sizes. With exceptional customer support, we are your trusted
+            sizes. With exceptional customer<br/> support, we are your trusted
             partner in achieving technological success.
           </Subtitle>
           <StatsGrid>
@@ -1547,10 +1576,10 @@ const Home = () => {
           <Title>Development Process we Follow</Title>
           <Subtitle>
             At Solminica, we follow an agile development methodology,
-            emphasizing iterative development, continuous improvement, and
-            collaboration among cross-functional teams. Our approach prioritizes
+            emphasizing iterative development,<br/> continuous improvement, and
+            collaboration among cross-functional teams. Our approach<br/> prioritizes
             customer feedback, adapts quickly to changing requirements, and
-            delivers high-quality software solutions efficiently.
+            delivers high-quality<br/> software solutions efficiently.
           </Subtitle>
           <ProcessImage
             src={developmentProcessImage}
@@ -1564,8 +1593,8 @@ const Home = () => {
           <Title>Key industries we serve</Title>
           <Subtitle>
             We understand the unique challenges and opportunities facing each
-            industry we serve. Our tailored digital solutions are designed to
-            streamline operations, enhance customer experiences, and drive
+            industry we serve. Our tailored<br/> digital solutions are designed to
+            streamline operations, enhance customer experiences, and drive<br/>
             growth for businesses of all sizes.
           </Subtitle>
           <IndustriesGrid>

@@ -16,7 +16,7 @@ const PageWrapper = styled.div`
 `;
 
 const Section = styled.section`
-  padding: 40px 0;
+  padding: 20px 0;
 `;
 
 const Container = styled.div`
@@ -99,8 +99,12 @@ const FeatureGrid = styled.div`
 `;
 
 const FeatureItem = styled.div`
-  background-color: #f8f8f8;
-  padding: 30px;
+  background-color: #ffffff;
+   box-shadow: 
+    7px 0px 9px 0px rgba(190, 190, 190, 0.25),
+    0px 4px 5px 0px rgba(190, 190, 190, 0.25);
+
+  padding: 20px;
   border-radius: 8px;
   display: flex;
   align-items: flex-start;
@@ -140,8 +144,12 @@ const ServiceGrid = styled.div`
 `;
 
 const ServiceItem = styled.div`
-  background-color: #f8f8f8;
-  padding: 30px;
+ box-shadow: 
+    7px 0px 9px 0px rgba(190, 190, 190, 0.25),
+    0px 4px 5px 0px rgba(190, 190, 190, 0.25);
+
+  background-color: #ffffff;
+  padding: 20px;
   border-radius: 8px;
 `;
 
@@ -391,7 +399,7 @@ const Technology = () => {
       <WhyChooseSection data-aos="fade-up">
         <Container>
           <Title>Why Choose <span>Node.Js Development?</span></Title>
-          <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna <br />aliqua."</Subtitle>
+          <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <br/>labore et dolore magna aliqua."</Subtitle>
           <FeatureGrid>
             {features.map((feature, index) => (
               <FeatureItem key={index}>
@@ -409,7 +417,7 @@ const Technology = () => {
       <ServicesSection data-aos="fade-up">
         <Container>
           <Title>Our <span>Node.js Development</span> Services</Title>
-          <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Subtitle>
+          <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut<br/> labore et dolore magna aliqua.</Subtitle>
           <ServiceGrid>
             {services.map((service, index) => (
               <ServiceItem key={index}>
@@ -432,7 +440,7 @@ const Technology = () => {
       <ExperienceSection data-aos="fade-up">
         <Container>
           <Title>See Our <span>Experience</span></Title>
-          <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna <br />aliqua."</Subtitle>
+          <Subtitle>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut<br/> labore et dolore magna aliqua."</Subtitle>
           <ProjectGrid>
             {[1, 2, 3].map((project) => (
               <ProjectItem key={project}>
@@ -447,7 +455,7 @@ const Technology = () => {
       <TestimonialSection data-aos="fade-up">
         <Container>
           <Title>Our Customers love what we do</Title>
-          <Subtitle>Our customers are at the center of everything we do, and we're passionate about delivering exceptional solutions that exceed their expectations. We take pride in providing innovative services that delight and satisfy their needs, fostering long-term relationships built on trust, quality, and reliability.</Subtitle>
+          <Subtitle>Our customers are at the center of everything we do, and we're passionate about delivering exceptional solutions <br/> that exceed their expectations. We take pride in providing innovative services that delight and satisfy their needs,<br/> fostering long-term relationships built on trust, quality, and reliability. Our dedication to customer satisfaction is <br/>unwavering, and we continually strive to improve and refine our offerings to meet their evolving needs.</Subtitle>
           <TestimonialCard>
             <TestimonialImage src={Customers} alt="Customer Testimonial" />
             <TestimonialContent>

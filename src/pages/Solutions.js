@@ -44,7 +44,7 @@ const PageWrapper = styled.div`
 `;
 
 const Section = styled.section`
-  padding: 40px 0;
+  padding: 20px 0;
 `;
 
 const Container = styled.div`
