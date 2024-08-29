@@ -7,14 +7,12 @@ const MainContainer = styled.div`
   max-width: 100%;
   overflow-x: hidden;
 `;
-
 const Content = styled.main`
-  padding: 0 20px;
+  padding: 120px 20px 0; // Adjust the top padding based on your header height
   @media (max-width: 768px) {
-    padding: 0 15px;
+    padding: 100px 15px 0; // Adjust for mobile
   }
 `;
-
 const MainLayout = ({ children }) => (
   <MainContainer>
     <Header />

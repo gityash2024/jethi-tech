@@ -6,8 +6,13 @@ import downArrow from '../assets/images/down-arrow.png';
 
 const HeaderWrapper = styled.header`
   font-family: 'Poppins';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #FFFFFF;
 `;
-
 const TopBar = styled.div`
   background-color: #015BCC;
   color: #FFFFFF;
@@ -52,7 +57,8 @@ const TopBarLink = styled.a`
 
 const MainNav = styled.nav`
   background-color: #FFFFFF;
-  padding: 15px 0;
+  padding: 5px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 `;
 
 const NavContent = styled.div`
