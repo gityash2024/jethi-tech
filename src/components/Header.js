@@ -13,10 +13,11 @@ const HeaderWrapper = styled.header`
   z-index: 1000;
   background-color: #FFFFFF;
 `;
+
 const TopBar = styled.div`
   background-color: #015BCC;
   color: #FFFFFF;
-  padding: 6px 0;
+  padding: 0;
 
   @media (max-width: 768px) {
     display: none;
@@ -37,17 +38,16 @@ const TopBarLink = styled.a`
   color: #FFFFFF;
   text-decoration: none;
   font-weight: 600;
-  margin-right: 20px;
   font-size: 14px;
-  padding: 5px 10px;
+  padding: 6px 10px;
   transition: all 0.3s;
   cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
   pointer-events: ${props => props.disabled ? 'none' : 'auto'};
+  display: inline-block;
 
   &:hover, &.active {
     background-color: ${props => props.disabled ? 'transparent' : '#FFFFFF'};
     color: ${props => props.disabled ? '#FFFFFF' : '#015BCC'};
-    border-radius: 2px;
   }
 
   &:last-child {
@@ -129,6 +129,8 @@ const NavLink = styled(Link)`
   font-weight: 500;
   font-size: 16px;
   transition: color 0.3s;
+  display: flex;
+  align-items: center;
 
   &.active {
     color: #015BCC;
@@ -141,12 +143,14 @@ const NavLink = styled(Link)`
   &:after {
     content: '';
     display: inline-block;
-    width: 22px;
-    height: 22px;
+    width: 16px;
+    height: 16px;
     background-image: url(${downArrow});
     background-size: contain;
     background-repeat: no-repeat;
     margin-left: 5px;
+    position: relative;
+    top: 1px;
   }
 
   @media (max-width: 768px) {

@@ -488,7 +488,34 @@ const SolutionDescription = styled.p`
 `;
 
 const IndustriesSection = styled(Section)``;
+const IndustrySubsection = styled.div`
+  display: flex;
+  margin-top: 40px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  color: #2f2f2f;
+  justify-content: space-between;
+  align-items: center;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+`;
+
+const IndustrySubtitle = styled.p`
+  font-size: 20px;
+  color: #434343;
+  flex: 1;
+      font-weight: 700;
+    line-height: 30px;
+    font-family: 'Poppins';
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+`;
 const IndustriesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -529,34 +556,7 @@ const IndustryName = styled.p`
   }
 `;
 
-const IndustrySubsection = styled.div`
-  display: flex;
-  margin-top: 40px;
-  font-family: 'Poppins';
-  font-weight: 600;
-  color: #2f2f2f;
-  justify-content: space-between;
-  align-items: center;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
-  }
-`;
-
-const IndustrySubtitle = styled.p`
-  font-size: 20px;
-  color: #434343;
-  flex: 1;
-      font-weight: 700;
-    line-height: 30px;
-    font-family: 'Poppins';
-
-  @media (max-width: 768px) {
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-`;
 
 const ServiceComponent = () => {
   useEffect(() => {

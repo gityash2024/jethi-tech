@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
+
+import styled, { keyframes } from 'styled-components';
+
+import { useInView } from 'react-intersection-observer';
+
+
 import AOS from "aos";
 import "slick-carousel/slick/slick.css";
 import CountUp from 'react-countup';
@@ -33,6 +38,8 @@ import trusted_partner_3 from "../assets/images/trusted_partner_3.png";
 import trusted_partner_4 from "../assets/images/trusted_partner_4.png";
 import trusted_partner_5 from "../assets/images/trusted_partner_5.png";
 import trusted_partner_6 from "../assets/images/trusted_partner_6.png";
+import trusted_partner_5_card from "../assets/images/trusted_partner_5_card.png";
+import trusted_partner_6_card from "../assets/images/trusted_partner_6_card.png";
 import trusted_partner_7 from "../assets/images/trusted_partner_7.png";
 import trusted_partner_8 from "../assets/images/trusted_partner_8.png";
 import our_digital_left_side_image from "../assets/images/our_digital_left_side_image.png";
@@ -152,6 +159,18 @@ const Container = styled.div`
 
  
 `;
+const cardVariants2 = {
+  hiddenLeft: { opacity: 0, x: -100 },
+  hiddenRight: { opacity: 0, x: 100 },
+  visible: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.8,
+    },
+  }),
+};
 const Container2 = styled.div`
 background-image: url(${herosectionbg});
   background-repeat: no-repeat;
@@ -177,7 +196,11 @@ const Section0 = styled.section`
     padding: 0px 0;
   }
 `;
-
+const gradientAnimation = keyframes`
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+`;
 const Button = styled.button`
   background-color: #015bcc;
   color: white;
@@ -197,20 +220,45 @@ const Button = styled.button`
 
 const Title = styled.h2`
   font-size: 46px;
-  color: #434343;
+  background: linear-gradient(270deg, #000000 60%, #1a1a1a 70%, #0072FF 85%, #2F69B1 100%);
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: ${gradientAnimation} 3s ease infinite;
   margin-bottom: 20px;
   text-align: center; 
-  font-weight:700;
+  font-weight: 700;
   line-height: 62.4px;
+
   @media (max-width: 768px) {
     font-size: 28px;
     line-height: 40.4px;
-    
-    
-    
   }
-     font-family: "Poppins";
+
+  font-family: "Poppins";
 `;
+const TitleOurDigital = styled.h2`
+  font-size: 46px;
+  background: linear-gradient(270deg, #000000 60%, #1a1a1a 70%, #0072FF 85%, #2F69B1 100%);
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: ${gradientAnimation} 3s ease infinite;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 62.4px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    line-height: 45px;
+  }
+
+  font-family: "Poppins";
+`;
+
+
 
 const Subtitle = styled.p`
   font-size: 20px;
@@ -224,20 +272,7 @@ const Subtitle = styled.p`
     font-size: 16px;
   }
 `;
-const TitleOurDigital = styled.h2`
-  font-size: 46px;
-  color: #434343;
-  margin-bottom: 20px;
-  font-weight:700;
-  line-height: 62.4px;
-  @media (max-width: 768px) {
-    font-size: 28px;
-  line-height: 45px;
 
-    
-  }
-     font-family: "Poppins";
-`;
 
 const SubtitleOurDigital = styled.p`
   font-size: 20px;
@@ -341,10 +376,51 @@ const HeroTitle = styled.h1`
     text-align: center;
   }
 `;
+const CountriesList = styled.p`
+  font-size: 12px;
+  line-height: 22px;
+  margin-top: 20px;
+  font-weight: 400;
+  font-family: "Poppins";
+  color: #6B6B6B;
+  a {
+    color: #6B6B6B;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 5px;
+    &:hover {
+      color: #0072FF;
+      text-decoration: underline;
+    }
+  }
+`;
+
 
 const HeroContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const shine = keyframes`
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+`;
+const ShinyLine = styled.hr`
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 114, 255, 0.5) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: ${shine} 3s linear infinite;
+  margin: 30px 0;
 `;
 
 const TrustedBy = styled.div`
@@ -370,6 +446,9 @@ const Logo = styled.img`
   height: 100%;
   margin: 10px;
   margin-right: 4%;
+    &:hover {
+    transform: scale(1.4);
+  }
 `;
 
 const ServicesSection = styled(Section20)`
@@ -408,16 +487,34 @@ const ServiceGrid = styled.div`
   }
 `;
 
-const ServiceItem = styled.div`
+const ServiceItem = styled(motion.div)`
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
   border: 1px solid #E1E1E1;
-  text-align: center;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+  &:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s ease-in-out;
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
 `;
+const cardVariants = {
+  hidden: { opacity: 0, transform: 'translateY(20px)' },
+  visible: (i) => ({
+    opacity: 1,
+    transform: 'translateY(0)',
+    transition: {
+      delay: i * 0.2,
+      duration: 0.5,
+    },
+  }),
+};
+
 
 const ServiceIcon = styled.img`
   width: 50px;
@@ -493,6 +590,13 @@ const ExpertiseItem = styled.li`
   padding: 10px 15px;
   width: 60%;
   text-align: left;
+ 
+  &:hover {
+  background:linear-gradient(to right, #0072FF 0%, #2F69B1 100%) !important;
+  color: #ffffff;
+
+
+  }
 `;
 
 const TechItemsContainer = styled.div`
@@ -507,6 +611,16 @@ const TechItem = styled.div`
   padding: 25px;
   border-bottom: 1px solid #5C5C5C;
   margin-right: 80px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  border-radius: 10px;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
   @media (max-width: 768px) {
     padding: 15px;
     margin-right: 0px;
@@ -516,11 +630,22 @@ const TechItem = styled.div`
 const TechLogo = styled.img`
   width: 40px;
   margin-right: 10px;
+  transition: transform 0.3s ease;
+
+  ${TechItem}:hover & {
+    transform: rotate(15deg) scale(1.1);
+  }
 `;
 
 const TechName = styled.span`
   font-size: 16px;
+  transition: color 0.3s ease;
+
+  ${TechItem}:hover & {
+    color: #0072FF;
+  }
 `;
+
 
 const BottomRow = styled.div`
   display: flex;
@@ -557,48 +682,6 @@ const ConsultButtonHome = styled(Button)`
   }
 `;
 
-const SolutionsSection = styled(Section0)`
-  // background-color: #f8f8f8;
-`;
-
-const SolutionGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  margin-top: 25px;
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const SolutionItem = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-`;
-
-const SolutionIcon = styled.img`
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-right: 20px;
-`;
-
-const SolutionContent = styled.div`
-  flex: 1;
-`;
-
-const SolutionTitle = styled.h4`
-  font-size: 20px;
-  margin-bottom: 10px;
-`;
-
-const SolutionDescription = styled.p`
-  font-size: 16px;
-`;
 
 const HireSection = styled(Section)`
   display: flex;
@@ -624,38 +707,6 @@ const HireImage = styled.img`
   }
 `;
 
-const ValueSection = styled(Section0)`
-  text-align: center;
-`;
-
-const StatsGrid = styled(motion.div)`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  margin-bottom: 40px;
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-  }
-`;
-
-const StatItem = styled(motion.div)``;
-
-const StatNumber = styled.h3`
-  font-size: 36px;
-  color: #2f2f2f;
-  margin-bottom: 10px;
-  margin-left: 60px;
-  margin-right: 60px;
-  border-bottom: 1px solid #5C5C5C;
-`;
-
-const StatLabel = styled.p`
-  font-size: 16px;
-  margin-left: 30px;
-  color: #666;
-`;
 
 const WorkSection = styled(Section0)`
 @media (max-width: 768px) {
@@ -928,7 +979,7 @@ const TrustedGrid = styled.div`
 `;
 
 const TrustedLogo = styled.img`
-  height: 60px;
+  height: 100px;
   width: auto;
 `;
 
@@ -1015,21 +1066,6 @@ const ViewAllButton = styled(Button)`
   margin: 40px auto 0;
 `;
 
-const PartnersGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
-  margin: 40px 0;
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-`;
-
-const PartnerLogo = styled.img`
-  width: 100%;
-  object-fit: contain;
-`;
-
 const ServingCountries = styled.h3`
   font-size: 20px;
   margin-top: 25px;
@@ -1039,16 +1075,137 @@ const ServingCountries = styled.h3`
     color: #4E4E4E;
 `;
 
-const CountriesList = styled.p`
-  font-size: 12px;
-  line-height: 22px;
-  margin-top: 20px;
-  font-weight: 400;
-  font-family: "Poppins";
-  color: #6B6B6B
+
+const SolutionsSection = styled(Section0)`
+  // background-color: #f8f8f8;
+`;
+
+const SolutionGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 25px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const SolutionItem = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+`;
+
+const SolutionIcon = styled.img`
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 20px;
+`;
+
+const SolutionContent = styled.div`
+  flex: 1;
+`;
+
+const SolutionTitle = styled.h4`
+  font-size: 20px;
+  margin-bottom: 10px;
+`;
+
+const SolutionDescription = styled.p`
+  font-size: 16px;
+`;
+const ValueSection = styled(Section0)`
+  text-align: center;
+`;
+
+const StatsGrid = styled(motion.div)`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+`;
+
+const StatItem = styled(motion.div)``;
+
+const StatNumber = styled.h3`
+  font-size: 36px;
+  color: #2f2f2f;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #5C5C5C;
+`;
+
+const StatLabel = styled.p`
+  font-size: 16px;
+  margin-left: 30px;
+  color: #666;
+`;
+const PartnersGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+`;
+
+const PartnerLogo = styled(motion.img)`
+  width: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.4);
+  }
+`;
+const PartnerLogoTest = styled(motion.img)`
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.4);
+  }
 `;
 
 const Home = () => {
+  const { ref: refValue, inView: inViewValue } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+  
+  const { ref: refPartners, inView: inViewPartners } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+ 
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   const [activeIndustry, setActiveIndustry] = useState('Education');
   const [expandedBlog, setExpandedBlog] = useState(0);
   const [activeExpertise, setActiveExpertise] = useState("Expertise");
@@ -1067,66 +1224,66 @@ const Home = () => {
 
   const techItems = {
     Expertise: [
-      { logo: nodejs, name: "Node JS" },
-      { logo: blockchain, name: "Blockchain" },
-      { logo: aiml, name: "AI/ML" },
-      { logo: laravel, name: "Laravel" },
-      { logo: wordpress, name: "Wordpress" },
-      { logo: shopify, name: "Shopify" },
+      { logo: nodejs, name: "Node JS", url: "https://nodejs.org/en/" },
+      { logo: blockchain, name: "Blockchain", url: "https://www.blockchain.com/" },
+      { logo: aiml, name: "AI/ML", url: "https://www.aiml.com/" },
+      { logo: laravel, name: "Laravel", url: "https://laravel.com/" },
+      { logo: wordpress, name: "Wordpress" , url: "https://wordpress.org/"},
+      { logo: shopify, name: "Shopify", url: "https://shopify.com/" },
     ],
     "Frontend Technologies": [
-      { logo: reactIcon, name: "React JS" },
-      { logo: nextjs, name: "Next.js" },
-      { logo: angular, name: "Angular" },
-      { logo: vuejs, name: "Vue JS" },
-      { logo: typescript, name: "TypeScript" },
+      { logo: reactIcon, name: "React JS", url: "https://reactjs.org/" },
+      { logo: nextjs, name: "Next.js", url: "https://nextjs.org/" },
+      { logo: angular, name: "Angular" , url: "https://angular.io/"},
+      { logo: vuejs, name: "Vue JS", url: "https://vuejs.org/" },
+      { logo: typescript, name: "TypeScript" ,  url: "https://www.typescriptlang.org/"},
       { logo: html, name: "HTML" },
     ],
     "Backend Technologies": [
-      { logo: nodejs, name: "Node JS" },
-      { logo: php, name: "PHP" },
-      { logo: net, name: ".net" },
-      { logo: python, name: "Python" },
-      { logo: java, name: "Java" },
-      { logo: ror, name: "Ruby on Rails" },
+      { logo: nodejs, name: "Node JS", url: "https://nodejs.org/en/" },
+      { logo: php, name: "PHP", url: "https://www.php.net/" },
+      { logo: net, name: ".net" , url: "https://dotnet.microsoft.com/en-us/"},
+      { logo: python, name: "Python", url: "https://www.python.org/" },
+      { logo: java, name: "Java", url: "https://www.java.com/en/" },
+      { logo: ror, name: "Ruby on Rails", url: "https://rubyonrails.org/" },
     ],
     "Mobile Technologies": [
-      { logo: flutter, name: "Flutter" },
-      { logo: android, name: "Android" },
-      { logo: ios, name: "iOS" },
-      { logo: ionic, name: "Ionic" },
-      { logo: native, name: "React Native" },
-      { logo: swift, name: "Swift" },
-      { logo: kotlin, name: "Kotlin" },
+      { logo: flutter, name: "Flutter", url: "https://flutter.dev/" },
+      { logo: android, name: "Android", url: "https://www.android.com/" },
+      { logo: ios, name: "iOS" , url: "https://www.ios.com/"},
+      { logo: ionic, name: "Ionic", url: "https://ionicframework.com/" },
+      { logo: native, name: "React Native" , url: "https://reactnative.dev/"},
+      { logo: swift, name: "Swift" , url: "https://swift.org/"},
+      { logo: kotlin, name: "Kotlin" , url: "https://kotlinlang.org/"},
     ],
     Frameworks: [
-      { logo: laravel, name: "Laravel" },
-      { logo: express, name: "Express JS" },
-      { logo: django, name: "Django" },
-      { logo: meanmern, name: "MEAN/MERN" },
-      { logo: wordpress, name: "Wordpress" },
-      { logo: codeig, name: "CodeIgniter" },
-      { logo: shopify, name: "Shopify" },
+      { logo: laravel, name: "Laravel", url: "https://laravel.com/" },
+      { logo: express, name: "Express JS", url: "https://expressjs.com/" },
+      { logo: django, name: "Django", url: "https://www.djangoproject.com/" },
+      { logo: meanmern, name: "MEAN/MERN", url: "https://www.mean.io/" },
+      { logo: wordpress, name: "Wordpress" , url: "https://wordpress.org/"},
+      { logo: codeig, name: "CodeIgniter", url: "https://codeigniter.com/" },
+      { logo: shopify, name: "Shopify", url: "https://shopify.com/" },
     ],
     "Cloud Technologies": [
-      { logo: aws, name: "AWS" },
-      { logo: azure, name: "Azure" },
-      { logo: googlecloud, name: "Google Cloud" },
-      { logo: alibaba, name: "Alibaba " },
-      { logo: DO, name: "Digital Ocean" },
+      { logo: aws, name: "AWS", url: "https://aws.amazon.com/" },
+      { logo: azure, name: "Azure" , url: "https://azure.microsoft.com/"},
+      { logo: googlecloud, name: "Google Cloud" , url: "https://cloud.google.com/"},
+      { logo: alibaba, name: "Alibaba ", url: "https://www.alibabacloud.com/zh-cn/" },
+      { logo: DO, name: "Digital Ocean" , url: "https://www.digitalocean.com/"},
     ],
     eCommerce: [
-      { logo: meanmern, name: "MEAN/MERN" },
-      { logo: wordpress, name: "Wordpress" },
-      { logo: shopify, name: "Shopify" },
-      { logo: woo, name: "Woo Commerce" },
-      { logo: drupal, name: "Drupal" },
-      { logo: prista, name: "Pristashop" },
+      { logo: meanmern, name: "MEAN/MERN" , url: "https://www.mean.io/"},
+      { logo: wordpress, name: "Wordpress" , url: "https://wordpress.org/"},
+      { logo: shopify, name: "Shopify" , url: "https://shopify.com/"},
+      { logo: woo, name: "Woo Commerce", url: "https://woocommerce.com/" },
+      { logo: drupal, name: "Drupal" , url: "https://www.drupal.org/"},
+      { logo: prista, name: "Pristashop" , url: "https://www.pristashop.com/"},
     ],
     "Web 3.0": [
-      { logo: blockchain, name: "Blockchain" },
-      { logo: metaverse, name: "Metaverse" },
-      { logo: nft, name: "NFT" },
+      { logo: blockchain, name: "Blockchain", url: "https://en.bitcoin.it/wiki/Blockchain" },
+      { logo: metaverse, name: "Metaverse",url: "https://www.metaverse.com/" },
+      { logo: nft, name: "NFT", url: "https://nft.tech/" },
     ],
   };
 
@@ -1252,110 +1409,186 @@ const Home = () => {
           </HeroContentWrapper>
           <HeroImage src={transformImage} alt="Transform your business" />
         </HeroSection>
-
         <TrustedBy data-aos="fade-up">
-          <TrustedTitle>
-            Trusted by the world's leading organizations
-          </TrustedTitle>
-          <LogoGrid>
-            <Logo src={tp_home_1} alt="Trusted Partner 1" />
-            <Logo src={tp_home_2} alt="Trusted Partner 2" />
-            <Logo src={tp_home_3} alt="Trusted Partner 3" />
-            <Logo src={tp_home_4} alt="Trusted Partner 4" />
-            <Logo src={trusted_partner_5} alt="Trusted Partner 5" />
-            <Logo src={trusted_partner_6} alt="Trusted Partner 6" />
-            <Logo src={trusted_partner_7} alt="Trusted Partner 7" />
-            <Logo src={trusted_partner_8} alt="Trusted Partner 8" />
-          </LogoGrid>
-        </TrustedBy>
+  <TrustedTitle>
+    Trusted by the world's leading organizations
+  </TrustedTitle>
+  <LogoGrid>
+    <Logo
+      src={tp_home_1}
+      alt="Trusted Partner 1"
+      onClick={() => window.open("https://apwrims.ap.gov.in/", "_blank")}
+      style={{ cursor: "pointer" }}
+    />
+    <Logo
+      src={tp_home_2}
+      alt="Trusted Partner 2"
+      onClick={() => window.open("https://www.sacredgroves.earth/", "_blank")}
+      style={{ cursor: "pointer" }}
+    />
+    <Logo
+      src={tp_home_3}
+      alt="Trusted Partner 3"
+      onClick={() => window.open("https://www.rainbowhospitals.in/", "_blank")}
+      style={{ cursor: "pointer" }}
+    />
+    <Logo
+      src={tp_home_4}
+      alt="Trusted Partner 4"
+      onClick={() => window.open("https://www.powergrid.in/", "_blank")}
+      style={{ cursor: "pointer" }}
+    />
+    <Logo
+      src={trusted_partner_5}
+      alt="Trusted Partner 5"
+      onClick={() => window.open("https://bambinoagro.com/", "_blank")}
+      style={{ cursor: "pointer" }}
+    />
+    <Logo
+      src={trusted_partner_6}
+      alt="Trusted Partner 6"
+      onClick={() => window.open("https://suvarnabhoomiinfra.com/", "_blank")}
+      style={{ cursor: "pointer" }}
+    />
+    <Logo
+      src={trusted_partner_7}
+      alt="Trusted Partner 7"
+      onClick={() => window.open("https://www.merinolaminates.com/en/", "_blank")}
+      style={{ cursor: "pointer" }}
+    />
+    <Logo
+      src={trusted_partner_8}
+      alt="Trusted Partner 8"
+      onClick={() => window.open("https://www.bachpanglobal.com/", "_blank")}
+      style={{ cursor: "pointer" }}
+    />
+  </LogoGrid>
+</TrustedBy>
+
       </Container>
 
       <ServicesSection data-aos="fade-up">
-        <ServicesContainer>
-          <ServicesSideImage
-            src={our_digital_left_side_image}
-            alt="Digital Transformation"
-          />
-          <ServicesContent>
-            <TitleOurDigital>
-              Our Digital <br /> Transformation Services
-            </TitleOurDigital>
-            <SubtitleOurDigital>
-              With a blend of reliable & long-term partner than just a Partner
-            </SubtitleOurDigital>
-            <ServiceGrid>
-              <ServiceItem>
-                <ServiceIcon
-                  src={our_digital_web_dev}
-                  alt="Website Development"
-                />
-                <ServiceTitle>Website Development</ServiceTitle>
-              </ServiceItem>
-              <ServiceItem>
-                <ServiceIcon
-                  src={our_digital_mobile_dev}
-                  alt="Mobile app Development"
-                />
-                <ServiceTitle>Mobile app Development</ServiceTitle>
-              </ServiceItem>
-              <ServiceItem>
-                <ServiceIcon src={our_digital_hire} alt="Hire Professionals" />
-                <ServiceTitle>Hire Professionals</ServiceTitle>
-              </ServiceItem>
-              <ServiceItem>
-                <ServiceIcon
-                  src={our_digital_blockchain}
-                  alt="Blockchain Development"
-                />
-                <ServiceTitle>Blockchain Development</ServiceTitle>
-              </ServiceItem>
-              <ServiceItem>
-                <ServiceIcon
-                  src={our_digital_digi_marketing}
-                  alt="Digital Marketing"
-                />
-                <ServiceTitle>Digital Marketing</ServiceTitle>
-              </ServiceItem>
-              <ServiceItem>
-                <ServiceIcon
-                  src={our_digital_public_relation}
-                  alt="Public Relations and Media"
-                />
-                <ServiceTitle>Public Relations and Media</ServiceTitle>
-              </ServiceItem>
-              <ServiceItem>
-                <ServiceIcon
-                  src={our_digital_cyber_security}
-                  alt="Cyber Security"
-                />
-                <ServiceTitle>Cyber Security</ServiceTitle>
-              </ServiceItem>
-              <ServiceItem>
-                <ServiceIcon
-                  src={our_digital_quality_test}
-                  alt="Quality Testing"
-                />
-                <ServiceTitle>Quality Testing</ServiceTitle>
-              </ServiceItem>
-              <ServiceItem>
-                <ServiceIcon src={our_digital_cloud} alt="Cloud and Devops" />
-                <ServiceTitle>Cloud and Devops</ServiceTitle>
-              </ServiceItem>
-              <ServiceItem>
-                <ServiceIcon2
-                  src={our_digital_lets_conect_last_card}
-                  alt="Cloud and Devops"
-                />
-              </ServiceItem>
-            </ServiceGrid>
-          </ServicesContent>
-        </ServicesContainer>
-      </ServicesSection>
+  <ServicesContainer>
+    <ServicesSideImage
+      src={our_digital_left_side_image}
+      alt="Digital Transformation"
+    />
+    <ServicesContent>
+      <TitleOurDigital>
+        Our Digital <br /> Transformation Services
+      </TitleOurDigital>
+      <SubtitleOurDigital>
+        With a blend of reliable & long-term partner than just a Partner
+      </SubtitleOurDigital>
+      <ServiceGrid>
+        <ServiceItem
+          custom={0}
+          initial="hidden"
+          whileInView="visible"
+          variants={cardVariants}
+          viewport={{ once: true }}
+        >
+          <ServiceIcon src={our_digital_web_dev} alt="Website Development" />
+          <ServiceTitle>Website Development</ServiceTitle>
+        </ServiceItem>
+        <ServiceItem
+          custom={1}
+          initial="hidden"
+          whileInView="visible"
+          variants={cardVariants}
+          viewport={{ once: true }}
+        >
+          <ServiceIcon src={our_digital_mobile_dev} alt="Mobile app Development" />
+          <ServiceTitle>Mobile app Development</ServiceTitle>
+        </ServiceItem>
+        <ServiceItem
+          custom={2}
+          initial="hidden"
+          whileInView="visible"
+          variants={cardVariants}
+          viewport={{ once: true }}
+        >
+          <ServiceIcon src={our_digital_hire} alt="Hire Professionals" />
+          <ServiceTitle>Hire Professionals</ServiceTitle>
+        </ServiceItem>
+        <ServiceItem
+          custom={3}
+          initial="hidden"
+          whileInView="visible"
+          variants={cardVariants}
+          viewport={{ once: true }}
+        >
+          <ServiceIcon src={our_digital_blockchain} alt="Blockchain Development" />
+          <ServiceTitle>Blockchain Development</ServiceTitle>
+        </ServiceItem>
+        <ServiceItem
+          custom={4}
+          initial="hidden"
+          whileInView="visible"
+          variants={cardVariants}
+          viewport={{ once: true }}
+        >
+          <ServiceIcon src={our_digital_digi_marketing} alt="Digital Marketing" />
+          <ServiceTitle>Digital Marketing</ServiceTitle>
+        </ServiceItem>
+        <ServiceItem
+          custom={5}
+          initial="hidden"
+          whileInView="visible"
+          variants={cardVariants}
+          viewport={{ once: true }}
+        >
+          <ServiceIcon src={our_digital_public_relation} alt="Public Relations and Media" />
+          <ServiceTitle>Public Relations and Media</ServiceTitle>
+        </ServiceItem>
+        <ServiceItem
+          custom={6}
+          initial="hidden"
+          whileInView="visible"
+          variants={cardVariants}
+          viewport={{ once: true }}
+        >
+          <ServiceIcon src={our_digital_cyber_security} alt="Cyber Security" />
+          <ServiceTitle>Cyber Security</ServiceTitle>
+        </ServiceItem>
+        <ServiceItem
+          custom={7}
+          initial="hidden"
+          whileInView="visible"
+          variants={cardVariants}
+          viewport={{ once: true }}
+        >
+          <ServiceIcon src={our_digital_quality_test} alt="Quality Testing" />
+          <ServiceTitle>Quality Testing</ServiceTitle>
+        </ServiceItem>
+        <ServiceItem
+          custom={8}
+          initial="hidden"
+          whileInView="visible"
+          variants={cardVariants}
+          viewport={{ once: true }}
+        >
+          <ServiceIcon src={our_digital_cloud} alt="Cloud and Devops" />
+          <ServiceTitle>Cloud and Devops</ServiceTitle>
+        </ServiceItem>
+        <ServiceItem
+          custom={9}
+          initial="hidden"
+          whileInView="visible"
+          variants={cardVariants}
+          viewport={{ once: true }}
+        >
+          <ServiceIcon2 src={our_digital_lets_conect_last_card} alt="Let's Connect" />
+        </ServiceItem>
+      </ServiceGrid>
+    </ServicesContent>
+  </ServicesContainer>
+</ServicesSection>
       </Container2>
 
       <BgWrapper>
       <BgWrapperRight>
-      <hr style={{border: "0.5px solid #000000"}}/>
+      <ShinyLine />
 
       <TechnologiesSection  data-aos="fade-up">
         <Container>
@@ -1398,66 +1631,93 @@ const Home = () => {
           </BottomRow>
         </Container>
       </TechnologiesSection>
-      <hr style={{border: "0.5px solid #000000",marginTop:"30px"}}/>
+      <ShinyLine />
 
       <SolutionsSection data-aos="fade-up">
-        <Container>
-          <Title>
-            Avail Profit-Driven Development Solutions<br />
-            to Resolve All-Scale Business Needs
-          </Title>
-          <Subtitle>
-            Solminica creates enterprise solutions that seamlessly blend
-            traditional methods with the latest <br/> innovations.
-          </Subtitle>
-          <SolutionGrid>
-            <SolutionItem>
-              <SolutionIcon src={smbs} alt="SMBs" />
-              <SolutionContent>
-                <SolutionTitle>SMBs</SolutionTitle>
-                <SolutionDescription>
-                  Seamlessly turn your small business into a well-known brand
-                  with the top development assistance. For decades, we have been
-                  helping small-scale businesses earn.
-                </SolutionDescription>
-              </SolutionContent>
-            </SolutionItem>
-            <SolutionItem>
-              <SolutionIcon src={startup} alt="Startups" />
-              <SolutionContent>
-                <SolutionTitle>Startups</SolutionTitle>
-                <SolutionDescription>
-                  Let your startups climb the ladder of success in no time. We
-                  offer software development services for startups and help them
-                  get more funding as a brand
-                </SolutionDescription>
-              </SolutionContent>
-            </SolutionItem>
-            <SolutionItem>
-              <SolutionIcon src={enterprise} alt="Enterprises" />
-              <SolutionContent>
-                <SolutionTitle>Enterprises</SolutionTitle>
-                <SolutionDescription>
-                  Seek robust and customised enterprise mobility solutions to
-                  meet your business needs. Our each development layer is
-                  engineered with experience and expertise
-                </SolutionDescription>
-              </SolutionContent>
-            </SolutionItem>
-            <SolutionItem>
-              <SolutionIcon src={agency} alt="Agencies" />
-              <SolutionContent>
-                <SolutionTitle>Agencies</SolutionTitle>
-                <SolutionDescription>
-                  Our technical approach makes it accessible for offshore
-                  agencies to get exposure, improve business' financial growth,
-                  and increase sales & marketing potential
-                </SolutionDescription>
-              </SolutionContent>
-            </SolutionItem>
-          </SolutionGrid>
-        </Container>
-      </SolutionsSection>
+      <Container>
+        <Title>
+          Avail Profit-Driven Development Solutions<br />
+          to Resolve All-Scale Business Needs
+        </Title>
+        <Subtitle>
+          Solminica creates enterprise solutions that seamlessly blend
+          traditional methods with the latest <br/> innovations.
+        </Subtitle>
+        <SolutionGrid>
+          <SolutionItem
+            custom={0}
+            initial="hiddenLeft"
+            whileInView="visible"
+            variants={cardVariants2}
+            viewport={{ once: true }}
+          >
+            <SolutionIcon src={smbs} alt="SMBs" />
+            <SolutionContent>
+              <SolutionTitle>SMBs</SolutionTitle>
+              <SolutionDescription>
+                Seamlessly turn your small business into a well-known brand
+                with the top development assistance. For decades, we have been
+                helping small-scale businesses earn.
+              </SolutionDescription>
+            </SolutionContent>
+          </SolutionItem>
+
+          <SolutionItem
+            custom={1}
+            initial="hiddenRight"
+            whileInView="visible"
+            variants={cardVariants2}
+            viewport={{ once: true }}
+          >
+            <SolutionIcon src={startup} alt="Startups" />
+            <SolutionContent>
+              <SolutionTitle>Startups</SolutionTitle>
+              <SolutionDescription>
+                Let your startups climb the ladder of success in no time. We
+                offer software development services for startups and help them
+                get more funding as a brand.
+              </SolutionDescription>
+            </SolutionContent>
+          </SolutionItem>
+
+          <SolutionItem
+            custom={2}
+            initial="hiddenLeft"
+            whileInView="visible"
+            variants={cardVariants2}
+            viewport={{ once: true }}
+          >
+            <SolutionIcon src={enterprise} alt="Enterprises" />
+            <SolutionContent>
+              <SolutionTitle>Enterprises</SolutionTitle>
+              <SolutionDescription>
+                Seek robust and customised enterprise mobility solutions to
+                meet your business needs. Our each development layer is
+                engineered with experience and expertise.
+              </SolutionDescription>
+            </SolutionContent>
+          </SolutionItem>
+
+          <SolutionItem
+            custom={3}
+            initial="hiddenRight"
+            whileInView="visible"
+            variants={cardVariants2}
+            viewport={{ once: true }}
+          >
+            <SolutionIcon src={agency} alt="Agencies" />
+            <SolutionContent>
+              <SolutionTitle>Agencies</SolutionTitle>
+              <SolutionDescription>
+                Our technical approach makes it accessible for offshore
+                agencies to get exposure, improve business' financial growth,
+                and increase sales & marketing potential.
+              </SolutionDescription>
+            </SolutionContent>
+          </SolutionItem>
+        </SolutionGrid>
+      </Container>
+    </SolutionsSection>
 
       </BgWrapperRight>
       </BgWrapper>
@@ -1480,55 +1740,51 @@ const Home = () => {
           <HireImage src={digitalservices} alt="Hire Efficient Team" />
         </HireSection>
       </Container>
-
-      <ValueSection  data-aos="fade-up">
+      <ValueSection ref={refValue}>
         <Container>
-          <Title>Solminica Deliver <br/> Value for Money</Title>
+          <Title>Solminica Deliver <br /> Value for Money</Title>
           <Subtitle>
-            Solminica delivers unparalleled value for money by offering
-            top-quality, innovative technology <br/> solutions at competitive prices.
-            Our customized services are designed to fit any budget, ensuring<br/>
-            efficiency and productivity enhancements for businesses of all
-            sizes. With exceptional customer<br/> support, we are your trusted
+            Solminica delivers unparalleled value for money by offering top-quality, innovative technology <br /> solutions at competitive prices.
+            Our customized services are designed to fit any budget, ensuring<br />
+            efficiency and productivity enhancements for businesses of all sizes. With exceptional customer<br /> support, we are your trusted
             partner in achieving technological success.
           </Subtitle>
-         <StatsGrid
-  initial={{ opacity: 0, y: 50 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5, staggerChildren: 0.1 }}
->
-  {[
-    { end: 99, suffix: '%', label: 'Satisfied Clients' },
-    { end: 160, suffix: '+', label: 'Tech Enthusiasts' },
-    { end: 30, suffix: '+', label: 'Industries covered' },
-    { end: 550, suffix: '+', label: 'Projects Delivered' },
-    { end: 80, suffix: '%+', label: 'Impressive growth of Product' },
-    { end: 3.4, suffix: 'M+', label: 'Lines of Code' },
-    { end: 20, suffix: '+', label: 'Industry Certified Team members' },
-    { end: 850, suffix: '+', label: 'On time project delivery.' },
-  ].map((stat, index) => (
-    <StatItem
-      key={index}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <StatNumber>
-        <CountUp end={stat.end} suffix={stat.suffix} duration={2.5} />
-      </StatNumber>
-      <StatLabel>{stat.label}</StatLabel>
-    </StatItem>
-  ))}
-</StatsGrid>
-          <BottomRow>
+          <StatsGrid
+            initial={{ opacity: 0, y: 50 }}
+            animate={inViewValue ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, staggerChildren: 0.1 }}
+          >
+          {[
+            { end: 99, suffix: '%', label: '◾ Satisfied Clients' },
+            { end: 160, suffix: '+', label: '◾ Tech Enthusiasts' },
+            { end: 30, suffix: '+', label: '◾ Industries covered' },
+            { end: 550, suffix: '+', label: '◾ Projects Delivered' },
+            { end: 80, suffix: '%+', label: '◾ Impressive growth of Product' },
+            { end: 3.4, suffix: 'M+', label: '◾ Lines of Code' },
+            { end: 20, suffix: '+', label: '◾ Industry Certified Team members' },
+            { end: 850, suffix: '+', label: '◾ On time project delivery.' },
+          ].map((stat, index) => (
+            <StatItem
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inViewValue ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5 }}
+            >
+              <StatNumber>
+                <CountUp start={inViewValue ? 0 : null} end={stat.end} suffix={stat.suffix} duration={2.5} />
+              </StatNumber>
+              <StatLabel>{stat.label}</StatLabel>
+            </StatItem>
+          ))}
+        </StatsGrid>
+        <BottomRow>
             <BottomText>
-              Our expertise in designing and building digital solutions authorises us to develop <br />bespoke solutions
+              Our expertise in designing and building digital solutions authorizes us to develop <br />bespoke solutions
             </BottomText>
             <ConsultButton>Consult Now!</ConsultButton>
           </BottomRow>
         </Container>
       </ValueSection>
-
       <WorkSection  data-aos="fade-up">
         <Container>
           <Title>Our Work</Title>
@@ -1726,8 +1982,8 @@ const Home = () => {
             <TrustedLogo src={trusted_partner_2} alt="Trusted Partner 2" />
             <TrustedLogo src={trusted_partner_3} alt="Trusted Partner 3" />
             <TrustedLogo src={trusted_partner_4} alt="Trusted Partner 4" />
-            <TrustedLogo src={trusted_partner_5} alt="Trusted Partner 5" />
-            <TrustedLogo src={trusted_partner_6} alt="Trusted Partner 6" />
+            <TrustedLogo src={trusted_partner_5_card} alt="Trusted Partner 5" />
+            <TrustedLogo src={trusted_partner_6_card} alt="Trusted Partner 6" />
           </TrustedGrid>
           <TrustedDots>
             <TrustedDot active />
@@ -1769,50 +2025,74 @@ const Home = () => {
         </Container>
       </BlogSection>
 
-      <Section data-aos="fade-up">
+      <Section ref={refPartners}>
         <Container>
           <Title>Our Enterprise Technology partners</Title>
           <Subtitle>
-            We are proud to partner with industry-leading technology providers
-            to deliver innovative solutions<br /> for our clients. Our partnerships
+            We are proud to partner with industry-leading technology providers to deliver innovative solutions<br /> for our clients. Our partnerships
             with companies like Google Cloud, Razorpay, AWS, and Microsoft<br />
-            empower us to leverage cutting-edge technologies and platforms to
-            drive digital transformation<br /> and growth for your business.
+            empower us to leverage cutting-edge technologies and platforms to drive digital transformation<br /> and growth for your business.
           </Subtitle>
           <PartnersGrid>
             {partnerLogos.map((partner, index) => (
-              <PartnerLogo key={index} src={partner.src} alt={partner.alt} />
+              <PartnerLogo
+                key={index}
+                src={partner.src}
+                alt={partner.alt}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inViewPartners ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: index * 0.2, duration: 0.5 }}
+              />
             ))}
           </PartnersGrid>
-          <ServingCountries>SERVING IN 70+ COUNTRIES</ServingCountries>
-          <CountriesList>
-            Web Development Company in India | Web Development Company in USA |
-            Web Development Company in UK | Web Development Company in Singapore
-            | Web Development Company in Germany | Web Development Company in
-            Canada | Web Development Company in Australia | Web Development
-            Company in Ireland | Web Development Company in Dublin | Web
-            Development Company in New Zealand | Web Development Company in
-            Netherlands | Web Development Company in Norway | Web Development
-            Company in UAE | Web Development Company in Saudi Arabia | Web
-            Development Company in Qatar | Web Development Company in Finland |
-            Web Development Company in Mexico | Web Development Company in
-            Switzerland | Web Development Company in Spain | Web Development
-            Company in France and more... | Mobile Development Company in India
-            | Mobile Development Company in USA | Mobile Development Company in
-            UK | Mobile Development Company in Singapore | Mobile Development
-            Company in Germany | Mobile Development Company in Canada | Mobile
-            Development Company in Australia | Mobile Development Company in
-            Ireland | Mobile Development Company in Dublin | Mobile Development
-            Company in New Zealand | Mobile Development Company in Netherlands |
-            Mobile Development Company in Norway | Mobile Development Company in
-            UAE | Mobile Development Company in Saudi Arabia | Mobile
-            Development Company in Qatar | Mobile Development Company in Finland
-            | Mobile Development Company in Mexico | Web Development Company in
-            Switzerland | Mobile Development Company in Spain | Mobile
-            Development Company in France and more...
-          </CountriesList>
-        </Container>
-      </Section>
+        <ServingCountries>SERVING IN 70+ COUNTRIES</ServingCountries>
+        <CountriesList>
+  <a href="#">Web Development Company in India</a> |
+  <a href="#">Web Development Company in USA</a> |
+  <a href="#">Web Development Company in UK</a> |
+  <a href="#">Web Development Company in Singapore</a> |
+  <a href="#">Web Development Company in Germany</a> |
+  <a href="#">Web Development Company in Canada</a> |
+  <a href="#">Web Development Company in Australia</a> |
+  <a href="#">Web Development Company in Ireland</a> |
+  <a href="#">Web Development Company in Dublin</a> |
+  <a href="#">Web Development Company in New Zealand</a> |
+  <a href="#">Web Development Company in Netherlands</a> |
+  <a href="#">Web Development Company in Norway</a> |
+  <a href="#">Web Development Company in UAE</a> |
+  <a href="#">Web Development Company in Saudi Arabia</a> |
+  <a href="#">Web Development Company in Qatar</a> |
+  <a href="#">Web Development Company in Finland</a> |
+  <a href="#">Web Development Company in Mexico</a> |
+  <a href="#">Web Development Company in Switzerland</a> |
+  <a href="#">Web Development Company in Spain</a> |
+  <a href="#">Web Development Company in France</a> |
+  <a href="#">and more...</a> |
+  <a href="#">Mobile Development Company in India</a> |
+  <a href="#">Mobile Development Company in USA</a> |
+  <a href="#">Mobile Development Company in UK</a> |
+  <a href="#">Mobile Development Company in Singapore</a> |
+  <a href="#">Mobile Development Company in Germany</a> |
+  <a href="#">Mobile Development Company in Canada</a> |
+  <a href="#">Mobile Development Company in Australia</a> |
+  <a href="#">Mobile Development Company in Ireland</a> |
+  <a href="#">Mobile Development Company in Dublin</a> |
+  <a href="#">Mobile Development Company in New Zealand</a> |
+  <a href="#">Mobile Development Company in Netherlands</a> |
+  <a href="#">Mobile Development Company in Norway</a> |
+  <a href="#">Mobile Development Company in UAE</a> |
+  <a href="#">Mobile Development Company in Saudi Arabia</a> |
+  <a href="#">Mobile Development Company in Qatar</a> |
+  <a href="#">Mobile Development Company in Finland</a> |
+  <a href="#">Mobile Development Company in Mexico</a> |
+  <a href="#">Mobile Development Company in Switzerland</a> |
+  <a href="#">Mobile Development Company in Spain</a> |
+  <a href="#">Mobile Development Company in France</a> |
+  <a href="#">and more...</a>
+</CountriesList>
+
+      </Container>
+    </Section>
     </HomeWrapper>
   );
 };
