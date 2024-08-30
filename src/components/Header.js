@@ -16,7 +16,7 @@ const HeaderWrapper = styled.header`
 const TopBar = styled.div`
   background-color: #015BCC;
   color: #FFFFFF;
-  padding: 10px 0;
+  padding: 6px 0;
 
   @media (max-width: 768px) {
     display: none;

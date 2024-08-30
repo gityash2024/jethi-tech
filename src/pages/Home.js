@@ -146,7 +146,7 @@ const HomeWrapper = styled.div`
 `;
 
 const Container = styled.div`
-  max-width: 1300px;
+  max-width: 75vw;
   margin: 0 auto;
   padding: 0 20px;
 
@@ -166,7 +166,7 @@ const Section = styled.section`
   }
 `;
 const Section20 = styled.section`
-  padding: 20px 0;
+  padding: 40px 0;
   @media (max-width: 768px) {
     padding: 30px 0;
   }
@@ -182,18 +182,21 @@ const Button = styled.button`
   background-color: #015bcc;
   color: white;
   border: none;
-  padding: 12px 24px;
-  font-size: 16px;
+  padding: 20px 30px;
+  font-size: 18px;
   font-weight: 600;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
+  &:hover {
+    background:linear-gradient(to right, #0072FF 0%, #2F69B1 100%);
+  }
   @media (max-width: 768px) {
     margin-bottom: 20px;
   }
 `;
 
 const Title = styled.h2`
-  font-size: 48px;
+  font-size: 46px;
   color: #434343;
   margin-bottom: 20px;
   text-align: center; 
@@ -222,7 +225,7 @@ const Subtitle = styled.p`
   }
 `;
 const TitleOurDigital = styled.h2`
-  font-size: 48px;
+  font-size: 46px;
   color: #434343;
   margin-bottom: 20px;
   font-weight:700;
@@ -321,7 +324,7 @@ const HeroContent = styled.div`
 
 const HeroImage = styled.img`
   flex: 1;
-  max-width: 50%;
+  max-width: 40%;
   @media (max-width: 768px) {
     max-width: 80%;
     margin-bottom: 20px;
@@ -329,8 +332,8 @@ const HeroImage = styled.img`
 `;
 
 const HeroTitle = styled.h1`
-  font-size: 48px;
-  line-height: 1.2;
+  font-size: 50px;
+  line-height: 62.4px;
   margin-bottom: 0px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   @media (max-width: 768px) {
@@ -359,7 +362,6 @@ const TrustedTitle = styled.h3`
 
 const LogoGrid = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 `;
@@ -367,6 +369,7 @@ const LogoGrid = styled.div`
 const Logo = styled.img`
   height: 100%;
   margin: 10px;
+  margin-right: 4%;
 `;
 
 const ServicesSection = styled(Section20)`
@@ -409,7 +412,7 @@ const ServiceItem = styled.div`
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E1E1E1;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -541,12 +544,13 @@ const BottomText = styled.p`
 
 const ConsultButton = styled(Button)`
   width: 20%;
+  
   @media (max-width: 768px) {
     width: 100%;
   }
 `;
 const ConsultButtonHome = styled(Button)`
-  width: 30%;
+  width: 40%;
   @media (max-width: 768px) {
     width: 100%;
     margin-bottom: 40px;
@@ -680,11 +684,11 @@ const IndustryList = styled.ul`
 const IndustryItem = styled.li`
   margin-bottom: 10px;
   cursor: pointer;
-  color: ${(props) => (props.active ? "#ffffff" : "#434343")};
+  color: ${(props) => (props.active ? "#0072FF" : "#434343")};
   font-weight: ${(props) => (props.active ? "600" : "normal")};
   background: ${(props) =>
     props.active
-      ? "linear-gradient(to right, #0072FF 0%, #2F69B1 100%)"
+      ? "linear-gradient(to right, #DDEEFF 0%, #DDEEFF 100%)"
       : "transparent"};
   padding: 10px 15px;
   width: 100%;
@@ -723,7 +727,6 @@ const WorkCard = styled.div`
   background-image: url(${educationProject1});
   background-size: cover;
   background-position: center;
-  border-radius: 10px;
   height: 300px;
   position: relative;
 `;
@@ -804,8 +807,8 @@ const IndustryName = styled.p`
 const CustomerTestimonial = styled.div`
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  border: 1px solid #6C6C6C;
+  border-radius: 60px;
   padding: 40px;
   margin-top: 25px;
   @media (max-width: 768px) {
@@ -873,7 +876,7 @@ const AwardsDots = styled.div`
 const AwardsDot = styled.span`
   width: 10px;
   height: 10px;
-  background-color: ${(props) => (props.active ? "#434343" : "#ccc")};
+  background-color: ${(props) => (props.active ? "#434343" : "#6C6C6C")};
   border-radius: 50%;
 `;
 
@@ -938,7 +941,7 @@ const TrustedDots = styled.div`
 const TrustedDot = styled.span`
   width: 10px;
   height: 10px;
-  background-color: ${(props) => (props.active ? "#434343" : "#ccc")};
+  background-color: ${(props) => (props.active ? "#434343" : "#6C6C6C")};
   border-radius: 50%;
 `;
 
@@ -1352,9 +1355,9 @@ const Home = () => {
 
       <BgWrapper>
       <BgWrapperRight>
-      <hr style={{border: "1px solid #000000",marginLeft:"100px",marginRight:"100px"}}/>
+      <hr style={{border: "0.5px solid #000000"}}/>
 
-      <TechnologiesSection>
+      <TechnologiesSection  data-aos="fade-up">
         <Container>
           <Title>Technologies that drive Growth</Title>
           <Subtitle>
@@ -1395,7 +1398,7 @@ const Home = () => {
           </BottomRow>
         </Container>
       </TechnologiesSection>
-      <hr style={{border: "1px solid #000000",marginLeft:"100px",marginRight:"100px",marginTop:"30px"}}/>
+      <hr style={{border: "0.5px solid #000000",marginTop:"30px"}}/>
 
       <SolutionsSection data-aos="fade-up">
         <Container>
@@ -1478,7 +1481,7 @@ const Home = () => {
         </HireSection>
       </Container>
 
-      <ValueSection>
+      <ValueSection  data-aos="fade-up">
         <Container>
           <Title>Solminica Deliver <br/> Value for Money</Title>
           <Subtitle>
@@ -1526,7 +1529,7 @@ const Home = () => {
         </Container>
       </ValueSection>
 
-      <WorkSection>
+      <WorkSection  data-aos="fade-up">
         <Container>
           <Title>Our Work</Title>
           <Subtitle>Solminica working on different sectors with giving them the proof and solutions. From agriculture to fintech, we cater to a wide array of industries, offering tailored solutions to meet their specific needs</Subtitle>
@@ -1662,7 +1665,7 @@ const Home = () => {
         </Container>
       </TechnologiesSection>
 
-      <AwardsSection>
+      <AwardsSection  data-aos="fade-up">
         <Title>Awards and Recognition</Title>
         <Subtitle>
           "We're proud to be recognized as a top performer by Clutch and
@@ -1688,7 +1691,7 @@ const Home = () => {
         </AwardsDots>
       </AwardsSection>
 
-      <BusinessesSection>
+      <BusinessesSection  data-aos="fade-up">
         <Container>
           <Title>Why Businesses Prefer Us?</Title>
           <Subtitle>
@@ -1708,7 +1711,7 @@ const Home = () => {
         </Container>
       </BusinessesSection>
 
-      <TrustedSection>
+      <TrustedSection  data-aos="fade-up">
         <Container>
           <Title>Trusted By 100+ Happy Brands</Title>
           <Subtitle>
@@ -1735,7 +1738,7 @@ const Home = () => {
         </Container>
       </TrustedSection>
 
-      <BlogSection>
+      <BlogSection  data-aos="fade-up">
         <Container>
           <Title>Blogs</Title>
           <Subtitle>
