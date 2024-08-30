@@ -4,6 +4,7 @@ import styled, { keyframes } from 'styled-components';
 
 import { useInView } from 'react-intersection-observer';
 
+import Slider from "react-slick";
 
 import AOS from "aos";
 import "slick-carousel/slick/slick.css";
@@ -35,6 +36,7 @@ import transformImage from "../assets/images/transform-image.png";
 import trusted_partner_1 from "../assets/images/trusted_partner_1.png";
 import trusted_partner_2 from "../assets/images/trusted_partner_2.png";
 import trusted_partner_3 from "../assets/images/trusted_partner_3.png";
+import sacred_card from "../assets/images/sacred_card.png";
 import trusted_partner_4 from "../assets/images/trusted_partner_4.png";
 import trusted_partner_5 from "../assets/images/trusted_partner_5.png";
 import trusted_partner_6 from "../assets/images/trusted_partner_6.png";
@@ -843,6 +845,17 @@ const IndustriesGrid = styled.div`
 
 const IndustryGridItem = styled.div`
   text-align: center;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #6C6C6C;
+
+  }
 `;
 
 const IndustryGridIcon = styled.img`
@@ -902,16 +915,7 @@ const AwardsSection = styled(Section)`
   text-align: center;
 `;
 
-const AwardsGrid = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
-  @media (max-width: 768px) {
-    flex-wrap: wrap;
-  }
-`;
+
 
 const AwardImage = styled.img`
   height: 100px;
@@ -961,25 +965,19 @@ const BusinessItem = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-`;
-
-const TrustedSection = styled(Section20)`
-  text-align: center;
-`;
-
-const TrustedGrid = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
-  @media (max-width: 768px) {
-    flex-wrap: wrap;
+  &:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
   }
 `;
 
+
 const TrustedLogo = styled.img`
   height: 100px;
+  cursor: pointer;
   width: auto;
 `;
 
@@ -1188,7 +1186,35 @@ const PartnerLogoTest = styled(motion.img)`
   }
 `;
 
+const TrustedSection = styled(Section20)`
+  text-align: center;
+`;
+
+const TrustedGrid = styled(Slider)`
+  .slick-slide {
+    display: flex !important;
+    justify-content: center;
+  }
+`;
+
+const AwardsGrid = styled(Slider)`
+  .slick-slide {
+    display: flex !important;
+    justify-content: center;
+  }
+`;
 const Home = () => {
+  const carouselSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,  // Adjust based on how many logos you want visible
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+  };
+
   const { ref: refValue, inView: inViewValue } = useInView({
     triggerOnce: true,
     threshold: 0.5,
@@ -1920,15 +1946,16 @@ const Home = () => {
           </CustomerTestimonial>
         </Container>
       </TechnologiesSection>
+<Container>
 
-      <AwardsSection  data-aos="fade-up">
+      <AwardsSection data-aos="fade-up">
         <Title>Awards and Recognition</Title>
         <Subtitle>
           "We're proud to be recognized as a top performer by Clutch and
           Appfutura, acknowledging our expertise in IT <br />services, software
           development, and iOS app creation."
         </Subtitle>
-        <AwardsGrid>
+        <AwardsGrid {...carouselSettings}>
           <AwardImage src={award_1} alt="Clutch Award" />
           <AwardImage src={award_2} alt="Top Software Development Company" />
           <AwardImage src={award_3} alt="Top App Developers" />
@@ -1939,13 +1966,8 @@ const Home = () => {
             alt="Top Rated Software Development Company"
           />
         </AwardsGrid>
-        <AwardsDots>
-          <AwardsDot active />
-          <AwardsDot />
-          <AwardsDot />
-          <AwardsDot />
-        </AwardsDots>
       </AwardsSection>
+</Container>
 
       <BusinessesSection  data-aos="fade-up">
         <Container>
@@ -1967,7 +1989,7 @@ const Home = () => {
         </Container>
       </BusinessesSection>
 
-      <TrustedSection  data-aos="fade-up">
+      <TrustedSection data-aos="fade-up">
         <Container>
           <Title>Trusted By 100+ Happy Brands</Title>
           <Subtitle>
@@ -1977,23 +1999,16 @@ const Home = () => {
             competitive advantage. We are proud to have maintained a 90% client
             retention rate since 2017.
           </Subtitle>
-          <TrustedGrid>
-            <TrustedLogo src={trusted_partner_1} alt="Trusted Partner 1" />
-            <TrustedLogo src={trusted_partner_2} alt="Trusted Partner 2" />
-            <TrustedLogo src={trusted_partner_3} alt="Trusted Partner 3" />
-            <TrustedLogo src={trusted_partner_4} alt="Trusted Partner 4" />
-            <TrustedLogo src={trusted_partner_5_card} alt="Trusted Partner 5" />
-            <TrustedLogo src={trusted_partner_6_card} alt="Trusted Partner 6" />
+          <TrustedGrid {...carouselSettings}>
+            <TrustedLogo onClick={() => window.open("https://www.rainbowhospitals.in/", "_blank")} src={trusted_partner_1} alt="Trusted Partner 1" />
+            <TrustedLogo onClick={() => window.open("https://apwrims.ap.gov.in/", "_blank")} src={trusted_partner_2} alt="Trusted Partner 2" />
+            <TrustedLogo onClick={() => window.open("https://www.powergrid.in/", "_blank")} src={trusted_partner_3} alt="Trusted Partner 3" />
+            <TrustedLogo onClick={() => window.open("https://www.sacredgroves.earth/", "_blank")} src={sacred_card} alt="Trusted Partner 4" />
+            <TrustedLogo onClick={() => window.open("https://suvarnabhoomiinfra.com/", "_blank")} src={trusted_partner_5_card} alt="Trusted Partner 5" />
+            <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_6_card} alt="Trusted Partner 6" />
           </TrustedGrid>
-          <TrustedDots>
-            <TrustedDot active />
-            <TrustedDot />
-            <TrustedDot />
-            <TrustedDot />
-          </TrustedDots>
         </Container>
       </TrustedSection>
-
       <BlogSection  data-aos="fade-up">
         <Container>
           <Title>Blogs</Title>
