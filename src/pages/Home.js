@@ -1329,18 +1329,18 @@ const Home = () => {
   ];
 
   const partnerLogos = [
-    { src: google, alt: "Google" },
-    { src: googleCloud, alt: "Google Cloud" },
-    { src: razorpay, alt: "Razorpay" },
-    { src: facebook2, alt: "Facebook" },
-    { src: linkedin2, alt: "LinkedIn" },
-    { src: aws, alt: "AWS" },
-    { src: kaspersky, alt: "Kaspersky" },
-    { src: bing, alt: "Bing" },
-    { src: payu, alt: "PayU" },
-    { src: digitalOcean, alt: "Digital Ocean" },
-    { src: newfold, alt: "Newfold" },
-    { src: bitrix24, alt: "Bitrix24" },
+    { src: google, alt: "Google" , url: "https://www.google.com/"},
+    { src: googleCloud, alt: "Google Cloud" , url: "https://cloud.google.com/"},
+    { src: razorpay, alt: "Razorpay" , url: "https://razorpay.com/"},
+    { src: facebook2, alt: "Facebook", url: "https://www.facebook.com/" },
+    { src: linkedin2, alt: "LinkedIn", url: "https://www.linkedin.com/" },
+    { src: aws, alt: "AWS", url: "https://aws.amazon.com/" },
+    { src: kaspersky, alt: "Kaspersky", url: "https://www.kaspersky.com/" },
+    { src: bing, alt: "Bing" , url: "https://www.bing.com/"},
+    { src: payu, alt: "PayU", url: "https://payu.in/" },
+    { src: digitalOcean, alt: "Digital Ocean", url: "https://www.digitalocean.com/" },
+    { src: newfold, alt: "Newfold", url: "https://www.newfold.com/" },
+    { src: bitrix24, alt: "Bitrix24", url: "https://bitrix24.com/" },
   ];
 
   const businessReasons = [
@@ -2051,6 +2051,7 @@ const Home = () => {
           <PartnersGrid>
             {partnerLogos.map((partner, index) => (
               <PartnerLogo
+                onClick={() => window.open(partner.url, "_blank")}
                 key={index}
                 src={partner.src}
                 alt={partner.alt}

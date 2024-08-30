@@ -109,6 +109,7 @@ const SocialProductsColumn = styled.div`
 const FooterLink = styled.a`
   font-family: 'Poppins';
   color: white;
+  cursor: pointer;
   text-decoration: none;
   display: block;
   margin-bottom: 8px;
@@ -144,6 +145,7 @@ const ProductsSection = styled.div`
 
 const ProductImage = styled.img`
   height: 50px;
+  cursor: pointer;
   font-family: 'Poppins';
   width: auto;
 `;
@@ -322,11 +324,11 @@ const Footer = () => {
           Copyright © 2017 - 2024 Solminica. All rights reserved.
         </Copyright>
         <Copyright>
-          <a>Sitemap</a> | <a href='/privacy-policy'>Privacy Policy</a> | <a href='/terms-conditions'>TnC</a> | <a>Refund Policy</a> | <a href="/code-of-conduct">Code of Conduct</a>
+          <a href="#">Sitemap</a> | <a href='/privacy-policy'>Privacy Policy</a> | <a href='/terms-conditions'>TnC</a> | <a href="#">Refund Policy</a> | <a href="/code-of-conduct">Code of Conduct</a>
         </Copyright>
       </CopyrightRow>
 
-      <Copyright style={{ fontSize: '11px', textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
+      <Copyright style={{ fontSize: '10px', textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
         Disclaimer: All logos, images, product names, brands and other trademarks featured or referred to within this website (www.jethitech.com) are the property of their respective trademark holders. These trademark holders are not affiliated with Solminica, our products, services, or our websites. They do not sponsor or endorse Solminica or any of our products or services. These references are provided for informational purposes only.
       </Copyright>
     </FooterContent>
