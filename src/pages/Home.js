@@ -57,17 +57,22 @@ import our_digital_cloud from "../assets/images/our_digital_cloud.png";
 import our_digital_lets_conect_last_card from "../assets/images/our_digital_lets_conect_last_card.png";
 import reactIcon from "../assets/images/react.png";
 import nextjs from "../assets/images/nextjs.png";
-import html from "../assets/images/html.png";
+import html from "../assets/images/html.svg";
+import css from "../assets/images/css.svg";
+import jquery from "../assets/images/jquery.svg";
+import php from "../assets/images/php.svg";
+import bootstrap from "../assets/images/bootstrap.svg";
+import ajax from "../assets/images/ajax.svg";
+import mysql from "../assets/images/mysql.svg";
+import laravel from "../assets/images/laravel.svg";
 import typescript from "../assets/images/typescript.png";
 import angular from "../assets/images/angular.png";
 import vuejs from "../assets/images/veujs.png";
 import nodejs from "../assets/images/nodejs.png";
 import blockchain from "../assets/images/blockchain.png";
 import aiml from "../assets/images/aiml.png";
-import laravel from "../assets/images/laravel.png";
 import wordpress from "../assets/images/wordpress.png";
 import shopify from "../assets/images/shopify.png";
-import php from "../assets/images/php.png";
 import net from "../assets/images/net.png";
 import python from "../assets/images/python.png";
 import java from "../assets/images/java.png";
@@ -133,12 +138,12 @@ import educationIcon from "../assets/images/education.png";
 import healthcareIcon from "../assets/images/healthcare.png";
 import logisticsIcon from "../assets/images/logistics-distribution.png";
 import aimlIcon from "../assets/images/aiml.png";
-import realEstateIcon from "../assets/images/real-estate.png";
-import travelIcon from "../assets/images/travel-hospitality.png";
-import foodIcon from "../assets/images/food-restaurant.png";
-import financeIcon from "../assets/images/finance.png";
-import retailIcon from "../assets/images/retail-e-commerce.png";
-import miscIcon from "../assets/images/miscellaneous.png";
+import realEstateIcon from "../assets/images/realEstateIcon.svg";
+import travelIcon from "../assets/images/travelIcon.svg";
+import foodIcon from "../assets/images/foodIcon.svg";
+import financeIcon from "../assets/images/financeIcon.svg";
+import retailIcon from "../assets/images/retailIcon.svg";
+import miscIcon from "../assets/images/miscIcon.svg";
 import educationProject1 from "../assets/images/education_1.png";
 import educationProject2 from "../assets/images/education_2.png";
 import herosectionbg from "../assets/images/hero-bg-line.png";
@@ -148,6 +153,7 @@ import tp_home_1 from "../assets/images/tp-home-1.png";
 import tp_home_2 from "../assets/images/tp-home-2.png";
 import tp_home_3 from "../assets/images/tp-home-3.png";
 import tp_home_4 from "../assets/images/tp-home-4.png";
+import { ArrowRightAlt } from "@material-ui/icons";
 
 const HomeWrapper = styled.div`
   font-family: "Poppins";
@@ -733,6 +739,20 @@ const IndustryList = styled.ul`
   width: 250px;
   margin-right: 40px;
 `;
+const BlueGradientSVGIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{ stopColor: '#0072FF', stopOpacity: 1 }} />
+        <stop offset="100%" style={{ stopColor: '#2F69B1', stopOpacity: 1 }} />
+      </linearGradient>
+    </defs>
+    <path
+      d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM13 7H11V12.59L14.7 16.29L16.11 14.88L13 11.59V7Z"
+      fill="url(#blue-gradient)"
+    />
+  </svg>
+);
 
 const IndustryItem = styled.li`
   margin-bottom: 10px;
@@ -743,12 +763,31 @@ const IndustryItem = styled.li`
     props.active
       ? "linear-gradient(to right, #DDEEFF 0%, #DDEEFF 100%)"
       : "transparent"};
-  padding: 10px 15px;
+  padding: 20px 15px;
   width: 100%;
   text-align: left;
   display: flex;
   align-items: center;
+
+  &:hover ${StyledSVGIcon},
+  &.active ${StyledSVGIcon} {
+    fill: url(#blue-gradient);
+  }
 `;
+
+const StyledSVGIcon = styled.img`
+  width: 24px;
+  height: 24px;
+  fill: #000000; /* Default color */
+  transition: fill 0.3s ease;
+
+  &:hover,
+  &.active {
+    fill: url(#blue-gradient);
+  }
+`;
+
+
 
 const IndustryIcon = styled.img`
   width: 24px;
@@ -764,6 +803,11 @@ const WorkDetailTitle = styled.h3`
   font-size: 24px;
   margin-bottom: 15px;
 `;
+const WorkDetailTitle2 = styled.h3`
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 15px;
+`;
 
 const WorkDetailDescription = styled.p`
   font-size: 16px;
@@ -772,6 +816,7 @@ const WorkDetailDescription = styled.p`
 
 const WorkCards = styled.div`
   display: grid;
+  cursor: pointer;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 `;
@@ -818,8 +863,8 @@ const TechStack = styled.div`
 `;
 
 const TechIcon = styled.img`
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
 `;
 
@@ -1196,7 +1241,20 @@ const TrustedGrid = styled(Slider)`
     justify-content: center;
   }
 `;
+const IndustryIconWrapper = styled.div`
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
 
+  svg {
+    fill: ${(props) => (props.active ? 'url(#blue-gradient)' : '#000000')};
+    transition: fill 0.3s ease;
+
+    &:hover {
+      fill: url(#blue-gradient);
+    }
+  }
+`;
 const AwardsGrid = styled(Slider)`
   .slick-slide {
     display: flex !important;
@@ -1812,46 +1870,53 @@ const Home = () => {
         </Container>
       </ValueSection>
       <WorkSection  data-aos="fade-up">
-        <Container>
-          <Title>Our Work</Title>
-          <Subtitle>Solminica working on different sectors with giving them the proof and solutions. From agriculture to fintech, we cater to a wide array of industries, offering tailored solutions to meet their specific needs</Subtitle>
-          <WorkGrid>
-            <IndustryList>
-              {Object.keys(industryData).map(industry => (
-                <IndustryItem 
-                  key={industry} 
-                  active={activeIndustry === industry} 
-                  onClick={() => setActiveIndustry(industry)}
-                >
-                  <IndustryIcon src={industryData[industry].icon} alt={industry} />
-                  {industry}
-                </IndustryItem>
+      <Section>
+      <Container>
+        <Title>Our Work</Title>
+        <Subtitle>
+          Solminica working on different sectors with giving them the proof and solutions. From agriculture to fintech, we cater to a wide array of industries, offering tailored solutions to meet their specific needs.
+        </Subtitle>
+        <WorkGrid>
+          <IndustryList>
+            {Object.keys(industryData).map((industry) => (
+              <IndustryItem
+                key={industry}
+                active={activeIndustry === industry}
+                onClick={() => setActiveIndustry(industry)}
+              >
+                <IndustryIconWrapper active={activeIndustry === industry}>
+                  <BlueGradientSVGIcon />
+                </IndustryIconWrapper>
+                {industry}
+              </IndustryItem>
+            ))}
+          </IndustryList>
+          <WorkDetails>
+            <WorkDetailTitle>{activeIndustry}</WorkDetailTitle>
+            <WorkDetailDescription>
+              The healthcare industry utilizes advanced technology solutions for telemedicine, electronic health records, and patient monitoring, thereby enhancing care accessibility, improving patient outcomes, and streamlining operational efficiency.
+            </WorkDetailDescription>
+            <WorkCards>
+              {[1, 2].map((_, index) => (
+                <WorkCard key={index}>
+                  <OverlayImage src={industryData[activeIndustry].icon} alt={`${activeIndustry} Project`} />
+                  <WorkCardContent>
+                    <WorkCardTitle>Rainbow Children’s Hospitals</WorkCardTitle>
+                    <WorkCardDescription>
+                      Rainbow Children’s Hospitals is a leading paediatric healthcare hospital chain in India with over 15 hospitals and 3 clinics in 6 cities, with a total bed capacity of 1,550+ beds.
+                    </WorkCardDescription>
+                    <TechStack>
+                      {/* Insert Tech Icons here */}
+                    </TechStack>
+                    <ReadMore href="#">Read More →</ReadMore>
+                  </WorkCardContent>
+                </WorkCard>
               ))}
-            </IndustryList>
-            <WorkDetails>
-              <WorkDetailTitle>{activeIndustry}</WorkDetailTitle>
-              <WorkDetailDescription>The {activeIndustry.toLowerCase()} industry utilizes advanced technology solutions for various purposes, thereby enhancing accessibility, improving outcomes, and streamlining operational efficiency.</WorkDetailDescription>
-              <WorkCards>
-                {[1, 2].map((_, index) => (
-                  <div key={index}>
-                    <WorkCard>
-                      <OverlayImage src={educationProject2} alt={`${activeIndustry} Project Overlay`} />
-                    </WorkCard>
-                    <WorkCardContent>
-                      <WorkCardTitle>{`${activeIndustry} Project ${index +1}`}</WorkCardTitle>
-                      <WorkCardDescription>Description of the project goes here.</WorkCardDescription>
-                      <TechStack>
-                        <TechIcon src={reactIcon} alt="React" />
-                        <TechIcon src={nextjs} alt="Next.js" />
-                      </TechStack>
-                      <ReadMore href="#">Read More →</ReadMore>
-                    </WorkCardContent>
-                  </div>
-                ))}
-              </WorkCards>
-            </WorkDetails>
-          </WorkGrid>
-        </Container>
+            </WorkCards>
+          </WorkDetails>
+        </WorkGrid>
+      </Container>
+    </Section>
       </WorkSection>
 
       <ProcessSection data-aos="fade-up">
