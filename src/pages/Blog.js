@@ -9,6 +9,7 @@ import blog_4 from '../assets/images/blog_4.png';
 import blog_5 from '../assets/images/blog_5.png';
 import blog_6 from '../assets/images/blog_6.png';
 import blog_7 from '../assets/images/blog_7.png';
+import card from '../assets/images/card.png';
 
 const BlogPage = styled.div`
   max-width: 1200px;
@@ -16,7 +17,7 @@ const BlogPage = styled.div`
   padding: 40px 20px;
 `;
 
-const HeroSection = styled.div`
+const HeroSection_1 = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,7 +32,7 @@ const HeroContent = styled.div`
   flex: 1;
 `;
 
-const HeroTitle = styled.h1`
+const HeroTitle_1 = styled.h1`
   font-size: 48px;
   font-weight: 700;
   color: #434343;
@@ -43,7 +44,7 @@ const HeroTitle = styled.h1`
   }
 `;
 
-const HeroSubtitle = styled.p`
+const HeroSubtitle_1 = styled.p`
   font-size: 20px;
   color: #4E4E4E;
   margin-bottom: 0;
@@ -170,21 +171,86 @@ const DropdownArrow = styled.span`
   }
 `;
 
+// card css 
+
+const ServicesPage = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: url(${card}) no-repeat center center;
+  background-size: cover;
+`;
+
+const ServicesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px 0;
+`;
+
+const ServiceCard = styled.div`
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
+
+const ServiceTitle = styled.h2`
+  font-size: 18px;
+  color: #333333;
+`;
+
+const ServiceDescription = styled.p`
+  font-size: 14px;
+  color: #666666;
+  margin-top: 10px;
+`;
+
+const HeroSection = styled.div`
+  text-align: center;
+  padding: 40px 20px;
+`;
+
+const HeroTitle = styled.h1`
+  color: #434343;
+  font-size: 48px;
+`;
+
+const HeroSubtitle = styled.p`
+  color: #4E4E4E;
+  font-size: 20px;
+`;
+
+
+
+
 const Blog = () => {
   const navigate = useNavigate();
+  const services = [
+    { title: "Web Development", description: "Build high-performing architectures for your projects." },
+    { title: "Mobile Solutions", description: "Create seamless mobile solutions." },
+    { title: "Cloud and DevOps", description: "Implement efficient cloud solutions and DevOps practices." },
+    // Add more services as needed
+  ];
+  
   return (
     <BlogPage>
-      <HeroSection>
+      <HeroSection_1>
         <HeroContent>
-          <HeroTitle>Our <span style={{color: '#0000FF'}}>Blogs</span></HeroTitle>
-          <HeroSubtitle>
+          <HeroTitle_1>Our <span style={{color: '#0000FF'}}>Blogs</span></HeroTitle_1>
+          <HeroSubtitle_1>
             Solminica creates inspirational designs and robust 
             solutions for Web and mobile apps. We combine our 
             expertise in tech & design.
-          </HeroSubtitle>
+          </HeroSubtitle_1>
         </HeroContent>
         <HeroImage src={our_blog} alt="Our Blogs" />
-      </HeroSection>
+      </HeroSection_1>
 
       <BlogHeader>
         <ResultsCount>Showing 1-6 of 13 results</ResultsCount>
@@ -222,6 +288,21 @@ const Blog = () => {
       </BlogGrid>
 
       <LoadMoreButton>Load More</LoadMoreButton>
+
+      <ServicesPage>
+      <HeroSection>
+        <HeroTitle>Our Services</HeroTitle>
+        <HeroSubtitle>We provide top-notch services in various tech fields.</HeroSubtitle>
+      </HeroSection>
+      <ServicesGrid>
+        {services.map(service => (
+          <ServiceCard key={service.title}>
+            <ServiceTitle>{service.title}</ServiceTitle>
+            <ServiceDescription>{service.description}</ServiceDescription>
+          </ServiceCard>
+        ))}
+      </ServicesGrid>
+    </ServicesPage>
     </BlogPage>
   );
 };

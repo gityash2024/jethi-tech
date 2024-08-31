@@ -1,4 +1,6 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
+
 import styled from 'styled-components';
 import about_as from '../assets/images/about_as.png';
 import finding_image from '../assets/images/finding_image.png';
@@ -27,6 +29,7 @@ import find_2 from '../assets/images/find_2.png';
 import find_3 from '../assets/images/find_3.png';
 import find_4 from '../assets/images/find_4.png';
 import find_5 from '../assets/images/find_5.png';
+import CountUp from 'react-countup';
 
 const AboutWrapper = styled.div`
   font-family: 'Poppins';
@@ -41,6 +44,8 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 20px;
 `;
+
+
 
 const HeroSection = styled(Section)`
   display: flex;
@@ -81,6 +86,7 @@ const Button = styled.button`
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
+  font-family: 'Poppins';
 `;
 
 const HeroImage = styled.img`
@@ -441,7 +447,7 @@ const BottomRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 25px;
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 20px;
@@ -455,10 +461,12 @@ const BottomText = styled.p`
   flex: 1;
   line-height: 30px;
     font-weight: 700;
+    font-family: "Poppins";
 `;
 
 const ConsultButton = styled(Button)`
   width: 20%;
+  
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -475,8 +483,135 @@ const AwardsDot = styled.span`
   background-color: ${(props) => (props.active ? "#434343" : "#ccc")};
   border-radius: 50%;
 `;
+const Section0 = styled.section`
+  padding: 0px 0;
+  @media (max-width: 768px) {
+    padding: 0px 0;
+  }
+`;
+
+const BusinessesSection = styled(Section0)`
+  text-align: center;
+  margin-bottom: 50px;
+`;
+
+
+const BusinessesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+`;
+
+const BusinessIcon = styled.img`
+  width: 50px;
+  height: 50px;
+`;
+
+const BusinessName = styled.p`
+  font-size: 14px;
+  margin-top: 10px;
+`;
+
+const BusinessItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  &:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+  }
+`;
+
+
+const TechnologiesSection = styled(Section0)`
+`;
+
+const CustomerTestimonial = styled.div`
+  display: flex;
+  align-items: center;
+  border: 1px solid #6C6C6C;
+  border-radius: 60px;
+  padding: 40px;
+  margin-top: 25px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px;
+  }
+`;
+
+const TestimonialText = styled.p`
+  font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: #434343
+`;
+
+const TestimonialPosition = styled.p`
+  font-size: 14px;
+  color: #666;
+`;
+
+const cardVariants2 = {
+  hiddenLeft: { opacity: 0, x: -100 },
+  hiddenRight: { opacity: 0, x: 100 },
+  visible: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.8,
+    },
+  }),
+};
+
+const ConsultButtonHome = styled(Button)`
+  width: 40%;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+`;
+// const { ref: refPartners, inView: inViewPartners } = useInView({
+//   triggerOnce: true,
+//   threshold: 0.5,
+// });
+// useEffect(() => {
+//   AOS.init({
+//     duration: 1000,
+//     once: true,
+//   });
+// }, []);
 
 const About = () => {
+  const { ref: refValue, inView: inViewValue } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  const businessReasons = [
+    { icon: Businesses_1, text: "SEO and Digital Marketing" },
+    { icon: Businesses_2, text: "4 months + free post launch support" },
+    { icon: Businesses_3, text: "Non-Disclosure Agreement" },
+    { icon: Businesses_4, text: "100% value for the money" },
+    { icon: Businesses_5, text: "Professional coding and version controls" },
+    { icon: Businesses_6, text: "Flexible Payment Plans" },
+    { icon: Businesses_7, text: "Real-time project tracking tools" },
+    { icon: Businesses_8, text: "Custom Tailored support | AMC Plans" },
+    { icon: Businesses_9, text: "Quality Assurance and Unit Test Cases" },
+    { icon: Businesses_10, text: "Penalty enforcement in case of Delivery Delay" },
+    { icon: Businesses_11, text: "In-depth analysis of revenue business Models" },
+    { icon: Businesses_12, text: "Mind Maps and video demos" },
+  ];
   return (
     <AboutWrapper>
       <Container>
@@ -484,7 +619,7 @@ const About = () => {
           <HeroContent>
             <HeroTitle>The right <span>technology partner</span>  can change everything</HeroTitle>
             <HeroSubtitle>We are firm believers that the best software comes from small agile and highly skilled teams.</HeroSubtitle>
-            <Button>Get Quote</Button>
+            <ConsultButtonHome>Get Quote</ConsultButtonHome>
           </HeroContent>
           <HeroImage src={about_as} alt="About Us" />
         </HeroSection>
@@ -513,184 +648,206 @@ const About = () => {
 </BeliefSection>
 
 
-        <SolutionsSection>
-          <Title>
-            Avail Profit-Driven Development Solutions<br />
-            to Resolve All-Scale Business Needs
-          </Title>
-          <Subtitle>
-            Solminica creates enterprise solutions that seamlessly blend
-            traditional methods with the latest innovations.
-          </Subtitle>
-          <SolutionGrid>
-            <SolutionItem>
-              <SolutionIcon src={smbs} alt="SMBs" />
-              <SolutionContent>
-                <SolutionTitle>SMBs</SolutionTitle>
-                <SolutionDescription>
-                  Seamlessly turn your small business into a well-known brand
-                  with the top development assistance. For decades, we have been
-                  helping small-scale businesses earn.
-                </SolutionDescription>
-              </SolutionContent>
-            </SolutionItem>
-            <SolutionItem>
-              <SolutionIcon src={startup} alt="Startups" />
-              <SolutionContent>
-                <SolutionTitle>Startups</SolutionTitle>
-                <SolutionDescription>
-                  Let your startups climb the ladder of success in no time. We
-                  offer software development services for startups and help them
-                  get more funding as a brand
-                </SolutionDescription>
-              </SolutionContent>
-            </SolutionItem>
-            <SolutionItem>
-              <SolutionIcon src={enterprise} alt="Enterprises" />
-              <SolutionContent>
-                <SolutionTitle>Enterprises</SolutionTitle>
-                <SolutionDescription>
-                  Seek robust and customised enterprise mobility solutions to
-                  meet your business needs. Our each development layer is
-                  engineered with experience and expertise
-                </SolutionDescription>
-              </SolutionContent>
-            </SolutionItem>
-            <SolutionItem>
-              <SolutionIcon src={agency} alt="Agencies" />
-              <SolutionContent>
-                <SolutionTitle>Agencies</SolutionTitle>
-                <SolutionDescription>
-                  Our technical approach makes it accessible for offshore
-                  agencies to get exposure, improve business' financial growth,
-                  and increase sales & marketing potential
-                </SolutionDescription>
-              </SolutionContent>
-            </SolutionItem>
-          </SolutionGrid>
-        </SolutionsSection>
+<SolutionsSection data-aos="fade-up">
+      <Container>
+        <Title>
+          Avail Profit-Driven Development Solutions<br />
+          to Resolve All-Scale Business Needs
+        </Title>
+        <Subtitle>
+          Solminica creates enterprise solutions that seamlessly blend
+          traditional methods with the latest <br/> innovations.
+        </Subtitle>
+        <SolutionGrid>
+          <SolutionItem
+            custom={0}
+            initial="hiddenLeft"
+            whileInView="visible"
+            variants={cardVariants2}
+            viewport={{ once: true }}
+          >
+            <SolutionIcon src={smbs} alt="SMBs" />
+            <SolutionContent>
+              <SolutionTitle>SMBs</SolutionTitle>
+              <SolutionDescription>
+                Seamlessly turn your small business into a well-known brand
+                with the top development assistance. For decades, we have been
+                helping small-scale businesses earn.
+              </SolutionDescription>
+            </SolutionContent>
+          </SolutionItem>
 
-        <ValueSection>
-          <ValueTitle>Solminica Deliver Value for <br />Money</ValueTitle>
-          <ValueSubtitle>Solminica delivers unparalleled value for money by offering top-quality, innovative technology<br /> solutions at competitive prices. Our customized services are designed to fit any budget, ensuring <br />efficiency and productivity enhancements for businesses of all sizes. With exceptional customer <br />support, we are your trusted partner in achieving technological success.</ValueSubtitle>
-          <StatsGrid>
-            <StatItem>
-              <StatNumber>99%</StatNumber>
-              <StatLabel>Satisfied Clients</StatLabel>
+          <SolutionItem
+            custom={1}
+            initial="hiddenRight"
+            whileInView="visible"
+            variants={cardVariants2}
+            viewport={{ once: true }}
+          >
+            <SolutionIcon src={startup} alt="Startups" />
+            <SolutionContent>
+              <SolutionTitle>Startups</SolutionTitle>
+              <SolutionDescription>
+                Let your startups climb the ladder of success in no time. We
+                offer software development services for startups and help them
+                get more funding as a brand.
+              </SolutionDescription>
+            </SolutionContent>
+          </SolutionItem>
+
+          <SolutionItem
+            custom={2}
+            initial="hiddenLeft"
+            whileInView="visible"
+            variants={cardVariants2}
+            viewport={{ once: true }}
+          >
+            <SolutionIcon src={enterprise} alt="Enterprises" />
+            <SolutionContent>
+              <SolutionTitle>Enterprises</SolutionTitle>
+              <SolutionDescription>
+                Seek robust and customised enterprise mobility solutions to
+                meet your business needs. Our each development layer is
+                engineered with experience and expertise.
+              </SolutionDescription>
+            </SolutionContent>
+          </SolutionItem>
+
+          <SolutionItem
+            custom={3}
+            initial="hiddenRight"
+            whileInView="visible"
+            variants={cardVariants2}
+            viewport={{ once: true }}
+          >
+            <SolutionIcon src={agency} alt="Agencies" />
+            <SolutionContent>
+              <SolutionTitle>Agencies</SolutionTitle>
+              <SolutionDescription>
+                Our technical approach makes it accessible for offshore
+                agencies to get exposure, improve business' financial growth,
+                and increase sales & marketing potential.
+              </SolutionDescription>
+            </SolutionContent>
+          </SolutionItem>
+        </SolutionGrid>
+      </Container>
+    </SolutionsSection>
+
+    <ValueSection ref={refValue}>
+        <Container>
+          <Title>Solminica Deliver <br /> Value for Money</Title>
+          <Subtitle>
+            Solminica delivers unparalleled value for money by offering top-quality, innovative technology <br /> solutions at competitive prices.
+            Our customized services are designed to fit any budget, ensuring<br />
+            efficiency and productivity enhancements for businesses of all sizes. With exceptional customer<br /> support, we are your trusted
+            partner in achieving technological success.
+          </Subtitle>
+          <StatsGrid
+            initial={{ opacity: 0, y: 50 }}
+            animate={inViewValue ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, staggerChildren: 0.1 }}
+          >
+          {[
+            { end: 99, suffix: '%', label: '◾ Satisfied Clients' },
+            { end: 160, suffix: '+', label: '◾ Tech Enthusiasts' },
+            { end: 30, suffix: '+', label: '◾ Industries covered' },
+            { end: 550, suffix: '+', label: '◾ Projects Delivered' },
+            { end: 80, suffix: '%+', label: '◾ Impressive growth of Product' },
+            { end: 3.4, suffix: 'M+', label: '◾ Lines of Code' },
+            { end: 20, suffix: '+', label: '◾ Industry Certified Team members' },
+            { end: 850, suffix: '+', label: '◾ On time project delivery.' },
+          ].map((stat, index) => (
+            <StatItem
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inViewValue ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5 }}
+            >
+              <StatNumber>
+                <CountUp start={inViewValue ? 0 : null} end={stat.end} suffix={stat.suffix} duration={2.5} />
+              </StatNumber>
+              <StatLabel>{stat.label}</StatLabel>
             </StatItem>
-            <StatItem>
-              <StatNumber>160+</StatNumber>
-              <StatLabel>Tech Enthusiasts</StatLabel>
-            </StatItem>
-            <StatItem>
-              <StatNumber>30+</StatNumber>
-              <StatLabel>Industries covered</StatLabel>
-            </StatItem>
-            <StatItem>
-              <StatNumber>550+</StatNumber>
-              <StatLabel>Projects Delivered</StatLabel>
-            </StatItem>
-            <StatItem>
-              <StatNumber>80%+</StatNumber>
-              <StatLabel>Impressive growth of Product</StatLabel>
-            </StatItem>
-            <StatItem>
-              <StatNumber>3.4M+</StatNumber>
-              <StatLabel>Lines of Code</StatLabel>
-            </StatItem>
-            <StatItem>
-              <StatNumber>20+</StatNumber>
-              <StatLabel>Industry Certified Team members</StatLabel>
-            </StatItem>
-            <StatItem>
-              <StatNumber>850+</StatNumber>
-              <StatLabel>On time project delivery.</StatLabel>
-            </StatItem>
-          </StatsGrid>
-          <BottomRow>
-            <BottomText>
+          ))}
+        </StatsGrid>
+        <BottomRow>
+        <BottomText>
               Our expertise in designing and building digital solutions
-              authorises us to develop <br />bespoke solutions
+              authorises us to develop bespoke solutions
             </BottomText>
             <ConsultButton>Consult Now!</ConsultButton>
           </BottomRow>
-        </ValueSection>
+        </Container>
+      </ValueSection>
 
-        <PreferSection>
-          <PreferTitle>Why Businesses Prefer Us?</PreferTitle>
-          <PreferSubtitle>As the leading IT company, Solminica guarantees client satisfaction through surveys, punctual <br />delivery, established SLAs for support, superior quality in deliverables, and a commendable client <br />retention record</PreferSubtitle>
-          <PreferGrid>
-            <PreferItem>
-              <PreferIcon src={Businesses_1} alt="SEO and Digital Marketing" />
-              <PreferText>SEO and Digital Marketing</PreferText>
-            </PreferItem>
-            <PreferItem>
-              <PreferIcon src={Businesses_2} alt="4 months + free post launch support" />
-              <PreferText>4 months + free post launch support</PreferText>
-            </PreferItem>
-            <PreferItem>
-              <PreferIcon src={Businesses_3} alt="Non-Disclosure Agreement" />
-              <PreferText>Non-Disclosure Agreement</PreferText>
-            </PreferItem>
-            <PreferItem>
-              <PreferIcon src={Businesses_4} alt="100% value for the money" />
-              <PreferText>100% value for the money</PreferText>
-            </PreferItem>
-            <PreferItem>
-              <PreferIcon src={Businesses_5} alt="Professional coding and version controls" />
-              <PreferText>Professional coding and version controls</PreferText>
-            </PreferItem>
-            <PreferItem>
-              <PreferIcon src={Businesses_6} alt="Flexible Payment Plans" />
-              <PreferText>Flexible Payment Plans</PreferText>
-            </PreferItem>
-            <PreferItem>
-              <PreferIcon src={Businesses_7} alt="Real-time project tracking tools" />
-              <PreferText>Real-time project tracking tools</PreferText>
-            </PreferItem>
-            <PreferItem>
-              <PreferIcon src={Businesses_8} alt="Custom Tailored support | AMC Plans" />
-              <PreferText>Custom Tailored support | AMC Plans</PreferText>
-            </PreferItem>
-            <PreferItem>
-              <PreferIcon src={Businesses_9} alt="Quality Assurance and Unit Test Cases" />
-              <PreferText>Quality Assurance and Unit Test Cases</PreferText>
-            </PreferItem>
-            <PreferItem>
-              <PreferIcon src={Businesses_10} alt="Penalty enforcement in case of Delivery Delay" />
-              <PreferText>Penalty enforcement in case of Delivery Delay</PreferText>
-            </PreferItem>
-            <PreferItem>
-              <PreferIcon src={Businesses_11} alt="In-depth analysis of revenue business Models" />
-              <PreferText>In-depth analysis of revenue business Models</PreferText>
-            </PreferItem>
-            {/* <PreferItem>
-              <PreferIcon src={Businesses_11} alt="In-depth analysis of revenue business Models" />
-              <PreferText>In-depth analysis of revenue business Models</PreferText>
-            </PreferItem> */}
-            <PreferItem>
-              <PreferIcon src={Businesses_12} alt="Mind Maps and video demos" />
-              <PreferText>Mind Maps and video demos</PreferText>
-            </PreferItem>
-          </PreferGrid>
-        </PreferSection>
+      <BusinessesSection  data-aos="fade-up">
+        <Container>
+          <Title>Why Businesses Prefer Us?</Title>
+          <Subtitle>
+            As the leading IT company, Solminica guarantees client satisfaction
+            through surveys, punctual <br />delivery, established SLAs for support,
+            superior quality in deliverables, and a commendable <br />client retention
+            record
+          </Subtitle>
+          <BusinessesGrid>
+            {businessReasons.map((item, index) => (
+              <BusinessItem key={index}>
+                <BusinessIcon src={item.icon} alt={item.text} />
+                <BusinessName>{item.text}</BusinessName>
+              </BusinessItem>
+            ))}
+          </BusinessesGrid>
+        </Container>
+      </BusinessesSection>
       </Container>
       <TestimonialSection>
         <Container>
-          <TestimonialTitle>Our Customers love what we do</TestimonialTitle>
-          <TestimonialSubtitle>
-            Our customers are at the center of everything we do, and we're passionate about delivering exceptional solutions<br />
-            that exceed their expectations. We take pride in providing innovative services that delight and satisfy their needs,<br />
-            fostering long-term relationships built on trust, quality, and reliability. Our dedication to customer satisfaction is <br />
-            unwavering, and we continually strive to improve and refine our offerings to meet their evolving needs.
-          </TestimonialSubtitle>
-          <TestimonialCard>
+          <TechnologiesSection data-aos="fade-up">
+        <Container>
+          <Title>Our Customers love what we do</Title>
+          <Subtitle>
+            Our customers are at the center of everything we do, and we're
+            passionate about delivering exceptional solutions <br />that exceed their
+            expectations. We take pride in providing innovative services that
+            delight and satisfy their needs, <br />fostering long-term relationships
+            built on trust, quality, and reliability. Our dedication to customer
+            satisfaction is <br />unwavering, and we continually strive to improve and
+            refine our offerings to meet their evolving needs.
+          </Subtitle>
+          <CustomerTestimonial>
+            <TestimonialImage src={Customers} alt="Customer Testimonial" />
+            <TestimonialContent>
+              <TestimonialText>
+                " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore.
+                <br />
+                <br /> 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore."
+              </TestimonialText>
+              <TestimonialAuthor>Mark Rise</TestimonialAuthor>
+              <TestimonialPosition>CEO, Founder</TestimonialPosition>
+              <AwardsDots>
+          <AwardsDot active />
+          <AwardsDot />
+          <AwardsDot />
+          <AwardsDot />
+        </AwardsDots>
+            </TestimonialContent>
+          </CustomerTestimonial>
+        </Container>
+      </TechnologiesSection>
+          {/* <TestimonialCard>
             <TestimonialImage src={Customers} alt="Customer Testimonial" />
             <TestimonialContent>
               <TestimonialQuote>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreconsectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore.
-
+                <br />
+                <br />
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreconsectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore."
               </TestimonialQuote>
@@ -703,7 +860,7 @@ const About = () => {
           <AwardsDot />
         </AwardsDots>
             </TestimonialContent>
-          </TestimonialCard>
+          </TestimonialCard> */}
         </Container>
       </TestimonialSection>
 

@@ -18,6 +18,7 @@ import Work from './pages/Work';
 import BlogDetails from './pages/BlogDetails';
 import ScrollToTop from './components/scrollToTop';
 import ScrollToTopOnMount from './components/ScrollToTopOnMount';
+import Card from './pages/Card';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/hire" element={<Hire />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/work" element={<Work />} />
+          <Route path="/card" element={<Card />} />
         </Routes>
         <ScrollToTop />
       </MainLayout>

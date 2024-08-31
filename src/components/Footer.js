@@ -179,7 +179,7 @@ const LocationItem = styled.div`
 
 const Flag = styled.img`
   font-family: 'Poppins';
-  width: 40px;
+  width: 125px;
   height: auto;
   margin-bottom: 0x;
 `;

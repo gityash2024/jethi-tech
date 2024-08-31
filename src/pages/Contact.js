@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
 import about from '../assets/images/about.png';
 import award_1 from '../assets/images/award_1.png';
 import award_2 from '../assets/images/award_2.png';
@@ -13,6 +14,10 @@ import trusted_partner_4 from '../assets/images/trusted_partner_4.png';
 import trusted_partner_5 from '../assets/images/trusted_partner_5.png';
 import trusted_partner_6 from '../assets/images/trusted_partner_6.png';
 import Customers from '../assets/images/Customers.png';
+import context from '../assets/images/context.png';
+import sacred_card from "../assets/images/sacred_card.png";
+import trusted_partner_5_card from "../assets/images/trusted_partner_5_card.png";
+import trusted_partner_6_card from "../assets/images/trusted_partner_6_card.png";
 
 const AboutWrapper = styled.div`
   font-family: 'Poppins';
@@ -73,13 +78,16 @@ font-weight: 400;
 `;
 
 const Button = styled.button`
-  background-color: #0066CC;
+     background-color: #015BCC;
   color: white;
   border: none;
   padding: 12px 24px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   border-radius: 4px;
+  font-family: 'Poppins';
+      line-height: 20px;
+    font-weight: 600;
 
   @media (max-width: 768px) {
     font-size: 14px;
@@ -110,20 +118,41 @@ const AwardsTitle = styled.h2`
     font-size: 28px;
   }
 `;
-
+const gradientAnimation = keyframes`
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+`;
 const Title = styled.h2`
-  font-size: 48px;
-  color: #434343;
+  font-size: 46px;
+  background: linear-gradient(270deg, #000000 60%, #1a1a1a 70%, #0072FF 85%, #2F69B1 100%);
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: ${gradientAnimation} 3s ease infinite;
   margin-bottom: 20px;
   text-align: center; 
-  font-weight:700;
+  font-weight: 700;
   line-height: 62.4px;
+
   @media (max-width: 768px) {
     font-size: 28px;
-    
+    line-height: 40.4px;
   }
-     font-family: "Poppins";
+
+  font-family: "Poppins";
 `;
+const shine = keyframes`
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+`;
+
+
 const AwardsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -168,12 +197,11 @@ const TrustedGrid = styled.div`
   }
 `;
 
-const TrustedLogo = styled.img`
-  height: 60px;
 
-  @media (max-width: 768px) {
-    height: 50px;
-  }
+const TrustedLogo = styled.img`
+  height: 100px;
+  cursor: pointer;
+  width: auto;
 `;
 
 const TestimonialSection = styled(Section)`
@@ -207,166 +235,8 @@ const TestimonialCard = styled.div`
 
 
 
-const FormSection = styled(Section)`
-  background-color: #f8f8f8;
-  display: flex;
-  justify-content: space-between;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
 
-const InfoBox = styled.div`
-  background-color: #0066CC;
-  color: white;
-  padding: 30px;
-  border-radius: 8px;
-  flex: 0 0 40%;
-
-  @media (max-width: 768px) {
-    flex: 1;
-    margin-bottom: 20px;
-  }
-`;
-
-const InfoTitle = styled.h3`
-  font-size: 24px;
-  margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    font-size: 20px;
-  }
-`;
-
-const InfoSubtitle = styled.p`
-  font-size: 16px;
-  margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    font-size: 14px;
-  }
-`;
-
-const InfoList = styled.ol`
-  padding-left: 20px;
-`;
-
-const InfoItem = styled.li`
-  margin-bottom: 10px;
-`;
-
-const FormContainer = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`;
-
-const FormTitle = styled.h2`
-  font-size: 36px;
-  color: #434343;
-  text-align: center;
-  margin-bottom: 40px;
-
-  @media (max-width: 768px) {
-    font-size: 28px;
-  }
-`;
-
-const Form = styled.form`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-`;
-
-const Input = styled.input`
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-
-  @media (max-width: 768px) {
-    padding: 10px;
-  }
-`;
-
-const Select = styled.select`
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-  appearance: none;
-
-  @media (max-width: 768px) {
-    padding: 10px;
-  }
-`;
-
-const TextArea = styled.textarea`
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-  grid-column: span 2;
-  resize: vertical;
-
-  @media (max-width: 768px) {
-    grid-column: span 1;
-    padding: 10px;
-  }
-`;
-
-const Captcha = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  grid-column: span 2;
-
-  @media (max-width: 768px) {
-    grid-column: span 1;
-  }
-`;
-
-const CaptchaInput = styled(Input)`
-  width: 60px;
-  text-align: center;
-`;
-
-const CaptchaOperator = styled.span`
-  font-size: 20px;
-  font-weight: bold;
-`;
-
-const SubmitButton = styled.button`
-  grid-column: span 2;
-  background-color: #0066CC;
-  color: white;
-  border: none;
-  padding: 12px;
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  
-
-  @media (max-width: 768px) {
-    grid-column: span 1;
-    padding: 10px;
-  }
-`;
 
 const Subtitle = styled.p`
   font-size: 20px;
@@ -380,6 +250,8 @@ const Subtitle = styled.p`
     font-size: 16px;
   }
 `;
+
+
 
 const AwardsDot = styled.span`
   width: 10px;
@@ -438,83 +310,241 @@ const TestimonialPosition = styled.p`
   color: #666;
 `;
 
+const FormSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f8f8f8;
+`;
+
+const FormContainer = styled.div`
+  flex: 1;
+  margin-right: 20px;
+`;
+
+
+
+const FormTitle = styled.h1`
+  font-size: 24px;
+  color: #333333;
+`;
+
+const Form = styled.form`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+`;
+
+const Input = styled.input`
+  padding: 10px;
+  font-size: 16px;
+`;
+
+const Select = styled.select`
+  padding: 10px;
+  font-size: 16px;
+  color: #666;
+`;
+
+const TextArea = styled.textarea`
+  grid-column: span 2;
+  padding: 10px;
+  font-size: 16px;
+`;
+
+const Captcha = styled.div`
+  display: flex;
+  align-items: center;
+  grid-column: span 2;
+`;
+
+const CaptchaInput = styled.input`
+  padding: 10px;
+  font-size: 16px;
+  width: 50px;
+  margin-right: 10px;
+`;
+
+const CaptchaOperator = styled.span`
+  font-size: 16px;
+  margin-right: 10px;
+`;
+
+const SubmitButton = styled.button`
+  grid-column: span 2;
+  padding: 10px 20px;
+  background-color: #0066CC;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+`;
+
+
+
+const InfoBox = styled.div`
+  background-image: url(${context});
+  background-size: cover;
+  background-position: center;
+  color: #ffffff; // White text for better contrast
+  padding: 40px; // Increase padding for better spacing
+  border-radius: 8px; // Soft rounded corners
+  font-family: 'Arial', sans-serif; // Modern, readable font
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); // Subtle shadow for depth
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Center alignment for all content
+  text-align: center; // Center text
+`;
+
+const InfoTitle = styled.h2`
+  font-size: 28px; // Larger font size for title
+  margin-bottom: 20px; // Space below the title
+`;
+
+// Subtitle styling
+const InfoSubtitle = styled.p`
+  font-size: 18px; // Readable text size
+  margin-bottom: 20px; // Space below subtitles
+`;
+
+// Styling for the list of benefits
+const InfoList = styled.ul`
+  list-style: none; // No bullets
+  padding: 0; // No padding
+  margin: 0; // No margin
+`;
+
+// List item styling
+const InfoItem = styled.li`
+  font-size: 16px; // Consistent font size
+  margin-bottom: 10px; // Space between items
+  &:before {
+    content: '• '; // Custom bullet point
+    color: #00BFFF; // Stylish bullet color
+    font-size: 20px; // Larger bullet size
+    padding-right: 10px; // Space after the bullet
+  }
+`;
+const Section0 = styled.section`
+  padding: 0px 0;
+  @media (max-width: 768px) {
+    padding: 0px 0;
+  }
+`;
+const TechnologiesSection = styled(Section0)`
+`;
+
+const GradientText = styled.span`
+  background: linear-gradient(90deg, #2f69b1 0%, #0072ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
+`;
+
+const DarkText = styled.span`
+  color: #2f2f2f;
+`;
+const ConsultButtonHome = styled(Button)`
+  width: 40%;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+`;
 const Contact = () => {
+  const carouselSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,  // Adjust based on how many logos you want visible
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+  };
   return (
     <AboutWrapper>
       <Container>
         <HeroSection>
           <HeroContent>
-            <HeroTitle>Partner with us to revolutionize your industry</HeroTitle>
+          <HeroTitle>
+              <DarkText>Partner With us to</DarkText>
+              <br /> <GradientText>revolutionize Your</GradientText>{" "}
+              <GradientText>industry</GradientText>
+             
+            </HeroTitle>
             <HeroSubtitle>
               Solminica creates inspirational designs and robust solutions for Web and mobile apps. We combine our expertise in tech & design to craft innovative digital solutions that lead the way in your industry.
             </HeroSubtitle>
-            <Button>Get Quote</Button>
+            <ConsultButtonHome>Get Quote</ConsultButtonHome>
           </HeroContent>
           <HeroImage src={about} alt="Partner with us" />
         </HeroSection>
 
         <FormSection>
-          <FormContainer>
-            <FormTitle>Let's work together to turn your vision into a reality</FormTitle>
-            <Form>
-              <Input type="text" placeholder="Name*" required />
-              <Input type="email" placeholder="Email*" required />
-              <Select defaultValue="">
-                <option value="" disabled>
-                  Contact Number*
-                </option>
-              </Select>
-              <Select defaultValue="">
-                <option value="" disabled>
-                  Your Budget
-                </option>
-              </Select>
-              <Select defaultValue="">
-                <option value="" disabled>
-                  Interested in
-                </option>
-              </Select>
-              <Select defaultValue="">
-                <option value="" disabled>
-                  How did you learn about us
-                </option>
-              </Select>
-              <TextArea placeholder="Project Requirements" rows={4} />
-              <Captcha>
-                <CaptchaInput type="text" value="5" disabled />
-                <CaptchaOperator>+</CaptchaOperator>
-                <CaptchaInput type="text" value="8" disabled />
-                <CaptchaOperator>=</CaptchaOperator>
-                <CaptchaInput type="text" placeholder="Captcha code" />
-              </Captcha>
-              <SubmitButton type="submit">Send</SubmitButton>
-            </Form>
-          </FormContainer>
-
-          <InfoBox>
-            <InfoTitle>You have an Idea</InfoTitle>
-            <InfoSubtitle>We have the experience to transform your idea in Digital Reality</InfoSubtitle>
-            <InfoSubtitle>Here's what you will get for submitting your contact details</InfoSubtitle>
-            <InfoList>
-              <InfoItem>45 minutes of free consultation</InfoItem>
-              <InfoItem>A strict non-disclosure agreement</InfoItem>
-              <InfoItem>Free Market & Competitive Analysis</InfoItem>
-              <InfoItem>Suggestions on Revenue Models & Go to Market Strategy</InfoItem>
-              <InfoItem>No obligation Technical specs & Proposal</InfoItem>
-              <InfoItem>Guidance on Pre-launch & Post-launch marketing</InfoItem>
-            </InfoList>
-          </InfoBox>
-        </FormSection>
+      <FormContainer>
+        <FormTitle>Let's work together to turn your vision into a reality</FormTitle>
+        <Form>
+          <Input type="text" placeholder="Name*" required />
+          <Input type="email" placeholder="Email*" required />
+          <Select defaultValue="">
+            <option value="" disabled>Contact Number*</option>
+          </Select>
+          <Select defaultValue="">
+            <option value="" disabled>Your Budget</option>
+          </Select>
+          <Select defaultValue="">
+            <option value="" disabled>Interested in</option>
+          </Select>
+          <Select defaultValue="">
+            <option value="" disabled>How did you learn about us</option>
+          </Select>
+          <TextArea placeholder="Project Requirements" rows={4} />
+          <Captcha>
+            <CaptchaInput type="text" value="5" disabled />
+            <CaptchaOperator>+</CaptchaOperator>
+            <CaptchaInput type="text" value="8" disabled />
+            <CaptchaOperator>=</CaptchaOperator>
+            <CaptchaInput type="text" placeholder="Captcha code" />
+          </Captcha>
+          <SubmitButton type="submit">Send</SubmitButton>
+        </Form>
+      </FormContainer>
+      <InfoBox>
+        <InfoTitle>You have an Idea</InfoTitle>
+        <InfoSubtitle>We have the experience to transform your idea in Digital Reality</InfoSubtitle>
+        <InfoSubtitle>Here's what you will get for submitting your contact details</InfoSubtitle>
+        {/* <InfoList> */}
+        <InfoBox>
+      {/* <InfoTitle>You have an Idea</InfoTitle>
+      <InfoSubtitle>We have the experience to transform your idea in Digital Reality</InfoSubtitle>
+      <InfoSubtitle>Here's what you will get for submitting your contact details:</InfoSubtitle>
+      <InfoList>
+        <InfoItem>45 minutes of free consultation</InfoItem>
+        <InfoItem>A strict non-disclosure agreement</InfoItem>
+        <InfoItem>Free Market & Competitive Analysis</InfoItem>
+        <InfoItem>Suggestions on Revenue Models & Go to Market Strategy</InfoItem>
+        <InfoItem>No obligation Technical specs & Proposal</InfoItem>
+        <InfoItem>Guidance on Pre-launch & Post-launch marketing</InfoItem> */}
+      {/* </InfoList> */}
+    </InfoBox>
+      </InfoBox>
+    </FormSection>
 
        
-      <AwardsSection>
+    <Container>
+
+      <AwardsSection data-aos="fade-up">
         <Title>Awards and Recognition</Title>
         <Subtitle>
           "We're proud to be recognized as a top performer by Clutch and
           Appfutura, acknowledging our expertise in IT <br />services, software
           development, and iOS app creation."
         </Subtitle>
-        <AwardsGrid>
+        <AwardsGrid {...carouselSettings}>
           <AwardImage src={award_1} alt="Clutch Award" />
           <AwardImage src={award_2} alt="Top Software Development Company" />
           <AwardImage src={award_3} alt="Top App Developers" />
@@ -525,16 +555,12 @@ const Contact = () => {
             alt="Top Rated Software Development Company"
           />
         </AwardsGrid>
-        <AwardsDots>
-          <AwardsDot active />
-          <AwardsDot />
-          <AwardsDot />
-          <AwardsDot />
-        </AwardsDots>
       </AwardsSection>
+</Container>
 
-        <TrustedSection>
-          <TrustedTitle>Trusted By 100+ Happy Brands</TrustedTitle>
+<TrustedSection data-aos="fade-up">
+        <Container>
+          <Title>Trusted By 100+ Happy Brands</Title>
           <Subtitle>
             At Solminica, we are dedicated to driving continuous innovation and
             digital transformation for our <br />stakeholders. We help our clients
@@ -542,16 +568,18 @@ const Contact = () => {
             competitive advantage. We are proud to have maintained a 90% client
             retention rate since 2017.
           </Subtitle>
-          <TrustedGrid>
-            <TrustedLogo src={trusted_partner_1} alt="Trusted Partner 1" />
-            <TrustedLogo src={trusted_partner_2} alt="Trusted Partner 2" />
-            <TrustedLogo src={trusted_partner_3} alt="Trusted Partner 3" />
-            <TrustedLogo src={trusted_partner_4} alt="Trusted Partner 4" />
-            <TrustedLogo src={trusted_partner_5} alt="Trusted Partner 5" />
-            <TrustedLogo src={trusted_partner_6} alt="Trusted Partner 6" />
+          <TrustedGrid {...carouselSettings}>
+            <TrustedLogo onClick={() => window.open("https://www.rainbowhospitals.in/", "_blank")} src={trusted_partner_1} alt="Trusted Partner 1" />
+            <TrustedLogo onClick={() => window.open("https://apwrims.ap.gov.in/", "_blank")} src={trusted_partner_2} alt="Trusted Partner 2" />
+            <TrustedLogo onClick={() => window.open("https://www.powergrid.in/", "_blank")} src={trusted_partner_3} alt="Trusted Partner 3" />
+            <TrustedLogo onClick={() => window.open("https://www.sacredgroves.earth/", "_blank")} src={sacred_card} alt="Trusted Partner 4" />
+            <TrustedLogo onClick={() => window.open("https://suvarnabhoomiinfra.com/", "_blank")} src={trusted_partner_5_card} alt="Trusted Partner 5" />
+            <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_6_card} alt="Trusted Partner 6" />
           </TrustedGrid>
-        </TrustedSection>
-
+        </Container>
+      </TrustedSection>
+        <TechnologiesSection data-aos="fade-up">
+        <Container>
           <Title>Our Customers love what we do</Title>
           <Subtitle>
             Our customers are at the center of everything we do, and we're
@@ -566,10 +594,12 @@ const Contact = () => {
             <TestimonialImage src={Customers} alt="Customer Testimonial" />
             <TestimonialContent>
               <TestimonialText>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                sed do eiusmod tempor incididunt ut labore. 
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore."
               </TestimonialText>
@@ -583,6 +613,8 @@ const Contact = () => {
         </AwardsDots>
             </TestimonialContent>
           </CustomerTestimonial>
+        </Container>
+      </TechnologiesSection>
       </Container>
     </AboutWrapper>
   );

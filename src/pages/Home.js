@@ -537,8 +537,12 @@ const ServiceIcon2 = styled.img`
 `;
 
 const ServiceTitle = styled.h4`
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 0;
+  font-family: 'Poppins';
+    font-weight: 500;
+    line-height: 26px;
+    color: #434343;
 `;
 
 const TechnologiesSection = styled(Section0)`
@@ -1573,7 +1577,7 @@ const Home = () => {
           viewport={{ once: true }}
         >
           <ServiceIcon src={our_digital_digi_marketing} alt="Digital Marketing" />
-          <ServiceTitle>Digital Marketing</ServiceTitle>
+          <ServiceTitle>Digital <br />Marketing</ServiceTitle>
         </ServiceItem>
         <ServiceItem
           custom={5}
@@ -1593,7 +1597,7 @@ const Home = () => {
           viewport={{ once: true }}
         >
           <ServiceIcon src={our_digital_cyber_security} alt="Cyber Security" />
-          <ServiceTitle>Cyber Security</ServiceTitle>
+          <ServiceTitle>Cyber <br />Security</ServiceTitle>
         </ServiceItem>
         <ServiceItem
           custom={7}
@@ -1603,7 +1607,7 @@ const Home = () => {
           viewport={{ once: true }}
         >
           <ServiceIcon src={our_digital_quality_test} alt="Quality Testing" />
-          <ServiceTitle>Quality Testing</ServiceTitle>
+          <ServiceTitle>Quality <br />Testing</ServiceTitle>
         </ServiceItem>
         <ServiceItem
           custom={8}
@@ -1963,10 +1967,12 @@ const Home = () => {
             <TestimonialImage src={Customers} alt="Customer Testimonial" />
             <TestimonialContent>
               <TestimonialText>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                sed do eiusmod tempor incididunt ut labore. 
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore."
               </TestimonialText>
