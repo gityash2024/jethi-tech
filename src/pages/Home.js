@@ -739,20 +739,6 @@ const IndustryList = styled.ul`
   width: 250px;
   margin-right: 40px;
 `;
-const BlueGradientSVGIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style={{ stopColor: '#0072FF', stopOpacity: 1 }} />
-        <stop offset="100%" style={{ stopColor: '#2F69B1', stopOpacity: 1 }} />
-      </linearGradient>
-    </defs>
-    <path
-      d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM13 7H11V12.59L14.7 16.29L16.11 14.88L13 11.59V7Z"
-      fill="url(#blue-gradient)"
-    />
-  </svg>
-);
 
 const IndustryItem = styled.li`
   margin-bottom: 10px;
@@ -768,26 +754,13 @@ const IndustryItem = styled.li`
   text-align: left;
   display: flex;
   align-items: center;
-
-  &:hover ${StyledSVGIcon},
-  &.active ${StyledSVGIcon} {
-    fill: url(#blue-gradient);
+  &:hover {
+    background:linear-gradient(to right, #DDEEFF 0%, #DDEEFF 100%) !important;
+    color: #0072FF;
+    transition: all 0.3s ease;
+    text-decoration: none;
   }
 `;
-
-const StyledSVGIcon = styled.img`
-  width: 24px;
-  height: 24px;
-  fill: #000000; /* Default color */
-  transition: fill 0.3s ease;
-
-  &:hover,
-  &.active {
-    fill: url(#blue-gradient);
-  }
-`;
-
-
 
 const IndustryIcon = styled.img`
   width: 24px;
@@ -1241,20 +1214,7 @@ const TrustedGrid = styled(Slider)`
     justify-content: center;
   }
 `;
-const IndustryIconWrapper = styled.div`
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
 
-  svg {
-    fill: ${(props) => (props.active ? 'url(#blue-gradient)' : '#000000')};
-    transition: fill 0.3s ease;
-
-    &:hover {
-      fill: url(#blue-gradient);
-    }
-  }
-`;
 const AwardsGrid = styled(Slider)`
   .slick-slide {
     display: flex !important;
@@ -1870,53 +1830,64 @@ const Home = () => {
         </Container>
       </ValueSection>
       <WorkSection  data-aos="fade-up">
-      <Section>
-      <Container>
-        <Title>Our Work</Title>
-        <Subtitle>
-          Solminica working on different sectors with giving them the proof and solutions. From agriculture to fintech, we cater to a wide array of industries, offering tailored solutions to meet their specific needs.
-        </Subtitle>
-        <WorkGrid>
-          <IndustryList>
-            {Object.keys(industryData).map((industry) => (
-              <IndustryItem
-                key={industry}
-                active={activeIndustry === industry}
-                onClick={() => setActiveIndustry(industry)}
-              >
-                <IndustryIconWrapper active={activeIndustry === industry}>
-                  <BlueGradientSVGIcon />
-                </IndustryIconWrapper>
-                {industry}
-              </IndustryItem>
-            ))}
-          </IndustryList>
-          <WorkDetails>
-            <WorkDetailTitle>{activeIndustry}</WorkDetailTitle>
-            <WorkDetailDescription>
-              The healthcare industry utilizes advanced technology solutions for telemedicine, electronic health records, and patient monitoring, thereby enhancing care accessibility, improving patient outcomes, and streamlining operational efficiency.
-            </WorkDetailDescription>
-            <WorkCards>
-              {[1, 2].map((_, index) => (
-                <WorkCard key={index}>
-                  <OverlayImage src={industryData[activeIndustry].icon} alt={`${activeIndustry} Project`} />
-                  <WorkCardContent>
-                    <WorkCardTitle>Rainbow Children’s Hospitals</WorkCardTitle>
-                    <WorkCardDescription>
-                      Rainbow Children’s Hospitals is a leading paediatric healthcare hospital chain in India with over 15 hospitals and 3 clinics in 6 cities, with a total bed capacity of 1,550+ beds.
-                    </WorkCardDescription>
-                    <TechStack>
-                      {/* Insert Tech Icons here */}
-                    </TechStack>
-                    <ReadMore href="#">Read More →</ReadMore>
-                  </WorkCardContent>
-                </WorkCard>
+        <Container>
+          <Title>Our Work</Title>
+          <Subtitle>Solminica working on different sectors with giving them the proof and solutions. From agriculture to fintech, we cater to a wide array of industries, offering tailored solutions to meet their specific needs</Subtitle>
+          <WorkGrid>
+            <IndustryList>
+              {Object.keys(industryData).map(industry => (
+                <IndustryItem 
+                  key={industry} 
+                  active={activeIndustry === industry} 
+                  onClick={() => setActiveIndustry(industry)}
+                >
+                  <IndustryIcon src={industryData[industry].icon} alt={industry} />
+                  {industry}
+                </IndustryItem>
               ))}
-            </WorkCards>
-          </WorkDetails>
-        </WorkGrid>
-      </Container>
-    </Section>
+            </IndustryList>
+            <WorkDetails>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+
+
+              <WorkDetailTitle>{activeIndustry} </WorkDetailTitle>
+              <WorkDetailTitle2>View All {'->'}</WorkDetailTitle2>
+              </div>
+
+              <WorkDetailDescription>The healthcare industry utilizes advanced technology solutions for telemedicine, electronic health records, and patient monitoring, thereby enhancing care accessibility, improving patient outcomes, and streamlining operational efficiency.</WorkDetailDescription>
+              <WorkCards>
+                {[1, 2].map((_, index) => (
+                  <div key={index}>
+                    <WorkCard>
+                      <OverlayImage src={educationProject2} alt={`${activeIndustry} Project Overlay`} />
+                    </WorkCard>
+                    <WorkCardContent>
+                      <WorkCardTitle>Rainbow Children’s Hospitals</WorkCardTitle>
+                      <WorkCardDescription>Rainbow Children’s Hospitals is a leading
+ paediatric healthcare hospital chain in India with over 15
+ hospitals and 3 clinics in 6 cities, with a total bed capacity of
+ 1,550+ beds.</WorkCardDescription>
+ <WorkCardTitle>Technologies</WorkCardTitle>
+
+                      <TechStack>
+                        <TechIcon src={html} alt="html" />
+                        <TechIcon src={css} alt="css" />
+                        <TechIcon src={jquery} alt="jquery" />
+                        <TechIcon src={bootstrap} alt="bootstrap" />
+                        <TechIcon src={php} alt="php" />
+                        <TechIcon src={ajax} alt="ajax" />
+                        <TechIcon src={mysql} alt="mysql" />
+                        <TechIcon src={laravel} alt="laravel" />
+                        
+                      </TechStack>
+                      <ReadMore href="#">Read More →</ReadMore>
+                    </WorkCardContent>
+                  </div>
+                ))}
+              </WorkCards>
+            </WorkDetails>
+          </WorkGrid>
+        </Container>
       </WorkSection>
 
       <ProcessSection data-aos="fade-up">
