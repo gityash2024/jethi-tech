@@ -1230,6 +1230,16 @@ const Home = () => {
     dots: true,
     infinite: true,
     speed: 500,
+    slidesToShow: 7,  // Adjust based on how many logos you want visible
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+  };
+  const carouselSettings2 = {
+    dots: true,
+    infinite: true,
+    speed: 500,
     slidesToShow: 5,  // Adjust based on how many logos you want visible
     slidesToScroll: 1,
     autoplay: true,
@@ -2041,7 +2051,7 @@ const Home = () => {
             competitive advantage. We are proud to have maintained a 90% client
             retention rate since 2017.
           </Subtitle>
-          <TrustedGrid {...carouselSettings}>
+          <TrustedGrid {...carouselSettings2}>
             <TrustedLogo onClick={() => window.open("https://www.rainbowhospitals.in/", "_blank")} src={trusted_partner_1} alt="Trusted Partner 1" />
             <TrustedLogo onClick={() => window.open("https://apwrims.ap.gov.in/", "_blank")} src={trusted_partner_2} alt="Trusted Partner 2" />
             <TrustedLogo onClick={() => window.open("https://www.powergrid.in/", "_blank")} src={trusted_partner_3} alt="Trusted Partner 3" />

@@ -288,7 +288,7 @@ const Blog = () => {
       </BlogGrid>
 
       <LoadMoreButton>Load More</LoadMoreButton>
-
+{/* 
       <ServicesPage>
       <HeroSection>
         <HeroTitle>Our Services</HeroTitle>
@@ -302,7 +302,7 @@ const Blog = () => {
           </ServiceCard>
         ))}
       </ServicesGrid>
-    </ServicesPage>
+    </ServicesPage> */}
     </BlogPage>
   );
 };

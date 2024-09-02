@@ -209,13 +209,14 @@ const Copyright = styled.p`
 `;
 
 const GradientText = styled.span`
+cursor: pointer;
   background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
   font-family: Sofia, cursive;
-  font-size: large;
+  font-size: 30px;
   color: white;
 `;
 
@@ -235,7 +236,7 @@ const Footer = () => {
       <FooterContent>
         <TopRow>
           <LogoSection>
-            <GradientText ><b>Solminica</b></GradientText>
+            <GradientText onClick={() => handleNavigation('/')} ><b>Solminica</b></GradientText>
             <LogoText>
               Dreaming big? Let Solminica be your one-stop destination for turning visions into successful business endeavors. With our comprehensive technology support, staff augmentation, and venture capital funding, your dreams are closer than ever.
             </LogoText>
@@ -246,16 +247,16 @@ const Footer = () => {
           <QuickLinksColumn>
           <QuickLinksSubColumn>
           <FooterLink onClick={() => handleNavigation('/')}>Home</FooterLink>
-            <FooterLink onClick={() => handleNavigation('/how-it-works')}>How it works</FooterLink>
+            <FooterLink >How it works</FooterLink>
             <FooterLink onClick={() => handleNavigation('/about')}>About</FooterLink>
-            <FooterLink onClick={() => handleNavigation('/features')}>Features</FooterLink>
-            <FooterLink onClick={() => handleNavigation('/address')}>Address</FooterLink>
+            <FooterLink >Features</FooterLink>
+            <FooterLink>Address</FooterLink>
           </QuickLinksSubColumn>
           <QuickLinksSubColumn>
-            <FooterLink onClick={() => handleNavigation('/testimonials')}>Testimonials</FooterLink>
+            <FooterLink>Testimonials</FooterLink>
             <FooterLink onClick={() => handleNavigation('/contact')}>Contact</FooterLink>
-            <FooterLink onClick={() => handleNavigation('/faq')}>FAQ</FooterLink>
-            <FooterLink onClick={() => handleNavigation('/blog')}>Blog</FooterLink>
+            <FooterLink >FAQ</FooterLink>
+            <FooterLink >Blog</FooterLink>
             <FooterLink onClick={() => handleNavigation('/privacy-policy')}>Privacy Policy</FooterLink>
           </QuickLinksSubColumn>
         </QuickLinksColumn>
@@ -324,7 +325,7 @@ const Footer = () => {
           Copyright © 2017 - 2024 Solminica. All rights reserved.
         </Copyright>
         <Copyright>
-          <a href="#">Sitemap</a> | <a href='/privacy-policy'>Privacy Policy</a> | <a href='/terms-conditions'>TnC</a> | <a href="#">Refund Policy</a> | <a href="/code-of-conduct">Code of Conduct</a>
+          <a href="#">Sitemap</a> | <a href='/privacy-policy'>Privacy Policy</a> | <a href='/terms-conditions'>TnC</a> | <a href="#">Refund Policy</a> | <a href="#">Code of Conduct</a>
         </Copyright>
       </CopyrightRow>
 
