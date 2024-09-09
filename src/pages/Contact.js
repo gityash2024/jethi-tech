@@ -9,32 +9,35 @@ import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import about from '../assets/images/about.png';
-import award_1 from '../assets/images/award_1.png';
-import award_2 from '../assets/images/award_2.png';
-import award_3 from '../assets/images/award_3.png';
-import award_4 from '../assets/images/award_4.png';
-import award_5 from '../assets/images/award_5.png';
-import sacred_card from '../assets/images/sacred_card.png';
-import trusted_partner_1 from '../assets/images/trusted_partner_1.png';
-import trusted_partner_2 from '../assets/images/trusted_partner_2.png';
-import trusted_partner_3 from '../assets/images/trusted_partner_3.png';
-import trusted_partner_4 from '../assets/images/trusted_partner_4.png';
-import trusted_partner_5 from '../assets/images/trusted_partner_5.png';
-import trusted_partner_6 from '../assets/images/trusted_partner_6.png';
-import trusted_partner_5_card from '../assets/images/trusted_partner_5_card.png';
-import trusted_partner_6_card from '../assets/images/trusted_partner_6_card.png';
+import award_1 from '../assets/images/award_1.svg';
+import award_2 from '../assets/images/award_2.svg';
+import award_3 from '../assets/images/award_3.svg';
+import award_4 from '../assets/images/award_4.svg';
+import award_5 from '../assets/images/award_5.svg';
+import award_6 from '../assets/images/award_6.svg';
+// import sacred_card from '../assets/images/sacred_card.png';
+import trusted_partner_1 from '../assets/images/trusted_partner_1.svg';
+import trusted_partner_2 from '../assets/images/trusted_partner_2.svg';
+import trusted_partner_3 from '../assets/images/trusted_partner_3.svg';
+import trusted_partner_4 from '../assets/images/trusted_partner_4.svg';
+import trusted_partner_5 from '../assets/images/trusted_partner_5.svg';
+import trusted_partner_6 from '../assets/images/trusted_partner_6.svg';
+import trusted_partner_7 from '../assets/images/trusted_partner_7.svg';
+import trusted_partner_8 from '../assets/images/trusted_partner_8.svg';
+// import trusted_partner_5_card from '../assets/images/trusted_partner_5_card.png';
+// import trusted_partner_6_card from '../assets/images/trusted_partner_6_card.png';
 import contactUsCard from '../assets/images/contact-us-card.png';
 import herosectionbg from '../assets/images/hero-bg-line.png';
 import our_digital_left_side_image from '../assets/images/our_digital_left_side_image.png';
-import our_digital_web_dev from '../assets/images/our_digital_web_dev.png';
-import our_digital_mobile_dev from '../assets/images/our_digital_mobile_dev.png';
-import our_digital_hire from '../assets/images/our_digital_hire.png';
-import our_digital_blockchain from '../assets/images/our_digital_blockchain.png';
-import our_digital_digi_marketing from '../assets/images/our_digital_digi_marketing.png';
-import our_digital_public_relation from '../assets/images/our_digital_public_relation.png';
-import our_digital_cyber_security from '../assets/images/our_digital_cyber_security.png';
-import our_digital_quality_test from '../assets/images/our_digital_quality_test.png';
-import our_digital_cloud from '../assets/images/our_digital_cloud.png';
+import our_digital_web_dev from "../assets/images/our_digital_web_dev.svg";
+import our_digital_mobile_dev from "../assets/images/our_digital_mobile_dev.svg";
+import our_digital_hire from "../assets/images/our_digital_hire.svg";
+import our_digital_blockchain from "../assets/images/our_digital_blockchain.svg";
+import our_digital_digi_marketing from "../assets/images/our_digital_digi_marketing.svg";
+import our_digital_public_relation from "../assets/images/our_digital_public_relation.svg";
+import our_digital_cyber_security from "../assets/images/our_digital_cyber_security.svg";
+import our_digital_quality_test from "../assets/images/our_digital_quality_test.svg";
+import our_digital_cloud from "../assets/images/our_digital_cloud.svg";
 import our_digital_lets_conect_last_card from '../assets/images/our_digital_lets_conect_last_card.png';
 
 const AboutWrapper = styled.div`
@@ -492,11 +495,13 @@ const Contact = () => {
             <AwardImage src={award_3} alt="Top App Developers" />
             <AwardImage src={award_4} alt="Top Mobile App Developers" />
             <AwardImage src={award_5} alt="Top Rated App Development Company" />
+            <AwardImage src={award_6} alt="Top Rated App Development " />
             <AwardImage src={award_1} alt="Clutch Award" />
             <AwardImage src={award_2} alt="Top Software Development Company" />
             <AwardImage src={award_3} alt="Top App Developers" />
             <AwardImage src={award_4} alt="Top Mobile App Developers" />
             <AwardImage src={award_5} alt="Top Rated App Development Company" />
+            <AwardImage src={award_6} alt="Top Rated App Development" />
             <AwardImage
               src={award_5}
               alt="Top Rated Software Development Company"
@@ -518,9 +523,11 @@ const Contact = () => {
               <TrustedLogo onClick={() => window.open("https://www.rainbowhospitals.in/", "_blank")} src={trusted_partner_1} alt="Trusted Partner 1" />
               <TrustedLogo onClick={() => window.open("https://apwrims.ap.gov.in/", "_blank")} src={trusted_partner_2} alt="Trusted Partner 2" />
               <TrustedLogo onClick={() => window.open("https://www.powergrid.in/", "_blank")} src={trusted_partner_3} alt="Trusted Partner 3" />
-              <TrustedLogo onClick={() => window.open("https://www.sacredgroves.earth/", "_blank")} src={sacred_card} alt="Trusted Partner 4" />
-              <TrustedLogo onClick={() => window.open("https://suvarnabhoomiinfra.com/", "_blank")} src={trusted_partner_5_card} alt="Trusted Partner 5" />
-              <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_6_card} alt="Trusted Partner 6" />
+              <TrustedLogo onClick={() => window.open("https://www.sacredgroves.earth/", "_blank")} src={trusted_partner_4} alt="Trusted Partner 4" />
+              <TrustedLogo onClick={() => window.open("https://suvarnabhoomiinfra.com/", "_blank")} src={trusted_partner_5} alt="Trusted Partner 5" />
+              <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_6} alt="Trusted Partner 6" />
+              <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_7} alt="Trusted Partner 7" />
+              <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_8} alt="Trusted Partner 8" />
             </TrustedGrid>
           </Container>
         </TrustedSection>

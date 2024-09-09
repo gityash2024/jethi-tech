@@ -33,27 +33,27 @@ import digitalOcean from "../assets/images/digitalOcean.png";
 import newfold from "../assets/images/newfold.png";
 import bitrix24 from "../assets/images/bitrix24.png";
 import transformImage from "../assets/images/transform-image.png";
-import trusted_partner_1 from "../assets/images/trusted_partner_1.png";
-import trusted_partner_2 from "../assets/images/trusted_partner_2.png";
-import trusted_partner_3 from "../assets/images/trusted_partner_3.png";
+import trusted_partner_1 from "../assets/images/trusted_partner_1.svg";
+import trusted_partner_2 from "../assets/images/trusted_partner_2.svg";
+import trusted_partner_3 from "../assets/images/trusted_partner_3.svg";
 import sacred_card from "../assets/images/sacred_card.png";
-import trusted_partner_4 from "../assets/images/trusted_partner_4.png";
-import trusted_partner_5 from "../assets/images/trusted_partner_5.png";
-import trusted_partner_6 from "../assets/images/trusted_partner_6.png";
-import trusted_partner_5_card from "../assets/images/trusted_partner_5_card.png";
-import trusted_partner_6_card from "../assets/images/trusted_partner_6_card.png";
-import trusted_partner_7 from "../assets/images/trusted_partner_7.png";
-import trusted_partner_8 from "../assets/images/trusted_partner_8.png";
+import trusted_partner_4 from "../assets/images/trusted_partner_4.svg";
+import trusted_partner_5 from "../assets/images/trusted_partner_5.svg";
+import trusted_partner_6 from "../assets/images/trusted_partner_6.svg";
+// import trusted_partner_5_card from "../assets/images/trusted_partner_5_card.svg";
+// import trusted_partner_6_card from "../assets/images/trusted_partner_6_card.svg";
+import trusted_partner_7 from "../assets/images/trusted_partner_7.svg";
+import trusted_partner_8 from "../assets/images/trusted_partner_8.svg";
 import our_digital_left_side_image from "../assets/images/our_digital_left_side_image.png";
-import our_digital_web_dev from "../assets/images/our_digital_web_dev.png";
-import our_digital_mobile_dev from "../assets/images/our_digital_mobile_dev.png";
-import our_digital_hire from "../assets/images/our_digital_hire.png";
-import our_digital_blockchain from "../assets/images/our_digital_blockchain.png";
-import our_digital_digi_marketing from "../assets/images/our_digital_digi_marketing.png";
-import our_digital_public_relation from "../assets/images/our_digital_public_relation.png";
-import our_digital_cyber_security from "../assets/images/our_digital_cyber_security.png";
-import our_digital_quality_test from "../assets/images/our_digital_quality_test.png";
-import our_digital_cloud from "../assets/images/our_digital_cloud.png";
+import our_digital_web_dev from "../assets/images/our_digital_web_dev.svg";
+import our_digital_mobile_dev from "../assets/images/our_digital_mobile_dev.svg";
+import our_digital_hire from "../assets/images/our_digital_hire.svg";
+import our_digital_blockchain from "../assets/images/our_digital_blockchain.svg";
+import our_digital_digi_marketing from "../assets/images/our_digital_digi_marketing.svg";
+import our_digital_public_relation from "../assets/images/our_digital_public_relation.svg";
+import our_digital_cyber_security from "../assets/images/our_digital_cyber_security.svg";
+import our_digital_quality_test from "../assets/images/our_digital_quality_test.svg";
+import our_digital_cloud from "../assets/images/our_digital_cloud.svg";
 import our_digital_lets_conect_last_card from "../assets/images/our_digital_lets_conect_last_card.png";
 import reactIcon from "../assets/images/react.png";
 import nextjs from "../assets/images/nextjs.png";
@@ -70,7 +70,7 @@ import angular from "../assets/images/angular.png";
 import vuejs from "../assets/images/veujs.png";
 import nodejs from "../assets/images/nodejs.png";
 import blockchain from "../assets/images/blockchain.png";
-import aiml from "../assets/images/aiml.png";
+import aiml from "../assets/images/aiml.svg";
 import wordpress from "../assets/images/wordpress.png";
 import shopify from "../assets/images/shopify.png";
 import net from "../assets/images/net.png";
@@ -99,45 +99,46 @@ import drupal from "../assets/images/drupal.png";
 import prista from "../assets/images/prista.png";
 import metaverse from "../assets/images/metaverse.png";
 import nft from "../assets/images/nft.png";
-import smbs from "../assets/images/smbs.png";
-import startup from "../assets/images/startup.png";
-import enterprise from "../assets/images/enterprise.png";
-import agency from "../assets/images/agency.png";
+import smbs from "../assets/images/smbs.svg";
+import startup from "../assets/images/startup.svg";
+import enterprise from "../assets/images/enterprise.svg";
+import agency from "../assets/images/agency.svg";
 import digitalservices from "../assets/images/digitalservices.png";
 import Customers from "../assets/images/Customers.png";
 import developmentProcessImage from "../assets/images/developmentProcessImage.png";
-import industries_1 from "../assets/images/industries_1.png";
-import industries_2 from "../assets/images/industries_2.png";
-import industries_3 from "../assets/images/industries_3.png";
-import industries_4 from "../assets/images/industries_4.png";
-import industries_5 from "../assets/images/industries_5.png";
-import industries_6 from "../assets/images/industries_6.png";
-import industries_7 from "../assets/images/industries_7.png";
-import industries_8 from "../assets/images/industries_8.png";
-import industries_9 from "../assets/images/industries_9.png";
-import industries_10 from "../assets/images/industries_10.png";
-import award_1 from "../assets/images/award_1.png";
-import award_2 from "../assets/images/award_2.png";
-import award_3 from "../assets/images/award_3.png";
-import award_4 from "../assets/images/award_4.png";
-import award_5 from "../assets/images/award_5.png";
+import industries_1 from "../assets/images/industries_1.svg";
+import industries_2 from "../assets/images/industries_2.svg";
+import industries_3 from "../assets/images/industries_3.svg";
+import industries_4 from "../assets/images/industries_4.svg";
+import industries_5 from "../assets/images/industries_5.svg";
+import industries_6 from "../assets/images/industries_6.svg";
+import industries_7 from "../assets/images/industries_7.svg";
+import industries_8 from "../assets/images/industries_8.svg";
+import industries_9 from "../assets/images/industries_9.svg";
+import industries_10 from "../assets/images/industries_10.svg";
+import award_1 from "../assets/images/award_1.svg";
+import award_2 from "../assets/images/award_2.svg";
+import award_3 from "../assets/images/award_3.svg";
+import award_4 from "../assets/images/award_4.svg";
+import award_5 from "../assets/images/award_5.svg";
+import award_6 from "../assets/images/award_6.svg";
 import blogs from "../assets/images/blogs.png";
-import Businesses_1 from "../assets/images/Businesses_1.png";
-import Businesses_2 from "../assets/images/Businesses_2.png";
-import Businesses_3 from "../assets/images/Businesses_3.png";
-import Businesses_4 from "../assets/images/Businesses_4.png";
-import Businesses_5 from "../assets/images/Businesses_5.png";
-import Businesses_6 from "../assets/images/Businesses_6.png";
-import Businesses_7 from "../assets/images/Businesses_7.png";
-import Businesses_8 from "../assets/images/Businesses_8.png";
-import Businesses_9 from "../assets/images/Businesses_9.png";
-import Businesses_10 from "../assets/images/Businesses_10.png";
-import Businesses_11 from "../assets/images/Businesses_11.png";
-import Businesses_12 from "../assets/images/Businesses_12.png";
+import Businesses_1 from "../assets/images/Businesses_1.svg";
+import Businesses_2 from "../assets/images/Businesses_2.svg";
+import Businesses_3 from "../assets/images/Businesses_3.svg";
+import Businesses_4 from "../assets/images/Businesses_4.svg";
+import Businesses_5 from "../assets/images/Businesses_5.svg";
+import Businesses_6 from "../assets/images/Businesses_6.svg";
+import Businesses_7 from "../assets/images/Businesses_7.svg";
+import Businesses_8 from "../assets/images/Businesses_8.svg";
+import Businesses_9 from "../assets/images/Businesses_9.svg";
+import Businesses_10 from "../assets/images/Businesses_10.svg";
+import Businesses_11 from "../assets/images/Businesses_11.svg";
+import Businesses_12 from "../assets/images/Businesses_12.svg";
 import educationIcon from "../assets/images/education.png";
 import healthcareIcon from "../assets/images/healthcare.png";
-import logisticsIcon from "../assets/images/logistics-distribution.png";
-import aimlIcon from "../assets/images/aiml.png";
+import logisticsIcon from "../assets/images/logistics-distribution.svg";
+import aimlIcon from "../assets/images/aiml.svg";
 import realEstateIcon from "../assets/images/realEstateIcon.svg";
 import travelIcon from "../assets/images/travelIcon.svg";
 import foodIcon from "../assets/images/foodIcon.svg";
@@ -2013,6 +2014,7 @@ const Home = () => {
           <AwardImage src={award_3} alt="Top App Developers" />
           <AwardImage src={award_4} alt="Top Mobile App Developers" />
           <AwardImage src={award_5} alt="Top Rated App Development Company" />
+          <AwardImage src={award_6} alt="Top Rated App Development " />
           <AwardImage
             src={award_5}
             alt="Top Rated Software Development Company"
@@ -2055,9 +2057,11 @@ const Home = () => {
             <TrustedLogo onClick={() => window.open("https://www.rainbowhospitals.in/", "_blank")} src={trusted_partner_1} alt="Trusted Partner 1" />
             <TrustedLogo onClick={() => window.open("https://apwrims.ap.gov.in/", "_blank")} src={trusted_partner_2} alt="Trusted Partner 2" />
             <TrustedLogo onClick={() => window.open("https://www.powergrid.in/", "_blank")} src={trusted_partner_3} alt="Trusted Partner 3" />
-            <TrustedLogo onClick={() => window.open("https://www.sacredgroves.earth/", "_blank")} src={sacred_card} alt="Trusted Partner 4" />
-            <TrustedLogo onClick={() => window.open("https://suvarnabhoomiinfra.com/", "_blank")} src={trusted_partner_5_card} alt="Trusted Partner 5" />
-            <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_6_card} alt="Trusted Partner 6" />
+            <TrustedLogo onClick={() => window.open("https://www.sacredgroves.earth/", "_blank")} src={trusted_partner_4} alt="Trusted Partner 4" />
+            <TrustedLogo onClick={() => window.open("https://suvarnabhoomiinfra.com/", "_blank")} src={trusted_partner_5} alt="Trusted Partner 5" />
+            <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_6} alt="Trusted Partner 6" />
+            <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_7} alt="Trusted Partner 7" />
+            <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_8} alt="Trusted Partner 8" />
           </TrustedGrid>
         </Container>
       </TrustedSection>

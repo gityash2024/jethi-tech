@@ -2,30 +2,33 @@ import React from 'react';
 import styled from 'styled-components';
 import work from '../assets/images/work.png';
 import work_on from '../assets/images/work_on.png';
-import award_1 from '../assets/images/award_1.png';
-import award_2 from '../assets/images/award_2.png';
-import award_3 from '../assets/images/award_3.png';
-import award_4 from '../assets/images/award_4.png';
-import award_5 from '../assets/images/award_5.png';
-import Businesses_1 from '../assets/images/Businesses_1.png';
-import Businesses_2 from '../assets/images/Businesses_2.png';
-import Businesses_3 from '../assets/images/Businesses_3.png';
-import Businesses_4 from '../assets/images/Businesses_4.png';
-import Businesses_5 from '../assets/images/Businesses_5.png';
-import Businesses_6 from '../assets/images/Businesses_6.png';
-import Businesses_7 from '../assets/images/Businesses_7.png';
-import Businesses_8 from '../assets/images/Businesses_8.png';
-import Businesses_9 from '../assets/images/Businesses_9.png';
-import Businesses_10 from '../assets/images/Businesses_10.png';
-import Businesses_11 from '../assets/images/Businesses_11.png';
-import Businesses_12 from '../assets/images/Businesses_12.png';
+import award_1 from '../assets/images/award_1.svg';
+import award_2 from '../assets/images/award_2.svg';
+import award_3 from '../assets/images/award_3.svg';
+import award_4 from '../assets/images/award_4.svg';
+import award_5 from '../assets/images/award_5.svg';
+import award_6 from '../assets/images/award_6.svg';
+import Businesses_1 from '../assets/images/Businesses_1.svg';
+import Businesses_2 from '../assets/images/Businesses_2.svg';
+import Businesses_3 from '../assets/images/Businesses_3.svg';
+import Businesses_4 from '../assets/images/Businesses_4.svg';
+import Businesses_5 from '../assets/images/Businesses_5.svg';
+import Businesses_6 from '../assets/images/Businesses_6.svg';
+import Businesses_7 from '../assets/images/Businesses_7.svg';
+import Businesses_8 from '../assets/images/Businesses_8.svg';
+import Businesses_9 from '../assets/images/Businesses_9.svg';
+import Businesses_10 from '../assets/images/Businesses_10.svg';
+import Businesses_11 from '../assets/images/Businesses_11.svg';
+import Businesses_12 from '../assets/images/Businesses_12.svg';
 import Customers from '../assets/images/Customers.png';
-import trusted_partner_1 from '../assets/images/trusted_partner_1.png';
-import trusted_partner_2 from '../assets/images/trusted_partner_2.png';
-import trusted_partner_3 from '../assets/images/trusted_partner_3.png';
-import trusted_partner_4 from '../assets/images/trusted_partner_4.png';
-import trusted_partner_5 from '../assets/images/trusted_partner_5.png';
-import trusted_partner_6 from '../assets/images/trusted_partner_6.png';
+import trusted_partner_1 from '../assets/images/trusted_partner_1.svg';
+import trusted_partner_2 from '../assets/images/trusted_partner_2.svg';
+import trusted_partner_3 from '../assets/images/trusted_partner_3.svg';
+import trusted_partner_4 from '../assets/images/trusted_partner_4.svg';
+import trusted_partner_5 from '../assets/images/trusted_partner_5.svg';
+import trusted_partner_6 from '../assets/images/trusted_partner_6.svg';
+import trusted_partner_7 from '../assets/images/trusted_partner_7.svg';
+import trusted_partner_8 from '../assets/images/trusted_partner_8.svg';
 
 const Container = styled.div`
   max-width: 1200px;
@@ -430,7 +433,7 @@ const Work = () => {
           <AwardImage src={award_3} alt="Top App Developers" />
           <AwardImage src={award_4} alt="Top Mobile App Developers" />
           <AwardImage src={award_5} alt="Top Rated App Development Company" />
-          <AwardImage src={award_5} alt="Top Rated Software Development Company" />
+          <AwardImage src={award_6} alt="Top Rated Software Development" />
         </AwardsGrid>
         <AwardsDots>
           <AwardsDot active />
@@ -507,6 +510,8 @@ const Work = () => {
           <TrustedLogo src={trusted_partner_4} alt="Trusted Partner 4" />
           <TrustedLogo src={trusted_partner_5} alt="Trusted Partner 5" />
           <TrustedLogo src={trusted_partner_6} alt="Trusted Partner 6" />
+          <TrustedLogo src={trusted_partner_7} alt="Trusted Partner 7" />
+          <TrustedLogo src={trusted_partner_8} alt="Trusted Partner 8" />
         </TrustedGrid>
         <TrustedDots>
           <TrustedDot active />
