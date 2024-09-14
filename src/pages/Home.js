@@ -1932,27 +1932,33 @@ const Home = () => {
             growth for businesses of all sizes.
           </Subtitle>
           <IndustriesGrid>
-            {[
-              industries_1,
-              industries_2,
-              industries_3,
-              industries_4,
-              industries_5,
-              industries_6,
-              industries_7,
-              industries_8,
-              industries_9,
-              industries_10,
-            ].map((industry, index) => (
-              <IndustryGridItem key={index}>
-                <IndustryGridIcon
-                  src={industry}
-                  alt={`Industry ${index + 1}`}
-                />
-                <IndustryName>{`Industry ${index + 1}`}</IndustryName>
-              </IndustryGridItem>
-            ))}
-          </IndustriesGrid>
+          {[
+            { img: industries_1, name: "Banking, Financial Services & Insurance" },
+            { img: industries_2, name: "Media, News & Entertainment" },
+            { img: industries_3, name: "Retail & Consumer Services" },
+            { img: industries_4, name: "Travel, Tourism & Leisure" },
+            { img: industries_5, name: "EdTech & Learning" },
+            { img: industries_6, name: "Real estate & Prop Tech" },
+            { img: industries_7, name: "Pharma & Healthcare" },
+            { img: industries_8, name: "Business & IT Services" },
+            { img: industries_9, name: "Automotive & Manufacturing" },
+            { img: industries_10, name: "Energy & Utilities" },
+          ].map((industry, index) => (
+            <IndustryGridItem key={index}>
+              <IndustryGridIcon
+                src={industry.img}
+                alt={industry.name}
+              />
+              <IndustryName style={{
+                fontFamily: 'Poppins',
+                fontSize: '20px',
+                fontWeight: '400',
+                lineHeight: '30px',
+                textAlign: 'center'
+              }}>{industry.name}</IndustryName>
+            </IndustryGridItem>
+          ))}
+      </IndustriesGrid>
           <BottomRow>
             <BottomText>
               Our expertise in designing and building digital solutions authorises us to develop bespoke solutions
