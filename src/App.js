@@ -4,7 +4,6 @@ import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import '@fontsource/sofia'; // Defaults to weight 400
-
 import About from './pages/About';
 import Blog from './pages/Blog';
 import TermsConditions from './pages/TermsConditions';
@@ -19,6 +18,7 @@ import BlogDetails from './pages/BlogDetails';
 import ScrollToTop from './components/scrollToTop';
 import ScrollToTopOnMount from './components/ScrollToTopOnMount';
 import Card from './pages/Card';
+import MenuCard from './pages/MenuCard';
 
 function App() {
   return (
@@ -40,6 +40,7 @@ function App() {
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/work" element={<Work />} />
           <Route path="/card" element={<Card />} />
+          <Route path="/menu-card" element={<MenuCard />} />
         </Routes>
         <ScrollToTop />
       </MainLayout>

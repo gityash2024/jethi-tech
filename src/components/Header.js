@@ -441,6 +441,10 @@ const ColumnTitle = styled.h3`
   color: #000000;
   font-weight: 600;
 
+   &:hover {
+    color: #2F69B1;
+  }
+
   @media (max-width: 768px) {
     font-size: 16px;
   }
@@ -452,9 +456,9 @@ const ColumnItem = styled.div`
   cursor: pointer;
   color: #434343;
 
-  &:hover {
-    color: #2F69B1;
-  }
+  // &:hover {
+  //   color: #2F69B1;
+  // }
 
   @media (max-width: 768px) {
     font-size: 13px;

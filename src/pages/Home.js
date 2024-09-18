@@ -105,7 +105,7 @@ import enterprise from "../assets/images/enterprise.svg";
 import agency from "../assets/images/agency.svg";
 import digitalservices from "../assets/images/digitalservices.png";
 import Customers from "../assets/images/Customers.png";
-import developmentProcessImage from "../assets/images/developmentProcessImage.png";
+import developmentProcessImage from "../assets/images/developmentProcessImage.svg";
 import industries_1 from "../assets/images/industries_1.svg";
 import industries_2 from "../assets/images/industries_2.svg";
 import industries_3 from "../assets/images/industries_3.svg";
@@ -504,7 +504,7 @@ const ServiceItem = styled(motion.div)`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   &:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: box-shadow 0.3s ease-in-out;
@@ -1017,75 +1017,7 @@ const TrustedDot = styled.span`
   border-radius: 50%;
 `;
 
-const BlogSection = styled(Section20)`
-`;
 
-const BlogsContainer = styled.div`
-  display: flex;
-  margin-top: 25px;
-  gap: 40px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const BlogsContent = styled.div`
-  flex: 1;
-`;
-
-const BlogItem = styled.div`
-  margin-bottom: 30px;
-`;
-
-const BlogQuestion = styled.div`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 18px;
-`;
-
-const BlogToggle = styled.img`
-  margin-right: 10px;
-  width: 24px;
-  height: 24px;
-`;
-
-const BlogAnswer = styled.div`
-  margin-top: 10px;
-  padding-left: 34px;
-  font-size: 16px;
-  line-height: 1.5;
-`;
-
-const BlogDescription = styled.p`
-  font-size: 14px;
-  margin: 10px 0;
-`;
-
-const BlogImage = styled.img`
-  width: 30%;
-  max-width: 3200px;
-  object-fit: cover;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-top: 20px;
-  }
-`;
-
-const ReadMore = styled.a`
-  color: #015bcc;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-`;
-
-const ViewAllButton = styled(Button)`
-  display: block;
-  margin: 40px auto 0;
-`;
 
 const ServingCountries = styled.h3`
   font-size: 20px;
@@ -1226,28 +1158,200 @@ const AwardsGrid = styled(Slider)`
     justify-content: center;
   }
 `;
+const iconalignleft =styled.div`
+  align-self: flex-start; 
+`;
+
+
+
+// const Container = styled.div`
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   text-align: center;
+// `;
+
+// const Title = styled.h2`
+//   font-size: 36px;
+//   font-weight: bold;
+//   color: #122740;
+// `;
+
+// const Subtitle = styled.p`
+//   font-size: 18px;
+//   color: #6B6F82;
+//   margin: 20px 0;
+//   line-height: 1.6;
+// `;
+
+
+
+
+
+
+
+const BlogSection = styled.section`
+  padding: 60px 20px;
+  background-color: #fff;
+`;
+
+// const Container = styled.div`
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   text-align: center;
+// `;
+
+// const Title = styled.h2`
+//   font-size: 36px;
+//   font-weight: bold;
+//   color: #122740;
+// `;
+
+// const Subtitle = styled.p`
+//   font-size: 18px;
+//   color: #6B6F82;
+//   margin: 20px 0;
+//   line-height: 1.6;
+// `;
+
+const BlogsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  align-items: flex-start;
+`;
+
+const BlogsContent = styled.div`
+  width: 60%;
+`;
+
+const BlogItem = styled.div`
+  margin-bottom: 30px;
+  // border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 20px;
+  text-align: left;
+`;
+
+const BlogQuestion = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #122740;
+  margin-bottom: 10px;
+`;
+
+const BlogToggle = styled.img`
+  width: 54px;  /* Updated width */
+  height: 54px;  /* Updated height */
+  margin-right: 10px;
+`;
+
+const BlogAnswer = styled.div`
+  margin-top: 10px;
+`;
+
+const BlogDescription = styled.p`
+  font-size: 14px;
+  color: #6B6F82;
+  margin-bottom: 10px;
+`;
+
+const ReadMore = styled.a`
+  font-size: 14px;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const BlogImage = styled.img`
+  width: 35%;
+  object-fit: contain;
+`;
+
+const ViewAllButton = styled.button`
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 40px auto 0;
+  display: block;  /* Center the button */
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
+
+const BlogSectionComponent = ({ blogData }) => {
+  const [openBlog, setOpenBlog] = useState(-1);
+}
+
+
 const Home = () => {
   const carouselSettings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 7,  // Adjust based on how many logos you want visible
+    slidesToShow: 7, // Number of images visible in one view
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
+    customPaging: (i) => (
+      <div
+        style={{
+          width: "16px", // Update width for individual dot
+          height: "16px", // Update height for individual dot
+          backgroundColor: i === 0 ? "#333" : "#ccc", // Color change for active/inactive dots
+          borderRadius: "50%", // Making the dots round
+          margin: "0 8px", // Spacing between dots (half of the gap)
+          opacity: 1, // Ensuring opacity is 1 for full visibility
+        }}
+      ></div>
+    ),
+    dotsClass: "slick-dots slick-thumb",
   };
+  
+  // const carouselSettings2 = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 5,  // Adjust based on how many logos you want visible
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 3000,
+  //   arrows: false,
+  // };
+
   const carouselSettings2 = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,  // Adjust based on how many logos you want visible
+    slidesToShow: 5, // Adjust based on how many logos you want visible
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
+    customPaging: (i) => (
+      <div
+        style={{
+          width: "16px",  // Increase the size of the dots
+          height: "16px", // Make dots hug the height
+          backgroundColor: i === 0 ? "#333" : "#ccc", // Change color of active/inactive dots
+          borderRadius: "50%",  // Make dots round
+          opacity: 1, // Set opacity to full
+          margin: "0 8px",  // Add gap between the dots
+        }}
+      ></div>
+    ),
+    dotsClass: "slick-dots slick-thumb", // Apply custom styling to dots
   };
-
+  
   const { ref: refValue, inView: inViewValue } = useInView({
     triggerOnce: true,
     threshold: 0.5,
@@ -1547,7 +1651,7 @@ const Home = () => {
           variants={cardVariants}
           viewport={{ once: true }}
         >
-          <ServiceIcon src={our_digital_web_dev} alt="Website Development" />
+          <ServiceIcon src={our_digital_web_dev} alt="Website Development" className="icon-align-left" />
           <ServiceTitle>Website Development</ServiceTitle>
         </ServiceItem>
         <ServiceItem
@@ -1557,7 +1661,7 @@ const Home = () => {
           variants={cardVariants}
           viewport={{ once: true }}
         >
-          <ServiceIcon src={our_digital_mobile_dev} alt="Mobile app Development" />
+          <ServiceIcon src={our_digital_mobile_dev} alt="Mobile app Development"    className="icon-align-left" />
           <ServiceTitle>Mobile app Development</ServiceTitle>
         </ServiceItem>
         <ServiceItem
@@ -1567,7 +1671,7 @@ const Home = () => {
           variants={cardVariants}
           viewport={{ once: true }}
         >
-          <ServiceIcon src={our_digital_hire} alt="Hire Professionals" />
+          <ServiceIcon src={our_digital_hire} alt="Hire Professionals"    className="icon-align-left" />
           <ServiceTitle>Hire Professionals</ServiceTitle>
         </ServiceItem>
         <ServiceItem
@@ -1577,7 +1681,7 @@ const Home = () => {
           variants={cardVariants}
           viewport={{ once: true }}
         >
-          <ServiceIcon src={our_digital_blockchain} alt="Blockchain Development" />
+          <ServiceIcon src={our_digital_blockchain} alt="Blockchain Development"    className="icon-align-left" />
           <ServiceTitle>Blockchain Development</ServiceTitle>
         </ServiceItem>
         <ServiceItem
@@ -1587,7 +1691,7 @@ const Home = () => {
           variants={cardVariants}
           viewport={{ once: true }}
         >
-          <ServiceIcon src={our_digital_digi_marketing} alt="Digital Marketing" />
+          <ServiceIcon src={our_digital_digi_marketing} alt="Digital Marketing"    className="icon-align-left"  />
           <ServiceTitle>Digital <br />Marketing</ServiceTitle>
         </ServiceItem>
         <ServiceItem
@@ -1597,7 +1701,7 @@ const Home = () => {
           variants={cardVariants}
           viewport={{ once: true }}
         >
-          <ServiceIcon src={our_digital_public_relation} alt="Public Relations and Media" />
+          <ServiceIcon src={our_digital_public_relation} alt="Public Relations and Media"    className="icon-align-left" />
           <ServiceTitle>Public Relations and Media</ServiceTitle>
         </ServiceItem>
         <ServiceItem
@@ -1649,47 +1753,61 @@ const Home = () => {
       <BgWrapperRight>
       <ShinyLine />
 
-      <TechnologiesSection  data-aos="fade-up">
-        <Container>
-          <Title>Technologies that drive Growth</Title>
-          <Subtitle>
-            Solminica creates enterprise solutions that seamlessly blend
-            traditional methods with the latest <br />innovations.
-          </Subtitle>
-          <TechGrid>
-            <TechColumn width="40%">
-              <ExpertiseList>
-                {expertiseList.map((item) => (
-                  <ExpertiseItem
-                    key={item}
-                    active={activeExpertise === item}
-                    onClick={() => setActiveExpertise(item)}
-                  >
-                    {item}
-                  </ExpertiseItem>
-                ))}
-              </ExpertiseList>
-            </TechColumn>
-            <TechColumn width="60%">
-              <TechItemsContainer>
-                {techItems[activeExpertise]?.map((tech, index) => (
-                  <TechItem key={index}>
-                    <TechLogo src={tech.logo} alt={tech.name} />
-                    <TechName>{tech.name}</TechName>
-                  </TechItem>
-                ))}
-              </TechItemsContainer>
-            </TechColumn>
-          </TechGrid>
-          <BottomRow>
-            <BottomText>
-              Our expertise in designing and building digital solutions
-              authorises us to develop bespoke solutions
-            </BottomText>
-            <ConsultButton>Consult Now!</ConsultButton>
-          </BottomRow>
-        </Container>
-      </TechnologiesSection>
+      <TechnologiesSection data-aos="fade-up">
+  <Container>
+    <Title>Technologies that drive Growth</Title>
+    <Subtitle>
+      Solminica creates enterprise solutions that seamlessly blend
+      traditional methods with the latest innovations.
+    </Subtitle>
+    <TechGrid>
+      <TechColumn width="40%">
+        <ExpertiseList>
+          {expertiseList.map((item) => (
+            <ExpertiseItem
+              key={item}
+              active={activeExpertise === item}
+              onClick={() => setActiveExpertise(item)}
+            >
+              {item}
+            </ExpertiseItem>
+          ))}
+        </ExpertiseList>
+      </TechColumn>
+      <TechColumn width="60%">
+        <TechItemsContainer>
+          {techItems[activeExpertise]?.map((tech, index) => (
+            <TechItem key={index} style={{ padding: "20px", textAlign: "center" }}>
+              <TechLogo
+                src={tech.logo}
+                alt={tech.name}
+                style={{ width: "80px", height: "80px", objectFit: "contain" }}
+              />
+              <TechName
+                style={{
+                  fontSize: "18px",
+                  marginTop: "10px",
+                  fontWeight: "bold",
+                }}
+              >
+                {tech.name}
+              </TechName>
+            </TechItem>
+          ))}
+        </TechItemsContainer>
+      </TechColumn>
+    </TechGrid>
+    <BottomRow>
+      <BottomText>
+        Our expertise in designing and building digital solutions
+        authorises us to develop bespoke solutions
+      </BottomText>
+      <ConsultButton>Consult Now!</ConsultButton>
+    </BottomRow>
+  </Container>
+</TechnologiesSection>
+
+
       <ShinyLine />
 
       <SolutionsSection data-aos="fade-up">
@@ -1961,7 +2079,7 @@ const Home = () => {
       </IndustriesGrid>
           <BottomRow>
             <BottomText>
-              Our expertise in designing and building digital solutions authorises us to develop bespoke solutions
+              Our expertise in designing and building digital solutions authorises us to develop <br/>bespoke solutions
             </BottomText>
             <ConsultButton>Consult Now!</ConsultButton>
           </BottomRow>
@@ -2007,26 +2125,22 @@ const Home = () => {
       </TechnologiesSection>
 <Container>
 
-      <AwardsSection data-aos="fade-up">
-        <Title>Awards and Recognition</Title>
-        <Subtitle>
-          "We're proud to be recognized as a top performer by Clutch and
-          Appfutura, acknowledging our expertise in IT <br />services, software
-          development, and iOS app creation."
-        </Subtitle>
-        <AwardsGrid {...carouselSettings}>
-          <AwardImage src={award_1} alt="Clutch Award" />
-          <AwardImage src={award_2} alt="Top Software Development Company" />
-          <AwardImage src={award_3} alt="Top App Developers" />
-          <AwardImage src={award_4} alt="Top Mobile App Developers" />
-          <AwardImage src={award_5} alt="Top Rated App Development Company" />
-          <AwardImage src={award_6} alt="Top Rated App Development " />
-          <AwardImage
-            src={award_5}
-            alt="Top Rated Software Development Company"
-          />
-        </AwardsGrid>
-      </AwardsSection>
+<AwardsSection data-aos="fade-up">
+  <Title>Awards and Recognition</Title>
+  <Subtitle>
+    "We're proud to be recognized as a top performer by Clutch and Appfutura, acknowledging our expertise in IT services, software development, and iOS app creation."
+  </Subtitle>
+  <AwardsGrid {...carouselSettings}>
+    <AwardImage src={award_1} alt="Clutch Award" />
+    <AwardImage src={award_2} alt="Top Software Development Company" />
+    <AwardImage src={award_3} alt="Top App Developers" />
+    <AwardImage src={award_4} alt="Top Mobile App Developers" />
+    <AwardImage src={award_5} alt="Top Rated App Development Company" />
+    <AwardImage src={award_6} alt="Top Rated App Development " />
+    <AwardImage src={award_5} alt="Top Rated Software Development Company" />
+  </AwardsGrid>
+</AwardsSection>
+
 </Container>
 
       <BusinessesSection  data-aos="fade-up">
@@ -2071,36 +2185,37 @@ const Home = () => {
           </TrustedGrid>
         </Container>
       </TrustedSection>
-      <BlogSection  data-aos="fade-up">
-        <Container>
-          <Title>Blogs</Title>
-          <Subtitle>
-            Our blog is your gateway to the world of IT and software development. Explore a wide range of<br />
-            topics, from practical how-to guides to in-depth analysis of industry trends. Stay informed and<br />
-            inspired by our team of experts.
-          </Subtitle>
-          <BlogsContainer>
-            <BlogsContent>
-              {blogData.map((blog, index) => (
-                <BlogItem key={index}>
-                  <BlogQuestion onClick={() => setOpenBlog(openBlog === index ? -1 : index)}>
-                    <BlogToggle src={openBlog === index ? negative : positive} alt="Toggle" />
-                    {blog.title}
-                  </BlogQuestion>
-                  {openBlog === index && (
-                    <BlogAnswer>
-                      <BlogDescription>{blog.description}</BlogDescription>
-                      <ReadMore href="#">Read More →</ReadMore>
-                    </BlogAnswer>
-                  )}
-                </BlogItem>
-              ))}
-            </BlogsContent>
-            <BlogImage src={blogs} alt="Blog illustration" />
-          </BlogsContainer>
-          <ViewAllButton>View all</ViewAllButton>
-        </Container>
-      </BlogSection>
+      <BlogSection data-aos="fade-up">
+      <Container>
+        <Title>Blogs</Title>
+        <Subtitle>
+          Our blog is your gateway to the world of IT and software development. Explore a wide range of<br />
+          topics, from practical how-to guides to in-depth analysis of industry trends. Stay informed and<br />
+          inspired by our team of experts.
+        </Subtitle>
+        <BlogsContainer>
+          <BlogsContent>
+            {blogData.map((blog, index) => (
+              <BlogItem key={index}>
+                <BlogQuestion onClick={() => setOpenBlog(openBlog === index ? -1 : index)}>
+                  <BlogToggle src={openBlog === index ? negative : positive} alt="Toggle" />
+                  {blog.title}
+                </BlogQuestion>
+                {openBlog === index && (
+                  <BlogAnswer>
+                    <BlogDescription>{blog.description}</BlogDescription>
+                    <ReadMore href="#">Read More →</ReadMore>
+                  </BlogAnswer>
+                )}
+              </BlogItem>
+            ))}
+          </BlogsContent>
+          <BlogImage src={blogs} alt="Blog illustration" />
+        </BlogsContainer>
+        <ViewAllButton>View all</ViewAllButton>
+      </Container>
+    </BlogSection>
+
 
       <Section ref={refPartners}>
         <Container>
