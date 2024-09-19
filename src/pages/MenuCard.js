@@ -3,52 +3,57 @@ import styled from 'styled-components';
 import phone from '../assets/images/phone.svg';
 import mail from '../assets/images/mail.svg';
 import phoneCall from '../assets/images/phone-call.svg';
-
-
+import github from '../assets/images/githubblack.png';
+import instagram from '../assets/images/instagramblack.png';
+import linkedin from '../assets/images/linkedinblack.png';
+import facebook from '../assets/images/facebookblack.png';
+import twitter from '../assets/images/twitterblack.png';
 const CardContainer = styled.div`
-  width: 228px;
-  height: auto;
-  padding: 0px 12px;
+  width: 350px; /* Adjusted width to match the desired Figma layout */
+  background-color: #DDEEFF;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: #DDEEFF;
-  gap: 10px;
-  border-left: 2px solid #000; /* Based on the provided border style */
-  opacity: 1;
+  border-radius: 10px;
+  gap: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+`;
+
+const Section = styled.div`
+// padding-left: 15px;
 `;
 
 const Title = styled.h2`
-  font-size: 16px;
+border-left: 2px solid #434343;
+  font-size: 30px;
   font-weight: bold;
-  color: #122740;
-  margin: 0;
+  color: #434343;
+  margin: 0 0 5px 0;
 `;
 
 const Subtitle = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   color: #6B6F82;
-  margin: 0;
+  margin-bottom: 20px;
 `;
 
 const ContactInfo = styled.div`
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 15px;
 `;
 
 const ContactItem = styled.div`
   display: flex;
   align-items: center;
-  font-size: 14px;
-  color: #122740;
+  font-size: 16px;
+  color: #434343;
 `;
 
 const Icon = styled.img`
   margin-right: 10px;
-  width: 16px; /* Adjust size as needed */
-  height: 16px; /* Adjust size as needed */
+  width: 20px;
+  height: 20px;
 `;
 
 const Button = styled.button`
@@ -56,12 +61,13 @@ const Button = styled.button`
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 15px 30px;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-  margin: 20px 0;
-  display: block;
+  width: 100%;
   text-align: center;
+
   &:hover {
     background-color: #0056b3;
   }
@@ -70,34 +76,62 @@ const Button = styled.button`
 const SocialIcons = styled.div`
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
   margin-top: 10px;
 `;
 
 const SocialIcon = styled.img`
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
 `;
 
-const FooterText = styled.p`
-  font-size: 10px;
-  color: #6B6F82;
+const FooterSection = styled.div`
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
-  margin-top: 10px;
+`;
+const FooterSection2 = styled.div`
+  padding: 2px;
+  border-radius: 10px;
+  text-align: center;
+`;
+
+const FooterText = styled.p`
+  font-size: 12px;
+  color: #6B6F82;
+  margin: 5px 0;
+`;
+
+const FooterLink = styled.a`
+  font-size: 14px;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
 `;
 
 const MenuCard = () => {
   return (
     <CardContainer>
-      <Title>About Us</Title>
-      <Subtitle>Know who we are</Subtitle>
-      <Title>Career</Title>
-      <Subtitle>Hire best Employees</Subtitle>
-      <Title>Blog</Title>
-      <Subtitle>Latest information and updates</Subtitle>
-      <Title>Contact Us</Title>
-      <Subtitle>Get in touch with us</Subtitle>
+      <Section>
+        <div>
+          <Title><span style={{marginLeft:"7px"}}>About Us</span></Title>
+          <Subtitle>Know who we are</Subtitle>
+        </div>
+        <div>
+          <Title><span style={{marginLeft:"7px"}}>Career</span></Title>
+          <Subtitle>Hire best Employees</Subtitle>
+        </div>
+        <div>
+          <Title><span style={{marginLeft:"7px"}}>Blog</span></Title>
+          <Subtitle>Latest information and updates</Subtitle>
+        </div>
+        <div>
+          <Title><span style={{marginLeft:"7px"}}>Contact Us</span></Title>
+          <Subtitle>Get in touch with us</Subtitle>
+        </div>
+      </Section>
 
       <ContactInfo>
         <ContactItem>
@@ -107,28 +141,29 @@ const MenuCard = () => {
           <Icon src={phoneCall} alt="Phone Call" /> +1(123) 567 7890
         </ContactItem>
         <ContactItem>
-          <Icon src={mail} alt="mMail" /> sales@jethitech.com
+          <Icon src={mail} alt="Mail" /> sales@jethitech.com
         </ContactItem>
       </ContactInfo>
 
       <Button>Get a Quote</Button>
 
       <SocialIcons>
-        <SocialIcon src="/path/to/facebook-icon.png" alt="Facebook" />
-        <SocialIcon src="/path/to/instagram-icon.png" alt="Instagram" />
-        <SocialIcon src="/path/to/twitter-icon.png" alt="Twitter" />
+        <SocialIcon src={facebook} alt="Facebook" />
+        <SocialIcon src={instagram} alt="Instagram" />
+        <SocialIcon src={github} alt="Github" />
+        <SocialIcon src={linkedin} alt="Linkedin" />
+        <SocialIcon src={twitter} alt="Twitter" />
       </SocialIcons>
+      <FooterSection2>
+        <FooterText>© 2023, All Rights Reserved by Jethitech</FooterText>
+      </FooterSection2>
 
-      <FooterText>© 2023, All Rights Reserved by Jethitech</FooterText>
-      <FooterText>We deliver value with information</FooterText>
-      <FooterText>
-        <a href="#" style={{ color: "#007bff", textDecoration: "none" }}>
-          EXPLORE CORPORATE PROFILE →
-        </a>
-      </FooterText>
+      <FooterSection>
+        <FooterText>We deliver value with information</FooterText>
+        <FooterLink href="#">EXPLORE CORPORATE PROFILE →</FooterLink>
+      </FooterSection>
     </CardContainer>
   );
 };
-
 
 export default MenuCard;
