@@ -9,6 +9,7 @@ import hireImage from '../assets/images/HireSolutionsCard.png';
 import solutionsImage from '../assets/images/HireSolutionsCard.png';
 import cardBg from '../assets/images/cardBg.png';
 
+import MenuCard from '../pages/MenuCard';
 const HeaderWrapper = styled.header`
   font-family: 'Poppins';
   position: fixed;
@@ -205,6 +206,8 @@ const NavLink2 = styled(Link)`
 const DropdownMenu = styled.ul`
   display: none;
   position: absolute;
+  margin-top: 15px;
+
   top: 100%;
   left: 50%;
   transform: translateX(-40%);
@@ -443,6 +446,7 @@ const ColumnTitle = styled.h3`
 
    &:hover {
     color: #2F69B1;
+    cursor: pointer;
   }
 
   @media (max-width: 768px) {
@@ -453,7 +457,6 @@ const ColumnTitle = styled.h3`
 const ColumnItem = styled.div`
   font-size: 14px;
   margin-bottom: 8px;
-  cursor: pointer;
   color: #434343;
 
   // &:hover {
@@ -478,6 +481,35 @@ const MenuButton = styled.button`
 
   @media (max-width: 768px) {
     font-size: 18px;
+  }
+`;
+const MenuContainer = styled.div`
+  position: relative;
+  display: inline-block;
+
+  &:hover > ul {
+    display: block;
+  }
+`;
+
+const MenuDropdown = styled.ul`
+  display: none;
+  position: absolute;
+  margin-top: 15px;
+  top: 100%;
+  left: -100px; /* Shifted towards the left to align it under the button */
+  background-color: #F5F5F5;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 0px;
+  z-index: 1000;
+  border-radius: 15px;
+  font-family: 'Inter', sans-serif;
+  height: auto;
+  color: #434343;
+  transition: display 0.3s ease;
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 
@@ -725,9 +757,14 @@ const Header = () => {
             <NavItem>
               <NavLink2 onClick={() => handleMenuClick('/work')} className={location.pathname === '/work' ? 'active' : ''}>Work</NavLink2>
             </NavItem>
+            <MenuContainer ref={menuRef}>
             <MenuButton onClick={toggleMenu}>
               MENU <MenuIcon src={menuIcon} alt="Menu" />
             </MenuButton>
+            <MenuDropdown>
+                  <MenuCard /> {/* Display your MenuCard component here */}
+            </MenuDropdown>
+          </MenuContainer>
           </NavMenu>
         </NavContent>
       </MainNav>

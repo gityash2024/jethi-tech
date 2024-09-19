@@ -40,7 +40,7 @@ function App() {
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/work" element={<Work />} />
           <Route path="/card" element={<Card />} />
-          <Route path="/menu-card" element={<MenuCard />} />
+          {/* <Route path="/menu-card" element={<MenuCard />} /> */}
         </Routes>
         <ScrollToTop />
       </MainLayout>

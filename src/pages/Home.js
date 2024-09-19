@@ -1195,7 +1195,7 @@ const iconalignleft =styled.div`
 
 
 const BlogSection = styled.section`
-  padding: 60px 20px;
+  padding: 30px 20px;
   background-color: #fff;
 `;
 
@@ -1298,64 +1298,59 @@ const BlogSectionComponent = ({ blogData }) => {
 
 
 const Home = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
   const carouselSettings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 7, // Number of images visible in one view
+    slidesToShow: 7,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
+    beforeChange: (oldIndex, newIndex) => setActiveSlide(newIndex), // Track active slide on change
     customPaging: (i) => (
       <div
         style={{
-          width: "16px", // Update width for individual dot
-          height: "16px", // Update height for individual dot
-          backgroundColor: i === 0 ? "#333" : "#ccc", // Color change for active/inactive dots
-          borderRadius: "50%", // Making the dots round
-          margin: "0 8px", // Spacing between dots (half of the gap)
-          opacity: 1, // Ensuring opacity is 1 for full visibility
+          width: "13px",
+          height: "13px",
+          marginTop: "20px",
+          backgroundColor: activeSlide === i ? "#333" : "#ccc", // Apply color to active dot
+          borderRadius: "50%",
+          margin: "0 8px",
+          opacity: 1,
         }}
       ></div>
     ),
     dotsClass: "slick-dots slick-thumb",
   };
-  
-  // const carouselSettings2 = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 5,  // Adjust based on how many logos you want visible
-  //   slidesToScroll: 1,
-  //   autoplay: true,
-  //   autoplaySpeed: 3000,
-  //   arrows: false,
-  // };
 
   const carouselSettings2 = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5, // Adjust based on how many logos you want visible
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
+    beforeChange: (oldIndex, newIndex) => setActiveSlide(newIndex), // Track active slide on change
     customPaging: (i) => (
       <div
         style={{
-          width: "16px",  // Increase the size of the dots
-          height: "16px", // Make dots hug the height
-          backgroundColor: i === 0 ? "#333" : "#ccc", // Change color of active/inactive dots
-          borderRadius: "50%",  // Make dots round
-          opacity: 1, // Set opacity to full
-          margin: "0 8px",  // Add gap between the dots
+          width: "13px",
+          height: "13px",
+          marginTop: "20px",
+          backgroundColor: activeSlide === i ? "#333" : "#ccc", // Apply color to active dot
+          borderRadius: "50%",
+          margin: "0 8px",
+          opacity: 1,
         }}
       ></div>
     ),
-    dotsClass: "slick-dots slick-thumb", // Apply custom styling to dots
+    dotsClass: "slick-dots slick-thumb",
   };
+
   
   const { ref: refValue, inView: inViewValue } = useInView({
     triggerOnce: true,
@@ -2131,20 +2126,20 @@ const Home = () => {
 <Container>
 
 <AwardsSection data-aos="fade-up">
-  <Title>Awards and Recognition</Title>
-  <Subtitle>
-    "We're proud to be recognized as a top performer by Clutch and Appfutura, acknowledging our expertise in IT services, software development, and iOS app creation."
-  </Subtitle>
-  <AwardsGrid {...carouselSettings}>
-    <AwardImage src={award_1} alt="Clutch Award" />
-    <AwardImage src={award_2} alt="Top Software Development Company" />
-    <AwardImage src={award_3} alt="Top App Developers" />
-    <AwardImage src={award_4} alt="Top Mobile App Developers" />
-    <AwardImage src={award_5} alt="Top Rated App Development Company" />
-    <AwardImage src={award_6} alt="Top Rated App Development " />
-    <AwardImage src={award_5} alt="Top Rated Software Development Company" />
-  </AwardsGrid>
-</AwardsSection>
+        <Title>Awards and Recognition</Title>
+        <Subtitle>
+          "We're proud to be recognized as a top performer by Clutch and Appfutura, acknowledging our expertise in IT services, software development, and iOS app creation."
+        </Subtitle>
+        <AwardsGrid {...carouselSettings}>
+          <AwardImage src={award_1} alt="Clutch Award" />
+          <AwardImage src={award_2} alt="Top Software Development Company" />
+          <AwardImage src={award_3} alt="Top App Developers" />
+          <AwardImage src={award_4} alt="Top Mobile App Developers" />
+          <AwardImage src={award_5} alt="Top Rated App Development Company" />
+          <AwardImage src={award_6} alt="Top Rated App Development " />
+          <AwardImage src={award_5} alt="Top Rated Software Development Company" />
+        </AwardsGrid>
+      </AwardsSection>
 
 </Container>
 
@@ -2169,26 +2164,20 @@ const Home = () => {
       </BusinessesSection>
 
       <TrustedSection data-aos="fade-up">
-        <Container>
-          <Title>Trusted By 100+ Happy Brands</Title>
-          <Subtitle>
-            At Solminica, we are dedicated to driving continuous innovation and
-            digital transformation for our <br />stakeholders. We help our clients
-            stay aligned with the latest technology trends, giving them a <br />
-            competitive advantage. We are proud to have maintained a 90% client
-            retention rate since 2017.
-          </Subtitle>
-          <TrustedGrid {...carouselSettings2}>
-            <TrustedLogo onClick={() => window.open("https://www.rainbowhospitals.in/", "_blank")} src={trusted_partner_1} alt="Trusted Partner 1" />
-            <TrustedLogo onClick={() => window.open("https://apwrims.ap.gov.in/", "_blank")} src={trusted_partner_2} alt="Trusted Partner 2" />
-            <TrustedLogo onClick={() => window.open("https://www.powergrid.in/", "_blank")} src={trusted_partner_3} alt="Trusted Partner 3" />
-            <TrustedLogo onClick={() => window.open("https://www.sacredgroves.earth/", "_blank")} src={trusted_partner_4} alt="Trusted Partner 4" />
-            <TrustedLogo onClick={() => window.open("https://suvarnabhoomiinfra.com/", "_blank")} src={trusted_partner_5} alt="Trusted Partner 5" />
-            <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_6} alt="Trusted Partner 6" />
-            <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_7} alt="Trusted Partner 7" />
-            <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_8} alt="Trusted Partner 8" />
-          </TrustedGrid>
-        </Container>
+        <Title>Trusted By 100+ Happy Brands</Title>
+        <Subtitle>
+          At Solminica, we are dedicated to driving continuous innovation and digital transformation for our stakeholders. We help our clients stay aligned with the latest technology trends, giving them a competitive advantage.
+        </Subtitle>
+        <TrustedGrid {...carouselSettings2}>
+          <TrustedLogo src={trusted_partner_1} alt="Trusted Partner 1" />
+          <TrustedLogo src={trusted_partner_2} alt="Trusted Partner 2" />
+          <TrustedLogo src={trusted_partner_3} alt="Trusted Partner 3" />
+          <TrustedLogo src={trusted_partner_4} alt="Trusted Partner 4" />
+          <TrustedLogo src={trusted_partner_5} alt="Trusted Partner 5" />
+          <TrustedLogo src={trusted_partner_6} alt="Trusted Partner 6" />
+          <TrustedLogo src={trusted_partner_7} alt="Trusted Partner 7" />
+          <TrustedLogo src={trusted_partner_8} alt="Trusted Partner 8" />
+        </TrustedGrid>
       </TrustedSection>
       <BlogSection data-aos="fade-up">
       <Container>
