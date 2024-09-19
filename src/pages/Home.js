@@ -593,9 +593,11 @@ const ExpertiseItem = styled.li`
   margin-bottom: 10px;
   cursor: pointer;
   font-family: "Poppins";
-   font-weight: 500;
-  color: ${(props) => (props.active ? "#ffffff" : "#434343")};
-  font-weight: ${(props) => (props.active ? "600" : "normal")};
+   font-weight: 500 !important;
+   font-size: 20px;
+   line-height: 30px;
+  color: ${(props) => (props.active ? "#ffffff" : "#202020")};
+  // font-weight: ${(props) => (props.active ? "600" : "normal")};
   background: ${(props) =>
     props.active
       ? "linear-gradient(to right, #0072FF 0%, #2F69B1 100%)"
@@ -1105,9 +1107,12 @@ const StatNumber = styled.h3`
 `;
 
 const StatLabel = styled.p`
-  font-size: 16px;
+  font-size: 20px;
   margin-left: 30px;
-  color: #666;
+  color: #434343;
+  font-weight: 500;
+    text-align: center;
+    line-height: 30px;
 `;
 const PartnersGrid = styled.div`
   display: grid;
@@ -1815,7 +1820,7 @@ const Home = () => {
     <BottomRow>
       <BottomText>
         Our expertise in designing and building digital solutions
-        authorises us to develop bespoke solutions
+        authorises us to develop <br />bespoke solutions
       </BottomText>
       <ConsultButton>Consult Now!</ConsultButton>
     </BottomRow>
@@ -1919,12 +1924,12 @@ const Home = () => {
         <HireSection data-aos="fade-up">
           <HireContent>
             <TitleOurDigital>
-              Are you looking to hire Efficient Mobile app and Web Development
+              Are you looking to hire Efficient<br /> Mobile app and Web Development<br />
               Team for your Business ?
             </TitleOurDigital>
             <SubtitleOurDigital>
               Solminica serves you with the most innovative Mobile App & web
-              development team that will take your business to a whole new
+              development <br />team that will take your business to a whole new
               level.
             </SubtitleOurDigital>
             <Button>Hire now</Button>
@@ -1980,7 +1985,7 @@ const Home = () => {
       <WorkSection  data-aos="fade-up">
         <Container>
           <Title>Our Work</Title>
-          <Subtitle>Solminica working on different sectors with giving them the proof and solutions. From agriculture to fintech, we cater to a wide array of industries, offering tailored solutions to meet their specific needs</Subtitle>
+          <Subtitle>Solminica working on different sectors with giving them the proof and solutions. From agriculture to <br />fintech, we cater to a wide array of industries, offering tailored solutions to meet their specific needs</Subtitle>
           <WorkGrid>
             <IndustryList>
               {Object.keys(industryData).map(industry => (
