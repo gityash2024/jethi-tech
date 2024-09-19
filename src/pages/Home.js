@@ -953,6 +953,7 @@ const AwardsDots = styled.div`
 
 const AwardsDot = styled.span`
   width: 10px;
+  cursor: pointer;
   height: 10px;
   background-color: ${(props) => (props.active ? "#434343" : "#6C6C6C")};
   border-radius: 50%;
@@ -1309,7 +1310,7 @@ const Home = () => {
         style={{
           width: "13px",
           height: "13px",
-          marginTop: "20px",
+          marginTop: "30px",
           backgroundColor: activeSlide === i ? "#333" : "#ccc", // Apply color to active dot
           borderRadius: "50%",
           margin: "0 8px",
@@ -1335,7 +1336,7 @@ const Home = () => {
         style={{
           width: "13px",
           height: "13px",
-          marginTop: "20px",
+          marginTop: "28px",
           backgroundColor: activeSlide === i ? "#333" : "#ccc", // Apply color to active dot
           borderRadius: "50%",
           margin: "0 8px",
@@ -1522,6 +1523,25 @@ const Home = () => {
     autoplaySpeed: 3000,
   };
 
+  const [activeDot, setActiveDot] = useState(0);
+
+  const testimonials = [
+    {
+      text: "Solminica has been a game-changer for our business. Their team delivered a top-notch solution that exceeded our expectations. We're thrilled with the results!",
+      author: "Mark Rise",
+      position: "CEO, Founder",
+    },
+    {
+      text: "Since implementing Solminica, we've seen a 25% increase in website traffic and a 15% boost in conversions. The team at Solminica truly understands our business needs.",
+      author: "Jane Doe",
+      position: "Marketing Director",
+    },
+    {
+      text: "Working with Solminica felt like a true partnership. They were responsive, proactive, and always willing to go the extra mile. We highly recommend their services.",
+      author: "John Smith",
+      position: "CEO, Founder",
+    },
+  ];
   return (
     <HomeWrapper>
       <SocialBar>
@@ -2096,23 +2116,17 @@ const Home = () => {
           <CustomerTestimonial>
             <TestimonialImage src={Customers} alt="Customer Testimonial" />
             <TestimonialContent>
-              <TestimonialText>
-                " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore. 
-                <br />
-                <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore."
-              </TestimonialText>
-              <TestimonialAuthor>Mark Rise</TestimonialAuthor>
-              <TestimonialPosition>CEO, Founder</TestimonialPosition>
-              <AwardsDots>
-          <AwardsDot active />
-          <AwardsDot />
-          <AwardsDot />
-          <AwardsDot />
+            <TestimonialText>{testimonials[activeDot].text}</TestimonialText>
+        <TestimonialAuthor>{testimonials[activeDot].author}</TestimonialAuthor>
+        <TestimonialPosition>{testimonials[activeDot].position}</TestimonialPosition>
+        <AwardsDots>
+          {testimonials.map((_, index) => (
+            <AwardsDot
+              key={index}
+              active={index === activeDot}
+              onClick={() => setActiveDot(index)}
+            />
+          ))}
         </AwardsDots>
             </TestimonialContent>
           </CustomerTestimonial>
