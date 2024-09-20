@@ -4,7 +4,9 @@ import { useInView } from 'react-intersection-observer';
 import Slider from 'react-slick';
 import AOS from 'aos';
 import Customers from "../assets/images/Customers.png";
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import 'aos/dist/aos.css';
 import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -398,6 +400,10 @@ const AwardsDot = styled.span`
   border-radius: 50%;
 `;
 const Contact = () => {
+  const [captchaValue, setCaptchaValue] = useState('');
+  const [captchaAnswer, setCaptchaAnswer] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
   // const carouselSettings = {
   //   dots: true,
   //   infinite: true,
@@ -468,7 +474,88 @@ const Contact = () => {
       duration: 1000,
       once: true,
     });
+    generateCaptcha();
   }, []);
+
+  const generateCaptcha = () => {
+    const num1 = Math.floor(Math.random() * 10);
+    const num2 = Math.floor(Math.random() * 10);
+    setCaptchaValue(`${num1} + ${num2}`);
+    setCaptchaAnswer((num1 + num2).toString());
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const phone = form.phone.value;
+    const budget = form.budget.value;
+    const interest = form.interest.value;
+    const source = form.source.value;
+    const requirements = form.requirements.value;
+    const captchaInput = form.captcha.value;
+
+    // Validation
+    if (name.length > 100) {
+      toast.error("Name should be 100 characters or less");
+      setIsLoading(false);
+      return;
+    }
+
+    if (requirements.length > 500) {
+      toast.error("Project requirements should be 500 characters or less");
+      setIsLoading(false);
+      return;
+    }
+
+    const phoneRegex = /^[6-9]\d{9}$/;
+    if (!phoneRegex.test(phone)) {
+      toast.error("Please enter a valid 10-digit Indian mobile number");
+      setIsLoading(false);
+      return;
+    }
+
+    if (captchaInput !== captchaAnswer) {
+      toast.error("Incorrect captcha. Please try again.");
+      generateCaptcha();
+      setIsLoading(false);
+      return;
+    }
+
+    const formData = {
+      name,
+      email,
+      phone,
+      budget,
+      interest,
+      source,
+      requirements,
+    };
+
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzbA6ZJzv0JQShWBAnhc0tQcjLVAJdBzZpcCHeLlFynCPTpRniSKSIPWjsifeBKA1Vn/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      toast.success('Form submitted successfully. We will contact you soon!');
+      form.reset();
+      generateCaptcha();
+    } catch (error) {
+      console.error('Error submitting form', error);
+      toast.error('An error occurred while submitting the form. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <AboutWrapper>
@@ -493,30 +580,39 @@ const Contact = () => {
           <Subtitle>Fill this form to Take the First Step Towards the Successful Journey.</Subtitle>
           <FormSection>
             <FormContainer>
-              <Form>
-                <Input type="text" placeholder="Name*" required />
-                <Input type="email" placeholder="Email*" required />
-                <Select defaultValue="">
-                  <option value="" disabled>Contact Number*</option>
-                </Select>
-                <Select defaultValue="">
+              <Form onSubmit={handleSubmit}>
+                <Input type="text" name="name" placeholder="Name*" required />
+                <Input type="email" name="email" placeholder="Email*" required />
+                <Input type="tel" name="phone" placeholder="Contact Number*" required />
+                <Select name="budget" defaultValue="" required>
                   <option value="" disabled>Your Budget</option>
+                  <option value="0-5000">$0 - $5,000</option>
+                  <option value="5000-10000">$5,000 - $10,000</option>
+                  <option value="10000+">$10,000+</option>
                 </Select>
-                <Select defaultValue="">
+                <Select name="interest" defaultValue="" required>
                   <option value="" disabled>Interested in</option>
+                  <option value="web-development">Web Development</option>
+                  <option value="mobile-app">Mobile App Development</option>
+                  <option value="ui-ux">UI/UX Design</option>
+                  <option value="other">Other</option>
                 </Select>
-                <Select defaultValue="">
+                <Select name="source" defaultValue="" required>
                   <option value="" disabled>How did you learn about us</option>
+                  <option value="search">Search Engine</option>
+                  <option value="social-media">Social Media</option>
+                  <option value="referral">Referral</option>
+                  <option value="other">Other</option>
                 </Select>
-                <TextArea placeholder="Project Requirements" rows={4} />
+                <TextArea name="requirements" placeholder="Project Requirements" rows={4} required />
                 <Captcha>
-                  <CaptchaInput type="text" value="5" disabled />
-                  <CaptchaOperator>+</CaptchaOperator>
-                  <CaptchaInput type="text" value="8" disabled />
+                  <CaptchaInput type="text" value={captchaValue} disabled />
                   <CaptchaOperator>=</CaptchaOperator>
-                  <CaptchaInput type="text" placeholder="Captcha code" />
+                  <CaptchaInput type="text" name="captcha" placeholder="Enter result" required />
                 </Captcha>
-                <SubmitButton>Send</SubmitButton>
+                <SubmitButton type="submit" disabled={isLoading}>
+                  {isLoading ? 'Sending...' : 'Send'}
+                </SubmitButton>
               </Form>
             </FormContainer>
             <InfoBox />
@@ -629,6 +725,8 @@ const Contact = () => {
         </Container>
       </TechnologiesSection>
       </Container>
+      <ToastContainer position="bottom-right" />
+
     </AboutWrapper>
   );
 };
