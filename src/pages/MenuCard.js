@@ -8,6 +8,7 @@ import instagram from '../assets/images/instagramblack.png';
 import linkedin from '../assets/images/linkedinblack.png';
 import facebook from '../assets/images/facebookblack.png';
 import twitter from '../assets/images/twitterblack.png';
+import { useNavigate } from 'react-router-dom';
 const CardContainer = styled.div`
   width: 350px; /* Adjusted width to match the desired Figma layout */
   background-color: #DDEEFF;
@@ -112,6 +113,7 @@ const FooterLink = styled.a`
 `;
 
 const MenuCard = () => {
+  const navigate=useNavigate();
   return (
     <CardContainer>
       <Section>
@@ -135,17 +137,17 @@ const MenuCard = () => {
 
       <ContactInfo>
         <ContactItem>
-          <Icon src={phone} alt="Phone" /> +91 12345 67890
+          <Icon src={phone} alt="Phone" /><a href="tel: +91 12345 67890"> +91 12345 67890</a>
         </ContactItem>
         <ContactItem>
-          <Icon src={phoneCall} alt="Phone Call" /> +1(123) 567 7890
+          <Icon src={phoneCall} alt="Phone Call"  /><a href="tel: +1(123) 567 7890"> +1(123) 567 7890</a>
         </ContactItem>
         <ContactItem>
-          <Icon src={mail} alt="Mail" /> sales@jethitech.com
+          <Icon src={mail} alt="Mail" /> <a href="mailto: sales@jethitech.com">sales@jethitech.com</a>
         </ContactItem>
       </ContactInfo>
 
-      <Button>Get a Quote</Button>
+      <Button onClick={() => navigate('/contact')}>Get a Quote</Button>
 
       <SocialIcons>
         <SocialIcon src={facebook} alt="Facebook" />
