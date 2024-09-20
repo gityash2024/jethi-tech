@@ -155,6 +155,7 @@ import tp_home_2 from "../assets/images/tp-home-2.png";
 import tp_home_3 from "../assets/images/tp-home-3.png";
 import tp_home_4 from "../assets/images/tp-home-4.png";
 import { ArrowRightAlt } from "@material-ui/icons";
+import { useNavigate } from "react-router-dom";
 
 const HomeWrapper = styled.div`
   font-family: "Poppins";
@@ -532,9 +533,6 @@ const ServiceItem2 = styled(motion.div)`
   flex-direction: column;
   align-items: flex-start;
   &:hover {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 0.3s ease-in-out;
-    transform: translateY(-5px);
     cursor: pointer;
   }
 `;
@@ -811,7 +809,7 @@ const WorkDetailTitle = styled.h3`
 `;
 const WorkDetailTitle2 = styled.h3`
   font-size: 18px;
-  cursor: pointer;
+  cursor: not-allowed;
   margin-bottom: 15px;
 `;
 
@@ -971,6 +969,7 @@ const AwardsSection = styled(Section)`
 const AwardImage = styled.img`
   height: 100px;
   width: auto;
+  margin-bottom: 20px;
 `;
 
 const AwardsDots = styled.div`
@@ -1031,6 +1030,7 @@ const TrustedLogo = styled.img`
   height: 80px;
   cursor: pointer;
   width: auto;
+  margin-bottom: 20px;
 `;
 
 const TrustedDots = styled.div`
@@ -1311,7 +1311,7 @@ const ViewAllButton = styled.button`
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 16px;
-  cursor: pointer;
+  cursor: not-allowed;
   margin: 40px auto 0;
   display: block;  /* Center the button */
   &:hover {
@@ -1325,6 +1325,7 @@ const BlogSectionComponent = ({ blogData }) => {
 
 
 const Home = () => {
+  const navigate=useNavigate();
   const [activeSlide, setActiveSlide] = useState(0);
   const carouselSettings = {
     dots: true,
@@ -1614,7 +1615,7 @@ const Home = () => {
               We are firm believers that the best software comes from <br /> small
               agile and highly skilled teams.
             </Subtitle22>
-            <ConsultButtonHome>Consult Now!</ConsultButtonHome>
+            <ConsultButtonHome onClick={() => navigate("/contact")}>Consult Now!</ConsultButtonHome>
           </HeroContentWrapper>
           <HeroImage src={transformImage} alt="Transform your business" />
         </HeroSection>
@@ -1781,6 +1782,7 @@ const Home = () => {
           <ServiceTitle>Cloud and Devops</ServiceTitle>
         </ServiceItem>
         <ServiceItem2
+          onClick={()=>{navigate('/contact')}}
           custom={9}
           initial="hidden"
           whileInView="visible"
@@ -1848,7 +1850,7 @@ const Home = () => {
         Our expertise in designing and building digital solutions
         authorises us to develop <br />bespoke solutions
       </BottomText>
-      <ConsultButton>Consult Now!</ConsultButton>
+      <ConsultButton onClick={() => navigate("/contact")}>Consult Now!</ConsultButton>
     </BottomRow>
   </Container>
 </TechnologiesSection>
@@ -1958,7 +1960,7 @@ const Home = () => {
               development <br />team that will take your business to a whole new
               level.
             </SubtitleOurDigital>
-            <Button>Hire now</Button>
+            <Button onClick={() => navigate("/contact")}>Hire now</Button>
           </HireContent>
           <HireImage src={digitalservices} alt="Hire Efficient Team" />
         </HireSection>
@@ -2004,7 +2006,7 @@ const Home = () => {
             <BottomText>
               Our expertise in designing and building digital solutions authorizes us to develop <br />bespoke solutions
             </BottomText>
-            <ConsultButton>Consult Now!</ConsultButton>
+            <ConsultButton onClick={() => navigate("/contact")}>Consult Now!</ConsultButton>
           </BottomRow>
         </Container>
       </ValueSection>
@@ -2127,7 +2129,7 @@ const Home = () => {
             <BottomText>
               Our expertise in designing and building digital solutions authorises us to develop <br/>bespoke solutions
             </BottomText>
-            <ConsultButton>Consult Now!</ConsultButton>
+            <ConsultButton onClick={() => navigate("/contact")}>Consult Now!</ConsultButton>
           </BottomRow>
         </Container>
       </TechnologiesSection>
