@@ -94,6 +94,17 @@ const FooterLink = styled.a`
     text-decoration: underline;
   }
 `;
+const FooterLink2 = styled.a`
+  color: white;
+  cursor: not-allowed;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px; // Adjusted based on Figma
+  font-size: 14px; // Updated font size to match Figma
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 const SocialIcons = styled.div`
   display: flex;
@@ -103,6 +114,7 @@ const SocialIcons = styled.div`
 `;
 
 const FooterSocialIcon = styled.img`
+cursor: pointer;
   width: 28px; // Increased size to match Figma
   height: 28px;
 `;
@@ -233,16 +245,16 @@ const Footer = () => {
           <QuickLinksColumn>
             <QuickLinksSubColumn>
               <FooterLink onClick={() => handleNavigation('/')}>Home</FooterLink>
-              <FooterLink >How it works</FooterLink>
+              <FooterLink2 title='commign-soon'>How it works</FooterLink2>
               <FooterLink onClick={() => handleNavigation('/about')}>About</FooterLink>
-              <FooterLink >Features</FooterLink>
-              <FooterLink>Address</FooterLink>
+              <FooterLink2 title='commign-soon'>Features</FooterLink2>
+              <FooterLink2 title='commign-soon'>Address</FooterLink2>
             </QuickLinksSubColumn>
             <QuickLinksSubColumn>
-              <FooterLink>Testimonials</FooterLink>
+              <FooterLink2 title='commign-soon'>Testimonials</FooterLink2>
               <FooterLink onClick={() => handleNavigation('/contact')}>Contact</FooterLink>
-              <FooterLink >FAQ</FooterLink>
-              <FooterLink >Blog</FooterLink>
+              <FooterLink2 title='commign-soon'>FAQ</FooterLink2>
+              <FooterLink2 title='commign-soon' >Blog</FooterLink2>
               <FooterLink onClick={() => handleNavigation('/privacy-policy')}>Privacy Policy</FooterLink>
             </QuickLinksSubColumn>
           </QuickLinksColumn>
@@ -257,10 +269,10 @@ const Footer = () => {
               <FooterSocialIcon src={telegram} alt="Telegram" />
             </SocialIcons>
             <ProductsSection>
-              <ProductImage src={product_1} alt="CHECKIN PILOT" />
-              <ProductImage src={product_2} alt="SMS JET" />
-              <ProductImage src={product_3} alt="SchoolMaster" />
-              <ProductImage src={product_4} alt="SentiProof" />
+              <ProductImage onClick={()=>{navigate('/contact')}} src={product_1} alt="CHECKIN PILOT" />
+              <ProductImage onClick={()=>{navigate('/contact')}} src={product_2} alt="SMS JET" />
+              <ProductImage onClick={()=>{navigate('/contact')}} src={product_3} alt="SchoolMaster" />
+              <ProductImage onClick={()=>{navigate('/contact')}} src={product_4} alt="SentiProof" />
             </ProductsSection>
           </SocialProductsColumn>
         </MiddleRow>
@@ -297,7 +309,7 @@ const Footer = () => {
             Copyright © 2017 - 2024 Solminica. All rights reserved.
           </Copyright>
           <Copyright>
-            <a href="#">Sitemap</a> | <a href='/privacy-policy'>Privacy Policy</a> | <a href='/terms-conditions'>TnC</a> | <a href="#">Refund Policy</a> | <a href="#">Code of Conduct</a>
+            <a style={{cursor:'not-allowed',textDecoration:'none',color:'white'}} title='commign-soon'>Sitemap</a> | <a href='/privacy-policy'>Privacy Policy</a> | <a href='/terms-conditions'>TnC</a> | <a style={{cursor:'not-allowed',textDecoration:'none',color:'white'}} title='commign-soon'>Refund Policy</a> | <a style={{cursor:'not-allowed',textDecoration:'none',color:'white'}} title='commign-soon'>Code of Conduct</a>
           </Copyright>
         </CopyrightRow>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import styled, { keyframes } from 'styled-components';
@@ -17,6 +17,7 @@ import find_2 from '../assets/images/find_2.png';
 import find_3 from '../assets/images/find_3.png';
 import find_4 from '../assets/images/find_4.png';
 import find_5 from '../assets/images/find_5.png';
+import { useNavigate } from 'react-router-dom';
 
 const AboutWrapper = styled.div`
   font-family: 'Poppins';
@@ -297,7 +298,34 @@ const ValueSubtitle = styled.p`
   text-align: center;
   font-family: 'Poppins';
 `;
+const Section0 = styled.section`
+  padding: 0px 0;
+  @media (max-width: 768px) {
+    padding: 0px 0;
+  }
+`;
+const Title = styled.h2`
+  font-size: 46px;
+  background: linear-gradient(270deg, #000000 60%, #1a1a1a 70%, #0072FF 85%, #2F69B1 100%);
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: ${gradientAnimation} 3s ease infinite;
+  margin-bottom: 20px;
+  text-align: center; 
+  font-weight: 700;
+  line-height: 62.4px;
 
+  @media (max-width: 768px) {
+    font-size: 28px;
+    line-height: 40.4px;
+  }
+
+  font-family: "Poppins";
+`;
+const TechnologiesSection = styled(Section0)`
+`;
 const StatsGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -397,6 +425,7 @@ const AwardsDots = styled.div`
 
 const AwardsDot = styled.span`
   width: 10px;
+  cursor: pointer;
   height: 10px;
   background-color: ${(props) => (props.active ? "#434343" : "#6C6C6C")};
   border-radius: 50%;
@@ -528,7 +557,26 @@ const About = () => {
     triggerOnce: true,
     threshold: 0.5,
   });
+  const [activeDot, setActiveDot] = useState(0);
 
+  const navigate=useNavigate();
+  const testimonials = [
+    {
+      text: "Solminica has been a game-changer for our business. Their team delivered a top-notch solution that exceeded our expectations. We're thrilled with the results!",
+      author: "Mark Rise",
+      position: "CEO, Founder",
+    },
+    {
+      text: "Since implementing Solminica, we've seen a 25% increase in website traffic and a 15% boost in conversions. The team at Solminica truly understands our business needs.",
+      author: "Jane Doe",
+      position: "Marketing Director",
+    },
+    {
+      text: "Working with Solminica felt like a true partnership. They were responsive, proactive, and always willing to go the extra mile. We highly recommend their services.",
+      author: "John Smith",
+      position: "CEO, Founder",
+    },
+  ];
   return (
     <AboutWrapper>
       <Container>
@@ -536,7 +584,7 @@ const About = () => {
           <HeroContent>
             <HeroTitle>The right <GradientText>technology <br/> partner</GradientText> can change<br/> everything</HeroTitle>
             <HeroSubtitle>We are firm believers that the best software comes from <br/>small agile and highly skilled teams.</HeroSubtitle>
-            <ConsultButton>Get Quote</ConsultButton>
+            <ConsultButton onClick={()=>{navigate('/contact')}}>Get Quote</ConsultButton>
           </HeroContent>
           <HeroImage src={about_as} alt="About Us" />
         </HeroSection>
@@ -689,31 +737,37 @@ const About = () => {
           </BottomRow>
         </ValueSection>
 
-        <TestimonialSection>
-          <BeliefTitle>Our Customers love what we do</BeliefTitle>
-          <TestimonialSubtitle>
-            Our customers are at the center of everything we do, and we're passionate about delivering exceptional solutions that exceed their expectations. We take pride in providing innovative services that delight and satisfy their needs, fostering long-term relationships built on trust, quality, and reliability. Our dedication to customer satisfaction is unwavering, and we continually strive to improve and refine our offerings to meet their evolving needs.
-          </TestimonialSubtitle>
+        <TechnologiesSection >
+        <Container>
+          <Title>Our Customers love what we do</Title>
+          <Subtitle>
+            Our customers are at the center of everything we do, and we're
+            passionate about delivering exceptional solutions <br />that exceed their
+            expectations. We take pride in providing innovative services that
+            delight and satisfy their needs, <br />fostering long-term relationships
+            built on trust, quality, and reliability. Our dedication to customer
+            satisfaction is <br />unwavering, and we continually strive to improve and
+            refine our offerings to meet their evolving needs.
+          </Subtitle>
           <CustomerTestimonial>
             <TestimonialImage src={Customers} alt="Customer Testimonial" />
             <TestimonialContent>
-              <TestimonialText>
-                " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-                <br />
-                <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
-              </TestimonialText>
-              <TestimonialAuthor>Mark Rise</TestimonialAuthor>
-              <TestimonialPosition>CEO, Founder</TestimonialPosition>
-              <AwardsDots>
-                <AwardsDot active />
-                <AwardsDot />
-                <AwardsDot />
-                <AwardsDot />
-              </AwardsDots>
+            <TestimonialText>{testimonials[activeDot].text}</TestimonialText>
+        <TestimonialAuthor>{testimonials[activeDot].author}</TestimonialAuthor>
+        <TestimonialPosition>{testimonials[activeDot].position}</TestimonialPosition>
+        <AwardsDots>
+          {testimonials.map((_, index) => (
+            <AwardsDot
+              key={index}
+              active={index === activeDot}
+              onClick={() => setActiveDot(index)}
+            />
+          ))}
+        </AwardsDots>
             </TestimonialContent>
           </CustomerTestimonial>
-        </TestimonialSection>
+        </Container>
+      </TechnologiesSection>
 
         <FindUsSection>
           <BeliefTitle>Find us</BeliefTitle>

@@ -3,6 +3,8 @@ import styled, { keyframes } from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 import Slider from 'react-slick';
 import AOS from 'aos';
+import { Link as ScrollLink } from 'react-scroll';
+
 import Customers from "../assets/images/Customers.png";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -258,6 +260,7 @@ const TrustedLogo = styled.img`
   height: 100px;
   cursor: pointer;
   width: auto;
+  margin-bottom:20px;
 `;
 
 const ServicesSection = styled(Section20)`
@@ -341,6 +344,7 @@ const AwardsGrid = styled(Slider)`
 const AwardImage = styled.img`
   height: 100px;
   width: auto;
+  margin-bottom: 20px;
 `;
 const TechnologiesSection = styled(Section0)`
 margin-bottom: 50px;
@@ -396,10 +400,30 @@ const AwardsDots = styled.div`
 const AwardsDot = styled.span`
   width: 10px;
   height: 10px;
+  cursor: pointer;
   background-color: ${(props) => (props.active ? "#434343" : "#6C6C6C")};
   border-radius: 50%;
 `;
 const Contact = () => {
+  const [activeDot, setActiveDot] = useState(0);
+
+  const testimonials = [
+    {
+      text: "Solminica has been a game-changer for our business. Their team delivered a top-notch solution that exceeded our expectations. We're thrilled with the results!",
+      author: "Mark Rise",
+      position: "CEO, Founder",
+    },
+    {
+      text: "Since implementing Solminica, we've seen a 25% increase in website traffic and a 15% boost in conversions. The team at Solminica truly understands our business needs.",
+      author: "Jane Doe",
+      position: "Marketing Director",
+    },
+    {
+      text: "Working with Solminica felt like a true partnership. They were responsive, proactive, and always willing to go the extra mile. We highly recommend their services.",
+      author: "John Smith",
+      position: "CEO, Founder",
+    },
+  ];
   const [captchaValue, setCaptchaValue] = useState('');
   const [captchaAnswer, setCaptchaAnswer] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -436,8 +460,8 @@ const Contact = () => {
     customPaging: (i) => (
       <div
         style={{
-          width: "16px", // Update width for individual dot
-          height: "16px", // Update height for individual dot
+          width: "13px", // Update width for individual dot
+          height: "13px", // Update height for individual dot
           backgroundColor: i === 0 ? "#333" : "#ccc", // Color change for active/inactive dots
           borderRadius: "50%", // Making the dots round
           margin: "0 8px", // Spacing between dots (half of the gap)
@@ -525,7 +549,7 @@ const Contact = () => {
       setIsLoading(false);
       return;
     }
-
+   
     const formData = {
       name,
       email,
@@ -570,15 +594,18 @@ const Contact = () => {
             <HeroSubtitle>
               Solminica creates inspirational designs and robust solutions for Web and mobile apps. We combine our expertise in tech & design to craft innovative digital solutions that lead the way in your industry.
             </HeroSubtitle>
-            <Button>Get Quote</Button>
+            <ScrollLink to="contactForm" smooth={true} duration={500}>
+  <Button>Get Quote</Button>
+</ScrollLink>
+
           </HeroContent>
           <img src={about} alt="Partner with us" style={{ maxWidth: '40%' }} />
         </HeroSection>
 
-        <Section>
+        <Section id="contactForm">
           <Title>Let's work together to turn your vision into a reality</Title>
           <Subtitle>Fill this form to Take the First Step Towards the Successful Journey.</Subtitle>
-          <FormSection>
+          <FormSection >
             <FormContainer>
               <Form onSubmit={handleSubmit}>
                 <Input type="text" name="name" placeholder="Name*" required />
@@ -661,33 +688,33 @@ const Contact = () => {
         </Subtitle>
         <Slider {...carouselSettings}>
           <div>
-            <TrustedLogo onClick={() => window.open("https://www.rainbowhospitals.in/", "_blank")} src={trusted_partner_1} alt="Trusted Partner 1" />
+            <TrustedLogo onClick={() => window.open("https://www.powergrid.in/", "_blank")} src={trusted_partner_1} alt="Trusted Partner 1" />
           </div>
           <div>
-            <TrustedLogo onClick={() => window.open("https://apwrims.ap.gov.in/", "_blank")} src={trusted_partner_2} alt="Trusted Partner 2" />
+            <TrustedLogo onClick={() => window.open("https://www.rainbowhospitals.in/", "_blank")} src={trusted_partner_2} alt="Trusted Partner 2" />
+          </div>
+          {/* <div>
+            <TrustedLogo onClick={() => window.open("https://www.rainbowhospitals.in/", "_blank")} src={trusted_partner_3} alt="Trusted Partner 3" />
+          </div> */}
+          <div>
+            <TrustedLogo onClick={() => window.open("https://apwrims.ap.gov.in/", "_blank")} src={trusted_partner_4} alt="Trusted Partner 4" />
           </div>
           <div>
-            <TrustedLogo onClick={() => window.open("https://www.powergrid.in/", "_blank")} src={trusted_partner_3} alt="Trusted Partner 3" />
+            <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_5} alt="Trusted Partner 5" />
           </div>
           <div>
-            <TrustedLogo onClick={() => window.open("https://www.sacredgroves.earth/", "_blank")} src={trusted_partner_4} alt="Trusted Partner 4" />
+            <TrustedLogo onClick={() => window.open("https://suvarnabhoomiinfra.com/", "_blank")} src={trusted_partner_6} alt="Trusted Partner 6" />
           </div>
           <div>
-            <TrustedLogo onClick={() => window.open("https://suvarnabhoomiinfra.com/", "_blank")} src={trusted_partner_5} alt="Trusted Partner 5" />
+            <TrustedLogo onClick={() => window.open("https://www.merinolaminates.com/en/", "_blank")} src={trusted_partner_7} alt="Trusted Partner 7" />
           </div>
           <div>
-            <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_6} alt="Trusted Partner 6" />
-          </div>
-          <div>
-            <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_7} alt="Trusted Partner 7" />
-          </div>
-          <div>
-            <TrustedLogo onClick={() => window.open("https://bambinoagro.com/", "_blank")} src={trusted_partner_8} alt="Trusted Partner 8" />
+            <TrustedLogo onClick={() => window.open("https://www.bachpanglobal.com/", "_blank")} src={trusted_partner_8} alt="Trusted Partner 8" />
           </div>
         </Slider>
       </Container>
     </TrustedSection>
-        <TechnologiesSection data-aos="fade-up">
+    <TechnologiesSection >
         <Container>
           <Title>Our Customers love what we do</Title>
           <Subtitle>
@@ -702,23 +729,17 @@ const Contact = () => {
           <CustomerTestimonial>
             <TestimonialImage src={Customers} alt="Customer Testimonial" />
             <TestimonialContent>
-              <TestimonialText>
-                " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore. 
-                <br />
-                <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore."
-              </TestimonialText>
-              <TestimonialAuthor>Mark Rise</TestimonialAuthor>
-              <TestimonialPosition>CEO, Founder</TestimonialPosition>
-              <AwardsDots>
-          <AwardsDot active />
-          <AwardsDot />
-          <AwardsDot />
-          <AwardsDot />
+            <TestimonialText>{testimonials[activeDot].text}</TestimonialText>
+        <TestimonialAuthor>{testimonials[activeDot].author}</TestimonialAuthor>
+        <TestimonialPosition>{testimonials[activeDot].position}</TestimonialPosition>
+        <AwardsDots>
+          {testimonials.map((_, index) => (
+            <AwardsDot
+              key={index}
+              active={index === activeDot}
+              onClick={() => setActiveDot(index)}
+            />
+          ))}
         </AwardsDots>
             </TestimonialContent>
           </CustomerTestimonial>

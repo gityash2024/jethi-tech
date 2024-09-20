@@ -13,6 +13,19 @@ import { motion } from 'framer-motion';
 import "slick-carousel/slick/slick-theme.css";
 import "aos/dist/aos.css";
 import whatsapp from "../assets/images/whatsapp.png";
+import practical from "../assets/images/practical.png";
+import sumitian from "../assets/images/sumitian.png";
+import dronekarna from "../assets/images/dronekarna.png";
+import dooper from "../assets/images/dooper.png";
+import womb from "../assets/images/womb.png";
+import reroutee from "../assets/images/reroutee.png";
+import sam from "../assets/images/sam.png";
+import appreaze from "../assets/images/appreaze.png";
+import inte from "../assets/images/inte.png";
+import samtosh from "../assets/images/samtosh.png";
+import mountain from "../assets/images/mountain.png";
+import exar from "../assets/images/exar.png";
+
 import telegram from "../assets/images/telegram.png";
 import followus from "../assets/images/followus.png";
 import instagram from "../assets/images/instagram.png";
@@ -771,33 +784,7 @@ const IndustryList = styled.ul`
   margin-right: 40px;
 `;
 
-const IndustryItem = styled.li`
-  margin-bottom: 10px;
-  cursor: pointer;
-  color: ${(props) => (props.active ? "#0072FF" : "#434343")};
-  font-weight: ${(props) => (props.active ? "600" : "normal")};
-  background: ${(props) =>
-    props.active
-      ? "linear-gradient(to right, #DDEEFF 0%, #DDEEFF 100%)"
-      : "transparent"};
-  padding: 20px 15px;
-  width: 100%;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  &:hover {
-    background:linear-gradient(to right, #DDEEFF 0%, #DDEEFF 100%) !important;
-    color: #0072FF;
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-`;
 
-const IndustryIcon = styled.img`
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-`;
 
 const WorkDetails = styled.div`
   flex: 1;
@@ -1131,6 +1118,38 @@ const StatNumber = styled.h3`
   margin-bottom: 10px;
   border-bottom: 1px solid #5C5C5C;
 `;
+const IndustryItem = styled.li`
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: ${(props) => (props.active ? "#0072FF" : "#000000")}; // Text color change
+  font-weight: ${(props) => (props.active ? "600" : "normal")};
+  background: ${(props) =>
+    props.active
+      ? "linear-gradient(to right, #DDEEFF 0%, #DDEEFF 100%)"
+      : "transparent"};
+  padding: 20px 15px;
+  width: 100%;
+  text-align: left;
+  
+  &:hover {
+    background: linear-gradient(to right, #DDEEFF 0%, #DDEEFF 100%) !important;
+    color: #0072FF;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+`;
+
+const IndustryIcon = styled.img`
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  filter: ${(props) => (props.active ? "none" : "grayscale(100%)")}; 
+  fill: ${(props) => (props.active ? "#0072FF" : "#000000")}; // For inline SVG
+`;
+
 
 const StatLabel = styled.p`
   font-size: 20px;
@@ -1325,6 +1344,82 @@ const BlogSectionComponent = ({ blogData }) => {
 
 
 const Home = () => {
+
+  const workData = {
+    'Education': [
+      {
+        image: sumitian,
+        title: 'Sumitian',
+        description: 'Sumit EdTech, a prominent coaching institute based in Bihar, embarked on a mission to enhance its educational offerings beyond live classes. The primary business goal was to create a robust Learning Management System (LMS) through a dedicated application. The aim was to enable students from classes nine to twelve to access recorded sessions and study materials post-live classes. Through an intuitive admin portal, instructors could upload content, which students could then access offline and download for future reference. This initiative sought to bridge the gap between live sessions and self-paced learning, providing a holistic educational experience for subscribed students',
+      },
+      {
+        image: practical,
+        title: 'Practically',
+        description: 'Practically, an ad tech application designed for K-6 to K-12 students embarked on a mission to revolutionize vocational education. The primary business goal was to create a comprehensive platform that seamlessly integrates virtual reality, mobile application, and chatbot technologies. This innovative approach aimed to enhance student learning experiences by providing interactive, hands-on content. With a focus on K-12 education, Practically aimed to deliver a platform where students could access courses, videos, simulations, and virtual reality content, fostering a dynamic and engaging educational environment. The ultimate objective was to contribute to the improvement of educational outcomes and facilitate effective learning for students.',
+      },
+    ],
+    'Healthcare': [
+      {
+        image: dooper,
+        title: 'Dooper',
+        description: 'Dooper embarked on a mission to redefine healthcare services by providing a comprehensive application catering to all hospital needs. The primary objective was to create a user-friendly platform that seamlessly integrates ambulance booking, appointments with health assistants and doctors, prescription management, lab test scheduling, and more. The goal was to enhance the overall efficiency of hospital operations and improve patient care.',
+      },
+      {
+        image: womb,
+        title: 'WOMB',
+        description: 'WOMB, a custom website and application, was conceptualized to offer comprehensive support to individuals navigating the transformative journey of pregnancy. The business goal was to create a holistic platform that not only tracked essential metrics but also provided coaching, valuable content, and mental health support. The aim was to empower expectant parents with a centralized hub that catered to their physical, emotional, and informational needs. The user app and admin panel were designed to facilitate a seamless exchange of information and support throughout the pregnancy experience',
+      },
+    ],
+    'Transportation': [
+      {
+        image: reroutee,
+        title: 'Reeroute',
+        description: 'The Reeroute Trucking Application aims to revolutionize the logistics industry by providing a comprehensive solution that optimizes trucking operations for transporters, consignors, vehicle owners, drivers, administrators, and sales teams. By streamlining processes and leveraging advanced technology, Reeroute enhances efficiency, transparency, and profitability across the supply chain',
+      },
+      {
+        image: sam,
+        title: 'SAM Auto Pooling ',
+        description: 'SAM, an auto-pooling application, strives to redefine commuting in Bangalore by providing a convenient and sustainable transportation solution. The primary goal is to optimize travel for users by introducing auto-pooling options, reducing traffic congestion, and promoting eco-friendly modes of transportation. SAM aims to enhance the daily commute experience, making it not just efficient but also socially responsible.SAM, an auto-pooling application, strives to redefine commuting in Bangalore by providing a convenient and sustainable transportation solution. The primary goal is to optimize travel for users by introducing auto-pooling options, reducing traffic congestion, and promoting eco-friendly modes of transportation. SAM aims to enhance the daily commute experience, making it not just efficient but also socially responsible.',
+      },
+    ],
+    'Real Estate': [
+      {
+        image: appreaze,
+        title: 'Appreaz',
+        description: 'Appreaz sought to address the growing demand for efficient residential management by developing a comprehensive solution. The goal was to empower residents to seamlessly manage financial transactions, facility bookings, and community interactions within a secure digital ecosystem. The overarching objective was to enhance the overall living experience while simplifying administrative tasks for both residents and management',
+      },
+      {
+        image: inte,
+        title: 'INRE',
+        description: 'INRE Global aspires to revolutionize the real estate sector by creating a user-friendly platform that streamlines the buying and selling of properties for both customers and administrators. The primary business goal is to enhance efficiency in real estate transactions by leveraging innovative technology solutions. The aim is to attract more customers and provide a seamless user experience, ultimately transforming the traditional real estate landscape.',
+      },
+    ],
+    'Investment': [
+      {
+        image: samtosh,
+        title: 'Santosh Investment',
+        description: 'Santosh aims to revolutionize the real estate investment experience by providing a seamless platform for investors to effortlessly manage their portfolios. With flexible registration, secure payment integration, and automatic monthly payouts, our goal is to empower investors with a user-friendly solution that simplifies the investment process.',
+      },
+      {
+        image: mountain,
+        title: 'Mountain Run',
+        description: 'Mountain Run, an Android gaming platform, aimed to scale up its mobile game application to expand the user base and elevate the gaming experience. The goal was to introduce captivating features, enhance graphics, and weave an engaging narrative, establishing Mountain Run as a premier choice for endless running adventures on Android devices. The focus extended beyond entertainment to create a dynamic and ever-evolving gameplay experience that fosters player loyalty.',
+      },
+      {
+        image: exar,
+        title: 'Exar World',
+        description: 'In pursuit of shaping the future of the internet, Exar World’s embarked on the visionary goal of developing an innovative metaverse that would redefine online interactions. Additionally, the primary objective was to create a dynamic and immersive virtual world, surpassing conventional digital experiences by integrating cutting-edge technologies such as blockchain and virtual reality. Exar World’s aimed to pioneer the next era of online engagement by providing users with unprecedented metaverse experiences, transcending the limitations of traditional internet platforms.',
+      }
+    ],
+    'Agriculture': [
+      {
+        image: dronekarna,
+        title: 'Dronekaraan',
+        description: 'In response to the evolving needs of the agriculture sector, our goal with the Dronekaaran Booking Application was to empower farmers with a cutting-edge solution for pesticide distribution. The primary objective was to streamline the booking process, ensuring farmers could easily request drone-assisted services while providing partners and administrators with robust tools for efficient management. By harnessing the power of drones, we aimed to enhance productivity, reduce costs, and contribute to sustainable agricultural practices',
+      }
+    ]
+  };
+  
   const navigate=useNavigate();
   const [activeSlide, setActiveSlide] = useState(0);
   const carouselSettings = {
@@ -1528,14 +1623,10 @@ const Home = () => {
   const industryData = {
     'Education': { icon: educationIcon },
     'Healthcare': { icon: healthcareIcon },
-    'Logistics & Distribution': { icon: logisticsIcon },
-    'AIML': { icon: aimlIcon },
+    'Transportation': { icon: logisticsIcon },
     'Real Estate': { icon: realEstateIcon },
-    'Travel & Hospitality': { icon: travelIcon },
-    'Food & Restaurant': { icon: foodIcon },
-    'Finance': { icon: financeIcon },
-    'Retail & E-commerce': { icon: retailIcon },
-    'Miscellaneous': { icon: miscIcon },
+    'Investment': { icon: financeIcon },
+    'Agriculture': { icon: foodIcon }
   };
 
   useEffect(() => {
@@ -2010,66 +2101,63 @@ const Home = () => {
           </BottomRow>
         </Container>
       </ValueSection>
-      <WorkSection  data-aos="fade-up">
-        <Container>
-          <Title>Our Work</Title>
-          <Subtitle>Solminica working on different sectors with giving them the proof and solutions. From agriculture to <br />fintech, we cater to a wide array of industries, offering tailored solutions to meet their specific needs</Subtitle>
-          <WorkGrid>
-            <IndustryList>
-              {Object.keys(industryData).map(industry => (
-                <IndustryItem 
-                  key={industry} 
-                  active={activeIndustry === industry} 
-                  onClick={() => setActiveIndustry(industry)}
-                >
-                  <IndustryIcon src={industryData[industry].icon} alt={industry} />
-                  {industry}
-                </IndustryItem>
-              ))}
-            </IndustryList>
-            <WorkDetails>
-              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+      <WorkSection data-aos="fade-up">
+    <Container>
+      <Title>Our Work</Title>
+      <Subtitle>Solminica working on different sectors with giving them the proof and solutions.</Subtitle>
+      <WorkGrid>
+        <IndustryList>
+        {Object.keys(industryData).map((industry) => (
+  <IndustryItem
+    key={industry}
+    active={activeIndustry === industry}
+    onClick={() => setActiveIndustry(industry)}
+  >
+    <IndustryIcon
+      src={industryData[industry].icon}
+      alt={industry}
+      active={activeIndustry === industry} // Pass active prop for dynamic color change
+    />
+    {industry}
+  </IndustryItem>
+))}
 
-
-              <WorkDetailTitle>{activeIndustry} </WorkDetailTitle>
-              <WorkDetailTitle2>View All {'->'}</WorkDetailTitle2>
+        </IndustryList>
+        <WorkDetails>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <WorkDetailTitle>{activeIndustry}</WorkDetailTitle>
+            <WorkDetailTitle2>View All {'->'}</WorkDetailTitle2>
+          </div>
+        
+          <WorkCards>
+            {workData[activeIndustry]?.map((card, index) => (
+              <div key={index}>
+                <WorkCard>
+                  <OverlayImage src={card.image} alt={`${activeIndustry} Project Overlay`} />
+                </WorkCard>
+                <WorkCardContent>
+                  <WorkCardTitle>{card.title}</WorkCardTitle>
+                  <WorkCardDescription>{card.description}</WorkCardDescription>
+                  <WorkCardTitle>Technologies</WorkCardTitle>
+                  <TechStack>
+                    <TechIcon src={html} alt="html" />
+                    <TechIcon src={css} alt="css" />
+                    <TechIcon src={jquery} alt="jquery" />
+                    <TechIcon src={bootstrap} alt="bootstrap" />
+                    <TechIcon src={php} alt="php" />
+                    <TechIcon src={ajax} alt="ajax" />
+                    <TechIcon src={mysql} alt="mysql" />
+                    <TechIcon src={laravel} alt="laravel" />
+                  </TechStack>
+                  <ReadMore href="#">Read More →</ReadMore>
+                </WorkCardContent>
               </div>
-
-              <WorkDetailDescription>The healthcare industry utilizes advanced technology solutions for telemedicine, electronic health records, and patient monitoring, thereby enhancing care accessibility, improving patient outcomes, and streamlining operational efficiency.</WorkDetailDescription>
-              <WorkCards>
-                {[1, 2].map((_, index) => (
-                  <div key={index}>
-                    <WorkCard>
-                      <OverlayImage src={educationProject2} alt={`${activeIndustry} Project Overlay`} />
-                    </WorkCard>
-                    <WorkCardContent>
-                      <WorkCardTitle>Rainbow Children’s Hospitals</WorkCardTitle>
-                      <WorkCardDescription>Rainbow Children’s Hospitals is a leading
- paediatric healthcare hospital chain in India with over 15
- hospitals and 3 clinics in 6 cities, with a total bed capacity of
- 1,550+ beds.</WorkCardDescription>
- <WorkCardTitle>Technologies</WorkCardTitle>
-
-                      <TechStack>
-                        <TechIcon src={html} alt="html" />
-                        <TechIcon src={css} alt="css" />
-                        <TechIcon src={jquery} alt="jquery" />
-                        <TechIcon src={bootstrap} alt="bootstrap" />
-                        <TechIcon src={php} alt="php" />
-                        <TechIcon src={ajax} alt="ajax" />
-                        <TechIcon src={mysql} alt="mysql" />
-                        <TechIcon src={laravel} alt="laravel" />
-                        
-                      </TechStack>
-                      <ReadMore href="#">Read More →</ReadMore>
-                    </WorkCardContent>
-                  </div>
-                ))}
-              </WorkCards>
-            </WorkDetails>
-          </WorkGrid>
-        </Container>
-      </WorkSection>
+            ))}
+          </WorkCards>
+        </WorkDetails>
+      </WorkGrid>
+    </Container>
+  </WorkSection>
 
       <ProcessSection data-aos="fade-up">
         <Container>
@@ -2214,7 +2302,7 @@ const Home = () => {
         <TrustedGrid {...carouselSettings2}>
           <TrustedLogo src={trusted_partner_1} alt="Trusted Partner 1" />
           <TrustedLogo src={trusted_partner_2} alt="Trusted Partner 2" />
-          <TrustedLogo src={trusted_partner_3} alt="Trusted Partner 3" />
+          {/* <TrustedLogo src={trusted_partner_3} alt="Trusted Partner 3" /> */}
           <TrustedLogo src={trusted_partner_4} alt="Trusted Partner 4" />
           <TrustedLogo src={trusted_partner_5} alt="Trusted Partner 5" />
           <TrustedLogo src={trusted_partner_6} alt="Trusted Partner 6" />

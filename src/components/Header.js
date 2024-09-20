@@ -47,6 +47,22 @@ const TopBarLink = styled.a`
   font-size: 14px;
   padding: 6px 10px;
   transition: all 0.3s;
+  cursor: not-allowed !important;
+  pointer-events: ${props => props.disabled ? 'none' : 'auto'};
+  display: inline-block;
+
+
+  &:last-child {
+    margin-right: 0;
+  }
+`;
+const TopBarLink2 = styled.a`
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 10px;
+  transition: all 0.3s;
   cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
   pointer-events: ${props => props.disabled ? 'none' : 'auto'};
   display: inline-block;
@@ -169,7 +185,7 @@ const NavLink = styled(Link)`
   }
 `;
 
-const NavLink2 = styled(Link)`
+const NavLink3 = styled(Link)`
   color: #434343;
   text-decoration: none;
   font-weight: 500;
@@ -177,6 +193,7 @@ const NavLink2 = styled(Link)`
   transition: color 0.3s;
   display: flex;
   align-items: center;
+  cursor: not-allowed;
 
   &.active {
     color: #015BCC;
@@ -550,13 +567,13 @@ const Header = () => {
     <HeaderWrapper>
       <TopBar>
         <TopBarContent>
-          <TopBarLink href="/" className="active">JTS</TopBarLink>
-          <TopBarLink href="#" disabled>Soleventure</TopBarLink>
-          <TopBarLink href="#" disabled>Realtors</TopBarLink>
-          <TopBarLink href="#" disabled>Interiors</TopBarLink>
-          <TopBarLink href="#" disabled>Branding</TopBarLink>
-          <TopBarLink href="#" disabled>Tax & accounting</TopBarLink>
-          <TopBarLink href="#" disabled>Startup incubation</TopBarLink>
+          <TopBarLink2 href="/" className="active">JTS</TopBarLink2>
+          <TopBarLink title='comming soon' >Soleventure</TopBarLink>
+          <TopBarLink  title='comming soon'>Realtors</TopBarLink>
+          <TopBarLink  title='comming soon' >Interiors</TopBarLink>
+          <TopBarLink  title='comming soon'>Branding</TopBarLink>
+          <TopBarLink   title='comming soon'>Tax & accounting</TopBarLink>
+          <TopBarLink   title='comming soon'>Startup incubation</TopBarLink>
         </TopBarContent>
       </TopBar>
       <MainNav>
@@ -755,7 +772,7 @@ const Header = () => {
               </DropdownMenuShifted>
             </NavItem>
             <NavItem>
-              <NavLink2 onClick={() => handleMenuClick('/work')} className={location.pathname === '/work' ? 'active' : ''}>Work</NavLink2>
+              <NavLink3 title='comming soon' >Work</NavLink3>
             </NavItem>
             <MenuContainer ref={menuRef}>
             <MenuButton onClick={toggleMenu}>
