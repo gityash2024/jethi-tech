@@ -346,6 +346,18 @@ const SidebarSocialIcon = styled.a`
   font-size: 14px;
   font-family: "Poppins";
 `;
+const SidebarSocialIcon2 = styled.a`
+  width: 30px;
+  height: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: "Poppins";
+`;
 
 const HeroSection = styled(Section)`
   display: flex;
@@ -501,6 +513,20 @@ const ServiceItem = styled(motion.div)`
   background-color: #fff;
   border-radius: 8px;
   border: 1px solid #E1E1E1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  &:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s ease-in-out;
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+`;
+const ServiceItem2 = styled(motion.div)`
+  background-color: #fff;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -1002,7 +1028,7 @@ const BusinessItem = styled.div`
 
 
 const TrustedLogo = styled.img`
-  height: 100px;
+  height: 80px;
   cursor: pointer;
   width: auto;
 `;
@@ -1550,9 +1576,9 @@ const Home = () => {
   return (
     <HomeWrapper>
       <SocialBar>
-        <SidebarSocialIcon href="#" target="_blank">
+        <SidebarSocialIcon2 href="#" target="_blank">
           <img src={telegram} alt="Telegram" />
-        </SidebarSocialIcon>
+        </SidebarSocialIcon2>
         <SidebarSocialIcon href="#" target="_blank">
           <img src={whatsapp} alt="WhatsApp" />
         </SidebarSocialIcon>
@@ -1754,7 +1780,7 @@ const Home = () => {
           <ServiceIcon src={our_digital_cloud} alt="Cloud and Devops" />
           <ServiceTitle>Cloud and Devops</ServiceTitle>
         </ServiceItem>
-        <ServiceItem
+        <ServiceItem2
           custom={9}
           initial="hidden"
           whileInView="visible"
@@ -1762,7 +1788,7 @@ const Home = () => {
           viewport={{ once: true }}
         >
           <ServiceIcon2 src={our_digital_lets_conect_last_card} alt="Let's Connect" />
-        </ServiceItem>
+        </ServiceItem2>
       </ServiceGrid>
     </ServicesContent>
   </ServicesContainer>
@@ -2176,6 +2202,7 @@ const Home = () => {
           </BusinessesGrid>
         </Container>
       </BusinessesSection>
+          <Container>
 
       <TrustedSection data-aos="fade-up">
         <Title>Trusted By 100+ Happy Brands</Title>
@@ -2193,6 +2220,7 @@ const Home = () => {
           <TrustedLogo src={trusted_partner_8} alt="Trusted Partner 8" />
         </TrustedGrid>
       </TrustedSection>
+          </Container>
       <BlogSection data-aos="fade-up">
       <Container>
         <Title>Blogs</Title>

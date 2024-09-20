@@ -123,30 +123,7 @@ const ProductImage = styled.img`
   width: auto;
 `;
 
-const LocationSection = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
 
-const LocationItem = styled.div`
-  text-align: center;
-  flex: 1;
-  padding: 0 30px; // Adjusted padding
-  font-size: 13px;
-  @media (max-width: 768px) {
-    padding: 20px 0;
-    border-bottom: 1px solid #53A4FF;
-    width: 100%;
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-`;
 
 const Flag = styled.img`
   width: 130px; // Adjusted to match Figma
@@ -194,7 +171,45 @@ const GradientText = styled.span`
   font-size: 30px;
   color: white;
 `;
+const LocationSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
+const LocationItem = styled.div`
+  text-align: center;
+  flex: 1;
+  padding: 0 30px;
+  font-size: 13px;
+  position: relative;
+  
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #53A4FF, transparent);
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 0;
+    border-bottom: 1px solid #53A4FF;
+    width: 100%;
+    &:last-child {
+      border-bottom: none;
+    }
+    &::after {
+      display: none;
+    }
+  }
+`;
 const Footer = () => {
   const navigate = useNavigate();
 
